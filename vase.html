@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花器 | 渔窑手工青花</title>
+    <meta name="description" content="渔窑手工青花花器，以青花民窑、钓鱼意境与东方留白构成品牌网站。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <!-- 全屏背景动画（水墨风） -->
+    <div class="bg-animated">
+      <div class="bg-layer bg-layer-1"></div>
+      <div class="bg-layer bg-layer-2"></div>
+      <div class="bg-ink-wash"></div>
+      <div class="bg-ink-drop"></div>
+      <div class="bg-ink-drop"></div>
+      <div class="bg-ink-drop"></div>
+    </div>
+
+    <!-- 左侧悬浮导航 -->
+    <nav class="side-nav" aria-label="主导航">
+      <div class="nav-logo">
+        <img src="img/logo.png" alt="渔窑手工青花 logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link" title="首页">首页</a></li>
+        <li><a href="tea.html" class="nav-link" title="茶具">茶具</a></li>
+        <li><a href="tableware.html" class="nav-link" title="餐具">餐具</a></li>
+        <li><a href="coffee.html" class="nav-link" title="咖啡具">咖啡具</a></li>
+        <li><a href="vase.html" class="nav-link active" title="花器">花器</a></li>
+        <li><a href="art.html" class="nav-link" title="艺术品">艺术品</a></li>
+        <li><a href="about.html" class="nav-link" title="关于">关于</a></li>
+      </ul>
+      <div class="nav-brand">
+        <span class="brand-cn">渔窑手工青花</span>
+        <span class="brand-en">fishing kiln</span>
+      </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+      <!-- 花器页 -->
+      <section id="vase" class="page-section active">
+        <div class="section-header">
+          <h2 class="cursive-text glitch" data-text="花器">花器</h2>
+          <p class="section-desc">花瓶、插器与静物氛围，更偏陈设、空间、山水气</p>
+        </div>
+        <div class="section-content">
+          <div class="info-card">
+            <h3 class="cursive-text">花器与空间陈设</h3>
+            <p>花器，不只是插花的容器，更是空间中的一处静物，一种氛围。渔窑花器，偏陈设、空间、山水气，让插花成为与器物的对话。</p>
+            <p>花瓶、插器，各有其型，各有其气，共同构成空间中的一处山水。</p>
+          </div>
+          <div class="items-grid">
+            <div class="item-card clickable-card" data-detail="vase-bottle">
+              <h4 class="cursive-text">渔隐瓶</h4>
+              <p>瓶身绘渔隐图，适合插一枝梅花。瓶型取法民窑青花瓶，却更适合现代空间的陈设。</p>
+              <span class="item-tag">渔隐图</span>
+            </div>
+            <div class="item-card clickable-card" data-detail="vase-arrangement">
+              <h4 class="cursive-text">水影插器</h4>
+              <p>水面倒影意境，插花如画中景。插器型取法古器，却更适合现代花道。</p>
+              <span class="item-tag">水影意境</span>
+            </div>
+            <div class="item-card clickable-card" data-detail="vase-celadon">
+              <h4 class="cursive-text">青瓷花器</h4>
+              <p>青瓷釉色，素雅花器，空间陈设佳品。釉色如湖水，器型如山中石。</p>
+              <span class="item-tag">素雅</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 详情模态框 -->
+    <div class="modal-overlay" id="detailModal">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="关闭">&times;</button>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </div>
+
+    <script src="js/detailData.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

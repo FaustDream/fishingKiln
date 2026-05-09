@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>餐具 | 渔窑手工青花</title>
+    <meta name="description" content="渔窑手工青花餐具，以青花民窑、钓鱼意境与东方留白构成品牌网站。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <!-- 全屏背景动画（水墨风） -->
+    <div class="bg-animated">
+      <div class="bg-layer bg-layer-1"></div>
+      <div class="bg-layer bg-layer-2"></div>
+      <div class="bg-ink-wash"></div>
+      <div class="bg-ink-drop"></div>
+      <div class="bg-ink-drop"></div>
+      <div class="bg-ink-drop"></div>
+    </div>
+
+    <!-- 左侧悬浮导航 -->
+    <nav class="side-nav" aria-label="主导航">
+      <div class="nav-logo">
+        <img src="img/logo.png" alt="渔窑手工青花 logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link" title="首页">首页</a></li>
+        <li><a href="tea.html" class="nav-link" title="茶具">茶具</a></li>
+        <li><a href="tableware.html" class="nav-link active" title="餐具">餐具</a></li>
+        <li><a href="coffee.html" class="nav-link" title="咖啡具">咖啡具</a></li>
+        <li><a href="vase.html" class="nav-link" title="花器">花器</a></li>
+        <li><a href="art.html" class="nav-link" title="艺术品">艺术品</a></li>
+        <li><a href="about.html" class="nav-link" title="关于">关于</a></li>
+      </ul>
+      <div class="nav-brand">
+        <span class="brand-cn">渔窑手工青花</span>
+        <span class="brand-en">fishing kiln</span>
+      </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+      <!-- 餐具页 -->
+      <section id="tableware" class="page-section active">
+        <div class="section-header">
+          <h2 class="cursive-text glitch" data-text="餐具">餐具</h2>
+          <p class="section-desc">盘、碗、碟与日常食器，像一桌青花与生活的关系</p>
+        </div>
+        <div class="section-content">
+          <div class="info-card">
+            <h3 class="cursive-text">民窑青花与日常食器</h3>
+            <p>民窑青花，不似官窑那般精细，却多了一份质朴与灵动。渔窑餐具，将民窑青花的质朴与日常食器结合，让每一餐都成为与器物的对话。</p>
+            <p>盘、碗、碟，各有其型，各有其用，共同构成一桌青花与生活的关系。</p>
+          </div>
+          <div class="items-grid">
+            <div class="item-card clickable-card" data-detail="tableware-plate">
+              <h4 class="cursive-text">青花盘</h4>
+              <p>青花缠枝莲纹盘，适合盛放点心。盘型宽平，青花纹样如水中莲叶。</p>
+              <span class="item-tag">缠枝莲纹</span>
+            </div>
+            <div class="item-card clickable-card" data-detail="tableware-bowl">
+              <h4 class="cursive-text">民窑碗</h4>
+              <p>民窑青花大碗，日常食器，釉面开片。碗型饱满，手握温润。</p>
+              <span class="item-tag">釉面开片</span>
+            </div>
+            <div class="item-card clickable-card" data-detail="tableware-dish">
+              <h4 class="cursive-text">渔趣碟</h4>
+              <p>小碟绘渔趣图，适合茶点、小食。碟型小巧，青花纹样灵动。</p>
+              <span class="item-tag">渔趣图</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 详情模态框 -->
+    <div class="modal-overlay" id="detailModal">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="关闭">&times;</button>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </div>
+
+    <script src="js/detailData.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

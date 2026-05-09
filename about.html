@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于 | 渔窑手工青花</title>
+    <meta name="description" content="关于渔窑手工青花，以青花民窑、钓鱼意境与东方留白构成品牌网站。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <!-- 全屏背景动画（水墨风） -->
+    <div class="bg-animated">
+      <div class="bg-layer bg-layer-1"></div>
+      <div class="bg-layer bg-layer-2"></div>
+      <div class="bg-ink-wash"></div>
+      <div class="bg-ink-drop"></div>
+      <div class="bg-ink-drop"></div>
+      <div class="bg-ink-drop"></div>
+    </div>
+
+    <!-- 左侧悬浮导航 -->
+    <nav class="side-nav" aria-label="主导航">
+      <div class="nav-logo">
+        <img src="img/logo.png" alt="渔窑手工青花 logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link" title="首页">首页</a></li>
+        <li><a href="tea.html" class="nav-link" title="茶具">茶具</a></li>
+        <li><a href="tableware.html" class="nav-link" title="餐具">餐具</a></li>
+        <li><a href="coffee.html" class="nav-link" title="咖啡具">咖啡具</a></li>
+        <li><a href="vase.html" class="nav-link" title="花器">花器</a></li>
+        <li><a href="art.html" class="nav-link" title="艺术品">艺术品</a></li>
+        <li><a href="about.html" class="nav-link active" title="关于">关于</a></li>
+      </ul>
+      <div class="nav-brand">
+        <span class="brand-cn">渔窑手工青花</span>
+        <span class="brand-en">fishing kiln</span>
+      </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+      <!-- 关于页 -->
+      <section id="about" class="page-section active">
+        <div class="section-header">
+          <h2 class="cursive-text glitch" data-text="关于渔窑">关于渔窑</h2>
+        </div>
+        <div class="section-content">
+          <div class="about-content">
+            <div class="info-card clickable-card" data-detail="brand">
+              <h3 class="cursive-text">渔窑手工青花</h3>
+              <p>渔窑，源于对青花民窑的致敬，融钓鱼意境于器物之中。</p>
+              <p>以民窑青花为骨，以垂钓山水为境，让器物不止停留于使用，也成为一种缓慢、克制、有温度的日常表达。</p>
+              <span class="card-hint">点击查看更多 →</span>
+            </div>
+            <div class="info-card clickable-card" data-detail="porcelain">
+              <h3 class="cursive-text">青花瓷文化</h3>
+              <p>青花瓷，代表中国人纯粹、恬淡、放达，富于水墨意蕴的东方审美观念。渔窑，以此为本，融钓鱼意境、古墨留白，构成独特的品牌气质。</p>
+              <span class="card-hint">点击查看更多 →</span>
+            </div>
+            <div class="info-card clickable-card" data-detail="fishing">
+              <h3 class="cursive-text">钓鱼文化</h3>
+              <p>钓鱼，从"生存之渔"到"休闲之钓"再到"哲学之境"。渔窑，取钓鱼意境，融于器物之中，让每一件作品都有一段渔隐时光。</p>
+              <span class="card-hint">点击查看更多 →</span>
+            </div>
+            <div class="info-card clickable-card" data-detail="calligraphy">
+              <h3 class="cursive-text">书法与器物</h3>
+              <p>书法，汉字书写的艺术化表达，是中华民族的精神密码。渔窑，以草书之狂放，融于器物之温润，让每一件作品都有一份书法的气韵。</p>
+              <span class="card-hint">点击查看更多 →</span>
+            </div>
+            <div class="info-card clickable-card" data-detail="craft">
+              <h3 class="cursive-text">制作工艺</h3>
+              <p>手工青花瓷，从选土、拉坯、利坯、画青花、上釉到烧制，历经数十道工序，每一件都是匠人精神的凝结。</p>
+              <span class="card-hint">点击查看更多 →</span>
+            </div>
+            <div class="info-card clickable-card" data-detail="contact">
+              <h3 class="cursive-text">联系渔窑</h3>
+              <p>工作室位于景德镇，欢迎预约参观。</p>
+              <p>每一件渔窑作品，都是缓慢、克制、有温度的日常表达。</p>
+              <span class="card-hint">点击查看更多 →</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 详情模态框 -->
+    <div class="modal-overlay" id="detailModal">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="关闭">&times;</button>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </div>
+
+    <script src="js/detailData.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

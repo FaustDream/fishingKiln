@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>咖啡具 | 渔窑手工青花</title>
+    <meta name="description" content="渔窑手工青花咖啡具，以青花民窑、钓鱼意境与东方留白构成品牌网站。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <!-- 全屏背景动画（水墨风） -->
+    <div class="bg-animated">
+      <div class="bg-layer bg-layer-1"></div>
+      <div class="bg-layer bg-layer-2"></div>
+      <div class="bg-ink-wash"></div>
+      <div class="bg-ink-drop"></div>
+      <div class="bg-ink-drop"></div>
+      <div class="bg-ink-drop"></div>
+    </div>
+
+    <!-- 左侧悬浮导航 -->
+    <nav class="side-nav" aria-label="主导航">
+      <div class="nav-logo">
+        <img src="img/logo.png" alt="渔窑手工青花 logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link" title="首页">首页</a></li>
+        <li><a href="tea.html" class="nav-link" title="茶具">茶具</a></li>
+        <li><a href="tableware.html" class="nav-link" title="餐具">餐具</a></li>
+        <li><a href="coffee.html" class="nav-link active" title="咖啡具">咖啡具</a></li>
+        <li><a href="vase.html" class="nav-link" title="花器">花器</a></li>
+        <li><a href="art.html" class="nav-link" title="艺术品">艺术品</a></li>
+        <li><a href="about.html" class="nav-link" title="关于">关于</a></li>
+      </ul>
+      <div class="nav-brand">
+        <span class="brand-cn">渔窑手工青花</span>
+        <span class="brand-en">fishing kiln</span>
+      </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+      <!-- 咖啡具页 -->
+      <section id="coffee" class="page-section active">
+        <div class="section-header">
+          <h2 class="cursive-text glitch" data-text="咖啡具">咖啡具</h2>
+          <p class="section-desc">古意器型与现代饮用场景结合，保持克制的当代感</p>
+        </div>
+        <div class="section-content">
+          <div class="info-card">
+            <h3 class="cursive-text">古意器型与现代场景</h3>
+            <p>咖啡，源于西方，却可在东方器型中找到新的表达。渔窑咖啡具，将古意器型与现代饮用场景结合，保持克制的当代感。</p>
+            <p>青花装饰，不只是纹样，更是一种态度——在快节奏的现代生活中，保留一份缓慢、克制、有温度的心境。</p>
+          </div>
+          <div class="items-grid">
+            <div class="item-card clickable-card" data-detail="coffee-cup">
+              <h4 class="cursive-text">青花咖啡杯</h4>
+              <p>古意器型与现代咖啡场景结合。杯型取法青花盏，却更适合咖啡的饮用。</p>
+              <span class="item-tag">古今结合</span>
+            </div>
+            <div class="item-card clickable-card" data-detail="coffee-pot">
+              <h4 class="cursive-text">手冲壶</h4>
+              <p>青花装饰手冲壶，出水细腻。壶型取法民窑壶，却更适合手冲咖啡的节奏。</p>
+              <span class="item-tag">出水细腻</span>
+            </div>
+            <div class="item-card clickable-card" data-detail="coffee-saucer">
+              <h4 class="cursive-text">咖啡承盘</h4>
+              <p>承接滴漏，青花边饰，实用与美并存。承盘如水面，壶杯如小舟。</p>
+              <span class="item-tag">实用与美</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 详情模态框 -->
+    <div class="modal-overlay" id="detailModal">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="关闭">&times;</button>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </div>
+
+    <script src="js/detailData.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
