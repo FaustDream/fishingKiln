@@ -2,7 +2,6 @@
 window.detailData = {
   brand: {
     title: "渔窑手工青花",
-    img: "img/brand.jpg",
     content: `
       <p>渔窑手工青花，源于对青花民窑的致敬，融钓鱼意境于器物之中。</p>
       <p>以民窑青花为骨，以垂钓山水为境，让器物不止停留于使用，也成为一种缓慢、克制、有温度的日常表达。</p>
@@ -18,7 +17,6 @@ window.detailData = {
   },
   porcelain: {
     title: "青花瓷文化",
-    img: "img/porcelain.jpg",
     content: `
       <p>青花瓷，又称白地青花瓷，常简称青花，是中国瓷器的主流品种之一，属釉下彩瓷。</p>
       <p>青花瓷是用含氧化钴的钴矿为原料，在陶瓷坯体上描绘纹饰，再罩上一层透明釉，经高温还原焰一次烧成。</p>
@@ -33,7 +31,6 @@ window.detailData = {
   },
   fishing: {
     title: "钓鱼文化",
-    img: "img/fishing.jpg",
     content: `
       <p>钓鱼，从远古的"生存之渔"，到文人的"休闲之钓"，再到哲人的"山水之境"，承载着中国人独特的情感与哲学。</p>
       <p>渔窑取钓鱼意境，融于器物之中：盏如小舟，壶如钓线，承盘如水面，让每一件作品都有一段渔隐时光。</p>
@@ -48,7 +45,6 @@ window.detailData = {
   },
   calligraphy: {
     title: "书法与器物",
-    img: "img/calligraphy.jpg",
     content: `
       <p>书法，汉字书写的艺术化表达，是中华民族的精神密码。草书之狂放、行书之流畅、楷书之端庄，皆可在器物之上找到对应。</p>
       <p>渔窑以草书之狂放融于器物之温润，让每一件作品都有一份书法的气韵与节奏。</p>
@@ -58,7 +54,6 @@ window.detailData = {
   },
   craft: {
     title: "制作工艺",
-    img: "img/craft.jpg",
     content: `
       <p>手工青花瓷的制作，是一场与泥土、水分、火焰的对话。</p>
       <p><strong>选土</strong>：选取高岭土与瓷石，按比例配比，练泥成团。</p>
@@ -72,7 +67,6 @@ window.detailData = {
   },
   contact: {
     title: "联系渔窑",
-    img: "img/contact.jpg",
     content: `
       <p>渔窑工作室位于景德镇，欢迎预约参观、交流。</p>
       <p>每一件渔窑作品，都是缓慢、克制、有温度的日常表达。</p>
@@ -85,7 +79,6 @@ window.detailData = {
   // ========== 茶具详情 ==========
   "tea-bowl": {
     title: "青花盏",
-    img: "img/tea-bowl.jpg",
     content: `
       <p>茶盏，古人饮茶之器，始于唐，盛于宋。</p>
       <p>渔窑青花盏，取法民窑形制，盏型古朴，釉色温润如玉。</p>
@@ -100,7 +93,6 @@ window.detailData = {
   },
   "tea-pot": {
     title: "垂钓壶",
-    img: "img/tea-pot.jpg",
     content: `
       <p>壶，茶事之核心。出水顺畅，断水利落，方为好壶。</p>
       <p>渔窑垂钓壶，壶身绘山水渔隐图，壶嘴如钓线般流畅有力。</p>
@@ -110,7 +102,6 @@ window.detailData = {
   },
   "tea-saucer": {
     title: "云水承",
-    img: "img/tea-saucer.jpg",
     content: `
       <p>承盘，承接壶漏与盏溢，是茶席上的无声守护者。</p>
       <p>渔窑云水承，盘心绘云纹水影，承盘如水面，壶盏如水中小舟。</p>
@@ -123,7 +114,6 @@ window.detailData = {
   },
   "tea-cup": {
     title: "渔隐杯",
-    img: "img/tea-cup.jpg",
     content: `
       <p>一杯一世界。渔隐杯，杯身绘渔翁垂钓图，手握处温润如玉。</p>
       <p>青花发色青翠，画工潇洒，一杯茶，便是一段渔隐时光。</p>
@@ -134,7 +124,6 @@ window.detailData = {
   // ========== 餐具详情 ==========
   "tableware-plate": {
     title: "青花盘",
-    img: "img/tableware-plate.jpg",
     content: `
       <p>青花缠枝莲纹盘，盘型宽平，青花纹样如水中莲叶舒展。</p>
       <p>渔窑餐具，取民窑青花之质朴，融于日常食器之中。</p>
@@ -144,7 +133,6 @@ window.detailData = {
   },
   "tableware-bowl": {
     title: "民窑碗",
-    img: "img/tableware-bowl.jpg",
     content: `
       <p>碗，最日常的食器，也是最见温情的器物。</p>
       <p>渔窑民窑碗，釉面自然开片，碗型饱满，手握温润。</p>
@@ -157,7 +145,6 @@ window.detailData = {
   },
   "tableware-dish": {
     title: "渔趣碟",
-    img: "img/tableware-dish.jpg",
     content: `
       <p>小碟，盛茶点、小食，是茶席与餐桌上的灵动配角。</p>
       <p>渔窑渔趣碟，碟型小巧，绘渔趣图，青花纹样灵动洒脱。</p>
@@ -168,7 +155,6 @@ window.detailData = {
   // ========== 咖啡具详情 ==========
   "coffee-cup": {
     title: "青花咖啡杯",
-    img: "img/coffee-cup.jpg",
     content: `
       <p>咖啡，源于西方，却可在东方器型中找到新的表达。</p>
       <p>渔窑青花咖啡杯，杯型取法青花盏，却更适合咖啡的饮用节奏。</p>
@@ -178,7 +164,6 @@ window.detailData = {
   },
   "coffee-pot": {
     title: "手冲壶",
-    img: "img/coffee-pot.jpg",
     content: `
       <p>手冲咖啡，讲究水流的细腻与稳定。</p>
       <p>渔窑手冲壶，青花装饰壶身，出水细腻如丝，壶型取法民窑壶却更符合手冲节奏。</p>
@@ -192,7 +177,6 @@ window.detailData = {
   },
   "coffee-saucer": {
     title: "咖啡承盘",
-    img: "img/coffee-saucer.jpg",
     content: `
       <p>承盘，承接滴漏，是咖啡席上的实用与美。</p>
       <p>渔窑咖啡承盘，青花边饰，盘心如水面，壶杯如水中小舟。</p>
@@ -203,7 +187,6 @@ window.detailData = {
   // ========== 花器详情 ==========
   "vase-bottle": {
     title: "渔隐瓶",
-    img: "img/vase-bottle.jpg",
     content: `
       <p>瓶，插花之器，也是空间中的一处静物、一种氛围。</p>
       <p>渔窑渔隐瓶，瓶身绘渔隐图，适合插一枝梅花或桃花，便是一幅立体的画。</p>
@@ -218,7 +201,6 @@ window.detailData = {
   },
   "vase-arrangement": {
     title: "水影插器",
-    img: "img/vase-arrangement.jpg",
     content: `
       <p>插器，插花之器，让花朵在水中找到自己的姿态。</p>
       <p>渔窑水影插器，取水影倒影意境，插花如画中景，器型取法古器却更适合现代花道。</p>
@@ -228,7 +210,6 @@ window.detailData = {
   },
   "vase-celadon": {
     title: "青瓷花器",
-    img: "img/vase-celadon.jpg",
     content: `
       <p>青瓷，中国陶瓷之美的重要代表，釉色如湖水、如远山。</p>
       <p>渔窑青瓷花器，釉色素雅，器型如山中石，是空间陈设的佳品。</p>
@@ -243,7 +224,6 @@ window.detailData = {
   // ========== 艺术品详情 ==========
   "art-plate": {
     title: "渔窑青花板",
-    img: "img/art-plate.jpg",
     content: `
       <p>瓷板画，以瓷为纸，以青花为墨，是陶瓷与绘画的完美结合。</p>
       <p>渔窑青花板，绘渔舟唱晚意境，板型取法古瓷板，却更适合现代空间的陈设与收藏。</p>
@@ -253,7 +233,6 @@ window.detailData = {
   },
   "art-sculpture": {
     title: "手工青花雕塑",
-    img: "img/art-sculpture.jpg",
     content: `
       <p>青花雕塑，以泥为骨，以青花为衣，是三维的青花瓷艺术。</p>
       <p>渔窑渔翁雕塑，手工捏制，青花点睛，雕塑型取法民间泥塑，却更适合现代空间的陈设与收藏。</p>
@@ -263,9 +242,8 @@ window.detailData = {
   },
   "art-limited": {
     title: "限定收藏款",
-    img: "img/art-limited.jpg",
     content: `
-      <p>限定，不是营销的噱头，而是对每一件作品独特性的尊重。</p>
+      <p>限定，不是营销的话术，而是对每一件作品独特性的尊重。</p>
       <p>渔窑限定收藏款，每款唯一，窑主手工签名。收藏的不只是器物，更是一种态度，一段时光。</p>
       <p>我们相信，好的器物会在对的人手中，继续生长、变化、生出使用的痕迹与温度。</p>
       <div class="detail-poem">
