@@ -4,119 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>茶具 | 渔窑手工青花</title>
-    <meta name="description" content="渔窑手工青花茶具，以青花民窑、钓鱼意境与东方留白构成品牌网站。">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <meta name="description" content="渔窑茶具栏目页，围绕盏、壶、承盘与慢饮秩序展开。">
+    <link rel="icon" href="img/logo.png">
     <link rel="stylesheet" href="css/styles.css">
   </head>
-  <body class="page-tea">
-    <div class="bg-animated">
-      <div class="bg-layer bg-layer-1"></div>
-      <div class="bg-layer bg-layer-2"></div>
-      <div class="bg-ink-wash"></div>
-      <div class="bg-ink-drop"></div>
-      <div class="bg-ink-drop"></div>
-      <div class="bg-ink-drop"></div>
+  <body data-page="tea">
+    <div class="site-shell">
+      <aside class="site-nav" id="siteNav"></aside>
+      <main class="site-main" id="app"></main>
     </div>
 
-    <nav class="side-nav" aria-label="主导航">
-      <div class="nav-logo">
-        <img src="img/logo.png" alt="渔窑手工青花 logo">
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html" class="nav-link" title="首页">首页</a></li>
-        <li><a href="tea.html" class="nav-link active" title="茶具">茶具</a></li>
-        <li><a href="tableware.html" class="nav-link" title="餐具">餐具</a></li>
-        <li><a href="coffee.html" class="nav-link" title="咖啡具">咖啡具</a></li>
-        <li><a href="vase.html" class="nav-link" title="花器">花器</a></li>
-        <li><a href="art.html" class="nav-link" title="艺术品">艺术品</a></li>
-        <li><a href="about.html" class="nav-link" title="关于">关于</a></li>
-      </ul>
-      <div class="nav-brand">
-        <span class="brand-cn">渔窑手工青花</span>
-        <span class="brand-en">fishing kiln</span>
-      </div>
-    </nav>
-
-    <main class="main-content">
-      <section id="tea" class="page-section active">
-        <div class="section-header">
-          <h2 class="cursive-text glitch" data-text="茶具">茶具</h2>
-          <p class="section-desc">盏、壶、承与饮茶器型，偏安静、清润、留白</p>
+    <dialog class="research-dialog" id="researchDialog">
+      <form method="dialog" class="research-dialog__surface">
+        <button class="dialog-close" id="researchDialogClose" type="submit" aria-label="关闭">
+          关闭
+        </button>
+        <img data-dialog-image src="" alt="">
+        <div class="research-dialog__copy">
+          <p class="eyebrow">资料札记</p>
+          <h2 data-dialog-title></h2>
+          <p data-dialog-summary></p>
+          <a data-dialog-source href="" target="_blank" rel="noreferrer">查看来源</a>
         </div>
-        <div class="section-content">
-          <div class="info-card">
-            <h3 class="cursive-text">青花瓷与茶文化</h3>
-            <p>中国是茶的发源地，茶具作为茶和水的载体，在茶道中扮演着重要角色。青花瓷茶具以其温润的釉色、古朴的器型，成为茶道中不可或缺的一部分。</p>
-            <p>渔窑茶具，以民窑青花为骨，以垂钓山水为境，让茶事不止停留于饮用，也成为一种缓慢、克制、有温度的日常表达。</p>
-          </div>
+      </form>
+    </dialog>
 
-          <div class="tea-category-tabs" aria-label="茶具分类">
-            <button class="tea-category-tab is-active" type="button" data-tab="tea-bowl">
-              <span class="tea-category-tab__title cursive-text">青花盏</span>
-              <span class="tea-category-tab__meta">民窑风格</span>
-            </button>
-            <button class="tea-category-tab" type="button" data-tab="tea-pot">
-              <span class="tea-category-tab__title cursive-text">垂钓壶</span>
-              <span class="tea-category-tab__meta">钓鱼意境</span>
-            </button>
-            <button class="tea-category-tab" type="button" data-tab="tea-saucer">
-              <span class="tea-category-tab__title cursive-text">云水承</span>
-              <span class="tea-category-tab__meta">古墨留白</span>
-            </button>
-            <button class="tea-category-tab" type="button" data-tab="tea-cup">
-              <span class="tea-category-tab__title cursive-text">渔隐杯</span>
-              <span class="tea-category-tab__meta">东方古意</span>
-            </button>
-          </div>
-
-          <div class="tea-detail-stack">
-            <article class="tea-detail-panel is-active" data-panel="tea-bowl">
-              <div class="tea-detail-panel__eyebrow">Tea Collection</div>
-              <div class="tea-detail-panel__header">
-                <h4 class="cursive-text">青花盏</h4>
-                <span class="item-tag">民窑风格</span>
-              </div>
-              <p>手工青花茶盏，釉色温润，盏型古朴。源于唐代茶盏形制，融入渔隐山水意境。</p>
-            </article>
-            <article class="tea-detail-panel" data-panel="tea-pot" hidden>
-              <div class="tea-detail-panel__eyebrow">Tea Collection</div>
-              <div class="tea-detail-panel__header">
-                <h4 class="cursive-text">垂钓壶</h4>
-                <span class="item-tag">钓鱼意境</span>
-              </div>
-              <p>以垂钓为意境，壶身青花山水，出水顺畅。壶型取法自然，线条流畅如钓线。</p>
-            </article>
-            <article class="tea-detail-panel" data-panel="tea-saucer" hidden>
-              <div class="tea-detail-panel__eyebrow">Tea Collection</div>
-              <div class="tea-detail-panel__header">
-                <h4 class="cursive-text">云水承</h4>
-                <span class="item-tag">古墨留白</span>
-              </div>
-              <p>承接茶漏，云纹装饰，与壶盏配套。承盘如水面，盏壶如小舟。</p>
-            </article>
-            <article class="tea-detail-panel" data-panel="tea-cup" hidden>
-              <div class="tea-detail-panel__eyebrow">Tea Collection</div>
-              <div class="tea-detail-panel__header">
-                <h4 class="cursive-text">渔隐杯</h4>
-                <span class="item-tag">东方古意</span>
-              </div>
-              <p>杯身绘渔翁垂钓图，手握温润。一杯茶，一段渔隐时光。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <div class="modal-overlay" id="detailModal">
-      <div class="modal-content">
-        <button class="modal-close" aria-label="关闭">&times;</button>
-        <div class="modal-body" id="modalBody"></div>
-      </div>
-    </div>
-
-    <script src="js/detailData.js" defer></script>
-    <script src="js/main.js" defer></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

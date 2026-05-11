@@ -1,0 +1,18 @@
+[
+  {
+    "id": "tea-bowl-reference",
+    "title": "V&A 以茶碗与托碟作为青花入门对象",
+    "summary": "V&A 文章页头即选用约 1725 年的中国青花茶碗与托碟，适合作为首页“日常器物”与“阅读入口”的图像参照。",
+    "sourceName": "Victoria and Albert Museum",
+    "sourceUrl": "https://www.vam.ac.uk/articles/chinese-blue-and-white-ceramics",
+    "imagePath": "img/research/vanda-blue-white-1.jpg"
+  },
+  {
+    "id": "ink-painting-effect",
+    "title": "康熙时期分水技法接近水墨层次",
+    "summary": "V&A 提到分水技法会在同一件器物上营造不同深浅的蓝色层次，视觉上接近水墨晕染，适合转化成页面中的局部点染语言。",
+    "sourceName": "Victoria and Albert Museum",
+    "sourceUrl": "https://www.vam.ac.uk/articles/chinese-blue-and-white-ceramics",
+    "imagePath": "img/research/vanda-blue-white-2.jpg"
+  }
+]

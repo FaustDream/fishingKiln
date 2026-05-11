@@ -4,157 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>渔窑手工青花 | fishing kiln</title>
-    <meta name="description" content="渔窑手工青花，以青花民窑、钓鱼意境与东方留白构成品牌网站。">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing:wght@400;700&family=Ma+Shan+Zheng&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <meta
+      name="description"
+      content="渔窑手工青花内容站，围绕青花工艺、器物分类、品牌故事与景德镇研究展开。"
+    >
+    <link rel="icon" href="img/logo.png">
     <link rel="stylesheet" href="css/styles.css">
   </head>
-  <body class="home-page">
-    <!-- 测试用隐藏元素（让原有测试通过） -->
-    <div style="display:none">
-      <span>做自己，生活需要热爱</span>
-      <span>Be yourself, life requires passion.</span>
-      <section id="collections"></section>
-      <img src="img/logo.png" alt="">
+  <body data-page="home">
+    <div class="site-shell">
+      <aside class="site-nav" id="siteNav"></aside>
+      <main class="site-main" id="app"></main>
     </div>
 
-    <!-- 全屏背景动画（水墨风） -->
-    <div class="bg-animated">
-      <div class="bg-layer bg-layer-1"></div>
-      <div class="bg-layer bg-layer-2"></div>
-      <div class="bg-ink-wash"></div>
-      <div class="bg-ink-drop"></div>
-      <div class="bg-ink-drop"></div>
-      <div class="bg-ink-drop"></div>
-    </div>
-
-    <!-- 左侧悬浮导航 -->
-    <nav class="side-nav" aria-label="主导航">
-      <div class="nav-logo">
-        <img src="img/logo.png" alt="渔窑手工青花 logo">
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html" class="nav-link active" title="首页">首页</a></li>
-        <li><a href="tea.html" class="nav-link" title="茶具">茶具</a></li>
-        <li><a href="tableware.html" class="nav-link" title="餐具">餐具</a></li>
-        <li><a href="coffee.html" class="nav-link" title="咖啡具">咖啡具</a></li>
-        <li><a href="vase.html" class="nav-link" title="花器">花器</a></li>
-        <li><a href="art.html" class="nav-link" title="艺术品">艺术品</a></li>
-        <li><a href="about.html" class="nav-link" title="关于">关于</a></li>
-      </ul>
-      <div class="nav-brand">
-        <span class="brand-cn">渔窑手工青花</span>
-        <span class="brand-en">fishing kiln</span>
-      </div>
-    </nav>
-
-    <!-- 主内容区 - 重新设计的布局 -->
-    <main class="main-content">
-      <!-- 首页 - 上侧文字 + 下侧左侧文字 + 右侧异形图片 -->
-      <section id="hero" class="page-section hero-section active">
-        <div class="hero-main-content">
-          <!-- 左侧：hero-text-top + hero-desc-large -->
-          <div class="hero-text-side">
-            <div class="hero-text-top">
-              <h1 class="cursive-text glitch" data-text="做自己">做自己</h1>
-              <h2 class="cursive-text glitch" data-text="生活需要热爱">生活需要热爱</h2>
-              <p class="cursive-sub">以民窑青花为骨，以垂钓山水为境</p>
-            </div>
-
-            <div class="hero-desc-large">
-              <h3 class="cursive-text">渔窑手工青花</h3>
-              <p class="large-text">源于对青花民窑的致敬，</p>
-              <p class="large-text">融钓鱼意境于器物之中。</p>
-              <div class="divider"></div>
-              <p class="medium-text">每一件作品都是</p>
-              <p class="medium-text">缓慢、克制、有温度的</p>
-              <p class="medium-text">日常表达。</p>
-            </div>
-          </div>
-
-        <!-- 右侧异形图片排列 - 包含主界面-1至主界面-5 -->
-        <div class="hero-images-irregular">
-          <div class="ink-scroll-ambience" aria-hidden="true">
-            <span class="ink-orbit ink-orbit-1"></span>
-            <span class="ink-orbit ink-orbit-2"></span>
-            <span class="ink-orbit ink-orbit-3"></span>
-          </div>
-          <div class="hero-aside-copy">
-            <div class="divider"></div>
-            <p class="small-text">以民窑青花为骨</p>
-            <p class="small-text">以垂钓山水为境</p>
-            <p class="small-text">让器物不止停留于使用</p>
-            <p class="small-text">也成为一种生活态度</p>
-          </div>
-          <div class="image-irregular img-1 animate-ink ink-card ink-card-1">
-            <img src="img/主界面-1.png" alt="渔窑手工青花-1">
-          </div>
-          <div class="image-irregular img-2 animate-ink ink-card ink-card-2" style="animation-delay: 0.2s;">
-            <img src="img/主界面-2.png" alt="渔窑手工青花-2">
-          </div>
-          <div class="image-irregular img-3 animate-ink ink-card ink-card-3" style="animation-delay: 0.4s;">
-            <img src="img/主界面-3.png" alt="渔窑手工青花-3">
-          </div>
-          <div class="image-irregular img-4 animate-ink ink-card ink-card-4" style="animation-delay: 0.6s;">
-            <img src="img/主界面-4.png" alt="渔窑手工青花-4">
-          </div>
-          <div class="image-irregular img-5 animate-ink" style="animation-delay: 0.8s;">
-            <img src="img/主界面-5.png" alt="渔窑手工青花-5">
-          </div>
+    <dialog class="research-dialog" id="researchDialog">
+      <form method="dialog" class="research-dialog__surface">
+        <button class="dialog-close" id="researchDialogClose" type="submit" aria-label="关闭">
+          关闭
+        </button>
+        <img data-dialog-image src="" alt="">
+        <div class="research-dialog__copy">
+          <p class="eyebrow">资料札记</p>
+          <h2 data-dialog-title></h2>
+          <p data-dialog-summary></p>
+          <a data-dialog-source href="" target="_blank" rel="noreferrer">查看来源</a>
         </div>
-        </div>
+      </form>
+    </dialog>
 
-        <a href="tea.html" class="scroll-hint" style="text-decoration:none; color:inherit; cursor:pointer; display:block;">
-          <span>探索更多</span>
-          <div class="scroll-arrow"></div>
-        </a>
-      </section>
-    
-    <!-- 探索更多内容 -->
-    <section id="exploreMore" class="page-section" style="display:block;">
-      <div class="section-header">
-        <h2 class="cursive-text glitch" data-text="渔窑故事">渔窑故事</h2>
-        <p class="section-desc">了解青花瓷的历史与魅力</p>
-      </div>
-      <div class="section-content">
-        <div class="info-card">
-          <h3 class="cursive-text">青花瓷茶具</h3>
-          <p>青花瓷茶具历史悠久，原始形态可追溯至唐宋时期。元代中后期开始成批生产，以景德镇湖田窑烧制的成熟青花瓷为代表。</p>
-          <p>青花瓷茶具是以氧化钴为呈色剂，在瓷胎描绘纹饰后施透明釉，经1300℃高温还原烧制而成的釉下彩器具。其蓝白相映的纹饰特点，具有晶莹明快、美观隽久的特色。</p>
-          <p>明代时器形纹饰趋于多样，景德镇成为主要产地。清代康熙年间达到工艺高峰，被誉为"清代之最"。青花瓷茶具将中国传统绘画技法运用在瓷器上，代表了元代绘画的重要成就。</p>
-          <p>它以清幽淡雅、意境幽远的写意特色与茶文化相融合，深受人们喜爱，被誉为"人间瑰宝"。</p>
-        </div>
-        <div class="items-grid">
-          <div class="item-card">
-            <h4 class="cursive-text">历史渊源</h4>
-            <p>源于唐宋，兴于元代，盛于明清。青花瓷承载着中华文明的交融史，是古代对外贸易和文化交流的重要载体。</p>
-          </div>
-          <div class="item-card">
-            <h4 class="cursive-text">工艺特色</h4>
-            <p>以氧化钴为呈色剂，经1300℃高温还原烧制。蓝白相映，晶莹明快，美观隽久，是釉下彩瓷器的经典代表。</p>
-          </div>
-          <div class="item-card">
-            <h4 class="cursive-text">文化意义</h4>
-            <p>青花瓷将中国传统绘画技法运用在瓷器上，以清幽淡雅、意境幽远的写意特色与茶文化相融合，被誉为"人间瑰宝"。</p>
-          </div>
-        </div>
-        <div style="text-align:center; margin-top:40px;">
-          <a href="tea.html" style="display:inline-block; padding:15px 40px; background:rgba(255, 255, 255, 0.05); border:1px solid rgba(255, 255, 255, 0.15); border-radius:8px; color:rgba(255, 255, 255, 0.8); text-decoration:none; font-size:16px; letter-spacing:0.1em; transition:all 300ms ease;">开始探索 →</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-    <!-- 详情模态框 -->
-    <div class="modal-overlay" id="detailModal">
-      <div class="modal-content">
-        <button class="modal-close" aria-label="关闭">&times;</button>
-        <div class="modal-body" id="modalBody"></div>
-      </div>
-    </div>
-
-    <script src="js/detailData.js" defer></script>
-    <script src="js/main.js" defer></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

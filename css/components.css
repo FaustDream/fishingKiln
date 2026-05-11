@@ -1,0 +1,173 @@
+.hero-action,
+.link-button,
+.dialog-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.hero-action:hover,
+.link-button:hover,
+.dialog-close:hover {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.hero-actions,
+.tab-buttons,
+.process-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tab-button,
+.process-step {
+  min-height: 2.7rem;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.56);
+  color: var(--ink-soft);
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+.tab-button[aria-selected="true"],
+.process-step.is-active {
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.tab-panels,
+.process-panels {
+  display: grid;
+}
+
+.tab-panel,
+.process-panel,
+.reading-card,
+.research-card,
+.object-card,
+.about-card {
+  padding: 1.2rem;
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.tab-panel h3,
+.process-panel h3,
+.reading-card h3,
+.research-card h3,
+.object-card h3,
+.about-card summary {
+  font-family: var(--ui-font);
+  font-size: 1.3rem;
+}
+
+.tab-panel p,
+.process-panel p,
+.reading-card p,
+.research-card p,
+.object-card p,
+.about-card p {
+  margin-top: 0.8rem;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+
+.object-card {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  align-items: center;
+}
+
+.object-card img,
+.research-card img {
+  width: 100%;
+  border-radius: 0.9rem;
+  object-fit: cover;
+}
+
+.research-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.source-note {
+  font-family: var(--ui-font);
+  color: rgba(49, 95, 135, 0.9);
+}
+
+.about-card {
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+.about-card summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.about-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.research-dialog {
+  width: min(48rem, calc(100vw - 2rem));
+  padding: 0;
+  border: 0;
+  border-radius: 1.5rem;
+  background: transparent;
+}
+
+.research-dialog::backdrop {
+  background: rgba(18, 30, 42, 0.48);
+}
+
+.research-dialog__surface {
+  display: grid;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  background: rgba(248, 244, 238, 0.98);
+  border-radius: 1.5rem;
+}
+
+.research-dialog__surface img {
+  width: 100%;
+  max-height: 24rem;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.research-dialog__copy {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.research-dialog__copy h2 {
+  font-family: var(--title-font);
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.research-dialog__copy p {
+  line-height: 1.85;
+}
+
+@media (max-width: 640px) {
+  .object-card {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions,
+  .tab-buttons,
+  .process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "porcelain-capital",
+    "title": "景德镇被长期视为“瓷都”",
+    "summary": "UNESCO 创意城市页面称景德镇为“Porcelain Capital”，并指出其制瓷历史已超过 1700 年，是中国最重要的高品质瓷器生产中心之一。",
+    "sourceName": "UNESCO Creative Cities Network",
+    "sourceUrl": "https://www.unesco.org/en/creative-cities/jingdezhen",
+    "imagePath": "img/research/vanda-blue-white-4.jpg"
+  },
+  {
+    "id": "imperial-kiln-system",
+    "title": "御窑体系覆盖原料、烧造、运输与管理",
+    "summary": "UNESCO 世界遗产预备名录页面指出，景德镇御窑遗址不仅包含窑炉与作坊，还覆盖原料开采、行会、码头和运输设施，呈现完整的瓷业系统。",
+    "sourceName": "UNESCO World Heritage Centre",
+    "sourceUrl": "https://whc.unesco.org/en/tentativelists/6265",
+    "imagePath": "img/research/vanda-blue-white-12.jpg"
+  },
+  {
+    "id": "jingdezhen-city-history",
+    "title": "景德镇在宋以后成为大规模瓷业中心",
+    "summary": "Britannica 记载，景德镇在宋代后进入高产阶段，明代起大规模为宫廷与政府供瓷，清代设立御窑后达到技术与管理高峰。",
+    "sourceName": "Encyclopaedia Britannica",
+    "sourceUrl": "https://www.britannica.com/place/Jingdezhen",
+    "imagePath": "img/research/vanda-blue-white-1.jpg"
+  }
+]
+

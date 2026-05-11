@@ -1,0 +1,27 @@
+[
+  {
+    "id": "yuan-origins",
+    "title": "青花在元代完成关键定型",
+    "summary": "V&A 说明，唐代已出现早期蓝白装饰；到元代，景德镇通过高岭土配方与烧成技术改进，让青花瓷进入成熟阶段，并形成更鲜明的钴蓝色。",
+    "sourceName": "Victoria and Albert Museum",
+    "sourceUrl": "https://www.vam.ac.uk/articles/chinese-blue-and-white-ceramics",
+    "imagePath": "img/research/vanda-blue-white-1.jpg"
+  },
+  {
+    "id": "global-export",
+    "title": "青花通过海陆贸易走向世界",
+    "summary": "V&A 指出，元明清时期的青花外销覆盖中东、日本、朝鲜、东南亚、非洲与欧洲，成为跨文化传播最强的中国陶瓷类型之一。",
+    "sourceName": "Victoria and Albert Museum",
+    "sourceUrl": "https://www.vam.ac.uk/articles/chinese-blue-and-white-ceramics",
+    "imagePath": "img/research/vanda-blue-white-10.jpg"
+  },
+  {
+    "id": "underglaze-definition",
+    "title": "青花的核心是白瓷胎与釉下钴蓝",
+    "summary": "Britannica 将 blue-and-white ware 概括为在白色瓷胎上施以蓝色釉下装饰；其源流可追到中东釉下蓝，再在中国元代获得系统发展，并影响欧洲。",
+    "sourceName": "Encyclopaedia Britannica",
+    "sourceUrl": "https://www.britannica.com/art/blue-and-white-ware",
+    "imagePath": "img/research/vanda-blue-white-2.jpg"
+  }
+]
+
