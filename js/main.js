@@ -1,17 +1,6 @@
-import { initInteractions } from "./interactions.js";
+import { getResearchIdFromLocation, initInteractions } from "./interactions.js";
 import { renderPage, renderSiteNav } from "./renderers.js";
-import { siteContent } from "./siteContent.js";
-
-const fallbackBackgrounds = {
-  home: "img/背景图-主界面.png",
-  about: "img/背景图-主界面.png"
-};
-
-function resolveBackground(page) {
-  const category = siteContent.categories.find((item) => item.slug === page);
-  const asset = category?.backgroundImage ?? fallbackBackgrounds[page] ?? fallbackBackgrounds.home;
-  return asset.startsWith("/") ? asset : `/${asset}`;
-}
+import { siteContent } from "./siteContentUnified.js";
 
 function mountPage() {
   const page = document.body.dataset.page ?? "home";
@@ -20,10 +9,24 @@ function mountPage() {
 
   if (!navRoot || !appRoot) return;
 
-  navRoot.innerHTML = renderSiteNav(siteContent.navigation, page);
-  appRoot.innerHTML = renderPage(page, siteContent);
-  document.body.style.setProperty("--page-background", `url("${resolveBackground(page)}")`);
-  initInteractions(page, siteContent);
+  try {
+    navRoot.innerHTML = renderSiteNav(siteContent.navigation, page);
+    const researchId = page === "research" ? getResearchIdFromLocation(window.location.href) : null;
+    appRoot.innerHTML = renderPage(page, siteContent, researchId);
+    initInteractions(page, siteContent);
+  } catch (error) {
+    // 页面入口必须有兜底，避免单个渲染异常直接把整页打成空白。
+    console.error(error);
+    appRoot.innerHTML = `
+      <section class="reading-section">
+        <div class="section-heading">
+          <h2>页面加载失败</h2>
+          <p>${error instanceof Error ? error.message : "未知错误"}</p>
+        </div>
+      </section>
+    `;
+  }
 }
 
 mountPage();
+

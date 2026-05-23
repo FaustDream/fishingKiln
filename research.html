@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研究专题 | 渔窑手工青花</title>
+    <meta
+      name="description"
+      content="渔窑研究专题页，围绕青花历史、景德镇脉络、工艺与器物关联展开连续阅读。"
+    >
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body data-page="research">
+    <div class="site-shell">
+      <aside class="site-nav" id="siteNav"></aside>
+      <main class="site-main" id="app"></main>
+    </div>
+
+    <dialog class="research-dialog" id="researchDialog">
+      <form method="dialog" class="research-dialog__surface">
+        <button class="dialog-close" id="researchDialogClose" type="submit" aria-label="关闭">
+          关闭
+        </button>
+        <img data-dialog-image src="" alt="">
+        <div class="research-dialog__copy">
+          <p class="eyebrow">资料札记</p>
+          <h2 data-dialog-title></h2>
+          <p data-dialog-summary></p>
+          <a data-dialog-source href="" target="_blank" rel="noreferrer">查看来源</a>
+        </div>
+      </form>
+    </dialog>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
