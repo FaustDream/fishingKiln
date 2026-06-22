@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宋 · 花器 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent)}
+
+/* Aurora流体分区 */
+.page-hero{min-height:45vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;
+  background:radial-gradient(ellipse at 30% 50%, rgba(49,95,135,0.08) 0%, transparent 60%),radial-gradient(ellipse at 70% 30%, rgba(150,97,73,0.08) 0%, transparent 50%)}
+.page-hero h1{font-family:var(--title-font);font-size:clamp(2.8rem,5vw,4rem);font-weight:700;margin-bottom:0.8rem}
+.page-hero .lead{color:var(--ink-soft);max-width:30rem;margin:0 auto;font-size:1.1rem}
+
+.zone{padding:5rem 2rem;position:relative;overflow:hidden}
+.zone::before{content:"";position:absolute;inset:0;opacity:0.4;pointer-events:none}
+.zone--scholar::before{background:radial-gradient(ellipse at 20% 80%, rgba(49,95,135,0.12) 0%, transparent 60%),radial-gradient(ellipse at 80% 20%, rgba(205,225,242,0.15) 0%, transparent 50%)}
+.zone--temple::before{background:radial-gradient(ellipse at 50% 0%, rgba(150,97,73,0.1) 0%, transparent 55%),radial-gradient(ellipse at 30% 100%, rgba(49,95,135,0.08) 0%, transparent 50%)}
+.zone--garden::before{background:radial-gradient(ellipse at 80% 50%, rgba(102,127,97,0.1) 0%, transparent 55%),radial-gradient(ellipse at 10% 80%, rgba(49,95,135,0.08) 0%, transparent 50%)}
+.zone__inner{max-width:56rem;margin:0 auto;position:relative;z-index:1}
+.zone__label{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-warm);margin-bottom:0.5rem}
+.zone h2{font-family:var(--title-font);font-size:1.8rem;margin-bottom:0.8rem}
+.zone p{color:var(--ink-soft);line-height:1.85;max-width:36rem;margin-bottom:1.5rem}
+.zone__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem}
+.zone__card{padding:1.2rem;background:var(--surface);border-radius:0.7rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08)}
+.zone__card h3{font-family:var(--title-font);font-size:1.1rem;margin-bottom:0.4rem}
+.zone__card p{font-size:0.85rem;margin-bottom:0}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">宋 <span>·</span> 花器</div>
+</header>
+
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/song-guanyin.jpg" alt="song 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+
+<section class="page-hero">
+  <div>
+    <h1>宋 · 花器</h1>
+    <p class="lead">宋代花事极盛。文人士大夫以插花、挂画、焚香、点茶为"四般闲事"。花器从佛教供器走向书斋案头，形成了中国花器美学最精微的体系。</p>
+  </div>
+</section>
+
+<section class="zone zone--scholar">
+  <div class="zone__inner">
+    <p class="zone__label">Zone 1</p>
+    <h2>书斋 · 胆瓶与梅瓶</h2>
+    <p>宋代文人书斋中，胆瓶是最常见的花器。长颈、鼓腹、小底，适合单枝梅花或兰花的清供。杨万里诗"胆样银瓶玉样梅"即咏此景。梅瓶小口短颈，原为酒器，因其口小仅容一枝瘦梅而得名。</p>
+    <div class="zone__items">
+      <div class="zone__card"><h3>汝窑胆瓶</h3><p>天青釉色如"雨过天青云破处"，开片如冰裂蝉翼。存世极少，是宋人"以简驭繁"美学理想的具象化。</p></div>
+      <div class="zone__card"><h3>官窑弦纹瓶</h3><p>瓶身饰弦纹数道，器型端庄。紫口铁足，釉面有大开片。弦纹的节奏感与瓶身曲线形成了微妙的视觉韵律。</p></div>
+      <div class="zone__card"><h3>龙泉青瓷琮式瓶</h3><p>仿上古玉琮造型，方身圆口，以瓷仿玉。南宋龙泉粉青釉温润如玉，是宋人"尚古"精神的陶瓷表达。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="zone zone--temple">
+  <div class="zone__inner">
+    <p class="zone__label">Zone 2</p>
+    <h2>禅院 · 净瓶与花觚</h2>
+    <p>宋代禅宗兴盛，寺院花器延续唐代军持传统，同时发展出新的器型。花觚仿商周青铜觚造型，大口、细腰、高圈足，用于佛前供花或大型插花。定窑、官窑均有烧造。</p>
+    <div class="zone__items">
+      <div class="zone__card"><h3>定窑白瓷净瓶</h3><p>小口、细长颈，肩部带流。定窑白瓷纯净如雪，与佛前清供的精神诉求高度契合。</p></div>
+      <div class="zone__card"><h3>官窑花觚</h3><p>仿青铜觚造型，颈部修长，腰部收束，喇叭形圈足。釉面肥厚，大开片如冰裂，古雅沉静。</p></div>
+      <div class="zone__card"><h3>影青香炉（兼花器）</h3><p>景德镇影青镂空香炉，炉盖可置鲜花。一器二用，是宋代禅院生活美学的日常表达。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="zone zone--garden">
+  <div class="zone__inner">
+    <p class="zone__label">Zone 3</p>
+    <h2>庭院 · 盆与缸</h2>
+    <p>宋代园林艺术发达，大型陶瓷花盆和花缸用于庭院布置。钧窑玫瑰紫釉花盆是徽宗"艮岳"的遗物，磁州窑白地黑花大鱼盆则更贴近民间生活。庭院花器的尺度与书斋花器的精微形成了有趣的对照。</p>
+    <div class="zone__items">
+      <div class="zone__card"><h3>钧窑玫瑰紫花盆</h3><p>钧窑以窑变著称，铜红釉在还原焰中呈现玫瑰紫、海棠红等变幻色彩。此类花盆底刻数字，为宫廷专用。</p></div>
+      <div class="zone__card"><h3>磁州窑白地黑花大鱼盆</h3><p>民间庭院用大盆，白地黑花写意画风。鱼藻纹舒展自由，与官窑的规整形成鲜明对比。</p></div>
+      <div class="zone__card"><h3>龙泉青瓷斗笠花盆</h3><p>广口、斜壁、小底，形如斗笠。粉青厚釉，适合种植菖蒲等小型庭院植物，是宋人"以小见大"园林观的缩影。</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 宋 · 花器</p>
+</footer>
+
+</body>
+</html>

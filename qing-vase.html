@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>清 · 花器 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* 植物图谱风 */
+.hero{padding:3rem 2rem 1rem;max-width:52rem;margin:0 auto;text-align:center}
+.hero h1{font-family:var(--title-font);font-size:clamp(2.6rem,5vw,3.4rem);margin-bottom:0.6rem}
+.hero .lead{color:var(--ink-soft);max-width:32rem;margin:0 auto;font-size:1.05rem}
+
+.herbarium{max-width:56rem;margin:0 auto;padding:2rem;display:flex;flex-direction:column;gap:1rem}
+.herbarium__specimen{display:grid;grid-template-columns:auto 1fr;gap:1.5rem;padding:1.5rem;background:var(--surface);border-radius:0.8rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08);align-items:start}
+.herbarium__index{font-family:var(--title-font);font-size:2rem;color:var(--accent-warm);opacity:0.6;min-width:3rem;text-align:center}
+.herbarium__body h3{font-family:var(--title-font);font-size:1.2rem;margin-bottom:0.2rem}
+.herbarium__body .latin{font-size:0.76rem;color:var(--ink-muted);font-style:italic;margin-bottom:0.6rem}
+.herbarium__body .tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.6rem}
+.herbarium__body .tags span{font-size:0.72rem;padding:0.15em 0.6em;background:var(--surface-soft);border-radius:0.4rem;color:var(--accent)}
+.herbarium__body p{font-size:0.88rem;color:var(--ink-soft);line-height:1.8}
+.herbarium__body .dim{font-size:0.82rem;color:var(--ink-muted);margin-top:0.4rem;font-family:monospace}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">清 <span>·</span> 花器</div>
+</header>
+
+<section class="hero">
+  <h1>清 · 花器</h1>
+  <p class="lead">清代花器是一个庞大的"物种库"——从郎窑红的奔放到豇豆红的含蓄，从粉彩的柔和到珐琅彩的贵重，每一种釉色和器型都有自己独特的生长脉络。本页以植物图鉴的方式梳理清代代表性花器品种。</p>
+</section>
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/qing-famille.jpg" alt="qing 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+<div class="herbarium">
+  <div class="herbarium__specimen">
+    <div class="herbarium__index">I</div>
+    <div class="herbarium__body">
+      <h3>郎窑红观音瓶</h3>
+      <div class="latin">Langyao Red · Guanyin Vase</div>
+      <div class="tags"><span>康熙</span><span>铜红釉</span><span>高温还原焰</span></div>
+      <p>康熙四十四年至五十一年（1705–1712），江西巡抚郎廷极督造景德镇御窑，创烧郎窑红。釉色如初凝牛血——"脱口垂足郎不流"（口沿露白胎、釉垂至底足而不流下）是郎窑红的工艺特征。观音瓶器型如观音立像：撇口、短颈、丰肩、长腹下收，是清代最经典的瓶式之一。</p>
+      <div class="dim">H: 42~45cm · 1300°C还原焰 · 氧化铜呈色</div>
+    </div>
+  </div>
+
+  <div class="herbarium__specimen">
+    <div class="herbarium__index">II</div>
+    <div class="herbarium__body">
+      <h3>豇豆红太白尊</h3>
+      <div class="latin">Peachbloom · Taibai Zun</div>
+      <div class="tags"><span>康熙</span><span>铜红釉</span><span>文房器</span></div>
+      <p>豇豆红（又称美人醉、桃花片）是康熙晚期创烧的高温铜红釉品种，因釉色如豇豆皮上散布绿苔斑而得名。烧造难度极大，传世品极少。太白尊为文房水盂，小口微撇、短颈、溜肩、腹部饱满，肩部常见暗刻三组团螭纹——以刀代笔、含蓄内敛。</p>
+      <div class="dim">H: 8~10cm · 康熙官窑文房 · "八大码"套组之一</div>
+    </div>
+  </div>
+
+  <div class="herbarium__specimen">
+    <div class="herbarium__index">III</div>
+    <div class="herbarium__body">
+      <h3>粉彩九桃天球瓶</h3>
+      <div class="latin">Famille Rose · Peach Tianqiuping</div>
+      <div class="tags"><span>雍正/乾隆</span><span>粉彩</span><span>祝寿器</span></div>
+      <p>粉彩九桃天球瓶始于雍正、盛于乾隆。瓶身绘桃树一株，结九桃（雍正画八桃、乾隆画九桃，"九"为极阳之数），搭配蝙蝠纹（蝠谐音"福"）。桃实以粉彩渲染出渐变效果——从果尖的粉红到饱满处的淡绿，过枝画法使桃枝从瓶身一面延伸到另一面，整体构图精巧而富贵。</p>
+      <div class="dim">H: 50~55cm · 粉彩过枝画法 · 乾隆御窑</div>
+    </div>
+  </div>
+
+  <div class="herbarium__specimen">
+    <div class="herbarium__index">IV</div>
+    <div class="herbarium__body">
+      <h3>珐琅彩锦鸡牡丹纹瓶</h3>
+      <div class="latin">Falangcai · Pheasant & Peony Vase</div>
+      <div class="tags"><span>乾隆</span><span>珐琅彩</span><span>御制</span></div>
+      <p>珐琅彩是清代最昂贵的瓷器品种。素白瓷胎在景德镇烧成后运往北京，由宫廷画师用进口珐琅料在胎上作画，再入紫禁城小窑低温复烧。锦鸡牡丹纹瓶以锦鸡（吉祥）和牡丹（富贵）组成"锦上添花"寓意图案，珐琅料色彩饱满如油画，是中西工艺和审美的完美融合。</p>
+      <div class="dim">H: 20~25cm · 景德镇胎 + 造办处画 + 紫禁城烧</div>
+    </div>
+  </div>
+
+  <div class="herbarium__specimen">
+    <div class="herbarium__index">V</div>
+    <div class="herbarium__body">
+      <h3>青花山水纹象腿瓶</h3>
+      <div class="latin">Blue & White · Landscape Xiangtui Vase</div>
+      <div class="tags"><span>康熙</span><span>青花</span><span>分水技法</span></div>
+      <p>康熙青花以"分水"技法著称——通过调节青料浓度将钴蓝分为五个色阶（头浓、二浓、正浓、淡水、影水），使单一青花色能呈现"墨分五色"的水墨画效果。象腿瓶（又称筒瓶）大撇口、短颈、直腹至底，器型挺拔。瓶身绘山水图，近景远山层次分明，画面意境取自清初"四王"山水画。</p>
+      <div class="dim">H: 45~48cm · 分水五色 · 康熙青花山水经典器</div>
+    </div>
+  </div>
+
+  <div class="herbarium__specimen">
+    <div class="herbarium__index">VI</div>
+    <div class="herbarium__body">
+      <h3>茶叶末釉绶带耳葫芦瓶</h3>
+      <div class="latin">Tea-dust Glaze · Double-gourd Vase</div>
+      <div class="tags"><span>乾隆</span><span>结晶釉</span><span>仿古器</span></div>
+      <p>茶叶末釉是铁结晶釉的一种，在高温还原焰中铁元素析出晶体，釉面呈现黄绿色斑点如茶末。乾隆时期茶叶末釉达到巅峰，常配以仿古器型——绶带耳葫芦瓶器型取自商周青铜器"壶"的变体，葫芦形寓意"福禄"。釉色沉静内敛，与器型的古拙气息相得益彰。</p>
+      <div class="dim">H: 26~30cm · 铁结晶釉 · 乾隆督陶官唐英监制</div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 清 · 花器</p>
+</footer>
+
+</body>
+</html>

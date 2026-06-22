@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>明 · 咖啡具 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* 海贸航线布局 - 地图式 */
+.hero{padding:3rem 2rem 1.5rem;max-width:52rem;margin:0 auto;text-align:center}
+.hero h1{font-family:var(--title-font);font-size:clamp(2.4rem,4.5vw,3.2rem);margin-bottom:0.6rem}
+.hero .lead{color:var(--ink-soft);max-width:34rem;margin:0 auto;font-size:1.05rem}
+
+.trade-routes{max-width:60rem;margin:0 auto;padding:1rem 2rem 5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1.5rem}
+.route-card{background:var(--surface);border-radius:0.8rem;padding:1.5rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08);position:relative;overflow:hidden}
+.route-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent-warm),var(--accent))}
+.route-card__port{font-size:0.78rem;color:var(--accent-warm);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem}
+.route-card h3{font-family:var(--title-font);font-size:1.15rem;margin-bottom:0.4rem}
+.route-card__era{font-size:0.8rem;color:var(--ink-muted);margin-bottom:0.8rem}
+.route-card p{font-size:0.88rem;color:var(--ink-soft);line-height:1.75}
+.route-card .stat{font-size:0.82rem;color:var(--accent);margin-top:0.6rem;font-style:italic}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">明 <span>·</span> 咖啡具</div>
+</header>
+
+<section class="hero">
+  <h1>明 · 咖啡具</h1>
+  <p class="lead">十五至十七世纪，咖啡从阿拉伯半岛经奥斯曼帝国传入欧洲。与此同时，明代青花瓷和克拉克瓷正通过海上丝绸之路大规模抵达欧洲和伊斯兰世界。中国瓷器成为最早承载咖啡文化的东方器物之一。</p>
+</section>
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/ming-bluewhite.jpg" alt="ming 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+<div class="trade-routes">
+  <div class="route-card">
+    <div class="route-card__port">出发：景德镇 → 月港</div>
+    <h3>克拉克瓷：为欧洲餐桌而生的瓷器</h3>
+    <div class="route-card__era">万历年间 · 1600年前后</div>
+    <p>1602年，荷兰东印度公司在马六甲海峡截获葡萄牙商船"圣卡特琳娜号"，缴获约十万件中国瓷器运往阿姆斯特丹拍卖。这批瓷器被称为Kraakporselein（克拉克瓷）——大开光、多分区、满绘花卉纹样的独特风格，迅速风靡欧洲。瑞典国王、法国王室纷纷订制，咖啡传入欧洲后，克拉克瓷咖啡杯成为贵族社交的标配。</p>
+    <div class="stat">"圣卡特琳娜号"载瓷约10万件 · 阿姆斯特丹拍卖引发全欧轰动</div>
+  </div>
+  <div class="route-card">
+    <div class="route-card__port">中转：马六甲海峡 · 果阿</div>
+    <h3>葡萄牙：咖啡入欧的第一个窗口</h3>
+    <div class="route-card__era">1517年后 · 葡萄牙海上帝国</div>
+    <p>葡萄牙人最早将咖啡从阿拉伯半岛带入欧洲。果阿作为葡萄牙在印度的殖民地，是中国瓷器输往欧洲的重要中转站。葡萄牙贵族使用青花瓷杯饮用咖啡的习惯，启发了后来欧洲本土瓷厂（如德国Meissen）模仿中国青花风格生产咖啡具。</p>
+  </div>
+  <div class="route-card">
+    <div class="route-card__port">目的地：伊斯坦布尔 · 托普卡帕宫</div>
+    <h3>奥斯曼帝国的青花咖啡杯</h3>
+    <div class="route-card__era">16–17世纪 · 奥斯曼宫廷</div>
+    <p>咖啡于十五世纪在也门兴起，迅速传遍奥斯曼帝国。托普卡帕宫收藏了大量明代青花瓷——这些瓷器被苏丹用于饮用咖啡和招待使节。奥斯曼工匠后来发展出Iznik陶瓷，其蓝白纹样明显受中国青花影响，成为奥斯曼咖啡文化的视觉符号。</p>
+  </div>
+  <div class="route-card">
+    <div class="route-card__port">目的地：阿姆斯特丹 · 代尔夫特</div>
+    <h3>代尔夫特蓝陶：中国青花在欧洲的化身</h3>
+    <div class="route-card__era">17世纪 · 荷兰黄金时代</div>
+    <p>随着荷兰咖啡消费量的激增，对咖啡具的需求推动代尔夫特陶工模仿中国青花瓷。代尔夫特蓝陶（Delft Blue）的纹样、器型和色彩都直接参考明代克拉克瓷。欧洲最早的"咖啡杯碟"正是在这个时期定型——这一组合形制至今仍是咖啡具的标准配置。</p>
+    <div class="stat">1650年阿姆斯特丹咖啡进口量激增 · 代尔夫特取代啤酒业</div>
+  </div>
+  <div class="route-card">
+    <div class="route-card__port">目的地：伦敦 · 咖啡屋文化</div>
+    <h3>中国瓷杯与英国咖啡屋</h3>
+    <div class="route-card__era">1650–1700 · 伦敦咖啡屋时代</div>
+    <p>1652年伦敦第一家咖啡屋开业，到1700年已有超过2000家。东印度公司大量进口中国瓷器，青花咖啡杯和巧克力杯成为伦敦咖啡屋的标配。1773年波士顿倾茶事件后，咖啡取代茶成为美国的主流饮品——但饮具依然沿用中国青花瓷杯的形制。</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 明 · 咖啡具</p>
+</footer>
+
+</body>
+</html>

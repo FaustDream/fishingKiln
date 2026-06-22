@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>元 · 餐具 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* 卡片钻取布局 */
+.hero{padding:3rem 2rem 2rem;max-width:56rem;margin:0 auto;text-align:center}
+.hero h1{font-family:var(--title-font);font-size:clamp(2.4rem,4.5vw,3.2rem);margin-bottom:0.6rem}
+.hero .lead{color:var(--ink-soft);max-width:30rem;margin:0 auto;font-size:1.05rem}
+
+.drill{padding:2rem;max-width:64rem;margin:0 auto}
+.drill__layer{margin-bottom:1.5rem}
+.drill__layer h2{font-family:var(--title-font);font-size:1.4rem;padding:0.9rem 1.2rem;background:var(--surface);border-radius:0.7rem;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08);display:flex;justify-content:space-between;align-items:center}
+.drill__layer h2::after{content:"+";font-size:1.2rem;color:var(--ink-muted)}
+.drill__content{padding:1rem 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));gap:1rem}
+.drill-card{background:var(--surface-soft);border-radius:0.65rem;padding:1.1rem;border-left:3px solid var(--accent-warm)}
+.drill-card__name{font-family:var(--title-font);font-weight:600;margin-bottom:0.3rem}
+.drill-card p{font-size:0.85rem;color:var(--ink-soft)}
+.drill-card__spec{font-size:0.78rem;color:var(--ink-muted);margin-top:0.4rem}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">元 <span>·</span> 餐具</div>
+</header>
+
+<section class="hero">
+  <h1>元 · 餐具</h1>
+  <p class="lead">元代是景德镇取代龙泉成为全国制瓷中心的转折期。青花大盘、釉里红碗、卵白釉高足杯——蒙元帝国的广阔疆域带来了新的器型和纹样需求。</p>
+</section>
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/yuan-bluewhite.jpg" alt="yuan 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+<div class="drill">
+  <div class="drill__layer">
+    <h2>大盘与主盘</h2>
+    <div class="drill__content">
+      <div class="drill-card">
+        <div class="drill-card__name">青花鱼藻纹大盘</div>
+        <p>元代青花大盘口径可达45cm以上，中心绘鱼藻、莲池或人物故事，边饰多层几何与花卉纹。这类大盘大量销往西亚，符合当地席地围坐共食的饮食习惯。</p>
+        <div class="drill-card__spec">口径 45.5cm · 至正型 · 西亚订单</div>
+      </div>
+      <div class="drill-card">
+        <div class="drill-card__name">卵白釉枢府款大盘</div>
+        <p>元代景德镇为枢密院烧造的"枢府瓷"，釉色卵白，印花精细。盘心印"枢""府"二字，胎体厚重，是元代官用瓷器的代表。</p>
+        <div class="drill-card__spec">枢府款 · 卵白釉 · 元代官用</div>
+      </div>
+    </div>
+  </div>
+  <div class="drill__layer">
+    <h2>碗与高足器</h2>
+    <div class="drill__content">
+      <div class="drill-card">
+        <div class="drill-card__name">青花龙纹高足碗</div>
+        <p>高足碗在元代大量烧造，青花龙纹高足碗为宫廷或贵族宴会所用。龙纹三爪或四爪，身形矫健，与明清龙纹的繁复风格迥异。</p>
+        <div class="drill-card__spec">高足 · 龙纹 · 青花</div>
+      </div>
+      <div class="drill-card">
+        <div class="drill-card__name">釉里红缠枝莲碗</div>
+        <p>釉里红烧造极难，铜红呈色不稳定，成品率低。传世釉里红碗多呈暗红或灰红色，但精品发色鲜艳如红宝石。</p>
+        <div class="drill-card__spec">釉里红 · 缠枝莲 · 景德镇</div>
+      </div>
+      <div class="drill-card">
+        <div class="drill-card__name">龙泉青瓷刻花碗</div>
+        <p>元代龙泉窑继续大量生产餐具，器型变大、胎体增厚以适应外销需求。刻花和贴花装饰增多，釉色以豆青为主。</p>
+        <div class="drill-card__spec">龙泉窑 · 豆青釉 · 外销</div>
+      </div>
+    </div>
+  </div>
+  <div class="drill__layer">
+    <h2>壶与注器</h2>
+    <div class="drill__content">
+      <div class="drill-card">
+        <div class="drill-card__name">青花凤首扁壶</div>
+        <p>凤首为流、凤尾为柄，器型源自波斯金银器。青花发色浓艳，纹样层次丰富，是元代青花中艺术水准最高的器型之一。</p>
+        <div class="drill-card__spec">凤首造型 · 波斯影响 · 元青花典范</div>
+      </div>
+      <div class="drill-card">
+        <div class="drill-card__name">青白釉多穆壶</div>
+        <p>"多穆"为藏语，指盛酥油茶的容器。元代多穆壶为瓷质，仿藏族金属或木质多穆壶造型，是元代民族融合在餐具上的生动体现。</p>
+        <div class="drill-card__spec">藏式造型 · 民族融合 · 青白釉</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 元 · 餐具</p>
+</footer>
+
+</body>
+</html>

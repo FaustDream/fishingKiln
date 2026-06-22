@@ -1,0 +1,2309 @@
+/* ===== Artifact Page Optimizations ===== */
+/* Per-category accent system, card enhancements, transitions */
+
+/* ---------- Category Accent Tokens ---------- */
+body[data-page="tea"] {
+  --cat-accent: #966149;      /* 茶具 — 暖陶土调 */
+  --cat-accent-soft: rgba(150, 97, 73, 0.12);
+  --cat-accent-line: rgba(150, 97, 73, 0.18);
+}
+
+body[data-page="coffee"] {
+  --cat-accent: #8b6914;      /* 咖啡 — 深金棕调 */
+  --cat-accent-soft: rgba(139, 105, 20, 0.12);
+  --cat-accent-line: rgba(139, 105, 20, 0.18);
+}
+
+body[data-page="tableware"] {
+  --cat-accent: #315f87;      /* 餐具 — 青花蓝调 */
+  --cat-accent-soft: rgba(49, 95, 135, 0.12);
+  --cat-accent-line: rgba(49, 95, 135, 0.18);
+}
+
+body[data-page="vase"] {
+  --cat-accent: #4a6b4a;      /* 花器 — 青釉绿调 */
+  --cat-accent-soft: rgba(74, 107, 74, 0.12);
+  --cat-accent-line: rgba(74, 107, 74, 0.18);
+}
+
+body[data-page="art"] {
+  --cat-accent: #4a376b;      /* 艺术品 — 紫陶调 */
+  --cat-accent-soft: rgba(74, 55, 107, 0.12);
+  --cat-accent-line: rgba(74, 55, 107, 0.18);
+}
+
+/* ---------- Category Directory Motion ---------- */
+@keyframes categoryPanelReveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.35rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body[data-page]:not([data-page="home"]):not([data-page="about"]):not([data-page="research"]) .category-hero__copy,
+body[data-page]:not([data-page="home"]):not([data-page="about"]):not([data-page="research"]) .category-hero__summary,
+body[data-page]:not([data-page="home"]):not([data-page="about"]):not([data-page="research"]) .category-section-nav,
+body[data-page]:not([data-page="home"]):not([data-page="about"]):not([data-page="research"]) .category-module {
+  animation: categoryPanelReveal 220ms ease both;
+}
+
+.category-tabs--directory .tab-panel:not([hidden]) {
+  animation: categoryPanelReveal 180ms ease both;
+}
+
+body[data-page]:not([data-page="home"]):not([data-page="about"]):not([data-page="research"]) .category-guide-card:hover,
+body[data-page]:not([data-page="home"]):not([data-page="about"]):not([data-page="research"]) .category-section-nav__item:hover,
+body[data-page]:not([data-page="home"]):not([data-page="about"]):not([data-page="research"]) .category-tabs--directory .tab-button[aria-selected="true"] {
+  color: var(--cat-accent, var(--accent));
+  box-shadow: inset 0 0 0 1px var(--cat-accent-line, var(--line));
+}
+
+/* ---------- Page Header Refinements ---------- */
+body[data-page]:not([data-page="home"]):not([data-page="about"]):not([data-page="research"]) .page-header--compact h1 {
+  background: linear-gradient(135deg, var(--ink) 30%, var(--cat-accent) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body[data-page]:not([data-page="home"]):not([data-page="about"]):not([data-page="research"]) .page-header--compact .eyebrow {
+  color: var(--cat-accent);
+}
+
+/* ---------- Detail Trigger (List Items) Enhancements ---------- */
+.detail-trigger {
+  position: relative;
+  cursor: pointer;
+  transition:
+    transform 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 250ms ease,
+    background-color 200ms ease,
+    padding-left 220ms ease;
+  transform-origin: left center;
+  overflow: hidden;
+}
+
+body[data-page]:not([data-page="home"]):not([data-page="about"]) .detail-trigger:hover {
+  transform: translateX(4px) scale(1.01);
+  box-shadow:
+    inset 0 0 0 1px var(--cat-accent-line, var(--line)),
+    0 12px 32px rgba(22, 34, 48, 0.09);
+  padding-left: 0.3rem;
+}
+
+body[data-page]:not([data-page="home"]):not([data-page="about"]) .detail-trigger::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--cat-accent, var(--accent));
+  transform: scaleY(0);
+  transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body[data-page]:not([data-page="home"]):not([data-page="about"]) .detail-trigger:hover::before,
+body[data-page]:not([data-page="home"]):not([data-page="about"]) .detail-trigger[aria-selected="true"]::before {
+  transform: scaleY(1);
+}
+
+/* Active trigger state */
+.detail-trigger[aria-selected="true"] {
+  box-shadow:
+    inset 0 0 0 1px var(--cat-accent-line, var(--line)),
+    0 6px 24px rgba(22, 34, 48, 0.06);
+}
+
+/* Trigger type hierarchy */
+.detail-trigger__eyebrow {
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  transition: color 200ms ease;
+}
+
+body[data-page]:not([data-page="home"]):not([data-page="about"]) .detail-trigger:hover .detail-trigger__eyebrow,
+body[data-page]:not([data-page="home"]):not([data-page="about"]) .detail-trigger[aria-selected="true"] .detail-trigger__eyebrow {
+  color: var(--cat-accent, var(--accent));
+}
+
+.detail-trigger strong {
+  font-weight: 650;
+  transition: color 200ms ease;
+}
+
+/* ---------- Detail Panel Transitions ---------- */
+.detail-panel {
+  transition:
+    opacity 320ms ease,
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.detail-panel.is-active {
+  animation: artifactPanelIn 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.detail-panel__header h3 {
+  font-family: var(--title-font);
+}
+
+body[data-page]:not([data-page="home"]):not([data-page="about"]) .detail-panel__header h3 {
+  color: var(--cat-accent, var(--ink));
+}
+
+/* Detail panel metadata refinements */
+.detail-panel__meta .detail-meta-chip {
+  transition:
+    box-shadow 200ms ease,
+    background-color 200ms ease;
+  border-left: 2px solid transparent;
+}
+
+body[data-page]:not([data-page="home"]):not([data-page="about"]) .detail-panel__meta .detail-meta-chip:hover {
+  border-left-color: var(--cat-accent, var(--accent));
+  background: var(--cat-accent-soft, rgba(49, 95, 135, 0.06));
+}
+
+/* ---------- Card Grid Entry Animation ---------- */
+@keyframes artifactCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes artifactCardMaterialize {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+    filter: saturate(0.85);
+  }
+
+  58% {
+    opacity: 1;
+    transform: translateY(-1px) scale(1.004);
+    filter: saturate(1.04);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: saturate(1);
+  }
+}
+
+@keyframes artifactCardScan {
+  0% {
+    opacity: 0;
+    transform: translateX(-130%);
+  }
+
+  18%,
+  62% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(130%);
+  }
+}
+
+@keyframes artifactPorcelainGlaze {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: translate3d(-8%, -4%, 0) rotate(0.5deg);
+  }
+
+  50% {
+    opacity: 0.36;
+    transform: translate3d(6%, 3%, 0) rotate(-0.5deg);
+  }
+}
+
+/* 卡片动效把“青花釉光”和“数字扫描线”叠在同一层，给信息卡统一的未来感与历史质感。 */
+.research-card,
+.object-card,
+.path-card,
+.network-panel,
+.institution-card,
+.summary-stat,
+.stat-card,
+.brief-card,
+.hero-focus-card,
+.ledger-row,
+.matrix-row,
+.timeline-node,
+.portal-row,
+.highlight-card,
+.detail-card,
+.glossary-card,
+.reading-card,
+.context-panel,
+.timeline-focus,
+.essay-card,
+.about-card,
+.reference-card,
+.system-card,
+.typology-card,
+.collection-card,
+.history-card,
+.tableware-roster-card,
+.detail-panel,
+.detail-trigger,
+.inline-detail__trigger,
+.collection-list__item,
+.artifact-motion-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transform-style: preserve-3d;
+}
+
+.research-card,
+.object-card,
+.path-card,
+.network-panel,
+.institution-card,
+.summary-stat,
+.stat-card,
+.brief-card,
+.hero-focus-card,
+.ledger-row,
+.matrix-row,
+.timeline-node,
+.portal-row,
+.highlight-card,
+.detail-card,
+.glossary-card,
+.reading-card,
+.context-panel,
+.timeline-focus,
+.essay-card,
+.about-card,
+.reference-card,
+.system-card,
+.typology-card,
+.collection-card,
+.history-card,
+.tableware-roster-card,
+.detail-panel,
+.collection-list__item,
+.artifact-motion-card {
+  transition:
+    opacity 240ms ease,
+    transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 260ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    filter 220ms ease;
+}
+
+.research-card::before,
+.object-card::before,
+.path-card::before,
+.network-panel::before,
+.institution-card::before,
+.summary-stat::before,
+.stat-card::before,
+.brief-card::before,
+.hero-focus-card::before,
+.ledger-row::before,
+.matrix-row::before,
+.timeline-node::before,
+.portal-row::before,
+.highlight-card::before,
+.detail-card::before,
+.glossary-card::before,
+.reading-card::before,
+.context-panel::before,
+.timeline-focus::before,
+.essay-card::before,
+.about-card::before,
+.reference-card::before,
+.system-card::before,
+.typology-card::before,
+.collection-card::before,
+.history-card::before,
+.tableware-roster-card::before,
+.detail-panel::before,
+.collection-list__item::before,
+.artifact-motion-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0)),
+    repeating-linear-gradient(90deg, transparent 0 18px, rgba(49, 95, 135, 0.035) 18px 19px, transparent 19px 44px),
+    radial-gradient(circle at 18% 16%, rgba(49, 95, 135, 0.11), transparent 34%),
+    radial-gradient(circle at 88% 20%, var(--cat-accent-soft, rgba(150, 97, 73, 0.1)), transparent 38%);
+  mix-blend-mode: screen;
+  opacity: 0.2;
+  animation: artifactPorcelainGlaze 7.5s ease-in-out infinite;
+}
+
+.research-card::after,
+.object-card::after,
+.path-card::after,
+.network-panel::after,
+.institution-card::after,
+.summary-stat::after,
+.stat-card::after,
+.brief-card::after,
+.hero-focus-card::after,
+.ledger-row::after,
+.matrix-row::after,
+.portal-row::after,
+.highlight-card::after,
+.detail-card::after,
+.glossary-card::after,
+.reading-card::after,
+.context-panel::after,
+.timeline-focus::after,
+.essay-card::after,
+.about-card::after,
+.reference-card::after,
+.system-card::after,
+.typology-card::after,
+.collection-card::after,
+.history-card::after,
+.tableware-roster-card::after,
+.detail-panel::after,
+.detail-trigger::after,
+.inline-detail__trigger::after,
+.collection-list__item::after,
+.artifact-motion-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.52), transparent),
+    linear-gradient(180deg, transparent 0 46%, var(--cat-accent-line, rgba(49, 95, 135, 0.16)) 49%, transparent 52% 100%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transform: translateX(-130%);
+}
+
+.research-card > *,
+.object-card > *,
+.path-card > *,
+.network-panel > *,
+.institution-card > *,
+.summary-stat > *,
+.stat-card > *,
+.brief-card > *,
+.hero-focus-card > *,
+.ledger-row > *,
+.matrix-row > *,
+.timeline-node > *,
+.portal-row > *,
+.highlight-card > *,
+.detail-card > *,
+.glossary-card > *,
+.reading-card > *,
+.context-panel > *,
+.timeline-focus > *,
+.essay-card > *,
+.about-card > *,
+.reference-card > *,
+.system-card > *,
+.typology-card > *,
+.collection-card > *,
+.history-card > *,
+.tableware-roster-card > *,
+.detail-panel > *,
+.detail-trigger > *,
+.inline-detail__trigger > *,
+.collection-list__item > *,
+.artifact-motion-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.research-card:hover,
+.object-card:hover,
+.path-card:hover,
+.network-panel:hover,
+.institution-card:hover,
+.summary-stat:hover,
+.stat-card:hover,
+.brief-card:hover,
+.hero-focus-card:hover,
+.ledger-row:hover,
+.matrix-row:hover,
+.timeline-node:hover,
+.portal-row:hover,
+.highlight-card:hover,
+.detail-card:hover,
+.glossary-card:hover,
+.reading-card:hover,
+.context-panel:hover,
+.timeline-focus:hover,
+.essay-card:hover,
+.about-card:hover,
+.reference-card:hover,
+.system-card:hover,
+.typology-card:hover,
+.collection-card:hover,
+.history-card:hover,
+.tableware-roster-card:hover,
+.detail-panel:hover,
+.collection-list__item:hover,
+.artifact-motion-card:hover {
+  transform: translateY(-5px) perspective(900px) rotateX(0.55deg);
+  filter: saturate(1.04);
+  box-shadow:
+    inset 0 0 0 1px var(--cat-accent-line, rgba(49, 95, 135, 0.18)),
+    0 24px 58px rgba(22, 34, 48, 0.16),
+    0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+
+.ledger-row.is-active,
+.ledger-row[aria-selected="true"],
+.portal-row.is-active,
+.portal-row[aria-selected="true"],
+.highlight-card.is-active,
+.highlight-card[aria-selected="true"],
+.glossary-card[aria-selected="true"],
+.research-card[aria-selected="true"],
+.detail-card.is-active,
+.detail-panel.is-active,
+[data-category-filter-state="active"] {
+  filter: saturate(1.05);
+  box-shadow:
+    inset 0 0 0 1px var(--cat-accent-line, rgba(49, 95, 135, 0.2)),
+    0 20px 46px rgba(22, 34, 48, 0.13),
+    0 0 18px var(--cat-accent-soft, rgba(49, 95, 135, 0.08));
+}
+
+.research-card:hover::before,
+.object-card:hover::before,
+.path-card:hover::before,
+.network-panel:hover::before,
+.institution-card:hover::before,
+.summary-stat:hover::before,
+.stat-card:hover::before,
+.brief-card:hover::before,
+.hero-focus-card:hover::before,
+.ledger-row:hover::before,
+.matrix-row:hover::before,
+.timeline-node:hover::before,
+.timeline-node[aria-selected="true"]::before,
+.timeline-node.is-active::before,
+.portal-row:hover::before,
+.highlight-card:hover::before,
+.detail-card:hover::before,
+.glossary-card:hover::before,
+.reading-card:hover::before,
+.context-panel:hover::before,
+.timeline-focus:hover::before,
+.essay-card:hover::before,
+.about-card:hover::before,
+.reference-card:hover::before,
+.system-card:hover::before,
+.typology-card:hover::before,
+.collection-card:hover::before,
+.history-card:hover::before,
+.tableware-roster-card:hover::before,
+.detail-panel:hover::before,
+.collection-list__item:hover::before,
+.artifact-motion-card:hover::before {
+  opacity: 0.46;
+}
+
+.research-card:hover::after,
+.object-card:hover::after,
+.path-card:hover::after,
+.network-panel:hover::after,
+.institution-card:hover::after,
+.summary-stat:hover::after,
+.stat-card:hover::after,
+.brief-card:hover::after,
+.hero-focus-card:hover::after,
+.ledger-row:hover::after,
+.matrix-row:hover::after,
+.portal-row:hover::after,
+.highlight-card:hover::after,
+.detail-card:hover::after,
+.glossary-card:hover::after,
+.reading-card:hover::after,
+.context-panel:hover::after,
+.timeline-focus:hover::after,
+.essay-card:hover::after,
+.about-card:hover::after,
+.reference-card:hover::after,
+.system-card:hover::after,
+.typology-card:hover::after,
+.collection-card:hover::after,
+.history-card:hover::after,
+.tableware-roster-card:hover::after,
+.detail-panel:hover::after,
+.detail-trigger:hover::after,
+.inline-detail__trigger:hover::after,
+.collection-list__item:hover::after,
+.artifact-motion-card:hover::after,
+.ledger-row.is-active::after,
+.ledger-row[aria-selected="true"]::after,
+.portal-row.is-active::after,
+.portal-row[aria-selected="true"]::after,
+.highlight-card.is-active::after,
+.highlight-card[aria-selected="true"]::after,
+.glossary-card[aria-selected="true"]::after,
+.research-card[aria-selected="true"]::after,
+.detail-card.is-active::after,
+.detail-panel.is-active::after,
+.detail-trigger[aria-selected="true"]::after,
+.inline-detail__trigger[aria-expanded="true"]::after,
+[data-category-filter-state="active"]::after {
+  animation: artifactCardScan 780ms ease both;
+}
+
+/* ---------- Research / Object Card Edge Indicator ---------- */
+body[data-page]:not([data-page="home"]):not([data-page="about"]) .research-card {
+  border-left: 2px solid transparent;
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 250ms ease,
+    border-left-color 200ms ease;
+}
+
+body[data-page]:not([data-page="home"]):not([data-page="about"]) .research-card:hover {
+  border-left-color: var(--cat-accent, var(--accent));
+}
+
+/* ---------- Image Loading Optimizations ---------- */
+.highlight-card__image,
+.detail-card__image,
+.research-card img,
+.object-card img {
+  transition: opacity 400ms ease, transform 400ms ease;
+  background: rgba(49, 95, 135, 0.04);
+}
+
+.highlight-card__image:not([src]),
+.research-card img:not([src]) {
+  opacity: 0;
+}
+
+object[data] {
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+object[data]:not([data=""]) {
+  opacity: 1;
+}
+
+/* ---------- Artifact-Specific Hero Emphasis ---------- */
+body[data-page="art"] .hero-section--narrative .hero-narrative {
+  position: relative;
+}
+
+body[data-page="art"] .hero-section--narrative .hero-narrative::after {
+  content: "";
+  position: absolute;
+  right: -2rem;
+  top: -2rem;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--cat-accent-soft), transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ---------- Panel Swap Animation ---------- */
+@keyframes artifactPanelIn {
+  from {
+    opacity: 0;
+    transform: translateX(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* ---------- Mobile: Category Tabs Scroll Enhance ---------- */
+@media (max-width: 640px) {
+  .category-tabs .tab-buttons {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 2%,
+      black 94%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 2%,
+      black 94%,
+      transparent 100%
+    );
+  }
+
+  /* Mobile: active detail trigger gets floating card treatment */
+  .detail-trigger[aria-selected="true"] {
+    position: relative;
+    z-index: 2;
+    box-shadow:
+      inset 0 0 0 1px var(--cat-accent-line, var(--line)),
+      0 10px 30px rgba(22, 34, 48, 0.12);
+  }
+}
+
+/* ---------- Vase / Tableware Collection Cards ---------- */
+.collection-list__item,
+.tableware-roster .roster-card {
+  border-top: 2px solid transparent;
+  transition:
+    transform 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms ease,
+    border-top-color 180ms ease;
+}
+
+body[data-page]:not([data-page="home"]):not([data-page="about"]) .collection-list__item:hover {
+  border-top-color: var(--cat-accent, var(--accent));
+}
+
+/* 分类页连续版面：普通信息容器去掉底色，保留标签、重点和选中态的颜色层级。 */
+body[data-page="tea"] .category-hero,
+body[data-page="coffee"] .category-hero,
+body[data-page="tableware"] .category-hero,
+body[data-page="vase"] .category-hero,
+body[data-page="art"] .category-hero,
+body[data-page="tea"] .category-module,
+body[data-page="coffee"] .category-module,
+body[data-page="tableware"] .category-module,
+body[data-page="vase"] .category-module,
+body[data-page="art"] .category-module,
+body[data-page="tea"] .category-tabs__panel-wrap .tab-panel,
+body[data-page="coffee"] .category-tabs__panel-wrap .tab-panel,
+body[data-page="tableware"] .category-tabs__panel-wrap .tab-panel,
+body[data-page="vase"] .category-tabs__panel-wrap .tab-panel,
+body[data-page="art"] .category-tabs__panel-wrap .tab-panel,
+body[data-page="tea"] .category-module .research-card,
+body[data-page="coffee"] .category-module .research-card,
+body[data-page="tableware"] .category-module .research-card,
+body[data-page="vase"] .category-module .research-card,
+body[data-page="art"] .category-module .research-card,
+body[data-page="tea"] .category-module .path-card,
+body[data-page="coffee"] .category-module .path-card,
+body[data-page="tableware"] .category-module .path-card,
+body[data-page="vase"] .category-module .path-card,
+body[data-page="art"] .category-module .path-card,
+body[data-page="tea"] .category-module .network-panel,
+body[data-page="coffee"] .category-module .network-panel,
+body[data-page="tableware"] .category-module .network-panel,
+body[data-page="vase"] .category-module .network-panel,
+body[data-page="art"] .category-module .network-panel,
+body[data-page="tea"] .category-module .institution-card,
+body[data-page="coffee"] .category-module .institution-card,
+body[data-page="tableware"] .category-module .institution-card,
+body[data-page="vase"] .category-module .institution-card,
+body[data-page="art"] .category-module .institution-card,
+body[data-page="tea"] .category-module .typology-card,
+body[data-page="coffee"] .category-module .typology-card,
+body[data-page="tableware"] .category-module .typology-card,
+body[data-page="vase"] .category-module .typology-card,
+body[data-page="art"] .category-module .typology-card,
+body[data-page="tea"] .category-module .collection-card,
+body[data-page="coffee"] .category-module .collection-card,
+body[data-page="tableware"] .category-module .collection-card,
+body[data-page="vase"] .category-module .collection-card,
+body[data-page="art"] .category-module .collection-card,
+body[data-page="tea"] .category-module .reference-card,
+body[data-page="coffee"] .category-module .reference-card,
+body[data-page="tableware"] .category-module .reference-card,
+body[data-page="vase"] .category-module .reference-card,
+body[data-page="art"] .category-module .reference-card,
+body[data-page="tea"] .category-module .system-card,
+body[data-page="coffee"] .category-module .system-card,
+body[data-page="tableware"] .category-module .system-card,
+body[data-page="vase"] .category-module .system-card,
+body[data-page="art"] .category-module .system-card,
+body[data-page="tea"] .category-module .history-card,
+body[data-page="coffee"] .category-module .history-card,
+body[data-page="tableware"] .category-module .history-card,
+body[data-page="vase"] .category-module .history-card,
+body[data-page="art"] .category-module .history-card,
+body[data-page="tea"] .category-module .tableware-roster-card,
+body[data-page="coffee"] .category-module .tableware-roster-card,
+body[data-page="tableware"] .category-module .tableware-roster-card,
+body[data-page="vase"] .category-module .tableware-roster-card,
+body[data-page="art"] .category-module .tableware-roster-card,
+body[data-page="tea"] .category-module .collection-list__item,
+body[data-page="coffee"] .category-module .collection-list__item,
+body[data-page="tableware"] .category-module .collection-list__item,
+body[data-page="vase"] .category-module .collection-list__item,
+body[data-page="art"] .category-module .collection-list__item,
+body[data-page="tea"] .category-module .ledger-row,
+body[data-page="coffee"] .category-module .ledger-row,
+body[data-page="tableware"] .category-module .ledger-row,
+body[data-page="vase"] .category-module .ledger-row,
+body[data-page="art"] .category-module .ledger-row,
+body[data-page="tea"] .category-module .matrix-row,
+body[data-page="coffee"] .category-module .matrix-row,
+body[data-page="tableware"] .category-module .matrix-row,
+body[data-page="vase"] .category-module .matrix-row,
+body[data-page="art"] .category-module .matrix-row,
+body[data-page="tea"] .category-module .detail-trigger,
+body[data-page="coffee"] .category-module .detail-trigger,
+body[data-page="tableware"] .category-module .detail-trigger,
+body[data-page="vase"] .category-module .detail-trigger,
+body[data-page="art"] .category-module .detail-trigger,
+body[data-page="tea"] .category-module .detail-panel,
+body[data-page="coffee"] .category-module .detail-panel,
+body[data-page="tableware"] .category-module .detail-panel,
+body[data-page="vase"] .category-module .detail-panel,
+body[data-page="art"] .category-module .detail-panel,
+body[data-page="tea"] .category-module .inline-detail__trigger,
+body[data-page="coffee"] .category-module .inline-detail__trigger,
+body[data-page="tableware"] .category-module .inline-detail__trigger,
+body[data-page="vase"] .category-module .inline-detail__trigger,
+body[data-page="art"] .category-module .inline-detail__trigger,
+body[data-page="tea"] .category-module .research-fact-card,
+body[data-page="coffee"] .category-module .research-fact-card,
+body[data-page="tableware"] .category-module .research-fact-card,
+body[data-page="vase"] .category-module .research-fact-card,
+body[data-page="art"] .category-module .research-fact-card {
+  background: transparent;
+  box-shadow: none;
+}
+
+body[data-page="tea"] .category-module,
+body[data-page="coffee"] .category-module,
+body[data-page="tableware"] .category-module,
+body[data-page="vase"] .category-module,
+body[data-page="art"] .category-module {
+  padding-block: 1.25rem;
+  border-block: 1px solid rgba(49, 95, 135, 0.1);
+  border-radius: 0;
+}
+
+body[data-page="tea"] .category-hero,
+body[data-page="coffee"] .category-hero,
+body[data-page="tableware"] .category-hero,
+body[data-page="vase"] .category-hero,
+body[data-page="art"] .category-hero {
+  padding-inline: 0;
+  border-radius: 0;
+}
+
+body[data-page="tea"] .category-module .research-card,
+body[data-page="coffee"] .category-module .research-card,
+body[data-page="tableware"] .category-module .research-card,
+body[data-page="vase"] .category-module .research-card,
+body[data-page="art"] .category-module .research-card,
+body[data-page="tea"] .category-module .path-card,
+body[data-page="coffee"] .category-module .path-card,
+body[data-page="tableware"] .category-module .path-card,
+body[data-page="vase"] .category-module .path-card,
+body[data-page="art"] .category-module .path-card,
+body[data-page="tea"] .category-module .network-panel,
+body[data-page="coffee"] .category-module .network-panel,
+body[data-page="tableware"] .category-module .network-panel,
+body[data-page="vase"] .category-module .network-panel,
+body[data-page="art"] .category-module .network-panel,
+body[data-page="tea"] .category-module .institution-card,
+body[data-page="coffee"] .category-module .institution-card,
+body[data-page="tableware"] .category-module .institution-card,
+body[data-page="vase"] .category-module .institution-card,
+body[data-page="art"] .category-module .institution-card,
+body[data-page="tea"] .category-module .typology-card,
+body[data-page="coffee"] .category-module .typology-card,
+body[data-page="tableware"] .category-module .typology-card,
+body[data-page="vase"] .category-module .typology-card,
+body[data-page="art"] .category-module .typology-card,
+body[data-page="tea"] .category-module .collection-card,
+body[data-page="coffee"] .category-module .collection-card,
+body[data-page="tableware"] .category-module .collection-card,
+body[data-page="vase"] .category-module .collection-card,
+body[data-page="art"] .category-module .collection-card,
+body[data-page="tea"] .category-module .reference-card,
+body[data-page="coffee"] .category-module .reference-card,
+body[data-page="tableware"] .category-module .reference-card,
+body[data-page="vase"] .category-module .reference-card,
+body[data-page="art"] .category-module .reference-card,
+body[data-page="tea"] .category-module .system-card,
+body[data-page="coffee"] .category-module .system-card,
+body[data-page="tableware"] .category-module .system-card,
+body[data-page="vase"] .category-module .system-card,
+body[data-page="art"] .category-module .system-card,
+body[data-page="tea"] .category-module .history-card,
+body[data-page="coffee"] .category-module .history-card,
+body[data-page="tableware"] .category-module .history-card,
+body[data-page="vase"] .category-module .history-card,
+body[data-page="art"] .category-module .history-card,
+body[data-page="tea"] .category-module .tableware-roster-card,
+body[data-page="coffee"] .category-module .tableware-roster-card,
+body[data-page="tableware"] .category-module .tableware-roster-card,
+body[data-page="vase"] .category-module .tableware-roster-card,
+body[data-page="art"] .category-module .tableware-roster-card,
+body[data-page="tea"] .category-module .collection-list__item,
+body[data-page="coffee"] .category-module .collection-list__item,
+body[data-page="tableware"] .category-module .collection-list__item,
+body[data-page="vase"] .category-module .collection-list__item,
+body[data-page="art"] .category-module .collection-list__item,
+body[data-page="tea"] .category-module .ledger-row,
+body[data-page="coffee"] .category-module .ledger-row,
+body[data-page="tableware"] .category-module .ledger-row,
+body[data-page="vase"] .category-module .ledger-row,
+body[data-page="art"] .category-module .ledger-row,
+body[data-page="tea"] .category-module .matrix-row,
+body[data-page="coffee"] .category-module .matrix-row,
+body[data-page="tableware"] .category-module .matrix-row,
+body[data-page="vase"] .category-module .matrix-row,
+body[data-page="art"] .category-module .matrix-row,
+body[data-page="tea"] .category-tabs__panel-wrap .tab-panel,
+body[data-page="coffee"] .category-tabs__panel-wrap .tab-panel,
+body[data-page="tableware"] .category-tabs__panel-wrap .tab-panel,
+body[data-page="vase"] .category-tabs__panel-wrap .tab-panel,
+body[data-page="art"] .category-tabs__panel-wrap .tab-panel {
+  border-radius: 0;
+  border-top: 1px solid rgba(49, 95, 135, 0.1);
+}
+
+body[data-page="tea"] .category-module .research-card:hover,
+body[data-page="coffee"] .category-module .research-card:hover,
+body[data-page="tableware"] .category-module .research-card:hover,
+body[data-page="vase"] .category-module .research-card:hover,
+body[data-page="art"] .category-module .research-card:hover,
+body[data-page="tea"] .category-module .path-card:hover,
+body[data-page="coffee"] .category-module .path-card:hover,
+body[data-page="tableware"] .category-module .path-card:hover,
+body[data-page="vase"] .category-module .path-card:hover,
+body[data-page="art"] .category-module .path-card:hover,
+body[data-page="tea"] .category-module .network-panel:hover,
+body[data-page="coffee"] .category-module .network-panel:hover,
+body[data-page="tableware"] .category-module .network-panel:hover,
+body[data-page="vase"] .category-module .network-panel:hover,
+body[data-page="art"] .category-module .network-panel:hover,
+body[data-page="tea"] .category-module .institution-card:hover,
+body[data-page="coffee"] .category-module .institution-card:hover,
+body[data-page="tableware"] .category-module .institution-card:hover,
+body[data-page="vase"] .category-module .institution-card:hover,
+body[data-page="art"] .category-module .institution-card:hover,
+body[data-page="tea"] .category-module .reference-card:hover,
+body[data-page="coffee"] .category-module .reference-card:hover,
+body[data-page="tableware"] .category-module .reference-card:hover,
+body[data-page="vase"] .category-module .reference-card:hover,
+body[data-page="art"] .category-module .reference-card:hover,
+body[data-page="tea"] .category-module .system-card:hover,
+body[data-page="coffee"] .category-module .system-card:hover,
+body[data-page="tableware"] .category-module .system-card:hover,
+body[data-page="vase"] .category-module .system-card:hover,
+body[data-page="art"] .category-module .system-card:hover,
+body[data-page="tea"] .category-module .history-card:hover,
+body[data-page="coffee"] .category-module .history-card:hover,
+body[data-page="tableware"] .category-module .history-card:hover,
+body[data-page="vase"] .category-module .history-card:hover,
+body[data-page="art"] .category-module .history-card:hover,
+body[data-page="tea"] .category-module .tableware-roster-card:hover,
+body[data-page="coffee"] .category-module .tableware-roster-card:hover,
+body[data-page="tableware"] .category-module .tableware-roster-card:hover,
+body[data-page="vase"] .category-module .tableware-roster-card:hover,
+body[data-page="art"] .category-module .tableware-roster-card:hover,
+body[data-page="tea"] .category-module .collection-list__item:hover,
+body[data-page="coffee"] .category-module .collection-list__item:hover,
+body[data-page="tableware"] .category-module .collection-list__item:hover,
+body[data-page="vase"] .category-module .collection-list__item:hover,
+body[data-page="art"] .category-module .collection-list__item:hover,
+body[data-page="tea"] .category-module .matrix-row:hover,
+body[data-page="coffee"] .category-module .matrix-row:hover,
+body[data-page="tableware"] .category-module .matrix-row:hover,
+body[data-page="vase"] .category-module .matrix-row:hover,
+body[data-page="art"] .category-module .matrix-row:hover,
+body[data-page="tea"] .category-module .research-fact-card:hover,
+body[data-page="coffee"] .category-module .research-fact-card:hover,
+body[data-page="tableware"] .category-module .research-fact-card:hover,
+body[data-page="vase"] .category-module .research-fact-card:hover,
+body[data-page="art"] .category-module .research-fact-card:hover {
+  transform: translateY(-1px);
+  box-shadow: none;
+  filter: saturate(1.02);
+}
+
+body[data-page="tea"] .category-module .research-card::before,
+body[data-page="coffee"] .category-module .research-card::before,
+body[data-page="tableware"] .category-module .research-card::before,
+body[data-page="vase"] .category-module .research-card::before,
+body[data-page="art"] .category-module .research-card::before,
+body[data-page="tea"] .category-module .path-card::before,
+body[data-page="coffee"] .category-module .path-card::before,
+body[data-page="tableware"] .category-module .path-card::before,
+body[data-page="vase"] .category-module .path-card::before,
+body[data-page="art"] .category-module .path-card::before,
+body[data-page="tea"] .category-module .reference-card::before,
+body[data-page="coffee"] .category-module .reference-card::before,
+body[data-page="tableware"] .category-module .reference-card::before,
+body[data-page="vase"] .category-module .reference-card::before,
+body[data-page="art"] .category-module .reference-card::before,
+body[data-page="tea"] .category-module .matrix-row::before,
+body[data-page="coffee"] .category-module .matrix-row::before,
+body[data-page="tableware"] .category-module .matrix-row::before,
+body[data-page="vase"] .category-module .matrix-row::before,
+body[data-page="art"] .category-module .matrix-row::before,
+body[data-page="tea"] .category-module .detail-panel::before,
+body[data-page="coffee"] .category-module .detail-panel::before,
+body[data-page="tableware"] .category-module .detail-panel::before,
+body[data-page="vase"] .category-module .detail-panel::before,
+body[data-page="art"] .category-module .detail-panel::before,
+body[data-page="tea"] .category-module .collection-list__item::before,
+body[data-page="coffee"] .category-module .collection-list__item::before,
+body[data-page="tableware"] .category-module .collection-list__item::before,
+body[data-page="vase"] .category-module .collection-list__item::before,
+body[data-page="art"] .category-module .collection-list__item::before {
+  opacity: 0.08;
+}
+
+body[data-page="tea"] .category-module .research-card::after,
+body[data-page="coffee"] .category-module .research-card::after,
+body[data-page="tableware"] .category-module .research-card::after,
+body[data-page="vase"] .category-module .research-card::after,
+body[data-page="art"] .category-module .research-card::after,
+body[data-page="tea"] .category-module .path-card::after,
+body[data-page="coffee"] .category-module .path-card::after,
+body[data-page="tableware"] .category-module .path-card::after,
+body[data-page="vase"] .category-module .path-card::after,
+body[data-page="art"] .category-module .path-card::after,
+body[data-page="tea"] .category-module .reference-card::after,
+body[data-page="coffee"] .category-module .reference-card::after,
+body[data-page="tableware"] .category-module .reference-card::after,
+body[data-page="vase"] .category-module .reference-card::after,
+body[data-page="art"] .category-module .reference-card::after,
+body[data-page="tea"] .category-module .matrix-row::after,
+body[data-page="coffee"] .category-module .matrix-row::after,
+body[data-page="tableware"] .category-module .matrix-row::after,
+body[data-page="vase"] .category-module .matrix-row::after,
+body[data-page="art"] .category-module .matrix-row::after,
+body[data-page="tea"] .category-module .detail-panel::after,
+body[data-page="coffee"] .category-module .detail-panel::after,
+body[data-page="tableware"] .category-module .detail-panel::after,
+body[data-page="vase"] .category-module .detail-panel::after,
+body[data-page="art"] .category-module .detail-panel::after,
+body[data-page="tea"] .category-module .collection-list__item::after,
+body[data-page="coffee"] .category-module .collection-list__item::after,
+body[data-page="tableware"] .category-module .collection-list__item::after,
+body[data-page="vase"] .category-module .collection-list__item::after,
+body[data-page="art"] .category-module .collection-list__item::after {
+  display: none;
+}
+
+body[data-page="tea"] .tag-chip,
+body[data-page="coffee"] .tag-chip,
+body[data-page="tableware"] .tag-chip,
+body[data-page="vase"] .tag-chip,
+body[data-page="art"] .tag-chip,
+body[data-page="tea"] .category-filter-summary,
+body[data-page="coffee"] .category-filter-summary,
+body[data-page="tableware"] .category-filter-summary,
+body[data-page="vase"] .category-filter-summary,
+body[data-page="art"] .category-filter-summary,
+body[data-page="tea"] .detail-meta-chip,
+body[data-page="coffee"] .detail-meta-chip,
+body[data-page="tableware"] .detail-meta-chip,
+body[data-page="vase"] .detail-meta-chip,
+body[data-page="art"] .detail-meta-chip {
+  background: var(--cat-accent-soft, rgba(49, 95, 135, 0.08));
+  box-shadow: inset 0 0 0 1px var(--cat-accent-line, rgba(49, 95, 135, 0.16));
+  color: var(--cat-accent, var(--accent));
+}
+
+body[data-page="tea"] .category-guide-card,
+body[data-page="coffee"] .category-guide-card,
+body[data-page="tableware"] .category-guide-card,
+body[data-page="vase"] .category-guide-card,
+body[data-page="art"] .category-guide-card,
+body[data-page="tea"] .category-tabs--directory .tab-button,
+body[data-page="coffee"] .category-tabs--directory .tab-button,
+body[data-page="tableware"] .category-tabs--directory .tab-button,
+body[data-page="vase"] .category-tabs--directory .tab-button,
+body[data-page="art"] .category-tabs--directory .tab-button,
+body[data-page="tea"] .category-section-nav__item,
+body[data-page="coffee"] .category-section-nav__item,
+body[data-page="tableware"] .category-section-nav__item,
+body[data-page="vase"] .category-section-nav__item,
+body[data-page="art"] .category-section-nav__item,
+body[data-page="tea"] .section-toggle,
+body[data-page="coffee"] .section-toggle,
+body[data-page="tableware"] .section-toggle,
+body[data-page="vase"] .section-toggle,
+body[data-page="art"] .section-toggle {
+  background: transparent;
+  box-shadow: none;
+}
+
+body[data-page="tea"] .category-guide-card:hover,
+body[data-page="coffee"] .category-guide-card:hover,
+body[data-page="tableware"] .category-guide-card:hover,
+body[data-page="vase"] .category-guide-card:hover,
+body[data-page="art"] .category-guide-card:hover,
+body[data-page="tea"] .category-tabs--directory .tab-button[aria-selected="true"],
+body[data-page="coffee"] .category-tabs--directory .tab-button[aria-selected="true"],
+body[data-page="tableware"] .category-tabs--directory .tab-button[aria-selected="true"],
+body[data-page="vase"] .category-tabs--directory .tab-button[aria-selected="true"],
+body[data-page="art"] .category-tabs--directory .tab-button[aria-selected="true"],
+body[data-page="tea"] .detail-trigger[aria-selected="true"],
+body[data-page="coffee"] .detail-trigger[aria-selected="true"],
+body[data-page="tableware"] .detail-trigger[aria-selected="true"],
+body[data-page="vase"] .detail-trigger[aria-selected="true"],
+body[data-page="art"] .detail-trigger[aria-selected="true"],
+body[data-page="tea"] .inline-detail__trigger[aria-expanded="true"],
+body[data-page="coffee"] .inline-detail__trigger[aria-expanded="true"],
+body[data-page="tableware"] .inline-detail__trigger[aria-expanded="true"],
+body[data-page="vase"] .inline-detail__trigger[aria-expanded="true"],
+body[data-page="art"] .inline-detail__trigger[aria-expanded="true"],
+body[data-page="tea"] [data-category-filter-target][data-category-filter-state="active"],
+body[data-page="coffee"] [data-category-filter-target][data-category-filter-state="active"],
+body[data-page="tableware"] [data-category-filter-target][data-category-filter-state="active"],
+body[data-page="vase"] [data-category-filter-target][data-category-filter-state="active"],
+body[data-page="art"] [data-category-filter-target][data-category-filter-state="active"] {
+  color: var(--cat-accent, var(--accent));
+  background: var(--cat-accent-soft, rgba(49, 95, 135, 0.08));
+  box-shadow: inset 3px 0 0 var(--cat-accent, var(--accent));
+}
+
+body[data-page="tea"] .category-option-strip,
+body[data-page="coffee"] .category-option-strip,
+body[data-page="tableware"] .category-option-strip,
+body[data-page="vase"] .category-option-strip,
+body[data-page="art"] .category-option-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  margin-block: 0.1rem 0.35rem;
+}
+
+body[data-page="tea"] .category-option-chip,
+body[data-page="coffee"] .category-option-chip,
+body[data-page="tableware"] .category-option-chip,
+body[data-page="vase"] .category-option-chip,
+body[data-page="art"] .category-option-chip {
+  min-height: 2.15rem;
+  padding: 0.34rem 0.72rem;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  background: transparent;
+  box-shadow: inset 0 0 0 1px rgba(49, 95, 135, 0.12);
+  font-size: 0.86rem;
+  transition: color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+body[data-page="tea"] .category-option-chip:hover,
+body[data-page="coffee"] .category-option-chip:hover,
+body[data-page="tableware"] .category-option-chip:hover,
+body[data-page="vase"] .category-option-chip:hover,
+body[data-page="art"] .category-option-chip:hover,
+body[data-page="tea"] .category-option-chip[aria-selected="true"],
+body[data-page="coffee"] .category-option-chip[aria-selected="true"],
+body[data-page="tableware"] .category-option-chip[aria-selected="true"],
+body[data-page="vase"] .category-option-chip[aria-selected="true"],
+body[data-page="art"] .category-option-chip[aria-selected="true"] {
+  color: var(--cat-accent, var(--accent));
+  box-shadow:
+    inset 0 0 0 1px var(--cat-accent-line, rgba(49, 95, 135, 0.18)),
+    inset 0 -2px 0 var(--cat-accent, var(--accent));
+}
+
+body[data-page="tea"] .category-module [data-category-filter-target][hidden],
+body[data-page="coffee"] .category-module [data-category-filter-target][hidden],
+body[data-page="tableware"] .category-module [data-category-filter-target][hidden],
+body[data-page="vase"] .category-module [data-category-filter-target][hidden],
+body[data-page="art"] .category-module [data-category-filter-target][hidden],
+body[data-page="tea"] .category-option-chip[hidden],
+body[data-page="coffee"] .category-option-chip[hidden],
+body[data-page="tableware"] .category-option-chip[hidden],
+body[data-page="vase"] .category-option-chip[hidden],
+body[data-page="art"] .category-option-chip[hidden] {
+  display: none;
+}
+
+body[data-page="tea"] .category-module [data-category-filter-target][data-category-filter-state="active"],
+body[data-page="coffee"] .category-module [data-category-filter-target][data-category-filter-state="active"],
+body[data-page="tableware"] .category-module [data-category-filter-target][data-category-filter-state="active"],
+body[data-page="vase"] .category-module [data-category-filter-target][data-category-filter-state="active"],
+body[data-page="art"] .category-module [data-category-filter-target][data-category-filter-state="active"] {
+  background: transparent;
+  box-shadow:
+    inset 3px 0 0 var(--cat-accent, var(--accent)),
+    inset 0 0 0 1px var(--cat-accent-line, rgba(49, 95, 135, 0.16));
+}
+
+body[data-page="tea"] .category-module [data-category-filter-target][data-category-filter-state="active"]::before,
+body[data-page="coffee"] .category-module [data-category-filter-target][data-category-filter-state="active"]::before,
+body[data-page="tableware"] .category-module [data-category-filter-target][data-category-filter-state="active"]::before,
+body[data-page="vase"] .category-module [data-category-filter-target][data-category-filter-state="active"]::before,
+body[data-page="art"] .category-module [data-category-filter-target][data-category-filter-state="active"]::before,
+body[data-page="tea"] .category-module [data-category-filter-target][data-category-filter-state="active"]::after,
+body[data-page="coffee"] .category-module [data-category-filter-target][data-category-filter-state="active"]::after,
+body[data-page="tableware"] .category-module [data-category-filter-target][data-category-filter-state="active"]::after,
+body[data-page="vase"] .category-module [data-category-filter-target][data-category-filter-state="active"]::after,
+body[data-page="art"] .category-module [data-category-filter-target][data-category-filter-state="active"]::after {
+  display: none;
+}
+
+/* ---------- Smooth Scroll Behavior Refinement ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .has-motion .detail-deck__list {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ===== Era Sub-Navigation (段内嵌标签导航) ===== */
+.era-subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1.2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.45s ease 0.15s, transform 0.45s ease 0.15s;
+}
+
+.era-section.is-visible .era-subnav {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.era-subnav__item {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 520;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px var(--line);
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+  white-space: nowrap;
+}
+
+.era-subnav__item:hover {
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--ink);
+  transform: translateY(-1px);
+  box-shadow: inset 0 0 0 1px var(--accent-soft), 0 4px 12px rgba(22, 34, 48, 0.06);
+}
+
+.era-subnav__item[aria-current="true"] {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: inset 0 0 0 1px var(--accent-strong);
+  transform: translateY(-1px);
+}
+
+.era-node-panels {
+  margin-top: 0.85rem;
+}
+
+.era-node-panel {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1rem 1.05rem;
+  border-radius: 0.55rem;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: inset 0 0 0 1px var(--line);
+  animation: eraNodePanelIn 220ms ease both;
+}
+
+.era-node-panel[hidden] {
+  display: none;
+}
+
+.era-node-panel__era {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.era-node-panel h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  line-height: 1.25;
+}
+
+.era-node-panel p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.era-node-panel__detail {
+  color: var(--ink) !important;
+}
+
+.era-node-panel__facts {
+  display: grid;
+  gap: 0.42rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.era-node-panel__facts li {
+  padding-left: 0.72rem;
+  border-left: 2px solid var(--accent);
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+@keyframes eraNodePanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.35rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Detail Deck Collapse Toggle ---------- */
+.detail-deck-section .detail-deck {
+  transition: opacity 280ms ease,
+              max-height 380ms ease;
+  max-height: 4000px;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.detail-deck-section.is-collapsed .detail-deck {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.section-heading .section-toggle {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ========== Era Background System ========== */
+:root {
+  /* 朝代背景色系 — 流体渐变，白+青花(#d4e3ef)为基底，融入各朝特征色 */
+  --era-tang-bg:
+    radial-gradient(ellipse at 20% 30%, rgba(255, 240, 235, 0.5) 0%, transparent 45%),
+    radial-gradient(ellipse at 70% 60%, rgba(212, 227, 239, 0.85) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 25%, rgba(200, 160, 130, 0.2) 0%, transparent 40%),
+    linear-gradient(160deg, #efe8e2 0%, #d4e3ef 48%, #cadce8 100%);
+
+  --era-song-bg:
+    radial-gradient(ellipse at 30% 40%, rgba(235, 242, 252, 0.6) 0%, transparent 45%),
+    radial-gradient(ellipse at 65% 25%, rgba(200, 220, 242, 0.8) 0%, transparent 50%),
+    radial-gradient(ellipse at 45% 80%, rgba(160, 195, 225, 0.2) 0%, transparent 45%),
+    linear-gradient(160deg, #e6f0f8 0%, #d4e3ef 48%, #c2d6e8 100%);
+
+  --era-yuan-bg:
+    radial-gradient(ellipse at 25% 50%, rgba(238, 232, 248, 0.45) 0%, transparent 45%),
+    radial-gradient(ellipse at 60% 35%, rgba(212, 227, 239, 0.85) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(170, 155, 205, 0.18) 0%, transparent 40%),
+    linear-gradient(160deg, #e8e6f2 0%, #d4e3ef 48%, #c5d4e8 100%);
+
+  --era-ming-bg:
+    radial-gradient(ellipse at 30% 55%, rgba(238, 245, 238, 0.5) 0%, transparent 45%),
+    radial-gradient(ellipse at 70% 30%, rgba(212, 227, 239, 0.82) 0%, transparent 50%),
+    radial-gradient(ellipse at 15% 25%, rgba(155, 185, 155, 0.2) 0%, transparent 40%),
+    linear-gradient(160deg, #eaf0e8 0%, #d4e3ef 48%, #c9dde0 100%);
+
+  --era-qing-bg:
+    radial-gradient(ellipse at 35% 45%, rgba(235, 243, 240, 0.5) 0%, transparent 45%),
+    radial-gradient(ellipse at 65% 55%, rgba(212, 227, 239, 0.82) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 18%, rgba(150, 178, 162, 0.18) 0%, transparent 40%),
+    linear-gradient(160deg, #eaf0ec 0%, #d4e3ef 48%, #cce0d8 100%);
+
+  /* 黑色文字令牌 */
+  --era-text-base: #1d2731;
+  --era-text-soft: rgba(29, 39, 49, 0.78);
+  --era-text-muted: rgba(29, 39, 49, 0.55);
+  --era-surface: rgba(0, 0, 0, 0.04);
+  --era-surface-hover: rgba(0, 0, 0, 0.08);
+  --era-line: rgba(0, 0, 0, 0.1);
+}
+
+/* 全量背景层 — fixed 覆盖整个视口 */
+.era-bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  transition: opacity 1.2s cubic-bezier(0.45, 0, 0.55, 1);
+  opacity: 0;
+}
+
+.era-bg-layer.is-active {
+  opacity: 1;
+}
+
+.era-bg-layer--tang { background: var(--era-tang-bg); }
+.era-bg-layer--song { background: var(--era-song-bg); }
+.era-bg-layer--yuan { background: var(--era-yuan-bg); }
+.era-bg-layer--ming { background: var(--era-ming-bg); }
+.era-bg-layer--qing { background: var(--era-qing-bg); }
+
+/* 颗粒质感叠加 */
+.era-bg-layer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    radial-gradient(circle at 60% 70%, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px, 80px 80px;
+}
+
+/* era-section 适应深色背景 */
+.era-section {
+  border-bottom: none; /* 去掉分割线，全量背景不需要 */
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 深色背景下的文字反色 */
+.era-section .era-visual {
+  background: var(--era-surface);
+}
+
+.era-section .era-visual {
+  isolation: isolate;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 18px 46px rgba(22, 34, 48, 0.12);
+}
+
+.era-section .era-visual::before,
+.era-section .era-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.era-section .era-visual::before {
+  z-index: 1;
+  background:
+    linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.28) 42%, transparent 58%),
+    radial-gradient(circle at 50% 42%, rgba(49, 95, 135, 0.16), transparent 48%);
+  opacity: 0;
+  transform: translateX(-28%);
+  transition:
+    opacity 520ms ease,
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.era-section .era-visual::after {
+  z-index: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 46%, rgba(255, 255, 255, 0.2), transparent 58%);
+  opacity: 0;
+  transform: scale(0.94);
+  transition:
+    opacity 520ms ease 120ms,
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1) 120ms;
+}
+
+.era-section.is-visible .era-visual::before {
+  opacity: 1;
+  transform: translateX(28%);
+}
+
+.era-section.is-visible .era-visual::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.era-section.is-visible .era-visual img {
+  animation: eraImageBreathe 9s ease-in-out infinite alternate;
+  transform: translateY(calc(var(--scroll-offset, 0) * 0.15px)) scale(1.015);
+}
+
+@keyframes eraImageBreathe {
+  from {
+    filter: saturate(1) contrast(1);
+  }
+
+  to {
+    filter: saturate(1.08) contrast(1.03);
+  }
+}
+
+.era-visual__placeholder {
+  background: var(--era-surface);
+}
+
+.era-visual__placeholder span {
+  color: rgba(0, 0, 0, 0.08);
+}
+
+.era-section .era-text h2 {
+  color: var(--era-text-base);
+}
+
+.era-section .era-text > p {
+  color: var(--era-text-soft);
+}
+
+.era-section .era-text .eyebrow {
+  color: var(--era-text-muted);
+}
+
+/* 深色背景下的子导航 */
+.era-subnav {
+  border-top-color: var(--era-line);
+}
+
+.era-subnav__item {
+  background: var(--era-surface);
+  color: var(--era-text-soft);
+  box-shadow: inset 0 0 0 1px var(--era-line);
+}
+
+.era-subnav__item:hover {
+  background: var(--era-surface-hover);
+}
+
+.era-subnav__item[aria-current="true"] {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: inset 0 0 0 1px var(--accent-strong);
+}
+
+.era-node-panel {
+  background: rgba(255, 255, 255, 0.56);
+  box-shadow: inset 0 0 0 1px var(--era-line), 0 12px 28px rgba(49, 95, 135, 0.08);
+  transform-origin: 50% 0;
+}
+
+/* 朝代探索抽屉承接“深入探索”：固定在当前视口，用户切换维度时不再被长页面滚动带走。 */
+.era-explorer {
+  position: fixed;
+  top: clamp(4.2rem, 8vh, 6rem);
+  right: clamp(1rem, 3vw, 2.4rem);
+  z-index: 75;
+  width: min(42rem, calc(100vw - 2rem));
+  max-height: min(78vh, 46rem);
+  color: var(--ink);
+  outline: none;
+  transform: translateX(1.4rem);
+  opacity: 0;
+  transition:
+    opacity 180ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.era-explorer[hidden] {
+  display: none;
+}
+
+.era-explorer.is-open {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.era-explorer__surface {
+  display: grid;
+  gap: 1rem;
+  max-height: inherit;
+  padding: 1.15rem;
+  overflow: hidden;
+  border-radius: 0.65rem;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow:
+    inset 0 0 0 1px rgba(49, 95, 135, 0.16),
+    0 22px 56px rgba(22, 34, 48, 0.18);
+  backdrop-filter: blur(16px);
+}
+
+.era-explorer__header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.era-explorer__header h3 {
+  margin: 0.2rem 0 0;
+  color: var(--ink);
+  font-family: var(--title-font);
+  font-size: clamp(1.2rem, 2.6vw, 1.7rem);
+  line-height: 1.2;
+}
+
+.era-explorer__close {
+  min-height: 2rem;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid rgba(49, 95, 135, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-size: 0.78rem;
+  line-height: 1;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.era-explorer__close:hover {
+  background: var(--ink);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.era-explorer__lead {
+  max-height: 6rem;
+  margin: 0;
+  overflow: auto;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.era-explorer__tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.35rem;
+  padding: 0.25rem;
+  border-radius: 0.55rem;
+  background: rgba(49, 95, 135, 0.07);
+}
+
+.era-explorer__tab {
+  min-height: 2.25rem;
+  padding: 0.35rem 0.5rem;
+  border: 0;
+  border-radius: 0.42rem;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 650;
+  line-height: 1.2;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.era-explorer__tab[aria-selected="true"] {
+  background: #fff;
+  color: var(--accent);
+  box-shadow: 0 4px 14px rgba(22, 34, 48, 0.08);
+}
+
+.era-explorer__panels {
+  min-height: 14rem;
+  overflow: auto;
+}
+
+.era-explorer__panel {
+  animation: eraExplorerPanelIn 180ms ease both;
+}
+
+.era-explorer__panel[hidden] {
+  display: none;
+}
+
+.era-explorer__node-list,
+.era-explorer__judgement-list,
+.era-explorer__term-grid,
+.era-explorer__category-grid {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+}
+
+.era-explorer__node {
+  display: grid;
+  grid-template-columns: 2.3rem minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 0.8rem;
+  border-radius: 0.55rem;
+  background: rgba(49, 95, 135, 0.05);
+}
+
+.era-explorer__node > span {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.era-explorer__node strong,
+.era-explorer__term-grid strong,
+.era-explorer__category strong {
+  color: var(--ink);
+  font-size: 0.96rem;
+  line-height: 1.25;
+}
+
+.era-explorer__node p,
+.era-explorer__term-grid p {
+  margin: 0.25rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.era-explorer__node small {
+  display: block;
+  margin-top: 0.35rem;
+  color: rgba(29, 39, 49, 0.66);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.era-explorer__judgement-list {
+  list-style: none;
+  counter-reset: judgement;
+}
+
+.era-explorer__judgement-list li {
+  position: relative;
+  padding: 0.78rem 0.85rem 0.78rem 2.45rem;
+  border-radius: 0.55rem;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 0 0 1px rgba(49, 95, 135, 0.12);
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  counter-increment: judgement;
+}
+
+.era-explorer__judgement-list li::before {
+  content: counter(judgement);
+  position: absolute;
+  left: 0.75rem;
+  top: 0.82rem;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.era-explorer__term-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.era-explorer__term-grid article {
+  padding: 0.82rem;
+  border-radius: 0.55rem;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: inset 0 0 0 1px rgba(49, 95, 135, 0.12);
+}
+
+.era-explorer__category-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.era-explorer__category {
+  display: grid;
+  gap: 0.25rem;
+  min-height: 5.4rem;
+  align-content: end;
+  padding: 0.85rem;
+  border-radius: 0.55rem;
+  background: linear-gradient(135deg, rgba(49, 95, 135, 0.1), rgba(150, 97, 73, 0.09));
+  color: inherit;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 1px rgba(49, 95, 135, 0.14);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.era-explorer__category:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 0 0 1px var(--accent), 0 10px 24px rgba(22, 34, 48, 0.1);
+}
+
+.era-explorer__category span,
+.era-explorer__empty {
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+}
+
+@keyframes eraExplorerPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.35rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 浅色背景下的按钮 */
+.era-section .link-button {
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--ink);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.era-section .link-button:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.era-section .link-button--outline {
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.era-section .link-button--outline:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* 浅色背景下的工艺要点 / 关键术语卡片 */
+.era-highlights {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 1.2rem;
+}
+
+.era-highlights h4 {
+  color: var(--ink);
+}
+
+.era-process-list li {
+  color: var(--ink-soft);
+}
+
+.glossary-chip {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--ink-soft);
+}
+
+.glossary-chip h4 {
+  color: var(--ink);
+}
+
+.glossary-chip p {
+  color: var(--ink-soft);
+}
+
+/* 朝代导航点适配浅色 */
+.era-nav__dot {
+  background: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.era-nav__dot:hover {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.era-nav__item.is-active .era-nav__dot {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(49, 95, 135, 0.25);
+}
+
+.era-nav__label {
+  color: var(--ink);
+}
+
+/* ========== Particle Hero ========== */
+
+.hero-section--particle {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+  }
+
+.particle-hero {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.particle-hero__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hero text overlay — floats above the particle canvas */
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem 2rem 2rem 18rem;
+  max-width: 48rem;
+  pointer-events: auto;
+  animation: overlayFadeIn 1.4s var(--ease-porcelain, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+
+/* ---------- Hero Verse (竖排 从右往左) ---------- */
+.hero-verse {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin: 0;
+  animation: overlayFadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+.hero-verse__text {
+  font-family: "Ma Shan Zheng", "Noto Serif SC", "KaiTi", "STKaiti", "SimSun", "STSong", serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 400;
+  color: #1d2731;
+  letter-spacing: 0.45em;
+  line-height: 1.6;
+  margin: 0;
+  max-height: 72vh;
+  animation: verseLineIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+}
+
+.hero-verse__attr {
+  margin-top: 1.8rem;
+  font-family: "Noto Serif SC", "SimSun", "STSong", serif;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.12em;
+  animation: verseAttrIn 0.8s ease 1.4s both;
+}
+
+@keyframes verseLineIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes verseAttrIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll-down indicator — subtle arrow at bottom */
+.hero-section--particle::after {
+  content: "";
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+  border-right: 2px solid var(--accent-soft, rgba(49, 95, 135, 0.28));
+  border-bottom: 2px solid var(--accent-soft, rgba(49, 95, 135, 0.28));
+  transform: translateX(-50%) rotate(45deg);
+  animation: scrollHint 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes scrollHint {
+  0%, 100% { opacity: 0.2; transform: translateX(-50%) rotate(45deg) translateY(0); }
+  50% { opacity: 0.65; transform: translateX(-50%) rotate(45deg) translateY(8px); }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-section--particle::after {
+    display: none;
+  }
+
+  /* categoryPanelReveal 等分类页入场动画在减少动态模式下全部关闭，保留内容即时可见。 */
+  .hero-overlay {
+    animation: none;
+  }
+
+  .era-section,
+  .era-section .era-visual,
+  .era-section .era-visual::before,
+  .era-section .era-visual::after,
+  .era-section.is-visible .era-visual img,
+  .era-annotation-marker,
+  .era-annotation-marker__pin,
+  .era-annotation-panel,
+  .era-node-panel,
+  .era-explorer,
+  .era-explorer__panel,
+  .category-hero__copy,
+  .category-hero__summary,
+  .category-section-nav,
+  .category-module,
+  .category-tabs--directory .tab-panel:not([hidden]),
+  .research-card,
+  .object-card,
+  .path-card,
+  .network-panel,
+  .institution-card,
+  .summary-stat,
+  .stat-card,
+  .brief-card,
+  .hero-focus-card,
+  .ledger-row,
+  .matrix-row,
+  .timeline-node,
+  .portal-row,
+  .highlight-card,
+  .detail-card,
+  .glossary-card,
+  .reading-card,
+  .context-panel,
+  .timeline-focus,
+  .essay-card,
+  .about-card,
+  .reference-card,
+  .system-card,
+  .typology-card,
+  .collection-card,
+  .history-card,
+  .tableware-roster-card,
+  .detail-panel,
+  .detail-trigger,
+  .inline-detail__trigger,
+  .collection-list__item,
+  .artifact-motion-card {
+    animation: none;
+    transition: none;
+  }
+
+  /* artifactCardMaterialize、artifactPorcelainGlaze 与 artifactCardScan 在低动态偏好下关闭，保留卡片信息即时呈现。 */
+  .research-card::before,
+  .object-card::before,
+  .path-card::before,
+  .network-panel::before,
+  .institution-card::before,
+  .summary-stat::before,
+  .stat-card::before,
+  .brief-card::before,
+  .hero-focus-card::before,
+  .ledger-row::before,
+  .matrix-row::before,
+  .timeline-node::before,
+  .portal-row::before,
+  .highlight-card::before,
+  .detail-card::before,
+  .glossary-card::before,
+  .reading-card::before,
+  .context-panel::before,
+  .timeline-focus::before,
+  .essay-card::before,
+  .about-card::before,
+  .reference-card::before,
+  .system-card::before,
+  .typology-card::before,
+  .collection-card::before,
+  .history-card::before,
+  .tableware-roster-card::before,
+  .detail-panel::before,
+  .inline-detail__trigger::before,
+  .collection-list__item::before,
+  .artifact-motion-card::before,
+  .research-card::after,
+  .object-card::after,
+  .path-card::after,
+  .network-panel::after,
+  .institution-card::after,
+  .summary-stat::after,
+  .stat-card::after,
+  .brief-card::after,
+  .hero-focus-card::after,
+  .ledger-row::after,
+  .matrix-row::after,
+  .portal-row::after,
+  .highlight-card::after,
+  .detail-card::after,
+  .glossary-card::after,
+  .reading-card::after,
+  .context-panel::after,
+  .timeline-focus::after,
+  .essay-card::after,
+  .about-card::after,
+  .reference-card::after,
+  .system-card::after,
+  .typology-card::after,
+  .collection-card::after,
+  .history-card::after,
+  .tableware-roster-card::after,
+  .detail-panel::after,
+  .detail-trigger::after,
+  .inline-detail__trigger::after,
+  .collection-list__item::after,
+  .artifact-motion-card::after {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* ========== Era Image Annotation Hotspots ========== */
+.era-visual__annotations {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.era-annotation-marker {
+  position: absolute;
+  left: var(--marker-x);
+  top: var(--marker-y);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+  padding: 0;
+  border: 0;
+  color: var(--ink);
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+  transition: transform 180ms ease;
+  z-index: 2;
+}
+
+.era-annotation-marker:hover {
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
+.era-annotation-marker__pin {
+  width: 0.78rem;
+  height: 0.78rem;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow:
+    0 0 0 0.3rem rgba(49, 95, 135, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.94);
+  transition: background-color 180ms ease, box-shadow 180ms ease;
+  animation: eraHotspotPulse 2.6s ease-in-out infinite;
+}
+
+.era-annotation-marker__label {
+  max-width: 5rem;
+  padding: 0.2rem 0.48rem;
+  border-radius: 999px;
+  overflow: hidden;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(49, 95, 135, 0.18);
+  font-size: 0.75rem;
+  font-weight: 650;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.era-annotation-marker[aria-selected="true"] .era-annotation-marker__pin {
+  background: var(--accent-warm);
+  box-shadow:
+    0 0 0 0.44rem rgba(150, 97, 73, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.96);
+}
+
+.era-annotation-marker[aria-selected="true"] .era-annotation-marker__label {
+  background: var(--ink);
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.era-annotation-panels {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.era-annotation-panel {
+  display: grid;
+  gap: 0.38rem;
+  max-width: 24rem;
+  padding: 0.9rem 1rem;
+  border-radius: 0.55rem;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow:
+    inset 0 0 0 1px rgba(49, 95, 135, 0.12),
+    0 14px 34px rgba(22, 34, 48, 0.12);
+  backdrop-filter: blur(10px);
+  animation: eraAnnotationPanelIn 220ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.era-annotation-panel[hidden] {
+  display: none;
+}
+
+.era-annotation-panel strong {
+  color: var(--ink);
+  font-family: var(--ui-font);
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+.era-annotation-panel span {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+@keyframes eraHotspotPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 0 0.3rem rgba(49, 95, 135, 0.18),
+      0 0 0 1px rgba(255, 255, 255, 0.94);
+  }
+
+  50% {
+    transform: scale(1.08);
+    box-shadow:
+      0 0 0 0.52rem rgba(49, 95, 135, 0.12),
+      0 0 0 1px rgba(255, 255, 255, 0.96);
+  }
+}
+
+@keyframes eraAnnotationPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.45rem) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .era-subnav {
+    gap: 0.35rem;
+  }
+
+  .era-subnav__item {
+    font-size: 0.78rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .era-annotation-marker__label {
+    max-width: 3.8rem;
+    padding: 0.18rem 0.38rem;
+    font-size: 0.68rem;
+  }
+
+  .era-annotation-panels {
+    left: 0.65rem;
+    right: 0.65rem;
+    bottom: 0.65rem;
+  }
+
+  .era-annotation-panel {
+    max-width: none;
+    padding: 0.72rem 0.78rem;
+    gap: 0.28rem;
+  }
+
+  .era-annotation-panel span {
+    font-size: 0.72rem;
+    line-height: 1.38;
+  }
+
+  .era-explorer {
+    top: auto;
+    right: 0;
+    bottom: 3.6rem;
+    left: 0;
+    width: 100%;
+    max-height: min(72vh, 38rem);
+    transform: translateY(1.2rem);
+  }
+
+  .era-explorer.is-open {
+    transform: translateY(0);
+  }
+
+  .era-explorer__surface {
+    border-radius: 0.75rem 0.75rem 0 0;
+    padding: 0.95rem;
+  }
+
+  .era-explorer__lead {
+    max-height: 5rem;
+    font-size: 0.82rem;
+  }
+
+  .era-explorer__tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .era-explorer__panels {
+    min-height: 12rem;
+  }
+
+  .era-explorer__term-grid,
+  .era-explorer__category-grid {
+    grid-template-columns: 1fr;
+  }
+}

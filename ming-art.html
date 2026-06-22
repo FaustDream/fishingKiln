@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>明 · 艺术品 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* 策展式布局 */
+.hero{padding:3rem 2rem;max-width:52rem;margin:0 auto;text-align:center}
+.hero h1{font-family:var(--title-font);font-size:clamp(2.6rem,5vw,3.4rem);margin-bottom:0.6rem}
+.hero .lead{color:var(--ink-soft);max-width:34rem;margin:0 auto;font-size:1.05rem}
+.hero .curator{font-size:0.82rem;color:var(--ink-muted);margin-top:1rem}
+
+.curated{max-width:56rem;margin:0 auto;padding:1rem 2rem 4rem}
+.curated__intro{padding:2rem;background:var(--surface);border-radius:0.8rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08);margin-bottom:2rem;font-size:0.95rem;color:var(--ink-soft);line-height:1.9}
+
+.curated__section{margin-bottom:2.5rem}
+.curated__section h2{font-family:var(--title-font);font-size:1.4rem;padding:0.6rem 0;border-bottom:1px solid var(--line);margin-bottom:1.2rem}
+.curated__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.2rem}
+.curated__item{padding:1.3rem;background:var(--surface);border-radius:0.7rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08)}
+.curated__item h3{font-family:var(--title-font);font-size:1.1rem;margin-bottom:0.3rem}
+.curated__item .date{font-size:0.78rem;color:var(--accent-warm);margin-bottom:0.4rem}
+.curated__item p{font-size:0.85rem;color:var(--ink-soft);line-height:1.75}
+
+.curated__essay{padding:2rem;background:var(--surface);border-radius:0.8rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08);margin-top:2rem}
+.curated__essay h3{font-family:var(--title-font);font-size:1.2rem;margin-bottom:0.8rem}
+.curated__essay p{font-size:0.9rem;color:var(--ink-soft);line-height:1.95;margin-bottom:0.8rem}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">明 <span>·</span> 艺术品</div>
+</header>
+
+<section class="hero">
+  <h1>明 · 艺术品</h1>
+  <p class="lead">明代是中国陶瓷从"工艺"走向"艺术"的关键时期。景德镇御窑的建立、督陶官制度的完善、文人审美的深度介入，使瓷器从批量生产的手工艺品跃升为具有独立艺术价值的收藏品。</p>
+  <p class="curator">策展人视角 · 五个线索理解明代陶瓷艺术</p>
+</section>
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/ming-bluewhite.jpg" alt="ming 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+<div class="curated">
+  <div class="curated__intro">
+    本次策展以五个核心线索串联明代陶瓷艺术品的演变：从永宣青花的异域钴料与帝国气象，到成化斗彩的宫廷趣味转向，再到嘉万的五彩绚烂与民窑崛起，最后在崇祯转型期中探清明清之交的审美暗流。每一件器物都不是孤立的存在——它们共同构成了一个全球化、商业化与文人化交织的陶瓷艺术生态。
+  </div>
+
+  <div class="curated__section">
+    <h2>线索一 · 永乐压手杯——茶杯何以成为艺术品</h2>
+    <div class="curated__grid">
+      <div class="curated__item">
+        <h3>永乐青花压手杯</h3>
+        <div class="date">永乐年间 · 约1410年</div>
+        <p>杯心双狮滚球纹，外壁缠枝莲纹，手握杯身时虎口恰好卡住外撇的口沿——压手杯是"人机工程学"在六百年前的完美实践。存世仅三件，均藏故宫博物院，是明代瓷器中最早的"文人标准器"。</p>
+      </div>
+      <div class="curated__item">
+        <h3>甜白釉暗花僧帽壶</h3>
+        <div class="date">永乐 · 甜白釉巅峰</div>
+        <p>器型源自藏传佛教僧帽，永乐帝崇佛，甜白釉僧帽壶是礼佛用器。胎体半脱胎——光照下可见暗花缠枝莲纹若隐若现，技术难度极高。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="curated__section">
+    <h2>线索二 · 斗彩鸡缸杯——从画谱到瓷画</h2>
+    <div class="curated__grid">
+      <div class="curated__item">
+        <h3>成化斗彩鸡缸杯</h3>
+        <div class="date">成化年间 · 约1470年</div>
+        <p>2014年香港苏富比拍出2.8亿港元。画面取材宋人《子母鸡图》，将绘画的"写生"传统移植到瓷器表面。斗彩工艺——釉下青花勾线、釉上五彩填色——使画面兼具版画的线条感和工笔的色彩层次。</p>
+      </div>
+      <div class="curated__item">
+        <h3>成化斗彩三秋杯</h3>
+        <div class="date">成化 · 斗彩小品</div>
+        <p>杯身极小（高仅约4cm），绘蝶恋花图案。"三秋"意为蝴蝶仅在秋季出现三次。成化瓷以"小巧精致"著称，与宣德朝的粗犷雄健形成鲜明对比，反映了成化帝个人审美对官窑的直接影响。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="curated__section">
+    <h2>线索三 · 全球化——大明瓷器的世界之旅</h2>
+    <div class="curated__grid">
+      <div class="curated__item">
+        <h3>万历克拉克瓷大盘</h3>
+        <div class="date">万历 · 约1600年</div>
+        <p>大开光分区布局专为欧洲市场设计——边饰为欧式花卉与中式纹样的混合，盘心为中式山水花鸟。这种"跨文化设计"使中国瓷器在以欧洲静物画（Still Life）为背景的艺术史叙事中占据重要位置。</p>
+      </div>
+      <div class="curated__item">
+        <h3>嘉靖回青料青花罐</h3>
+        <div class="date">嘉靖 · 回青料</div>
+        <p>嘉靖年间改用西域"回青"钴料，发色蓝中泛紫，与永宣苏麻离青的深沉和万历浙料的灰蓝均不同。回青料的"紫气"被嘉靖帝视为祥瑞，推动了道教题材瓷器的大量生产。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="curated__essay">
+    <h3>策展手记</h3>
+    <p>明代陶瓷艺术的核心张力在于"官窑—民窑""中国—世界""实用—审美"三组对立关系的持续互动。永乐压手杯的"手感设计"、成化斗彩的"文人画移植"、万历时克拉克瓷的"全球化定制"——每一次创新都不是单纯的技术进步，而是社会需求、审美风尚和全球贸易合力作用的结果。</p>
+    <p>当我们今天观看一件明代瓷器时，看到的不仅是一坨泥土在火中的蜕变，更是十五至十七世纪世界体系的一个切面——钴料来自波斯，器型销往欧洲，审美承自宋元，技术长于景德镇。这种"跨地域的本地知识"，正是明代陶瓷艺术的真正伟大之处。</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 明 · 艺术品</p>
+</footer>
+
+</body>
+</html>

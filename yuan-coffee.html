@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>元 · 咖啡具 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* 丝路地图布局 */
+.hero{padding:3rem 2rem;max-width:48rem;margin:0 auto;text-align:center}
+.hero h1{font-family:var(--title-font);font-size:clamp(2.4rem,4.5vw,3.2rem);margin-bottom:1rem}
+.hero .lead{color:var(--ink-soft);font-size:1.05rem;line-height:1.85}
+
+.route{max-width:56rem;margin:0 auto;padding:1rem 2rem 4rem;position:relative}
+.route::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--line);transform:translateX(-50%)}
+.route__stop{display:flex;align-items:flex-start;margin-bottom:3rem;position:relative}
+.route__stop:nth-child(odd){flex-direction:row}
+.route__stop:nth-child(even){flex-direction:row-reverse}
+.route__stop-dot{position:absolute;left:50%;top:1rem;transform:translateX(-50%);width:0.9rem;height:0.9rem;border-radius:50%;background:var(--accent-warm);z-index:1;box-shadow:0 0 0 6px rgba(150,97,73,0.1)}
+.route__stop-body{width:44%;padding:1.2rem;background:var(--surface);border-radius:0.7rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08)}
+.route__stop-body h3{font-family:var(--title-font);font-size:1.15rem;margin-bottom:0.3rem}
+.route__stop-body .city{font-size:0.82rem;color:var(--accent-warm);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem}
+.route__stop-body p{font-size:0.88rem;color:var(--ink-soft);line-height:1.7}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+
+@media(max-width:700px){
+  .route::before{left:1.5rem;transform:none}
+  .route__stop{flex-direction:column!important;padding-left:3rem}
+  .route__stop-dot{left:1.5rem}
+  .route__stop-body{width:100%}
+}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">元 <span>·</span> 咖啡具</div>
+</header>
+
+<section class="hero">
+  <h1>元 · 咖啡具</h1>
+  <p class="lead">咖啡在元代尚未传入中国，但咖啡的故乡——阿拉伯半岛——正是元代青花瓷最大的海外市场之一。元青花大盘、执壶远销波斯和阿拉伯，为当地咖啡文化的容器选择提供了来自东方的选项。这条器物传播之路，是咖啡具史上最早的东西对话。</p>
+</section>
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/yuan-bluewhite.jpg" alt="yuan 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+<div class="route">
+  <div class="route__stop">
+    <div class="route__stop-dot"></div>
+    <div class="route__stop-body">
+      <p class="city">景德镇 · 中国</p>
+      <h3>苏麻离青的起点</h3>
+      <p>元代青花所用的钴料"苏麻离青"（Smalt）从波斯进口。这种钴料高铁低锰，发色浓艳，在釉下呈现深蓝色并带有铁锈斑——与咖啡液的深褐色形成了天然的视觉呼应。元代工匠用来自咖啡故乡的颜料，烧制出了远销咖啡故乡的器具。</p>
+    </div>
+  </div>
+  <div class="route__stop">
+    <div class="route__stop-dot"></div>
+    <div class="route__stop-body">
+      <p class="city">霍尔木兹 · 波斯</p>
+      <h3>中转港与审美过滤</h3>
+      <p>霍尔木兹海峡是元代海上丝绸之路的咽喉。青花瓷在此卸船后，由波斯商人转运至内陆。波斯贵族对蓝白色调的偏爱与元青花的色彩语言高度契合，这种审美共鸣至今仍体现在波斯咖啡具的蓝白彩绘传统中。</p>
+    </div>
+  </div>
+  <div class="route__stop">
+    <div class="route__stop-dot"></div>
+    <div class="route__stop-body">
+      <p class="city">大不里士 · 伊利汗国</p>
+      <h3>宫廷中的青花与咖啡</h3>
+      <p>伊利汗国宫廷大量收藏元青花瓷。阿尔达比勒神庙（今伊朗）至今保存着萨法维王朝时期收集的元明青花瓷。14世纪咖啡开始在阿拉伯半岛普及，青花瓷杯盘成为咖啡器具的东方选项。</p>
+    </div>
+  </div>
+  <div class="route__stop">
+    <div class="route__stop-dot"></div>
+    <div class="route__stop-body">
+      <p class="city">开罗 · 埃及</p>
+      <h3>福斯塔特的中国瓷片</h3>
+      <p>开罗福斯塔特遗址出土了大量元代青花瓷片，证明元青花已深入阿拉伯世界的日常生活。15世纪以后，咖啡在埃及和阿拉伯半岛全面流行，来自中国的青花器具自然进入了咖啡饮用场景。</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 元 · 咖啡具</p>
+</footer>
+
+</body>
+</html>

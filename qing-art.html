@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>清 · 艺术品 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* 专题目录布局 */
+.hero{padding:3rem 2rem 1.5rem;max-width:52rem;margin:0 auto;text-align:center}
+.hero h1{font-family:var(--title-font);font-size:clamp(2.6rem,5vw,3.4rem);margin-bottom:0.6rem}
+.hero .lead{color:var(--ink-soft);max-width:34rem;margin:0 auto;font-size:1.05rem}
+
+.archives{max-width:56rem;margin:0 auto;padding:1rem 2rem 4rem}
+.archives__reel{margin-bottom:2.5rem}
+.archives__reel h2{font-family:var(--title-font);font-size:1.5rem;padding-bottom:0.5rem;border-bottom:2px solid var(--accent);margin-bottom:1.2rem}
+.archives__item{display:grid;grid-template-columns:6rem 1fr;gap:1.2rem;padding:1.2rem;background:var(--surface);border-radius:0.65rem;margin-bottom:0.8rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08);align-items:start}
+.archives__item .ref{font-family:monospace;font-size:0.85rem;color:var(--accent-warm);padding-top:0.15rem}
+.archives__item h3{font-family:var(--title-font);font-size:1.1rem;margin-bottom:0.2rem}
+.archives__item .meta{font-size:0.78rem;color:var(--ink-muted)}
+.archives__item p{font-size:0.88rem;color:var(--ink-soft);line-height:1.75;margin-top:0.3rem}
+
+.archives__note{padding:1.5rem;background:var(--surface);border-radius:0.7rem;margin-top:2rem;font-size:0.88rem;color:var(--ink-soft);line-height:1.85;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08)}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">清 <span>·</span> 艺术品</div>
+</header>
+
+<section class="hero">
+  <h1>清 · 艺术品</h1>
+  <p class="lead">清代陶瓷艺术品的存量之巨、品类之繁、工艺之精在中国陶瓷史上空前绝后。从康熙的创新到乾隆的集大成，再到晚清的转型，这里提供一份精简但脉络清晰的清代陶瓷艺术索引。</p>
+</section>
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/qing-famille.jpg" alt="qing 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+<div class="archives">
+  <div class="archives__reel">
+    <h2>康熙期 · 1662–1722</h2>
+    <div class="archives__item">
+      <div class="ref">KX-001</div>
+      <div>
+        <h3>青花万寿字大尊</h3>
+        <div class="meta">通高 76cm · 康熙六十大寿特制 · 南京博物院藏</div>
+        <p>瓶身写满一万个不同书体的"寿"字——篆、隶、楷、行、草各体俱全。烧造于景德镇，进献朝廷为康熙帝祝寿。以瓷器为载体、文字为纹饰、祝寿为功能，将书法艺术和陶瓷工艺完美统一。</p>
+      </div>
+    </div>
+    <div class="archives__item">
+      <div class="ref">KX-002</div>
+      <div>
+        <h3>郎窑红釉观音瓶</h3>
+        <div class="meta">H: 43cm · 郎廷极督造 · 北京故宫</div>
+        <p>康熙高温铜红釉的巅峰之作。郎窑红的红如初凝牛血，光线下呈现玻璃质感，釉面有细碎开片。观音瓶器型庄重典雅，是清代单色釉艺术品的标杆。</p>
+      </div>
+    </div>
+    <div class="archives__item">
+      <div class="ref">KX-003</div>
+      <div>
+        <h3>五彩人物故事棒槌瓶</h3>
+        <div class="meta">H: 46cm · 康熙五彩 · 人物纹</div>
+        <p>康熙五彩色彩对比强烈——矾红、绿彩、黄彩、蓝彩、黑彩并用。棒槌瓶器型为康熙独创，因形似洗衣棒槌而得名。人物纹取材《三国演义》《水浒传》等，是清初市民文化在陶瓷上的映射。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="archives__reel">
+    <h2>雍正期 · 1723–1735</h2>
+    <div class="archives__item">
+      <div class="ref">YZ-001</div>
+      <div>
+        <h3>珐琅彩雉鸡牡丹碗</h3>
+        <div class="meta">D: 14.5cm · 雍正御制 · 台北故宫</div>
+        <p>雍正珐琅彩在康熙基础上发展出更精雅的审美——留白增多、配色清雅、画工极细。雉鸡羽毛根根可辨，牡丹花瓣由浅粉到深红渐变。雍正本人审美严格，"不雅者不取"，珐琅彩因此成为清代瓷艺的最高水准。</p>
+      </div>
+    </div>
+    <div class="archives__item">
+      <div class="ref">YZ-002</div>
+      <div>
+        <h3>粉彩过枝花卉纹盘</h3>
+        <div class="meta">D: 20.5cm · 雍正粉彩 · 过枝画法</div>
+        <p>"过枝"画法——花枝从盘外壁延伸到盘内，内外一体。雍正粉彩的设色以淡雅著称，花卉以没骨法渲染、不作勾勒，柔和如宣纸上的工笔画。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="archives__reel">
+    <h2>乾隆期 · 1736–1795</h2>
+    <div class="archives__item">
+      <div class="ref">QL-001</div>
+      <div>
+        <h3>各色釉大瓶（"瓷母"）</h3>
+        <div class="meta">H: 86.4cm · 乾隆 · 北京故宫</div>
+        <p>一件瓶身上集合了十五种釉彩和装饰技法——青花、粉彩、斗彩、珐琅彩、仿哥釉、松石绿釉、窑变釉、仿汝釉、仿官釉等。器型硕大、工艺复杂、烧制成功率极低，代表了乾隆朝"集历代陶瓷之大成"的艺术野心。</p>
+      </div>
+    </div>
+    <div class="archives__item">
+      <div class="ref">QL-002</div>
+      <div>
+        <h3>粉彩百鹿尊</h3>
+        <div class="meta">H: 44cm · 乾隆 · 山林隐逸题材</div>
+        <p>百鹿尊为乾隆朝独创器型——小口、短颈、腹部硕大如球。通体绘山林间百鹿奔腾/休憩，"百鹿"谐音"百禄"。将文人山水画的意境移植到立体的瓷器上，是乾隆瓷艺中少见的"书卷气"作品。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="archives__note">
+    清代陶瓷艺术品的谱系可以这样概括：康熙以技术和器型创新开路（郎窑红、五彩、青花分水）；雍正在审美上精益求精（珐琅彩、粉彩雅化）；乾隆以"集大成"的姿态将历代陶瓷技艺融于一炉（各色釉大瓶、仿古器型）。三代帝王的个人审美差异，深刻塑造了清代陶瓷艺术品的整体面貌。晚清虽然国力衰落，但浅绛彩、新粉彩等品种的兴起为二十世纪的陶瓷艺术转型埋下了伏笔。
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 清 · 艺术品</p>
+</footer>
+
+</body>
+</html>

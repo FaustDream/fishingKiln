@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>元 · 茶具 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* 分屏交互布局 */
+.split{display:flex;min-height:calc(100vh - 3.4rem)}
+.split__left{flex:1;display:flex;flex-direction:column;justify-content:center;padding:4rem 3rem;min-width:0}
+.split__left h1{font-family:var(--title-font);font-size:clamp(2.4rem,4vw,3.2rem);font-weight:700;line-height:1.15;margin-bottom:1.2rem}
+.split__left .lead{color:var(--ink-soft);font-size:1.05rem;line-height:1.85;max-width:28rem;margin-bottom:2rem}
+.split__right{flex:1;padding:3rem;display:flex;flex-direction:column;gap:1rem;overflow-y:auto;max-height:calc(100vh - 3.4rem);border-left:1px solid var(--line)}
+.split-card{padding:1.3rem;background:var(--surface);border-radius:0.75rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08);cursor:default;transition:transform 180ms ease}
+.split-card:hover{transform:translateX(-4px)}
+.split-card h3{font-family:var(--title-font);font-size:1.05rem;margin-bottom:0.3rem}
+.split-card p{font-size:0.85rem;color:var(--ink-soft)}
+.split-card__meta{font-size:0.78rem;color:var(--ink-muted)}
+
+/* 底部史料 */
+.sources{max-width:56rem;margin:0 auto;padding:3rem 2rem 5rem}
+.sources h2{font-family:var(--title-font);font-size:1.6rem;margin-bottom:1.2rem}
+.source-card{background:var(--surface);border-radius:0.7rem;padding:1.2rem;margin-bottom:1rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08)}
+.source-card h3{font-family:var(--title-font);font-size:1.05rem}
+.source-card p{font-size:0.88rem;color:var(--ink-soft);margin-top:0.3rem}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+
+@media(max-width:768px){
+  .split{flex-direction:column}.split__left,.split__right{padding:2rem 1.2rem}.split__right{border-left:none;border-top:1px solid var(--line);max-height:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">元 <span>·</span> 茶具</div>
+</header>
+
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/yuan-bluewhite.jpg" alt="yuan 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+
+<div class="split">
+  <div class="split__left">
+    <h1>元 · 茶具</h1>
+    <p class="lead">元代是中国茶文化的过渡期。蒙古统治者带来了酥油茶等草原饮法，但汉地文人仍延续宋代点茶传统。景德镇在元代崛起为制瓷中心，青花瓷和釉里红的创烧开启了彩绘瓷的新纪元。</p>
+  </div>
+  <div class="split__right">
+    <div class="split-card">
+      <p class="split-card__meta">茶法变迁</p>
+      <h3>从点茶到散茶冲泡</h3>
+      <p>元代开始出现散茶直接冲泡的饮法，虽未取代点茶，但为明代瀹茶法的全面普及埋下了伏笔。茶碾和茶臼的使用频率逐渐降低，壶的器型随之演变。</p>
+    </div>
+    <div class="split-card">
+      <p class="split-card__meta">青花发端</p>
+      <h3>青花茶具的出现</h3>
+      <p>元代景德镇创烧青花瓷，钴料经丝绸之路从波斯输入。青花执壶、高足杯成为元代茶具中全新的品类，白地蓝花的视觉语言影响了此后六百年的中国茶具审美。</p>
+    </div>
+    <div class="split-card">
+      <p class="split-card__meta">草原影响</p>
+      <h3>高足杯的流行</h3>
+      <p>高足杯（马上杯）在元代极为盛行，造型或许源自蒙古人马上饮酒的习惯。青花和釉里红高足杯既是实用茶酒具，也是元代最具代表性的器型之一。</p>
+    </div>
+    <div class="split-card">
+      <p class="split-card__meta">釉里红</p>
+      <h3>铜红釉的革命</h3>
+      <p>釉里红以铜为呈色剂，在还原焰中呈现红色。烧成难度极大，元代釉里红传世品极少但精品惊艳。釉里红执壶是元代茶具中最珍贵的品种之一。</p>
+    </div>
+    <div class="split-card">
+      <p class="split-card__meta">钧窑续烧</p>
+      <h3>钧窑茶碗的转型</h3>
+      <p>元代钧窑继续烧造，但器型变大、胎体变厚，釉色不如宋代精微。钧窑茶碗在民间仍广泛使用，见证了名窑从宫廷走向大众的历史过程。</p>
+    </div>
+  </div>
+</div>
+
+<section class="sources">
+  <h2>文献与出土</h2>
+  <div class="source-card">
+    <h3>王祯《农书》（1313年）</h3>
+    <p>记载茶叶加工和饮用的变化，提到散茶冲泡法已经开始在民间流行。</p>
+  </div>
+  <div class="source-card">
+    <h3>景德镇湖田窑遗址</h3>
+    <p>出土大量元代青花和釉里红茶具残片，证实了元代景德镇茶具生产的规模和技术水平。</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 元 · 茶具</p>
+</footer>
+
+</body>
+</html>

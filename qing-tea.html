@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>清 · 茶具 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* 优雅大字布局 */
+.elegance{max-width:56rem;margin:0 auto;padding:5rem 2rem}
+.elegance h1{font-family:var(--title-font);font-size:clamp(3.2rem,7vw,5rem);line-height:1.1;margin-bottom:1.5rem;letter-spacing:0.02em}
+.elegance .tagline{font-family:var(--title-font);font-size:clamp(1.1rem,2vw,1.4rem);color:var(--accent-warm);margin-bottom:3rem}
+.elegance .essay{max-width:34rem;font-size:1rem;line-height:2;color:var(--ink-soft)}
+
+.timeline{max-width:52rem;margin:0 auto;padding:2rem 2rem 6rem}
+.timeline h2{font-family:var(--title-font);font-size:1.8rem;margin-bottom:2rem;text-align:center}
+.timeline__era{margin-bottom:2.5rem;padding-left:2rem;border-left:2px solid var(--accent-warm)}
+.timeline__era h3{font-family:var(--title-font);font-size:1.3rem;margin-bottom:0.8rem}
+.timeline__era .ruler{font-size:0.82rem;color:var(--accent-warm);margin-bottom:0.6rem}
+.timeline__era p{color:var(--ink-soft);font-size:0.9rem;line-height:1.85}
+.timeline__era .item{margin-top:0.8rem;padding:0.8rem 1rem;background:var(--surface);border-radius:0.5rem;font-size:0.88rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08)}
+.timeline__era .item strong{font-family:var(--title-font)}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">清 <span>·</span> 茶具</div>
+</header>
+
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/qing-famille.jpg" alt="qing 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+
+<section class="elegance">
+  <h1>工夫茶</h1>
+  <p class="tagline">清代茶道的终极形态</p>
+  <div class="essay">
+    清代是中国茶具史上最为精致的时代。潮汕工夫茶将明代的瀹茶法推向极致——"壶必孟臣，杯必若琛，茶必武夷"。紫砂壶在陈鸣远、邵大亨等大师手中从实用器升格为艺术品。景德镇的粉彩、珐琅彩盖碗和茶壶将茶具的装饰推向了前所未有的华丽高度。
+  </div>
+</section>
+
+<div class="timeline">
+  <h2>清代茶具体系演变</h2>
+  <div class="timeline__era">
+    <h3>康雍乾 · 宫廷茶具的极致</h3>
+    <div class="ruler">康熙 1661 – 乾隆 1795</div>
+    <p>康熙创烧珐琅彩——从铜胎画珐琅移植到瓷胎，使用进口珐琅料。雍正皇帝亲自审定瓷样，珐琅彩茶壶、盖碗纹饰精雅到"无一处不讲究"。乾隆粉彩将百花不露地、开光人物故事等繁复纹样推向极限。</p>
+    <div class="item"><strong>珐琅彩黄地开光山水茶壶</strong> — 康熙御制，珐琅料发色明艳，山水纹由宫廷画师起稿</div>
+    <div class="item"><strong>粉彩百花不露地盖碗</strong> — 乾隆年间，通体满绘各色花卉，不留空白，极尽繁华</div>
+  </div>
+  <div class="timeline__era">
+    <h3>潮汕工夫茶体系</h3>
+    <div class="ruler">乾隆嘉庆以降 · 闽粤地区</div>
+    <p>"工夫"二字道尽了清代民间茶道的精髓——在时间中打磨每一个细节。四宝配置：孟臣罐（小紫砂壶，约150ml）、若琛杯（白瓷小杯，三只一组）、玉书煨（烧水砂铫）、潮汕风炉（红泥炭炉）。</p>
+    <div class="item"><strong>孟臣罐</strong> — 惠孟臣制紫砂小壶，底刻"孟臣"二字，出水柔顺、断水利落，工夫茶之核心</div>
+  </div>
+  <div class="timeline__era">
+    <h3>嘉道 · 紫砂文人壶的黄金时代</h3>
+    <div class="ruler">嘉庆 1796 – 道光 1850</div>
+    <p>陈曼生任溧阳县令时与紫砂艺人杨彭年合作，创制"曼生十八式"——井栏、石瓢、合欢、匏瓜等器型突破传统圆壶格局，壶身刻书法铭文，将诗书画印融入紫砂壶设计。</p>
+    <div class="item"><strong>曼生石瓢壶</strong> — 壶身刻"不肥而坚，是以永年"，文人壶的典范之作</div>
+  </div>
+  <div class="timeline__era">
+    <h3>晚清 · 盖碗的普及</h3>
+    <div class="ruler">同光时期 · 19世纪后期</div>
+    <p>盖碗（三才碗——盖为天、碗为人、托为地）在清代从宫廷走向民间，成为茶馆和家庭中的标准茶具。青花、粉彩、单色釉盖碗大量生产，有些盖碗碗身书"可以清心也"回文。</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 清 · 茶具</p>
+</footer>
+
+</body>
+</html>

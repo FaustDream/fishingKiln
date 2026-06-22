@@ -21,6 +21,95 @@ function renderStoryPanels(items) {
     .join("");
 }
 
+const publicCopyReplacements = [
+  ["栏目主目录", "器物导览"],
+  ["栏目目录", "页面导览"],
+  ["分类判断", "浏览重点"],
+  ["观察维度", "欣赏角度"],
+  ["资料模块", "内容"],
+  ["资料台账", "参考资料"],
+  ["来源台账", "参考资料"],
+  ["对象台账", "对象一览"],
+  ["茶具资料台账", "茶具参考"],
+  ["典籍规矩", "典籍"],
+  ["文献规则", "古籍摘读"],
+  ["典籍规则", "典籍摘读"],
+  ["古籍规则", "古籍摘读"],
+  ["研究判断", "阅读提示"],
+  ["工艺判断", "工艺要点"],
+  ["历史档案", "历史脉络"],
+  ["来源档案", "出处与参考"],
+  ["茶具详情档案", "茶具细览"],
+  ["餐具档案详情", "餐具细览"],
+  ["冲煮档案详情", "冲煮细览"],
+  ["馆藏对象细览", "馆藏细览"],
+  ["共享详情", "细览"],
+  ["看共享详情", "看细览"],
+  ["看资料台账", "看参考资料"],
+  ["看文献规则", "看古籍摘读"],
+  ["看历史档案", "看历史脉络"],
+  ["看来源机构", "看参考出处"],
+  ["来源机构", "参考出处"],
+  ["机构来源", "参考机构"],
+  ["来源体系", "出处体系"],
+  ["来源页面", "出处页面"],
+  ["原始来源", "原文出处"],
+  ["资料来源", "参考资料"],
+  ["来源总览", "出处总览"],
+  ["来源", "出处"],
+  ["支撑内容", "关联内容"],
+  ["支撑首页", "关联首页"],
+  ["支撑茶具", "关联茶具"],
+  ["支撑餐具", "关联餐具"],
+  ["支撑花器", "关联花器"],
+  ["支撑艺术品", "关联艺术品"],
+  ["支撑咖啡具", "关联咖啡具"],
+  ["支撑主盘", "关联主盘"],
+  ["支撑 Kraak", "关联 Kraak"],
+  ["支撑深碗", "关联深碗"],
+  ["支撑成组", "关联成组"],
+  ["支撑桌面", "关联桌面"],
+  ["支撑海贸", "关联海贸"],
+  ["支撑城市", "关联城市"],
+  ["支撑空间", "关联空间"],
+  ["支撑观看", "关联观看"],
+  ["支撑具体器型", "关联具体器型"],
+  ["支撑", "关联"],
+  ["判断线", "线索"],
+  ["判断点", "看点"],
+  ["判断标准", "看点标准"],
+  ["判断条目", "阅读条目"],
+  ["判断样本", "参照样本"],
+  ["判断顺序", "观看顺序"],
+  ["判断维度", "欣赏角度"],
+  ["判断逻辑", "欣赏逻辑"],
+  ["判断直接", "辨识直接"],
+  ["判断茶具", "理解茶具"],
+  ["判断盏系", "识别盏系"],
+  ["判断主盘", "识别主盘"],
+  ["判断从", "欣赏从"],
+  ["判断青花", "理解青花"],
+  ["规则拉回", "内容接回"],
+  ["规则说明", "内容说明"],
+  ["规则决定", "参数影响"],
+  ["规则网格", "秩序网格"],
+  ["档案选读", "专题选读"],
+  ["台账中", "列表中"],
+  ["台账要", "列表要"],
+  ["台账现", "列表现"],
+  ["台账，", "列表，"],
+  ["台账。", "列表。"],
+  ["台账", "列表"],
+  ["档案", "专题"],
+  ["规则", "要点"],
+  ["判断", "辨识"]
+];
+
+// 正式页面只输出面向用户的讲解词，保留数据字段和组件命名给工程侧继续复用。
+function cleanPublicCopy(html) {
+  return publicCopyReplacements.reduce((copy, [from, to]) => copy.replaceAll(from, to), html);
+}
+
 function renderCategoryCards(items) {
   return items
     .map(
@@ -119,6 +208,26 @@ function renderSectionLinkStrip(items) {
   return `
     <nav class="section-link-strip" aria-label="首页分区导航">
       ${items.map(({ href, label }) => `<a class="section-link-strip__item" href="${href}">${label}</a>`).join("")}
+    </nav>
+  `;
+}
+
+function renderHomeSectionNav(items = []) {
+  if (!items.length) return "";
+
+  // 首页内容跨度较长，固定索引用编号和 aria-current 明确当前位置，避免用户滚动后失去分区方向。
+  return `
+    <nav class="home-section-nav home-section-nav--fixed" aria-label="首页内容导航" data-home-section-nav>
+      <div class="home-section-nav__rail">
+        ${items
+          .map(({ href, label }, index) => {
+            const targetId = href.replace(/^#/, "");
+            const navIndex = String(index + 1).padStart(2, "0");
+            const current = index === 0 ? ' aria-current="true"' : "";
+            return `<a class="home-section-nav__item" href="${href}" data-home-nav-link="${targetId}"${current}><span class="home-section-nav__index">${navIndex}</span><span class="home-section-nav__text">${label}</span></a>`;
+          })
+          .join("")}
+      </div>
     </nav>
   `;
 }
@@ -410,14 +519,14 @@ function renderGlossaryCards(items) {
 
 function renderCategoryResearchModules(category) {
   return `
-    <section class="category-collapsible" id="category-context" data-collapsible-section>
+    <section class="category-module category-collapsible" id="category-context" data-collapsible-section>
       <div class="section-heading section-heading--compact">
         <div>
           <h2>观察维度</h2>
         </div>
         <button class="section-toggle" type="button" data-collapsible-toggle aria-expanded="true">收起</button>
       </div>
-      <div class="category-context" data-collapsible-content>
+      <div class="category-context category-module-grid" data-collapsible-content>
         <article class="research-card">
           <h3>相关历史节点</h3>
           <p>${category.historyNote}</p>
@@ -474,26 +583,232 @@ function renderSummaryStats(stats) {
   `;
 }
 
-function renderCategoryHeaderTools(category) {
-  const pageLinks =
-    category.pageLinks ??
-    [
+function getCategoryFacetText(defaultFacets = ["用途"], ...values) {
+  const text = values.filter(Boolean).join(" ");
+  const facets = ["用途", "器形", "纹样", "意境", "传播"].filter((facet) => text.includes(facet));
+  return [...new Set([...(facets.length ? facets : []), ...defaultFacets])].join("|");
+}
+
+function getCategoryPageLinks(category) {
+  return (
+    category.pageLinks ?? [
       { href: "#category-panels", label: "看器物栏目" },
-      { href: "#category-context", label: "看观察维度" },
+      { href: "#category-context", label: "看欣赏角度" },
       { href: "#category-research", label: "看延伸研究" }
-    ];
+    ]
+  );
+}
+
+const categoryGuideProfiles = {
+  tea: {
+    title: "从饮法进入",
+    text: "先选点茶、泡饮或分饮，再细看口沿、腹深、出汤路径和套组关系。",
+    actions: [
+      { href: "#category-panels", label: "选择饮法", text: "按使用场景切换浏览重点。" },
+      { href: "#tea-typology", label: "看茶器", text: "对照盏、碗、壶、盖碗与杯碟。" },
+      { href: "#tea-detail", label: "细看器物", text: "展开对象、尺寸和出处。" }
+    ]
+  },
+  tableware: {
+    title: "从桌面分工进入",
+    text: "先分主盘、深碗、外销盘和成组服务，再看盘面版式与海外流通。",
+    actions: [
+      { href: "#category-panels", label: "选择用途", text: "按桌面角色切换浏览重点。" },
+      { href: "#tableware-roster", label: "看谱系", text: "查看盘、碗、碟的成组关系。" },
+      { href: "#tableware-collection", label: "看馆藏", text: "用对象样本校正阅读。" }
+    ]
+  },
+  coffee: {
+    title: "从冲煮方式进入",
+    text: "先选滤泡、浸泡、压力或冷萃系统，再看容量、时间和器具结构。",
+    actions: [
+      { href: "#category-panels", label: "选择方式", text: "按冲煮路径切换浏览重点。" },
+      { href: "#coffee-systems", label: "看系统", text: "对照滤材、流速和器具形态。" },
+      { href: "#coffee-matrix", label: "看条件", text: "比较温度、时长和粉水比例。" }
+    ]
+  },
+  vase: {
+    title: "从陈设场景进入",
+    text: "先定书斋、厅堂或案几位置，再看口沿、肩线、腹部和插枝空间。",
+    actions: [
+      { href: "#category-panels", label: "选择场景", text: "按空间关系切换浏览重点。" },
+      { href: "#vase-typology", label: "看器形", text: "对照梅瓶、觚式瓶和抱月瓶。" },
+      { href: "#vase-detail", label: "细看花器", text: "展开轮廓、用途和出处。" }
+    ]
+  },
+  art: {
+    title: "从观看方式进入",
+    text: "先看正面性、题景、年款和展陈位置，再把对象放回收藏语境。",
+    actions: [
+      { href: "#category-panels", label: "选择看法", text: "按图像、器型和语境切换重点。" },
+      { href: "#art-highlights", label: "看馆藏", text: "进入首要对象和策展说明。" },
+      { href: "#art-axes", label: "看路径", text: "整理从图像到陈设的阅读顺序。" }
+    ]
+  }
+};
+
+function getCategoryGuideProfile(category) {
+  return (
+    categoryGuideProfiles[category.slug] ?? {
+      title: `从${category.name}进入`,
+      text: category.intro || category.historyNote || "先选择浏览重点，再进入对象样本和参考出处。",
+      actions: getCategoryPageLinks(category)
+        .slice(0, 3)
+        .map(({ href, label }) => ({ href, label: normalizeAnchorLabel(label), text: "跳转到本页对应内容。" }))
+    }
+  );
+}
+
+function renderCategoryGuideActions(actions) {
+  return actions
+    .map(
+      ({ href, label }) => `
+        <a class="category-guide-card artifact-motion-card" href="${href}">
+          <strong>${label}</strong>
+        </a>
+      `
+    )
+    .join("");
+}
+
+function renderCategoryHeroGuide(category) {
+  const profile = getCategoryGuideProfile(category);
 
   return `
-    <div class="page-header__meta">
-      <div class="tag-row tag-row--compact">
-        ${category.glossaryTitles.map((item) => `<span class="tag-chip">${item}</span>`).join("")}
-      </div>
-      ${renderSummaryStats(category.summaryStats)}
-      <div class="hero-actions hero-actions--compact">
-        ${pageLinks.map(({ href, label }) => `<a class="link-button" href="${href}">${label}</a>`).join("")}
+    <div class="category-hero-guide">
+      <div class="category-hero-guide__actions" aria-label="${category.name}快捷入口">
+        ${renderCategoryGuideActions(profile.actions)}
       </div>
     </div>
   `;
+}
+
+function normalizeAnchorLabel(label = "") {
+  return label.replace(/^看/, "");
+}
+
+function createCategoryNavItems(category, sections = []) {
+  const baseItems = [{ id: "category-panels", label: "浏览重点" }];
+  const sectionItems = sections
+    .filter(Boolean)
+    .map(({ id, title }) => ({ id, label: normalizeAnchorLabel(title) }))
+    .filter(({ id, label }) => id && label);
+  const researchItems = category.researchModules?.length ? [{ id: "category-context", label: "欣赏角度" }] : [];
+  const hasResearchCards = category.relatedResearchIds?.length || category.researchSpotlights?.length;
+
+  return [...baseItems, ...sectionItems, ...researchItems, ...(hasResearchCards ? [{ id: "category-research", label: "延伸阅读" }] : [])];
+}
+
+function renderCategorySectionNav(items) {
+  if (!items?.length) return "";
+
+  return `
+    <nav class="category-section-nav" aria-label="内容快捷导航" data-category-section-nav>
+      ${items
+        .map(
+          ({ id, label }, index) => `
+            <a class="category-section-nav__item" href="#${id}">
+              <span>${String(index + 1).padStart(2, "0")}</span>
+              <strong>${label}</strong>
+            </a>
+          `
+        )
+        .join("")}
+    </nav>
+  `;
+}
+
+// 五个器物栏目页共用同一套主目录：左侧保留分类说明，右侧提供入门路径和关键入口。
+function renderCategoryLead(category) {
+  return `
+    <section class="category-hero">
+      <div class="category-hero__grid">
+        <div class="category-hero__media">
+          ${category.heroImage ? `<img class="category-hero__image" src="${category.heroImage}" alt="${category.name}">` : ""}
+        </div>
+        <div class="category-hero__copy">
+          <p class="eyebrow">器物导览</p>
+          <h1>${category.name}</h1>
+          ${category.intro ? `<p class="category-hero__intro">${category.intro}</p>` : ""}
+          <div class="tag-row tag-row--compact category-hero__tags">
+            ${category.glossaryTitles.map((item) => `<span class="tag-chip">${item}</span>`).join("")}
+          </div>
+          ${renderCategoryHeroGuide(category)}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderCategoryShell(category, sections, navItems = createCategoryNavItems(category, sections)) {
+  return `
+    <div class="category-page-shell category-page-shell--${category.slug}">
+      ${renderCategoryLead(category)}
+      <div class="category-content-stack">
+        ${renderCategorySectionNav(navItems)}
+        <div class="category-content-main">
+          ${sections.join("")}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderCategoryModule({ id, title, summary, className = "reading-section", body }) {
+  return `
+    <section class="${className} category-module" id="${id}">
+      <div class="section-heading">
+        <h2>${title}</h2>
+        ${summary ? `<p>${summary}</p>` : ""}
+      </div>
+      ${body}
+    </section>
+  `;
+}
+
+function renderCategoryResearchSection(category, cards) {
+  return `
+    <section class="reading-section category-module category-collapsible" id="category-research" data-collapsible-section>
+      <div class="section-heading section-heading--compact">
+        <div>
+          <h2>${category.researchSectionTitle ?? "延伸研究"}</h2>
+          ${category.researchSectionSummary ? `<p>${category.researchSectionSummary}</p>` : ""}
+        </div>
+        <button class="section-toggle" type="button" data-collapsible-toggle aria-expanded="true">收起</button>
+      </div>
+      <div class="research-rail-shell" data-collapsible-content>
+        <div class="research-strip research-strip--mobile-rail">
+          ${renderCategoryResearchCards(cards)}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function getCategoryResearchCards(category, researchItems) {
+  return (category.researchSpotlights ?? category.relatedResearchIds.map((id) => ({ id })))
+    .map((spotlight) => ({ item: researchItems.find((entry) => entry.id === spotlight.id), spotlight }))
+    .filter(({ item }) => Boolean(item));
+}
+
+function renderCategoryDirectory(category) {
+  return `
+    <section class="tab-group category-tabs category-tabs--directory category-module" id="category-panels" data-category-directory>
+      <div class="section-heading section-heading--compact">
+        <div>
+          <h2>浏览重点</h2>
+          <p>先切换用途、器形、纹样和语境，再继续阅读下方内容。</p>
+        </div>
+      </div>
+      <p class="category-filter-summary" data-category-filter-summary>正在查看：${category.panels?.[0]?.[0] ?? "用途"}</p>
+      <div class="tab-buttons">${renderCategoryPanelButtons(category.panels)}</div>
+      <div class="tab-panels category-tabs__panel-wrap">${renderCategoryPanelArticles(category.panels)}</div>
+    </section>
+  `;
+}
+
+function addCategoryModuleClass(sectionHtml) {
+  return sectionHtml.replace("<section class=\"detail-deck-section inline-detail\"", "<section class=\"detail-deck-section inline-detail category-module\"");
 }
 
 function renderResearchFacts(items) {
@@ -693,19 +1008,11 @@ export function buildHomeDetailLookup(home, researchItems, categories) {
   const lookup = new Map();
 
   home.sourceDeck.items.forEach((item) => {
-    lookup.set(item.id, normalizeSourceDetail(item));
+    lookup.set(item.id, item);
   });
 
   (home.featuredRecords ?? []).forEach((item) => {
-    lookup.set(item.id, normalizeFeaturedRecordDetail(item));
-  });
-
-  (home.timeline ?? []).forEach((item) => {
-    lookup.set(item.id, normalizeTimelineDetail(item, researchItems, categories));
-  });
-
-  (home.glossary ?? []).forEach((item) => {
-    lookup.set(item.id, normalizeGlossaryDetail(item, researchItems, categories));
+    lookup.set(item.id, item);
   });
 
   return lookup;
@@ -949,12 +1256,15 @@ function renderCoffeeSystemCards(items) {
   return items
     .map(
       ({ title, format, ratio, temperature, time, filter, note, sourceName, sourceUrl }) => `
-        <article class="research-card system-card">
+        <article class="research-card system-card" data-category-filter-target data-category-facets="${getCategoryFacetText(["用途", "器形"], title, format, ratio, temperature, time, filter, note)}">
           <div>
             <p class="eyebrow">${format}</p>
             <h3>${title}</h3>
           </div>
-          <p>${note}</p>
+          <div class="system-card__body">
+            <p>${note}</p>
+            <p><strong>主要看点</strong>：先看 ${format} 如何控制水路和接触时间，再把 ${ratio}、${temperature} 与 ${filter} 放在同一组里比较。</p>
+          </div>
           <div class="detail-panel__meta detail-panel__meta--stack">
             <div class="detail-meta-chip"><span>粉水比</span><strong>${ratio}</strong></div>
             <div class="detail-meta-chip"><span>温度</span><strong>${temperature}</strong></div>
@@ -977,7 +1287,7 @@ function renderCoffeeProtocolLedger(items) {
       ${items
         .map(
           ({ title, brewingWindow, ratio, temperature, filter, vessel }) => `
-            <article class="matrix-row">
+            <article class="matrix-row" data-category-filter-target data-category-facets="${getCategoryFacetText(["用途"], title, brewingWindow, ratio, temperature, filter, vessel)}">
               <div>
                 <p class="eyebrow">参数矩阵</p>
                 <h3>${title}</h3>
@@ -999,12 +1309,15 @@ function renderCoffeeHistoryCards(items) {
   return items
     .map(
       ({ eyebrow, title, summary, sourceName, href }) => `
-        <article class="research-card history-card">
+        <article class="research-card history-card" data-category-filter-target data-category-facets="${getCategoryFacetText(["传播", "意境"], eyebrow, title, summary, sourceName)}">
           <div>
             <p class="eyebrow">${eyebrow}</p>
             <h3>${title}</h3>
           </div>
-          <p>${summary}</p>
+          <div class="history-card__body">
+            <p>${summary}</p>
+            <p><strong>为什么重要</strong>：这段资料把咖啡具从当代设备拉回杯壶比例、市场定制和社交场景，便于和上方冲煮系统互相对照。</p>
+          </div>
           <div class="research-card__meta">
             <span class="source-note">${sourceName}</span>
             <a class="link-button" href="${href}" target="_blank" rel="noreferrer">打开对象页</a>
@@ -1094,6 +1407,27 @@ function renderFeaturedRecordSection(title, summary, items, sectionId) {
   `;
 }
 
+function getFeaturedRecords(items, detailItems = []) {
+  const seen = new Set((items ?? []).map((item) => item.title));
+  const detailRecords = (detailItems ?? [])
+    .filter((item) => !seen.has(item.title))
+    .map((item) => ({
+      id: item.id,
+      eyebrow: item.eyebrow,
+      title: item.title,
+      summary: item.detailBody ?? item.summary,
+      detailTitle: item.detailTitle ?? item.title,
+      detailBody: item.detailBody ?? item.summary,
+      detailFacts: item.detailBullets ?? [],
+      detailMeta: item.detailMeta ?? [],
+      sourceName: item.sourceLinks?.[0]?.label ?? "参考出处",
+      sourceUrl: item.sourceLinks?.[0]?.url ?? "#",
+      imagePath: item.imagePath
+    }));
+
+  return [...(items ?? []), ...detailRecords].slice(0, Math.max(6, items?.length ?? 0));
+}
+
 function renderDetailMetrics(items) {
   return `
     <div class="detail-panel__meta">
@@ -1160,21 +1494,25 @@ function renderDetailDeck(sectionId, deck) {
                     <h3>${item.detailTitle}</h3>
                     <p>${item.detailBody}</p>
                   </div>
-                  ${renderDetailMetrics(item.metrics).replace('detail-panel__meta', 'detail-panel__meta inline-detail__meta')}
-                  <ul class="context-panel__facts inline-detail__facts">
-                    ${item.detailBullets.map((bullet) => `<li>${bullet}</li>`).join("")}
-                  </ul>
-                  <div class="detail-panel__meta detail-panel__meta--stack inline-detail__meta">
-                    ${item.detailMeta
-                      .map(
-                        ([label, value]) => `
-                          <div class="detail-meta-chip">
-                            <span>${label}</span>
-                            <strong>${value}</strong>
-                          </div>
-                        `
-                      )
-                      .join("")}
+                  <div class="detail-panel__content-grid">
+                    <div>
+                      ${renderDetailMetrics(item.metrics).replace('detail-panel__meta', 'detail-panel__meta inline-detail__meta')}
+                      <ul class="context-panel__facts inline-detail__facts">
+                        ${item.detailBullets.map((bullet) => `<li>${bullet}</li>`).join("")}
+                      </ul>
+                    </div>
+                    <div class="detail-panel__meta detail-panel__meta--stack inline-detail__meta">
+                      ${item.detailMeta
+                        .map(
+                          ([label, value]) => `
+                            <div class="detail-meta-chip">
+                              <span>${label}</span>
+                              <strong>${value}</strong>
+                            </div>
+                          `
+                        )
+                        .join("")}
+                    </div>
                   </div>
                   ${renderSourceLinks(item.sourceLinks)}
                 </article>
@@ -1245,7 +1583,7 @@ function renderCategoryPanelButtons(panels) {
   return panels
     .map(([label], index) => {
       const selected = index === 0 ? "true" : "false";
-      return `<button class="tab-button" data-tab-target="panel-${index}" aria-selected="${selected}">${label}</button>`;
+      return `<button class="tab-button" data-tab-target="panel-${index}" data-category-filter-label="${label}" aria-selected="${selected}">${label}</button>`;
     })
     .join("");
 }
@@ -1268,27 +1606,55 @@ function renderCategoryPanelArticles(panels) {
 function renderVaseClassificationBands(items) {
   return items
     .map(
-      ({ eyebrow, title, text }) => `
-        <article class="path-card">
-          <p class="eyebrow">${eyebrow}</p>
-          <h3>${title}</h3>
-          <p>${text}</p>
-        </article>
-      `
+      (item) =>
+        renderEnrichedBriefCard({
+          item,
+          className: "path-card enriched-brief-card",
+          defaultFacets: ["用途"],
+          showEyebrow: true
+        })
     )
     .join("");
+}
+
+function renderBriefPointList(points) {
+  if (!points?.length) return "";
+
+  return `
+    <ul class="inline-detail__facts enriched-brief-card__facts">
+      ${points.map((point) => `<li>${point}</li>`).join("")}
+    </ul>
+  `;
+}
+
+// 分类页短说明卡统一读取 meta 与 points，让五类页面都有“字段 + 要点”的细读层。
+function renderEnrichedBriefCard({ item, className, defaultFacets, showEyebrow = false }) {
+  const facetText = getCategoryFacetText(defaultFacets, item.eyebrow, item.title, item.text, item.points?.join(" "));
+
+  return `
+    <article class="${className}" data-category-filter-target data-category-facets="${facetText}">
+      ${showEyebrow && item.eyebrow ? `<p class="eyebrow">${item.eyebrow}</p>` : ""}
+      <h3>${item.title}</h3>
+      <p>${item.text}</p>
+      ${renderInlineDetailMeta(item.meta)}
+      ${renderBriefPointList(item.points)}
+    </article>
+  `;
 }
 
 function renderVaseTypologyCards(items) {
   return items
     .map(
       ({ name, alias, period, profile, use, focus, source }) => `
-        <article class="research-card typology-card">
+        <article class="research-card typology-card" data-category-filter-target data-category-facets="${getCategoryFacetText(["器形"], name, alias, profile, use, focus)}">
           <div>
             <p class="eyebrow">${period}</p>
             <h3>${name}</h3>
           </div>
-          <p>${profile}</p>
+          <div class="typology-card__body">
+            <p>${profile}</p>
+            <p><strong>阅读重点</strong>：${focus}。这件器物适合从“${use}”进入，再把口沿、腹深、画面和成组关系一起读。</p>
+          </div>
           <div class="detail-panel__meta detail-panel__meta--stack">
             <div class="detail-meta-chip"><span>别名</span><strong>${alias}</strong></div>
             <div class="detail-meta-chip"><span>用途</span><strong>${use}</strong></div>
@@ -1304,12 +1670,12 @@ function renderVaseTypologyCards(items) {
 function renderVaseCurationNotes(items) {
   return items
     .map(
-      ({ title, text }) => `
-        <article class="research-fact-card">
-          <h3>${title}</h3>
-          <p>${text}</p>
-        </article>
-      `
+      (item) =>
+        renderEnrichedBriefCard({
+          item,
+          className: "research-fact-card enriched-brief-card",
+          defaultFacets: ["纹样", "意境"]
+        })
     )
     .join("");
 }
@@ -1318,13 +1684,16 @@ function renderCollectionHighlights(items) {
   return items
     .map(
       ({ title, museum, period, dimension, note, href, sourceName, imagePath }) => `
-        <article class="research-card">
+        <article class="research-card collection-card" data-category-filter-target data-category-facets="${getCategoryFacetText(["器形", "纹样"], title, period, dimension, note, sourceName)}">
           ${imagePath ? `<img src="${imagePath}" alt="${title}">` : ""}
           <div>
             <p class="eyebrow">${museum}</p>
             <h3>${title}</h3>
           </div>
-          <p>${note}</p>
+          <div class="collection-card__body">
+            <p>${note}</p>
+            <p><strong>细看</strong>：${period} 的样本可用于对照 ${dimension} 这一尺度线索，并回看 ${sourceName} 的对象记录。</p>
+          </div>
           <div class="detail-panel__meta detail-panel__meta--stack">
             <div class="detail-meta-chip"><span>时代</span><strong>${period}</strong></div>
             <div class="detail-meta-chip"><span>尺寸</span><strong>${dimension}</strong></div>
@@ -1339,19 +1708,38 @@ function renderCollectionHighlights(items) {
     .join("");
 }
 
+function getCategoryCollectionHighlights(category) {
+  const existing = category.collectionHighlights ?? [];
+  const seen = new Set(existing.map((item) => item.title));
+  const detailItems = (category.detailDeck?.items ?? [])
+    .filter((item) => !seen.has(item.title))
+    .map((item) => ({
+      title: item.title,
+      museum: item.detailMeta?.find(([label]) => label.includes("来源") || label.includes("出处"))?.[1] ?? item.sourceLinks?.[0]?.label ?? "馆藏样本",
+      period: item.metrics?.find(([label]) => label.includes("时期") || label.includes("时代"))?.[1] ?? item.eyebrow,
+      dimension: item.metrics?.find(([label]) => label.includes("尺寸") || label.includes("宽度") || label.includes("器高"))?.[1] ?? item.metrics?.[0]?.[1] ?? "见对象页",
+      note: item.detailBody ?? item.summary,
+      href: item.sourceLinks?.[0]?.url ?? "#",
+      sourceName: item.sourceLinks?.[0]?.label ?? "馆藏页",
+      imagePath: item.imagePath
+    }));
+
+  return [...existing, ...detailItems].slice(0, Math.max(6, existing.length));
+}
+
 function renderResearchLedger(items) {
   return `
     <div class="ledger-list">
       ${items
         .map(
           ({ title, type, focus, value, href }) => `
-            <article class="ledger-row">
+            <article class="ledger-row reference-card" data-category-filter-target data-category-facets="${getCategoryFacetText(["用途", "器形", "纹样", "意境"], title, type, focus, value)}">
               <div>
                 <p class="eyebrow">${type}</p>
                 <h3>${title}</h3>
               </div>
               <p>${focus}</p>
-              <p>${value}</p>
+              <p class="reference-card__insight">${value}。这条资料用于把页面中的器型说明、尺寸信息和使用场景接回具体出处。</p>
               <a class="link-button" href="${href}" target="_blank" rel="noreferrer">查看来源</a>
             </article>
           `
@@ -1367,13 +1755,19 @@ function renderTablewareRoster(items) {
       ${items
         .map(
           ({ title, period, profile, use, sourceName, sourceUrl }) => `
-            <article class="ledger-row">
+            <article class="ledger-row tableware-roster-card" data-category-filter-target data-category-facets="${getCategoryFacetText(["用途", "器形", "传播"], title, period, profile, use, sourceName)}">
               <div>
                 <p class="eyebrow">${period}</p>
                 <h3>${title}</h3>
               </div>
-              <p>${profile}</p>
-              <p>${use}</p>
+              <div class="tableware-roster-card__body">
+                <p>${profile}</p>
+                <p><strong>主要看点</strong>：${use} 阅读时先确认桌面位置，再看口径、腹深、边饰和中心题景如何共同组织一套餐具。</p>
+              </div>
+              <div class="detail-panel__meta detail-panel__meta--stack">
+                <div class="detail-meta-chip"><span>时期</span><strong>${period}</strong></div>
+                <div class="detail-meta-chip"><span>出处</span><strong>${sourceName}</strong></div>
+              </div>
               <a class="link-button" href="${sourceUrl}" target="_blank" rel="noreferrer">${sourceName}</a>
             </article>
           `
@@ -1386,12 +1780,12 @@ function renderTablewareRoster(items) {
 function renderTablewareJudgements(items) {
   return items
     .map(
-      ({ title, text }) => `
-        <article class="research-fact-card">
-          <h3>${title}</h3>
-          <p>${text}</p>
-        </article>
-      `
+      (item) =>
+        renderEnrichedBriefCard({
+          item,
+          className: "research-fact-card enriched-brief-card",
+          defaultFacets: ["用途", "器形", "纹样", "传播"]
+        })
     )
     .join("");
 }
@@ -1421,16 +1815,19 @@ function renderInlineDetailCards(items) {
       ${items
         .map(
           (item, index) => `
-            <article class="research-card inline-detail">
+            <article class="research-card inline-detail" data-category-filter-target data-category-facets="${getCategoryFacetText(["器形", "纹样", "意境"], item.eyebrow, item.title, item.summary, item.detailFacts?.join(" "))}">
               ${item.imagePath ? `<img src="${item.imagePath}" alt="${item.title}">` : ""}
               <div class="inline-detail__copy">
                 <div>
                   <p class="eyebrow">${item.eyebrow ?? item.sourceName}</p>
                   <h3>${item.title}</h3>
                 </div>
-                <p>${item.summary}</p>
+                <div class="inline-detail__summary">
+                  <p>${item.summary}</p>
+                  <p><strong>细看</strong>：${item.detailFacts?.[0] ?? item.detailMeta?.[0]?.[1] ?? "从器形、图像与出处一起进入这件对象。"} 这件对象可作为同类器物的近身参照。</p>
+                </div>
                 <button class="inline-detail__trigger" type="button" data-inline-detail-trigger="${item.id}" aria-expanded="${index === 0 ? "true" : "false"}">
-                  ${index === 0 ? "收起资料" : "展开资料"}
+                  ${index === 0 ? "收起细节" : "展开细节"}
                 </button>
                 <div class="inline-detail__panel" data-inline-detail-panel="${item.id}"${index === 0 ? "" : " hidden"}>
                   ${renderInlineDetailMeta(item.detailMeta)}
@@ -1462,15 +1859,18 @@ function renderCollectionList(items) {
       ${items
         .map(
           (item, index) => `
-            <article class="collection-list__item inline-detail">
+            <article class="collection-list__item inline-detail" data-category-filter-target data-category-facets="${getCategoryFacetText(["器形", "纹样", "意境"], item.eyebrow, item.title, item.summary, item.detailFacts?.join(" "))}">
               ${item.imagePath ? `<img src="${item.imagePath}" alt="${item.title}">` : ""}
               <div>
                 <p class="eyebrow">${item.eyebrow ?? item.sourceName}</p>
                 <h3>${item.title}</h3>
               </div>
-              <p>${item.summary}</p>
+              <div class="collection-list__body">
+                <p>${item.summary}</p>
+                <p><strong>细看</strong>：${item.detailFacts?.[0] ?? item.detailMeta?.[0]?.[1] ?? "从对象信息进入展陈语境。"} 外层先给出核心阅读线索，展开后再查看尺寸、材料与出处。</p>
+              </div>
               <button class="inline-detail__trigger" type="button" data-inline-detail-trigger="${item.id}" aria-expanded="${index === 0 ? "true" : "false"}">
-                ${index === 0 ? "收起资料" : "展开资料"}
+                ${index === 0 ? "收起细节" : "展开细节"}
               </button>
               <div class="inline-detail__panel" data-inline-detail-panel="${item.id}"${index === 0 ? "" : " hidden"}>
                 ${renderInlineDetailMeta(item.detailMeta)}
@@ -1498,12 +1898,12 @@ function renderCollectionList(items) {
 function renderViewingAxes(items) {
   return items
     .map(
-      ({ title, text }) => `
-        <article class="path-card">
-          <h3>${title}</h3>
-          <p>${text}</p>
-        </article>
-      `
+      (item) =>
+        renderEnrichedBriefCard({
+          item,
+          className: "path-card enriched-brief-card",
+          defaultFacets: ["用途", "器形", "纹样", "意境"]
+        })
     )
     .join("");
 }
@@ -1514,7 +1914,7 @@ function renderSourceInstitutions(items) {
       ${items
         .map(
           ({ title, summary, href }) => `
-            <article class="network-panel institution-card">
+            <article class="network-panel institution-card" data-category-filter-target data-category-facets="${getCategoryFacetText(["传播", "意境"], title, summary)}">
               <p class="eyebrow">来源机构</p>
               <h3>${title}</h3>
               <p>${summary}</p>
@@ -1529,164 +1929,544 @@ function renderSourceInstitutions(items) {
   `;
 }
 
-function renderHome(home, categories, researchItems) {
-  const detailLookup = buildHomeDetailLookup(home, researchItems, categories);
-  const defaultDetail = detailLookup.get(home.defaultDetailId) ?? detailLookup.values().next().value;
-  const spotlight =
-    home.coffeeSpotlight ?? home.featureSpotlight ?? home.tablewareSpotlight ?? home.vaseSpotlight ?? home.artSpotlight ?? null;
-  const spotlightSection = spotlight ? renderFeatureSpotlightSection(spotlight) : "";
-  const overviewSection =
-    home.categoryOverview?.length
-      ? `
-          <section class="reading-section" id="${home.overviewId ?? "category-overview"}">
-            <div class="section-heading">
-              <h2>${home.overviewTitle ?? "栏目总览"}</h2>
-              <p>${home.overviewSummary ?? "首页先按栏目建立总站入口，再进入各自的深读页。"}</p>
-            </div>
-            <div class="institution-grid">${renderCategoryOverviewCards(home.categoryOverview)}</div>
-          </section>
-        `
-      : "";
-  // 首页矩阵和历史档案只在运行态数据明确提供时出现，避免其它栏目首页被硬套咖啡结构。
-  const matrixSection =
-    home.protocolLedger?.length
-      ? `
-          <section class="reading-section" id="${home.matrixId ?? "coffee-matrix"}">
-            <div class="section-heading">
-              <h2>${home.matrixTitle ?? "器具参数矩阵"}</h2>
-              <p>${home.matrixSummary ?? "把时间、温度、比例、滤材和代表器具放进同一张矩阵，便于首页先完成横向比较。"}</p>
-            </div>
-            ${renderCoffeeProtocolLedger(home.protocolLedger)}
-          </section>
-        `
-      : "";
-  const historySection =
-    home.historyMoments?.length
-      ? `
-          <section class="portal-stack" id="${home.historyId ?? "coffee-history"}">
-            <div class="section-heading">
-              <h2>${home.historyTitle ?? "历史档案"}</h2>
-              <p>${home.historySummary ?? "用对象页和研究档案把首页专题接回可追溯的时间脉络。"}</p>
-            </div>
-            <div class="coffee-history-grid">${renderCoffeeHistoryCards(home.historyMoments)}</div>
-          </section>
-        `
-      : "";
-  const featuredResearchSection =
-    home.featuredResearch?.ids?.length && home.researchPaths?.length
-      ? renderFeaturedResearchSection(home.featuredResearch, home.researchPaths, researchItems)
-      : "";
-  const researchIndexSection = home.researchIndex
-    ? renderResearchIndexSection(home.researchIndex, home.researchIndexItems ?? researchItems)
-    : "";
-  const readingSection =
-    home.readingCards?.length
-      ? `
-          <section class="reading-section" id="home-reading">
-            <div class="section-heading">
-              <h2>${home.readingSectionTitle ?? "档案选读"}</h2>
-              <p>${home.readingSectionSummary ?? "把首页中的研究档案进一步拉回连续阅读，避免数据只停留在索引卡层面。"}</p>
-            </div>
-            <div class="reading-grid">${renderReadingCards(home.readingCards.slice(0, 6), researchItems)}</div>
-          </section>
-        `
-      : "";
+function renderLedgerRows(items) {
+  return items
+    .map(
+      (item, index) => `
+        <button class="ledger-row${index === 0 ? " is-active" : ""}" type="button"
+          data-ledger-id="${item.id}" aria-selected="${index === 0 ? "true" : "false"}">
+          <div class="ledger-row__head">
+            <h3>${item.title}</h3>
+            ${item.era ? `<span class="ledger-row__era">${item.era}</span>` : ""}
+          </div>
+          <p>${item.keyJudgment ?? item.summary}</p>
+          ${item.relatedSections?.length
+            ? `<div class="ledger-row__tags">${item.relatedSections
+                .map((s) => `<span class="tag-chip">${s}</span>`)
+                .join("")}</div>`
+            : ""}
+        </button>
+      `
+    )
+    .join("");
+}
 
+export function renderLedgerDetail(item) {
+  if (!item) return `<div class="detail-card detail-card--ledger"><p>请从左侧台账中选择一项查看详情。</p></div>`;
   return `
-    <section class="hero-section hero-section--institutional hero-section--portal">
-      <div class="hero-copy">
-        <p class="eyebrow">${home.hero.englishName}</p>
-        <h1>${home.hero.title}</h1>
-        <p class="hero-subtitle">${home.hero.subtitle}</p>
-        <p class="hero-description">${home.hero.description}</p>
-        <div class="hero-actions">${renderHeroActions(home.hero.actions)}</div>
-        ${renderSectionLinkStrip(home.hero.sectionLinks)}
-        <div class="stat-grid">${renderHeroMetricCards(home.hero.metrics ?? home.institutionStats)}</div>
+    <div class="detail-card detail-card--ledger">
+      ${item.imagePath ? `<img class="detail-card__image" src="${item.imagePath}" alt="${item.title}" loading="lazy">` : ""}
+      <div class="detail-card__copy">
+        <p class="eyebrow">${item.eyebrow}</p>
+        <h2>${item.detailTitle ?? item.title}</h2>
+        <p>${item.detailBody ?? item.summary}</p>
+        ${item.detailBullets?.length
+          ? `<ul class="detail-card__facts">${item.detailBullets.map((b) => `<li>${b}</li>`).join("")}</ul>`
+          : ""}
       </div>
-      <div class="hero-aside">
-        ${renderHeroBrief(home.hero.brief)}
-        ${renderHeroFocusCard(home.hero.focusCard)}
+      <div class="detail-card__meta">
+        ${(item.detailMeta ?? [])
+          .map(
+            ([dt, dd]) => `
+              <div><dt>${dt}</dt><dd>${dd}</dd></div>
+            `
+          )
+          .join("")}
       </div>
-    </section>
-    ${spotlightSection}
-    ${overviewSection}
-    ${matrixSection}
-    <section class="reading-section" id="home-portal">
-      <div class="section-heading">
-        <h2>${home.portalTitle ?? "来源与对象"}</h2>
-        <p>${home.portalSummary ?? "资料台账、重点对象、时间脉络、术语与工艺图谱在首页共用一套内嵌详情阅读面板。"}</p>
-      </div>
-      <div class="home-portal">
-        <div class="home-portal__main">
-          <section class="portal-stack" id="${home.sourceDeckId ?? "home-source-deck"}">
-            <div class="section-heading">
-              <h2>${home.sourceDeck.title}</h2>
-              <p>${home.sourceDeck.summary}</p>
-            </div>
-            <div class="portal-list">${renderSourceDeckRows(home.sourceDeck.items)}</div>
-          </section>
-          <section class="portal-stack" id="featured-records">
-            <div class="section-heading">
-              <h2>${home.featuredRecordTitle ?? "重点对象"}</h2>
-              <p>${home.featuredRecordSummary ?? "首页重点对象在这里统一展开结构化详情。"}</p>
-            </div>
-            <div class="highlight-grid">${renderHighlightCards(home.featuredRecords ?? [])}</div>
-          </section>
-          <section class="portal-stack" id="network">
-            <div class="section-heading">
-              <h2>${home.networkTitle ?? "资料网络"}</h2>
-              <p>${home.networkSummary ?? "官方机构、馆藏对象页与城市系统资料共同构成首页的来源网络。"}</p>
-            </div>
-            <div class="institution-grid">${renderNetworkCards(home.networkPanels ?? [])}</div>
-          </section>
-          <section class="portal-stack" id="timeline">
-            <div class="section-heading">
-              <h2>${home.timelineTitle ?? "时间脉络"}</h2>
-              <p>${home.timelineSummary ?? "把青花从元代定型到全球传播的主线，放回景德镇的城市系统里来理解。"}</p>
-            </div>
-            <div class="timeline-grid">${renderTimeline(home.timeline)}</div>
-            ${renderJingdezhenPanel(home.jingdezhenPanel)}
-          </section>
-          <section class="portal-stack" id="glossary">
-            <div class="section-heading">
-              <h2>${home.glossaryTitle ?? "术语索引"}</h2>
-              <p>${home.glossarySummary ?? "把总站最常被回看的术语留在首页，便于从概念回到对象与栏目。"}</p>
-            </div>
-            <div class="reading-grid">${renderGlossaryDetailCards(home.glossary ?? [])}</div>
-          </section>
-          <section class="portal-stack" id="process">
-            <div class="section-heading">
-              <h2>${home.processTitle ?? "工艺图谱"}</h2>
-              <p>${home.processSummary ?? "把原料、成型、绘饰、上釉和入窑放回连续工艺流程里。"}</p>
-            </div>
-            <div class="process-layout">
-              <div class="process-steps">${renderProcessSteps(home.process)}</div>
-              <div class="process-panels">${renderProcessPanels(home.process)}</div>
-            </div>
-          </section>
-          ${historySection}
-        </div>
-        <aside class="detail-dock">
-          <div class="detail-dock__frame" data-home-detail-panel>${renderEmbeddedDetail(defaultDetail)}</div>
-        </aside>
-      </div>
-    </section>
-    ${renderInstitutionSignalSection(
-      home.institutionSignals,
-      home.institutionSignalsTitle ?? "馆藏来源",
-      home.institutionSignalsSummary ?? "首页列出本次专题整理所依赖的官方机构与馆藏入口，便于直接追溯资料边界。"
-    )}
-    ${featuredResearchSection}
-    ${readingSection}
-    ${researchIndexSection}
-    <section class="objects-section" id="objects">
-      <div class="section-heading">
-        <h2>${home.objectSectionTitle ?? "器物栏目"}</h2>
-        <p>${home.objectSectionSummary ?? "五个栏目页使用同一套阅读框架，让总站入口和分类深读保持连续。"}</p>
-      </div>
-      <div class="object-grid">${renderCategoryCards(categories)}</div>
-    </section>
+      ${item.sourceLinks?.length
+        ? `<div class="hero-actions hero-actions--compact">
+            ${item.sourceLinks.map((l) => `<a class="link-button" href="${l.url}" target="_blank" rel="noreferrer">${l.label}</a>`).join("")}
+          </div>`
+        : ""}
+    </div>
   `;
+}
+
+function renderResearchTabsNav(dimensions, activeId) {
+  return dimensions
+    .map(
+      (d) =>
+        `<button class="research-tabs__tab" type="button" data-research-tab="${d.id}" aria-selected="${d.id === activeId ? "true" : "false"}">${d.label}</button>`
+    )
+    .join("");
+}
+
+function renderResearchTabsPanels(dimensions, activeId) {
+  return dimensions
+    .map((d) => {
+      const isActive = d.id === activeId;
+      let content = "";
+      switch (d.id) {
+        case "network":
+          content = d.panels?.length
+            ? `<div class="institution-grid">${d.panels
+                .map(
+                  (p) => `
+              <article class="network-panel institution-card">
+                <p class="eyebrow">${p.eyebrow}</p>
+                <h3>${p.title}</h3>
+                <p>${p.summary}</p>
+              </article>`
+                )
+                .join("")}</div>`
+            : "";
+          break;
+        case "timeline":
+          content =
+            (d.timelineNodes?.length ? `<div class="timeline-grid">${renderTimeline(d.timelineNodes)}</div>` : "") +
+            (d.jingdezhenPanel ? renderJingdezhenPanel(d.jingdezhenPanel) : "");
+          break;
+        case "glossary":
+          content = d.terms?.length
+            ? `<div class="reading-grid">${renderGlossaryDetailCards(d.terms)}</div>`
+            : "";
+          break;
+        case "process":
+          content = d.steps?.length
+            ? `<div class="process-layout"><div class="process-steps">${renderProcessSteps(d.steps)}</div><div class="process-panels">${renderProcessPanels(d.steps)}</div></div>`
+            : "";
+          break;
+      }
+      return `<div class="research-tabs__panel" data-research-panel="${d.id}"${isActive ? "" : " hidden"}>${content}</div>`;
+    })
+    .join("");
+}
+
+function renderEraAnnotationMarkers(items) {
+  return items
+    .map(function(item, index) {
+      var selected = index === 0 ? ' aria-selected="true"' : ' aria-selected="false"';
+      return '\
+        <button class="era-annotation-marker" type="button" data-annotation-trigger="' + item.id + '"' + selected + ' style="--marker-x:' + item.x + '%; --marker-y:' + item.y + '%;">\
+          <span class="era-annotation-marker__pin"></span>\
+          <span class="era-annotation-marker__label">' + item.label + '</span>\
+        </button>\
+      ';
+    })
+    .join("");
+}
+
+function renderEraAnnotationPanels(items) {
+  return items
+    .map(function(item, index) {
+      return '\
+        <article class="era-annotation-panel" data-annotation-panel="' + item.id + '"' + (index === 0 ? "" : " hidden") + '>\
+          <strong>' + item.title + '</strong>\
+          <span>' + item.summary + '</span>\
+          <span>' + item.detail + '</span>\
+        </article>\
+      ';
+    })
+    .join("");
+}
+
+// 朝代图片承载胎、釉、青料、纹样、窑火热点，用户点击后只切换当前图片内的工艺说明。
+function renderEraAnnotations(items, annotationId) {
+  if (!items?.length) return "";
+
+  return '\
+    <div class="era-visual__annotations" data-annotation-root="' + annotationId + '">\
+      ' + renderEraAnnotationMarkers(items) + '\
+      <div class="era-annotation-panels">\
+        ' + renderEraAnnotationPanels(items) + '\
+      </div>\
+    </div>\
+  ';
+}
+
+function getEraNodePanelId(eraId, node) {
+  return eraId + "-node-" + node.id;
+}
+
+function renderEraNodeFacts(facts) {
+  // 时间线节点的判断点以列表呈现，帮助用户从摘要继续读到可操作的鉴赏依据。
+  if (!facts?.length) return "";
+
+  return '\
+    <ul class="era-node-panel__facts">\
+      ' + facts.map(function(fact) { return '<li>' + fact + '</li>'; }).join("") + '\
+    </ul>\
+  ';
+}
+
+function renderEraSubNavItems(era, eraId) {
+  // 段内子导航按钮绑定到唯一节点面板，点击后切换当前朝代内的具体叙事节点。
+  return (era.nodes || []).map(function(node, index) {
+    var panelId = getEraNodePanelId(eraId, node);
+    var current = index === 0 ? ' aria-current="true"' : "";
+    return '\
+      <button class="era-subnav__item" type="button" data-era-subnav-target="' + eraId + '" data-era-node-target="' + panelId + '" aria-controls="' + panelId + '"' + current + ' title="' + node.title + '">\
+        ' + node.title + '\
+      </button>\
+    ';
+  }).join("");
+}
+
+function renderEraNodePanels(era, eraId) {
+  var nodes = era.nodes || [];
+  if (!nodes.length) return "";
+
+  // 子节点面板承载每个时间线节点的独立说明，让段内按钮点击后在当前视口产生明确反馈。
+  return '\
+    <div class="era-node-panels" data-era-node-root="' + eraId + '">\
+      ' + nodes.map(function(node, index) {
+        var panelId = getEraNodePanelId(eraId, node);
+        var activeClass = index === 0 ? " is-active" : "";
+        return '\
+          <article class="era-node-panel' + activeClass + '" id="' + panelId + '" data-era-node-panel="' + panelId + '"' + (index === 0 ? "" : " hidden") + '>\
+            <span class="era-node-panel__era">' + node.era + '</span>\
+            <h3>' + node.title + '</h3>\
+            <p>' + node.summary + '</p>\
+            ' + (node.detail ? '<p class="era-node-panel__detail">' + node.detail + '</p>' : "") + '\
+            ' + renderEraNodeFacts(node.facts) + '\
+          </article>\
+        ';
+      }).join("") + '\
+    </div>\
+  ';
+}
+
+function getEraExplorerPanelId(explorerId, panel) {
+  return explorerId + "-" + panel;
+}
+
+function renderEraCategoryLinks(entries) {
+  return entries
+    .map(function(entry) {
+      return '<a class="link-button link-button--outline" href="' + entry.href + '" target="_blank">' + entry.name + '</a>';
+    })
+    .join("");
+}
+
+function renderEraExplorerTabs(explorerId) {
+  var tabs = [
+    ["nodes", "\u8282\u70b9\u8109\u7edc"],
+    ["process", "\u5de5\u827a\u5224\u65ad"],
+    ["glossary", "\u672f\u8bed"],
+    ["categories", "\u53bb\u770b\u5206\u7c7b"]
+  ];
+
+  // 探索面板用固定四个维度组织信息，用户不需要离开当前朝代段落就能切换阅读视角。
+  return tabs.map(function(tab, index) {
+    var panelId = getEraExplorerPanelId(explorerId, tab[0]);
+    return '\
+      <button class="era-explorer__tab" type="button" data-era-explorer-tab="' + panelId + '" aria-controls="' + panelId + '" aria-selected="' + (index === 0 ? "true" : "false") + '">\
+        ' + tab[1] + '\
+      </button>\
+    ';
+  }).join("");
+}
+
+function renderEraExplorerNodes(nodes) {
+  if (!nodes?.length) return '<p class="era-explorer__empty">\u6682\u65e0\u72ec\u7acb\u8282\u70b9\u3002</p>';
+
+  return '\
+    <div class="era-explorer__node-list">\
+      ' + nodes.map(function(node, index) {
+        return '\
+          <article class="era-explorer__node">\
+            <span>' + String(index + 1).padStart(2, "0") + '</span>\
+            <div>\
+              <strong>' + node.title + '</strong>\
+              <p>' + node.summary + '</p>\
+              ' + (node.detail ? '<small>' + node.detail + '</small>' : "") + '\
+            </div>\
+          </article>\
+        ';
+      }).join("") + '\
+    </div>\
+  ';
+}
+
+function renderEraExplorerProcess(processSteps) {
+  if (!processSteps.length) return '<p class="era-explorer__empty">\u6682\u65e0\u5de5\u827a\u5224\u65ad\u3002</p>';
+
+  return '\
+    <ol class="era-explorer__judgement-list">\
+      ' + processSteps.map(function(step) { return '<li>' + step + '</li>'; }).join("") + '\
+    </ol>\
+  ';
+}
+
+function renderEraExplorerGlossary(eraGlossary) {
+  if (!eraGlossary.length) return '<p class="era-explorer__empty">\u6682\u65e0\u76f8\u5173\u672f\u8bed\u3002</p>';
+
+  return '\
+    <div class="era-explorer__term-grid">\
+      ' + eraGlossary.map(function(g) {
+        return '<article><strong>' + g.title + '</strong><p>' + g.summary + '</p></article>';
+      }).join("") + '\
+    </div>\
+  ';
+}
+
+function renderEraExplorerCategories(entries) {
+  if (!entries.length) return '<p class="era-explorer__empty">\u6682\u65e0\u5173\u8054\u5206\u7c7b\u3002</p>';
+
+  return '\
+    <div class="era-explorer__category-grid">\
+      ' + entries.map(function(entry) {
+        return '<a class="era-explorer__category" href="' + entry.href + '" target="_blank"><span>\u8fdb\u5165</span><strong>' + entry.name + '</strong></a>';
+      }).join("") + '\
+    </div>\
+  ';
+}
+
+function renderEraExplorer(era, eraId, eraGlossary, processSteps, categoryEntries) {
+  var explorerId = eraId + "-explorer";
+  var panels = [
+    ["nodes", renderEraExplorerNodes(era.nodes || [])],
+    ["process", renderEraExplorerProcess(processSteps)],
+    ["glossary", renderEraExplorerGlossary(eraGlossary)],
+    ["categories", renderEraExplorerCategories(categoryEntries)]
+  ];
+
+  return '\
+    <div class="era-explorer" id="' + explorerId + '" data-era-explorer="' + explorerId + '" role="dialog" aria-modal="false" aria-labelledby="' + explorerId + '-title" tabindex="-1" hidden>\
+      <div class="era-explorer__surface">\
+        <header class="era-explorer__header">\
+          <div>\
+            <p class="eyebrow">' + era.eraLabel + ' &middot; ' + era.eraPeriod + '</p>\
+            <h3 id="' + explorerId + '-title">' + era.title + '</h3>\
+          </div>\
+          <button class="era-explorer__close" type="button" data-era-explorer-close aria-label="\u5173\u95ed\u63a2\u7d22">\u5173\u95ed</button>\
+        </header>\
+        <p class="era-explorer__lead">' + (era.detail || era.summary) + '</p>\
+        <nav class="era-explorer__tabs" aria-label="' + era.eraLabel + '\u63a2\u7d22\u7ef4\u5ea6">\
+          ' + renderEraExplorerTabs(explorerId) + '\
+        </nav>\
+        <div class="era-explorer__panels">\
+          ' + panels.map(function(panel, index) {
+            var panelId = getEraExplorerPanelId(explorerId, panel[0]);
+            return '<article class="era-explorer__panel" id="' + panelId + '" data-era-explorer-panel="' + panelId + '"' + (index === 0 ? "" : " hidden") + '>' + panel[1] + '</article>';
+          }).join("") + '\
+        </div>\
+      </div>\
+    </div>\
+  ';
+}
+
+
+function renderEraSection(era, index, home, categories, glossary) {
+  const eraId = "era-" + era.eraSlug;
+  const annotationItems = home.annotationDiagram?.items || [];
+
+  // 朝代拼音用于生成独立朝代器物页链接，确保首页按钮能进入对应子分类页面。
+  var eraPinyinMap = { "\u5510": "tang", "\u5b8b": "song", "\u5143": "yuan", "\u660e": "ming", "\u6e05": "qing" };
+  var eraPinyin = eraPinyinMap[era.eraSlug] || "";
+
+  // 术语按相关研究 ID 汇入当前朝代，避免把所有术语一次性塞进每个朝代段落。
+  const eraGlossary = (glossary || []).filter(function(g) {
+    var relatedIds = g.relatedResearchIds || [];
+    return (era.relatedResearchIds || []).some(function(rid) { return relatedIds.indexOf(rid) !== -1; });
+  });
+
+  var glossaryCards = eraGlossary.slice(0, 3).map(function(g) {
+    return '<article class="glossary-chip"><h4>' + g.title + '</h4><p>' + g.summary + '</p></article>';
+  }).join("");
+
+  var categoryEntries = (era.relatedCategories || [])
+    .map(function(slug) {
+      var cat = (categories || []).find(function(c) { return c.slug === slug; });
+      if (!cat) return null;
+      // 首页朝代段落的器类入口进入独立朝代页，而不是回到总分类页。
+      var href = eraPinyin ? eraPinyin + "-" + cat.slug + ".html" : cat.slug + ".html";
+      return { href: href, name: cat.name };
+    })
+    .filter(Boolean);
+
+  var processSteps = era.processSteps || [];
+  var subNavItems = renderEraSubNavItems(era, eraId);
+  var nodePanels = renderEraNodePanels(era, eraId);
+  var explorerId = eraId + "-explorer";
+  var categoryLinks = renderEraCategoryLinks(categoryEntries);
+
+  return '\
+    <section class="era-section" id="' + eraId + '" data-era="' + era.eraSlug + '">\
+      <div class="era-layout">\
+        <div class="era-visual">\
+          ' + (era.imagePath ? '<img src="' + era.imagePath + '" alt="' + era.eraLabel + '">' : '<div class="era-visual__placeholder"><span>' + era.eraLabel + '</span></div>') + '\
+          ' + (era.imagePath ? renderEraAnnotations(annotationItems, eraId) : "") + '\
+        </div>\
+        <div class="era-text">\
+          <p class="eyebrow">' + era.eraLabel + ' &middot; ' + era.eraPeriod + '</p>\
+          <h2>' + era.title + '</h2>\
+          <p>' + era.summary + '</p>\
+          ' + (subNavItems ? '\
+            <nav class="era-subnav" aria-label="' + era.eraLabel + '\u5b50\u8282\u70b9">\
+              ' + subNavItems + '\
+            </nav>\n          ' : "") + '\
+          ' + nodePanels + '\
+          ' + (processSteps.length ? '\
+            <div class="era-highlights">\
+              <h4>工艺要点</h4>\
+              <ul class="era-process-list">\
+                ' + processSteps.map(function(s) { return '<li>' + s + '</li>'; }).join("") + '\
+              </ul>\n            </div>\n          ' : "") + '\
+          ' + (eraGlossary.length ? '\
+            <div class="era-highlights">\
+              <h4>关键术语</h4>\
+              <div class="era-glossary-chips">' + glossaryCards + '</div>\n            </div>\n          ' : "") + '\
+          <div class="era-actions">\n            <button class="link-button era-explore-trigger" type="button" data-explore="' + explorerId + '" aria-controls="' + explorerId + '" aria-expanded="false">深入探索</button>\n            ' + categoryLinks + '\n          </div>\n        </div>\n      </div>\n      ' + renderEraExplorer(era, eraId, eraGlossary, processSteps, categoryEntries) + '\n    </section>\n  ';
+}
+
+function renderEraNav(eras) {
+  return '\
+    <nav class="era-nav" data-era-nav aria-label="\u671d\u4ee3\u5bfc\u822a">\
+      <ul class="era-nav__list">\
+        ' + eras
+          .map(function(era, index) {
+            return '\
+              <li class="era-nav__item" data-era-item="' + era.eraSlug + '">\
+                <button class="era-nav__dot" type="button" data-era-target="era-' + era.eraSlug + '" aria-label="' + era.eraLabel + '">\
+                  <span class="era-nav__label">' + (era.eraShortLabel || era.eraLabel) + '</span>\
+                </button>\
+              </li>\
+            ';
+          })
+          .join("") + '\
+      </ul>\
+    </nav>\
+  ';
+}
+
+function renderFooterInstitutions(institutionSignals) {
+  if (!institutionSignals || !institutionSignals.length) return "";
+  return '\
+    <section class="institution-signals-section">\
+      <div class="section-heading">\
+        <h2>馆藏来源</h2>\
+        <p>本站引用的公开馆藏与研究机构。</p>\
+      </div>\
+      <div class="institution-signals-strip">\
+        ' + institutionSignals
+          .map(function(s) {
+            return '\
+              <a class="institution-signal-card" href="' + s.href + '" target="_blank" rel="noreferrer">\
+                <p class="eyebrow">' + s.eyebrow + '</p>\
+                <h3>' + s.title + '</h3>\
+                <p>' + s.summary + '</p>\
+                <span class="institution-signal-stat">' + s.stat + '</span>\
+              </a>\
+            ';
+          })
+          .join("") + '\
+      </div>\
+    </section>\
+  ';
+}
+
+function buildEraCategorySlugsFromNavigation(navigation, categories) {
+  // 首页朝代器类入口以导航子页为准，避免时间线节点的语义标签和真实页面数量不一致。
+  var categorySlugs = (categories || []).map(function(category) { return category.slug; });
+  var eraMap = { "\u5510": [], "\u5b8b": [], "\u5143": [], "\u660e": [], "\u6e05": [] };
+
+  (navigation || []).forEach(function(item) {
+    if (categorySlugs.indexOf(item.slug) === -1 || !item.children?.length) return;
+
+    item.children.forEach(function(child) {
+      var eraLabel = child.label;
+      if (!eraMap[eraLabel]) return;
+      if (eraMap[eraLabel].indexOf(item.slug) === -1) eraMap[eraLabel].push(item.slug);
+    });
+  });
+
+  return eraMap;
+}
+
+function buildTimelineEras(timeline, glossary, process, navigation, categories) {
+  // 将具体时间线节点归并为五个首页朝代段落，归并结果决定滚动叙事的显示顺序。
+  var eraOrder = ["唐", "宋", "元", "明", "清"];
+  var navigationEraCategories = buildEraCategorySlugsFromNavigation(navigation, categories);
+
+  var eraGroups = {};
+  eraOrder.forEach(function(e) { eraGroups[e] = []; });
+
+  (timeline || []).forEach(function(node) {
+    var era = node.era || "";
+    if (era === "唐代") eraGroups["唐"].push(node);
+    else if (era === "宋元" || era === "宋代") eraGroups["宋"].push(node);
+    else if (era === "元代") eraGroups["元"].push(node);
+    else if (era === "永乐" || era === "宣德" || era === "明代" || era === "晚明" || era === "景德镇") eraGroups["明"].push(node);
+    else if (era === "清代" || era === "海贸") eraGroups["清"].push(node);
+    else eraGroups["清"].push(node);
+  });
+
+  // 只输出有内容的朝代段落，避免空段落进入朝代导航和滚动高亮状态。
+  return eraOrder
+    .filter(function(eraKey) { return eraGroups[eraKey].length > 0; })
+    .map(function(eraKey, index) {
+      var nodes = eraGroups[eraKey];
+      var firstNode = nodes[0];
+      var eraSlug = eraKey;
+
+      var relatedResearchIds = [];
+      var relatedCategories = navigationEraCategories[eraKey] || [];
+      nodes.forEach(function(n) {
+        if (n.researchId) relatedResearchIds.push(n.researchId);
+      });
+
+      var processSteps = (process || []).slice(0, 4).map(function(p) { return p[0] + "\uff1a" + p[1]; });
+
+      var periodMap = {
+        "唐": "618\u2013907",
+        "宋": "960\u20131279",
+        "元": "1271\u20131368",
+        "明": "1368\u20131644",
+        "清": "1644\u20131912"
+      };
+
+      return {
+        eraSlug: eraSlug,
+        eraLabel: eraKey + "\u4ee3",
+        eraShortLabel: eraKey,
+        eraPeriod: periodMap[eraKey] || "",
+        title: nodes.length === 1 ? firstNode.title : eraKey + "\u4ee3\u9752\u82b1\u74f7",
+        summary: nodes.map(function(n) { return n.summary; }).join(" "),
+        detail: nodes.map(function(n) { return n.detail; }).filter(Boolean).join(" "),
+        imagePath: firstNode.imagePath || "",
+        relatedResearchIds: relatedResearchIds,
+        relatedCategories: relatedCategories,
+        processSteps: processSteps,
+        nodes: nodes
+      };
+    });
+}
+
+export function renderHome(home, categories, researchItems, navigation) {
+  var glossary = home.glossary || [];
+  var process = home.process || [];
+  var timelineEras = buildTimelineEras(home.timeline || [], glossary, process, navigation, categories);
+
+  // Store eras on home for other functions to use
+  home.timelineEras = timelineEras;
+
+  var eraSections = timelineEras
+    .map(function(era, index) { return renderEraSection(era, index, home, categories, glossary); })
+    .join("");
+
+  var eraNav = renderEraNav(timelineEras);
+
+  return '\
+    <section class="hero-section hero-section--particle">\
+      <div class="particle-hero" data-particle-hero></div>\
+      <div class="hero-overlay">\
+        <div class="hero-verse">\
+          <p class="hero-verse__text">淮左名都，竹西佳处，<br>解鞍少驻初程。<br>过春风十里，<br>尽荠麦青青。<br>自胡马窥江去后，<br>废池乔木，犹厌言兵。<br>渐黄昏，清角吹寒，<br>都在空城。<br>杜郎俊赏，算而今，<br>重到须惊。<br>纵豆蔻词工，<br>青楼梦好，难赋深情。<br>二十四桥仍在，波心荡，<br>冷月无声。<br>念桥边红药，<br>年年知为谁生。</p>\
+          <p class="hero-verse__attr">— 宋 · 姜夔《扬州慢》</p>\
+        </div>\
+      </div>\
+    </section>\
+    <div class="era-bg-layer era-bg-layer--tang" data-era-bg="\u5510"></div>\
+    <div class="era-bg-layer era-bg-layer--song" data-era-bg="\u5b8b"></div>\
+    <div class="era-bg-layer era-bg-layer--yuan" data-era-bg="\u5143"></div>\
+    <div class="era-bg-layer era-bg-layer--ming" data-era-bg="\u660e"></div>\
+    <div class="era-bg-layer era-bg-layer--qing" data-era-bg="\u6e05"></div>\
+    ' + eraNav + '\
+    <main class="era-main" data-era-main>\
+      ' + eraSections + '\
+    </main>\
+  ';
 }
 
 export function resolveResearchItem(id, items) {
@@ -1697,7 +2477,7 @@ export function renderResearchDetailPage(id, content) {
   const item = resolveResearchItem(id, content.research.items);
 
   if (!item) {
-    return `
+    return cleanPublicCopy(`
       <section class="page-header">
         <div>
           <p class="eyebrow">research journal</p>
@@ -1721,14 +2501,14 @@ export function renderResearchDetailPage(id, content) {
         </div>
         <div class="reading-grid">${renderResearchPathCards(content.home.researchPaths, content.research.items)}</div>
       </section>
-    `;
+    `);
   }
 
   const relatedItems = content.research.items
     .filter((entry) => entry.id !== item.id && entry.tags.some((tag) => item.tags.includes(tag)))
     .slice(0, 3);
 
-  return `
+  return cleanPublicCopy(`
     <section class="page-header">
       <div>
         <p class="eyebrow">${item.era}</p>
@@ -1805,323 +2585,273 @@ export function renderResearchDetailPage(id, content) {
     </section>
     <section class="research-detail-grid" id="source">
       <div class="section-heading">
-        <h2>来源档案</h2>
-        <p>把来源机构、资料重点和原始链接并排展示，方便判断这条专题的可信度与使用边界。</p>
+        <h2>出处与参考</h2>
+        <p>把参考机构、资料重点和原始链接并排展示，方便理解这条专题的可信度与使用边界。</p>
       </div>
       ${renderSourceArchive(item)}
     </section>
-  `;
+  `);
+}
+
+function renderCategorySections(category, contentSections, cards) {
+  return [
+    renderCategoryDirectory(category),
+    ...contentSections.map(({ html }) => html),
+    renderCategoryResearchModules(category),
+    renderCategoryResearchSection(category, cards)
+  ];
 }
 
 function renderStandardCategoryPage(category, researchItems) {
-  const cards = (category.researchSpotlights ?? category.relatedResearchIds.map((id) => ({ id })))
-    .map((spotlight) => ({ item: researchItems.find((entry) => entry.id === spotlight.id), spotlight }))
-    .filter(({ item }) => Boolean(item));
-
-  return `
-    <section class="page-header page-header--compact">
-      <div>
-        <p class="eyebrow">${category.name}</p>
-        <h1>${category.name}</h1>
-        ${category.intro ? `<p>${category.intro}</p>` : ""}
-        ${renderCategoryHeaderTools(category)}
-      </div>
-    </section>
-    <section class="tab-group category-tabs" id="category-panels">
-      <div class="tab-buttons">${renderCategoryPanelButtons(category.panels)}</div>
-      <div class="tab-panels">${renderCategoryPanelArticles(category.panels)}</div>
-    </section>
-    ${renderCategoryResearchModules(category)}
-    <section class="reading-section category-collapsible" id="category-research" data-collapsible-section>
-      <div class="section-heading section-heading--compact">
-        <div>
-          <h2>${category.researchSectionTitle ?? "延伸研究"}</h2>
-          ${category.researchSectionSummary ? `<p>${category.researchSectionSummary}</p>` : ""}
-        </div>
-        <button class="section-toggle" type="button" data-collapsible-toggle aria-expanded="true">收起</button>
-      </div>
-      <div class="research-rail-shell" data-collapsible-content>
-        <div class="research-strip research-strip--mobile-rail">
-          ${renderCategoryResearchCards(cards)}
-        </div>
-      </div>
-    </section>
-  `;
+  const cards = getCategoryResearchCards(category, researchItems);
+  return renderCategoryShell(category, renderCategorySections(category, [], cards));
 }
 
-// 茶具页与花器页共用这条专题渲染分支：结构都是“谱系 / 规则 / 详情 / 样本 / 台账”。
+// 茶具页与花器页共用同一条专题渲染分支，页内导航由 section 定义统一生成。
 function renderStructuredCategoryPage(category, researchItems) {
-  const cards = (category.researchSpotlights ?? category.relatedResearchIds.map((id) => ({ id })))
-    .map((spotlight) => ({ item: researchItems.find((entry) => entry.id === spotlight.id), spotlight }))
-    .filter(({ item }) => Boolean(item));
+  const cards = getCategoryResearchCards(category, researchItems);
   const headings = category.sectionHeadings;
+  const contentSections = [
+    {
+      id: headings.typology.id,
+      title: headings.typology.title,
+      html: renderCategoryModule({
+        id: headings.typology.id,
+        title: headings.typology.title,
+        summary: headings.typology.summary,
+        className: "reading-paths-section",
+        body: `
+          <div class="reading-grid category-module-grid">${renderVaseClassificationBands(category.classificationBands)}</div>
+          <div class="topic-typology-grid category-module-grid">${renderVaseTypologyCards(category.typologyList)}</div>
+        `
+      })
+    },
+    {
+      id: headings.notes.id,
+      title: headings.notes.title,
+      html: renderCategoryModule({
+        id: headings.notes.id,
+        title: headings.notes.title,
+        summary: headings.notes.summary,
+        body: `<div class="research-facts-grid category-module-grid">${renderVaseCurationNotes(category.curationNotes)}</div>`
+      })
+    },
+    {
+      id: `${category.slug}-detail`,
+      title: `${category.name}细览`,
+      html: addCategoryModuleClass(renderDetailDeck(`${category.slug}-detail`, category.detailDeck))
+    },
+    {
+      id: headings.collection.id,
+      title: headings.collection.title,
+      html: renderCategoryModule({
+        id: headings.collection.id,
+        title: headings.collection.title,
+        summary: headings.collection.summary,
+        body: `<div class="reading-grid category-module-grid">${renderCollectionHighlights(getCategoryCollectionHighlights(category))}</div>`
+      })
+    },
+    {
+      id: headings.ledger.id,
+      title: headings.ledger.title,
+      html: renderCategoryModule({
+        id: headings.ledger.id,
+        title: headings.ledger.title,
+        summary: headings.ledger.summary,
+        body: renderResearchLedger(category.researchLedger)
+      })
+    }
+  ];
 
-  return `
-    <section class="page-header page-header--compact">
-      <div>
-        <p class="eyebrow">${category.name}</p>
-        <h1>${category.name}</h1>
-        <p>${category.intro}</p>
-        ${renderCategoryHeaderTools(category)}
-      </div>
-    </section>
-    <section class="tab-group category-tabs" id="category-panels">
-      <div class="tab-buttons">${renderCategoryPanelButtons(category.panels)}</div>
-      <div class="tab-panels">${renderCategoryPanelArticles(category.panels)}</div>
-    </section>
-    <section class="reading-paths-section" id="${headings.typology.id}">
-      <div class="section-heading">
-        <h2>${headings.typology.title}</h2>
-        <p>${headings.typology.summary}</p>
-      </div>
-      <div class="reading-grid">${renderVaseClassificationBands(category.classificationBands)}</div>
-      <div class="topic-typology-grid">${renderVaseTypologyCards(category.typologyList)}</div>
-    </section>
-    <section class="reading-section" id="${headings.notes.id}">
-      <div class="section-heading">
-        <h2>${headings.notes.title}</h2>
-        <p>${headings.notes.summary}</p>
-      </div>
-      <div class="research-facts-grid">${renderVaseCurationNotes(category.curationNotes)}</div>
-    </section>
-    ${renderDetailDeck(`${category.slug}-detail`, category.detailDeck)}
-    <section class="reading-section" id="${headings.collection.id}">
-      <div class="section-heading">
-        <h2>${headings.collection.title}</h2>
-        <p>${headings.collection.summary}</p>
-      </div>
-      <div class="reading-grid">${renderCollectionHighlights(category.collectionHighlights)}</div>
-    </section>
-    <section class="reading-section" id="${headings.ledger.id}">
-      <div class="section-heading">
-        <h2>${headings.ledger.title}</h2>
-        <p>${headings.ledger.summary}</p>
-      </div>
-      ${renderResearchLedger(category.researchLedger)}
-    </section>
-    ${renderCategoryResearchModules(category)}
-    <section class="reading-section category-collapsible" id="category-research" data-collapsible-section>
-      <div class="section-heading section-heading--compact">
-        <div>
-          <h2>${category.researchSectionTitle ?? "延伸研究"}</h2>
-          ${category.researchSectionSummary ? `<p>${category.researchSectionSummary}</p>` : ""}
-        </div>
-        <button class="section-toggle" type="button" data-collapsible-toggle aria-expanded="true">收起</button>
-      </div>
-      <div class="research-rail-shell" data-collapsible-content>
-        <div class="research-strip research-strip--mobile-rail">
-          ${renderCategoryResearchCards(cards)}
-        </div>
-      </div>
-    </section>
-  `;
+  return renderCategoryShell(category, renderCategorySections(category, contentSections, cards), createCategoryNavItems(category, contentSections));
 }
 
 function renderCoffeeCategoryPage(category, researchItems) {
-  const cards = (category.researchSpotlights ?? category.relatedResearchIds.map((id) => ({ id })))
-    .map((spotlight) => ({ item: researchItems.find((entry) => entry.id === spotlight.id), spotlight }))
-    .filter(({ item }) => Boolean(item));
+  const cards = getCategoryResearchCards(category, researchItems);
+  const contentSections = [
+    {
+      id: "coffee-systems",
+      title: "冲煮系统",
+      html: renderCategoryModule({
+        id: "coffee-systems",
+        title: "冲煮系统",
+        summary: category.systemsSummary,
+        body: `
+          <div class="reading-grid category-module-grid">${renderVaseClassificationBands(category.classificationBands)}</div>
+          <div class="coffee-system-grid category-module-grid">${renderCoffeeSystemCards(category.systemCards)}</div>
+        `
+      })
+    },
+    {
+      id: "coffee-matrix",
+      title: "参数矩阵",
+      html: renderCategoryModule({
+        id: "coffee-matrix",
+        title: "参数矩阵",
+        summary: category.matrixSummary,
+        body: renderCoffeeProtocolLedger(category.protocolLedger)
+      })
+    },
+    {
+      id: "coffee-detail-deck",
+      title: "冲煮细览",
+      html: addCategoryModuleClass(renderDetailDeck("coffee-detail-deck", category.detailDeck))
+    },
+    {
+      id: "coffee-history",
+      title: "历史脉络",
+      html: renderCategoryModule({
+        id: "coffee-history",
+        title: "历史脉络",
+        summary: category.historySummary,
+        body: `<div class="coffee-history-grid category-module-grid">${renderCoffeeHistoryCards(category.historyMoments)}</div>`
+      })
+    },
+    {
+      id: "coffee-ledger",
+      title: "参考资料",
+      html: renderCategoryModule({
+        id: "coffee-ledger",
+        title: "参考资料",
+        summary: "这里列出咖啡具页使用的行业组织、品牌官方页面和博物馆对象页，让分类内容有清楚出处。",
+        body: renderResearchLedger(category.researchLedger)
+      })
+    }
+  ];
 
-  return `
-    <section class="page-header">
-      <div>
-        <p class="eyebrow">${category.name}</p>
-        <h1>${category.name}</h1>
-        <p>${category.intro}</p>
-        ${renderCategoryHeaderTools(category)}
-      </div>
-      <img class="page-header__image" src="${category.heroImage}" alt="${category.name}">
-    </section>
-    <section class="tab-group category-tabs" id="category-panels">
-      <div class="tab-buttons">${renderCategoryPanelButtons(category.panels)}</div>
-      <div class="tab-panels">${renderCategoryPanelArticles(category.panels)}</div>
-    </section>
-    <section class="reading-section" id="coffee-systems">
-      <div class="section-heading">
-        <h2>冲煮系统</h2>
-        <p>${category.systemsSummary}</p>
-      </div>
-      <div class="reading-grid">${renderVaseClassificationBands(category.classificationBands)}</div>
-      <div class="coffee-system-grid">${renderCoffeeSystemCards(category.systemCards)}</div>
-    </section>
-    <section class="reading-section" id="coffee-matrix">
-      <div class="section-heading">
-        <h2>参数矩阵</h2>
-        <p>${category.matrixSummary}</p>
-      </div>
-      ${renderCoffeeProtocolLedger(category.protocolLedger)}
-    </section>
-    ${renderDetailDeck("coffee-detail-deck", category.detailDeck)}
-    <section class="reading-section" id="coffee-history">
-      <div class="section-heading">
-        <h2>历史档案</h2>
-        <p>${category.historySummary}</p>
-      </div>
-      <div class="coffee-history-grid">${renderCoffeeHistoryCards(category.historyMoments)}</div>
-    </section>
-    <section class="reading-section" id="coffee-ledger">
-      <div class="section-heading">
-        <h2>资料台账</h2>
-        <p>这里列出咖啡具页使用的行业组织、品牌官方页面和博物馆对象页，避免分类结论失去出处。</p>
-      </div>
-      ${renderResearchLedger(category.researchLedger)}
-    </section>
-    ${renderCategoryResearchModules(category)}
-    <section class="reading-section category-collapsible" id="category-research" data-collapsible-section>
-      <div class="section-heading section-heading--compact">
-        <div>
-          <h2>${category.researchSectionTitle ?? "延伸研究"}</h2>
-          ${category.researchSectionSummary ? `<p>${category.researchSectionSummary}</p>` : ""}
-        </div>
-        <button class="section-toggle" type="button" data-collapsible-toggle aria-expanded="true">收起</button>
-      </div>
-      <div class="research-rail-shell" data-collapsible-content>
-        <div class="research-strip research-strip--mobile-rail">
-          ${renderCategoryResearchCards(cards)}
-        </div>
-      </div>
-    </section>
-  `;
+  return renderCategoryShell(category, renderCategorySections(category, contentSections, cards), createCategoryNavItems(category, contentSections));
 }
 
 function renderTablewareCategoryPage(category, researchItems) {
-  const cards = (category.researchSpotlights ?? category.relatedResearchIds.map((id) => ({ id })))
-    .map((spotlight) => ({ item: researchItems.find((entry) => entry.id === spotlight.id), spotlight }))
-    .filter(({ item }) => Boolean(item));
+  const cards = getCategoryResearchCards(category, researchItems);
+  const contentSections = [
+    {
+      id: "tableware-roster",
+      title: "桌面谱系",
+      html: renderCategoryModule({
+        id: "tableware-roster",
+        title: "桌面谱系",
+        summary: category.rosterSummary,
+        body: `
+          <div class="reading-grid category-module-grid">${renderVaseClassificationBands(category.classificationBands)}</div>
+          ${renderTablewareRoster(category.roster)}
+        `
+      })
+    },
+    {
+      id: "tableware-inline-detail",
+      title: "餐具细览",
+      html: addCategoryModuleClass(renderDetailDeck("tableware-inline-detail", category.detailDeck))
+    },
+    {
+      id: "tableware-collection",
+      title: "馆藏样本",
+      html: renderCategoryModule({
+        id: "tableware-collection",
+        title: "馆藏样本",
+        summary: "选出适合餐具分类的对象页样本，用尺寸、版式和使用语境校正页面内容。",
+        body: `<div class="reading-grid category-module-grid">${renderCollectionHighlights(getCategoryCollectionHighlights(category))}</div>`
+      })
+    },
+    {
+      id: "tableware-judgements",
+      title: "阅读提示",
+      html: renderCategoryModule({
+        id: "tableware-judgements",
+        title: "阅读提示",
+        summary: "把对象页、贸易背景和桌面使用关系整理成可快速复核的阅读条目。",
+        body: `<div class="research-facts-grid category-module-grid">${renderTablewareJudgements(category.judgementNotes)}</div>`
+      })
+    },
+    {
+      id: "tableware-ledger",
+      title: "参考资料",
+      html: renderCategoryModule({
+        id: "tableware-ledger",
+        title: "参考资料",
+        summary: "这里列出餐具页使用的馆藏、研究文章与机构出处，让分类内容有清楚出处。",
+        body: renderResearchLedger(category.researchLedger)
+      })
+    }
+  ];
 
-  return `
-    <section class="page-header page-header--compact">
-      <div>
-        <p class="eyebrow">${category.name}</p>
-        <h1>${category.name}</h1>
-        <p>${category.intro}</p>
-        ${renderCategoryHeaderTools(category)}
-      </div>
-    </section>
-    <section class="tab-group category-tabs" id="category-panels">
-      <div class="tab-buttons">${renderCategoryPanelButtons(category.panels)}</div>
-      <div class="tab-panels">${renderCategoryPanelArticles(category.panels)}</div>
-    </section>
-    <section class="reading-section" id="tableware-roster">
-      <div class="section-heading">
-        <h2>桌面谱系</h2>
-        <p>${category.rosterSummary}</p>
-      </div>
-      <div class="reading-grid">${renderVaseClassificationBands(category.classificationBands)}</div>
-      ${renderTablewareRoster(category.roster)}
-    </section>
-    ${renderDetailDeck("tableware-inline-detail", category.detailDeck)}
-    <section class="reading-section" id="tableware-collection">
-      <div class="section-heading">
-        <h2>馆藏样本</h2>
-        <p>选出适合支撑餐具分类的对象页样本，用尺寸、版式和使用语境校正页面结论。</p>
-      </div>
-      <div class="reading-grid">${renderCollectionHighlights(category.collectionHighlights)}</div>
-    </section>
-    <section class="reading-section" id="tableware-judgements">
-      <div class="section-heading">
-        <h2>研究判断</h2>
-        <p>把对象页、贸易背景和桌面使用关系压缩成可快速复核的判断条目。</p>
-      </div>
-      <div class="research-facts-grid">${renderTablewareJudgements(category.judgementNotes)}</div>
-    </section>
-    <section class="reading-section" id="tableware-ledger">
-      <div class="section-heading">
-        <h2>资料台账</h2>
-        <p>这里列出餐具页使用的馆藏、研究文章与机构来源，避免分类结论失去出处。</p>
-      </div>
-      ${renderResearchLedger(category.researchLedger)}
-    </section>
-    ${renderCategoryResearchModules(category)}
-    <section class="reading-section category-collapsible" id="category-research" data-collapsible-section>
-      <div class="section-heading section-heading--compact">
-        <div>
-          <h2>${category.researchSectionTitle ?? "延伸研究"}</h2>
-          ${category.researchSectionSummary ? `<p>${category.researchSectionSummary}</p>` : ""}
+  return renderCategoryShell(category, renderCategorySections(category, contentSections, cards), createCategoryNavItems(category, contentSections));
+}
+
+function renderArtLedgerSection(category) {
+  if (!category.researchLedger?.length) return null;
+
+  return {
+    id: "art-ledger",
+    title: "参考资料",
+    html: `
+      <section class="reading-section category-module" id="art-ledger">
+        <div class="section-heading">
+          <h2>参考资料</h2>
+          <p>把对象页、机构页面与通史文章统一列出，方便从策展阅读直接回到原文出处。</p>
         </div>
-        <button class="section-toggle" type="button" data-collapsible-toggle aria-expanded="true">收起</button>
-      </div>
-      <div class="research-rail-shell" data-collapsible-content>
-        <div class="research-strip research-strip--mobile-rail">
-          ${renderCategoryResearchCards(cards)}
-        </div>
-      </div>
-    </section>
-  `;
+        ${renderResearchLedger(category.researchLedger)}
+      </section>
+    `
+  };
 }
 
 function renderArtCategoryPage(category, researchItems) {
-  const cards = (category.researchSpotlights ?? category.relatedResearchIds.map((id) => ({ id })))
-    .map((spotlight) => ({ item: researchItems.find((entry) => entry.id === spotlight.id), spotlight }))
-    .filter(({ item }) => Boolean(item));
-  const detailDeckSection = category.detailDeck ? renderDetailDeck("art-detail-deck", category.detailDeck) : "";
-  const researchLedgerSection =
-    category.researchLedger?.length
-      ? `
-          <section class="reading-section" id="art-ledger">
-            <div class="section-heading">
-              <h2>资料台账</h2>
-              <p>把对象页、机构页面与通史文章统一列成台账，方便从策展判断直接回到原始来源。</p>
-            </div>
-            ${renderResearchLedger(category.researchLedger)}
-          </section>
-        `
-      : "";
+  const cards = getCategoryResearchCards(category, researchItems);
+  const contentSections = [
+    {
+      id: "art-highlights",
+      title: "重点馆藏",
+      html: addCategoryModuleClass(
+        renderFeaturedRecordSection(
+          "重点馆藏",
+          category.curatorialIntro[0],
+          getFeaturedRecords(category.collectionHighlights, category.detailDeck?.items),
+          "art-highlights"
+        )
+      )
+    },
+    {
+      id: "art-list",
+      title: "策展列表",
+      html: renderCategoryModule({
+        id: "art-list",
+        title: "策展列表",
+        summary: category.curatorialIntro[1],
+        body: renderCollectionList(category.collectionList)
+      })
+    },
+    category.detailDeck
+      ? {
+          id: "art-detail-deck",
+          title: "馆藏细览",
+          html: addCategoryModuleClass(renderDetailDeck("art-detail-deck", category.detailDeck))
+        }
+      : null,
+    {
+      id: "art-axes",
+      title: "观看路径",
+      html: renderCategoryModule({
+        id: "art-axes",
+        title: "观看路径",
+        summary: "艺术品页先给出观看对象的顺序，再进入使用场景和图像内容。",
+        body: `<div class="reading-grid category-module-grid">${renderViewingAxes(category.viewingAxes)}</div>`
+      })
+    },
+    {
+      id: "art-sources",
+      title: "参考机构",
+      html: renderCategoryModule({
+        id: "art-sources",
+        title: "参考机构",
+        summary: "重点馆藏之后继续展示参考机构，便于回看各馆藏页与研究文章的差异。",
+        body: renderSourceInstitutions(category.sourceInstitutions)
+      })
+    },
+    renderArtLedgerSection(category)
+  ].filter(Boolean);
 
-  return `
-    <section class="page-header page-header--compact">
-      <div>
-        <p class="eyebrow">${category.name}</p>
-        <h1>${category.name}</h1>
-        <p>${category.intro}</p>
-        ${renderCategoryHeaderTools(category)}
-      </div>
-    </section>
-    ${renderFeaturedRecordSection(
-      "重点馆藏",
-      category.curatorialIntro[0],
-      category.collectionHighlights,
-      "art-highlights"
-    )}
-    <section class="reading-section" id="art-list">
-      <div class="section-heading">
-        <h2>策展列表</h2>
-        <p>${category.curatorialIntro[1]}</p>
-      </div>
-      ${renderCollectionList(category.collectionList)}
-    </section>
-    ${detailDeckSection}
-    <section class="reading-section" id="art-axes">
-      <div class="section-heading">
-        <h2>观看路径</h2>
-        <p>艺术品页不先谈使用场景，而先给出观看对象的判断顺序。</p>
-      </div>
-      <div class="reading-grid">${renderViewingAxes(category.viewingAxes)}</div>
-    </section>
-    <section class="reading-section" id="art-sources">
-      <div class="section-heading">
-        <h2>来源机构</h2>
-        <p>重点馆藏之后继续展示来源机构，便于回看各馆藏页与研究文章的差异。</p>
-      </div>
-      ${renderSourceInstitutions(category.sourceInstitutions)}
-    </section>
-    ${researchLedgerSection}
-    ${renderCategoryResearchModules(category)}
-    <section class="reading-section category-collapsible" id="category-research" data-collapsible-section>
-      <div class="section-heading section-heading--compact">
-        <div>
-          <h2>${category.researchSectionTitle ?? "延伸研究"}</h2>
-          ${category.researchSectionSummary ? `<p>${category.researchSectionSummary}</p>` : ""}
-        </div>
-        <button class="section-toggle" type="button" data-collapsible-toggle aria-expanded="true">收起</button>
-      </div>
-      <div class="research-rail-shell" data-collapsible-content>
-        <div class="research-strip research-strip--mobile-rail">
-          ${renderCategoryResearchCards(cards)}
-        </div>
-      </div>
-    </section>
-  `;
+  return renderCategoryShell(category, renderCategorySections(category, contentSections, cards), createCategoryNavItems(category, contentSections));
 }
 
 function renderCategoryPage(category, researchItems) {
@@ -2173,6 +2903,13 @@ export function renderHeroActions(actions) {
 }
 
 export function renderSiteNav(items, currentPage) {
+  const renderChildren = (children) => {
+    if (!children || !children.length) return "";
+    return `<div class="site-nav__sub" hidden>${children
+      .map(({ label, href }) => `<a class="site-nav__sublink" href="${href}" target="_blank">${label}</a>`)
+      .join("")}</div>`;
+  };
+
   return `
     <div class="site-brand">
       <img src="img/logo.png" alt="渔窑标识">
@@ -2185,11 +2922,21 @@ export function renderSiteNav(items, currentPage) {
       <nav class="site-nav__links">
         ${items
           .map(
-            ({ slug, label, href }) => `
-              <a class="site-nav__link${slug === currentPage ? " is-active" : ""}" href="${href}">
-                ${label}
-              </a>
-            `
+            ({ slug, label, href, children }) => {
+              const hasChildren = children && children.length;
+              const isActive = slug === currentPage;
+              return `
+              <div class="site-nav__group${isActive ? " is-active" : ""}">
+                <div class="site-nav__row">
+                  <a class="site-nav__link${isActive ? " is-active" : ""}" href="${href}">
+                    ${label}
+                  </a>
+                  ${hasChildren ? `<button class="site-nav__toggle" type="button" aria-expanded="false" aria-label="展开${label}朝代"><span>▾</span></button>` : ''}
+                </div>
+                ${renderChildren(children)}
+              </div>
+            `;
+            }
           )
           .join("")}
       </nav>
@@ -2199,11 +2946,7 @@ export function renderSiteNav(items, currentPage) {
 
 export function renderPage(currentPage, content, researchId) {
   if (currentPage === "home") {
-    return renderHome(content.home, content.categories, content.research.items);
-  }
-
-  if (currentPage === "about") {
-    return renderAbout(content.about);
+    return cleanPublicCopy(renderHome(content.home, content.categories, content.research.items, content.navigation));
   }
 
   if (currentPage === "research") {
@@ -2211,5 +2954,5 @@ export function renderPage(currentPage, content, researchId) {
   }
 
   const category = content.categories.find((item) => item.slug === currentPage);
-  return category ? renderCategoryPage(category, content.research.items) : "";
+  return category ? cleanPublicCopy(renderCategoryPage(category, content.research.items)) : "";
 }

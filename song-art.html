@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宋 · 艺术品 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent)}
+
+/* 滚动叙事 + 视差 */
+.hero-panel{min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem}
+.hero-panel h1{font-family:var(--title-font);font-size:clamp(3rem,6vw,4.5rem);font-weight:700;margin-bottom:1rem}
+.hero-panel .lead{color:var(--ink-soft);max-width:30rem;margin:0 auto;font-size:1.15rem}
+
+.narrative{max-width:48rem;margin:0 auto;padding:2rem 2rem 5rem}
+.narrative__chapter{margin-bottom:5rem}
+.narrative__chapter:last-child{margin-bottom:0}
+.narrative__image{height:16rem;border-radius:0.85rem;margin-bottom:2rem;display:flex;align-items:center;justify-content:center;font-family:var(--title-font);font-size:4rem}
+.narrative__chapter:nth-child(1) .narrative__image{background:linear-gradient(135deg,rgba(120,150,200,0.15),rgba(49,95,135,0.06));color:rgba(120,150,200,0.15)}
+.narrative__chapter:nth-child(2) .narrative__image{background:linear-gradient(135deg,rgba(150,97,73,0.15),rgba(49,95,135,0.06));color:rgba(150,97,73,0.15)}
+.narrative__chapter:nth-child(3) .narrative__image{background:linear-gradient(135deg,rgba(102,127,97,0.15),rgba(49,95,135,0.06));color:rgba(102,127,97,0.15)}
+.narrative__chapter:nth-child(4) .narrative__image{background:linear-gradient(135deg,rgba(49,95,135,0.15),rgba(150,97,73,0.06));color:rgba(49,95,135,0.15)}
+.narrative__num{font-family:var(--title-font);font-size:5rem;font-weight:700;color:rgba(49,95,135,0.06);line-height:1;margin-bottom:-2rem;position:relative;z-index:-1}
+.narrative__chapter h2{font-family:var(--title-font);font-size:1.8rem;margin-bottom:0.8rem}
+.narrative__chapter p{color:var(--ink-soft);line-height:1.9;margin-bottom:0.6rem}
+.narrative__aside{font-family:"Ma Shan Zheng",serif;font-size:1.1rem;color:var(--accent-warm);margin-top:1rem;line-height:2;border-left:3px solid var(--line);padding-left:1rem}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+
+@media(max-width:640px){.narrative__num{font-size:3rem}}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">宋 <span>·</span> 艺术品</div>
+</header>
+
+<section class="hero-panel">
+  <div>
+    <h1>宋 · 艺术品</h1>
+    <p class="lead">宋代是中国陶瓷美学的巅峰。"雨过天青云破处"的汝窑，"入窑一色出窑万彩"的钧窑，"紫口铁足"的官窑——五大名窑定义了此后千年中国陶瓷的审美坐标。</p>
+  </div>
+</section>
+
+<div class="narrative">
+  <div class="narrative__chapter">
+    <div class="narrative__num">01</div>
+    <img class="narrative__image" src="img/dynasty-pages/song-bowl.jpg" alt="汝窑天青釉" style="object-fit:cover">
+    <h2>汝窑：天青色的终极</h2>
+    <p>汝窑烧造时间极短，约在北宋末年仅二十余年（1086-1106年），传世品不足百件。天青釉色是汝窑的标志——介于蓝与绿之间的微妙色调，被宋徽宗以"雨过天青云破处，这般颜色做将来"一语定格。</p>
+    <p>汝窑器多素面无纹，以釉色和器型取胜。其釉面有细密开片如蝉翼，底足多有三或五枚细小支钉痕——这是汝窑独有的"芝麻钉"特征。台北故宫藏有汝窑水仙盆、莲花式温碗等旷世珍品。</p>
+    <p class="narrative__aside">一抹天青，千年绝响。</p>
+  </div>
+
+  <div class="narrative__chapter">
+    <div class="narrative__num">02</div>
+    <img class="narrative__image" src="img/dynasty-pages/song-guanyin.jpg" alt="钧窑窑变" style="object-fit:cover">
+    <h2>钧窑：窑变的诗意</h2>
+    <p>钧窑以窑变釉色著称，在还原焰中铜元素呈现出从玫瑰紫到海棠红的丰富变化。每一件钧窑器都是独一无二的——入窑前无法预知出窑后的色彩。这种"偶然之美"在宋代艺术哲学中具有特殊地位。</p>
+    <p>钧窑器底多刻有数字，从"一"到"十"，代表尺寸大小。数字越小器型越大。"蚯蚓走泥纹"是钧窑的典型特征——釉层在烧制过程中自然流动形成的纹理。钧窑花盆是徽宗"艮岳"的遗物，见证了北宋末年皇家园林的奢华。</p>
+    <p class="narrative__aside">入窑一色，出窑万彩。</p>
+  </div>
+
+  <div class="narrative__chapter">
+    <div class="narrative__num">03</div>
+    <img class="narrative__image" src="img/dynasty-pages/song-qingbai.jpg" alt="官窑冰裂纹" style="object-fit:cover">
+    <h2>官窑：帝国的审美意志</h2>
+    <p>南宋官窑是皇室直接控制的窑场，产品仅供宫廷使用。官窑瓷器的特征是"紫口铁足"——因胎体含铁量高，口沿釉薄处露出紫黑色胎骨，底足无釉处则呈铁褐色。釉面肥厚，有大开片纹理，俗称"冰裂纹"。</p>
+    <p>官窑器型多仿青铜器和玉器——琮式瓶、贯耳瓶、簋式炉等——这是南宋朝廷"法古"思想的直接体现。在偏安江南的政治语境下，仿古器物承载了文化正统性的象征意义。</p>
+    <p class="narrative__aside">紫口铁足，冰裂纹间，藏着一整个王朝的尊严。</p>
+  </div>
+
+  <div class="narrative__chapter">
+    <div class="narrative__num">04</div>
+    <img class="narrative__image" src="img/dynasty-pages/song-vase.jpg" alt="哥窑金丝铁线" style="object-fit:cover">
+    <h2>哥窑与龙泉：金丝铁线的传奇</h2>
+    <p>哥窑的特征是"金丝铁线"——釉面大开片纹理粗黑如铁线，小开片细密金黄如金丝。这种开片效果是通过胎釉膨胀系数差异在冷却时自然形成的，再以墨汁或茶叶水浸染着色。</p>
+    <p>龙泉窑则是宋代青瓷的另一座高峰。南宋龙泉创烧的粉青和梅子青釉，将青瓷釉色推向了温润如玉的极致。龙泉青瓷大量外销，从日本到东非，成为世界认识中国陶瓷的窗口。</p>
+    <p class="narrative__aside">金丝铁线是时间的刻痕，梅子青是江南的魂魄。</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 宋 · 艺术品</p>
+</footer>
+
+</body>
+</html>

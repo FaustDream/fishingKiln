@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>唐 · 餐具 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* Bento Grid 布局 */
+.page{padding:2rem;max-width:72rem;margin:0 auto}
+.hero-bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:1.2rem;margin-bottom:3rem}
+.hero-bento__item{
+  background:var(--surface);border-radius:1rem;padding:1.5rem;
+  box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.hero-bento__item--hero{grid-column:span 2;grid-row:span 2}
+.hero-bento__item--hero h1{font-family:var(--title-font);font-size:clamp(2.2rem,3.5vw,3rem);font-weight:700;line-height:1.15;margin-bottom:0.6rem}
+.hero-bento__item--hero p{color:var(--ink-soft);font-size:1.05rem}
+.hero-bento__item--stat{grid-row:span 1;align-items:flex-start}
+.hero-bento__item--stat .num{font-family:var(--title-font);font-size:2.4rem;font-weight:700;color:var(--accent-warm);line-height:1}
+.hero-bento__item--stat .lbl{font-size:0.85rem;color:var(--ink-muted);margin-top:0.3rem}
+.hero-bento__item--pull{font-family:var(--title-font);font-size:1.15rem;font-weight:600;color:var(--accent)}
+.hero-bento__item--img{grid-column:span 1;grid-row:span 1;padding:0;overflow:hidden}
+.hero-bento__img-placeholder{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--title-font);font-size:2rem;
+  background:linear-gradient(135deg,rgba(150,97,73,0.12),rgba(49,95,135,0.08));
+  color:rgba(150,97,73,0.2);
+}
+
+/* 分类网格 */
+.section-title{font-family:var(--title-font);font-size:1.8rem;margin-bottom:0.4rem}
+.section-lead{color:var(--ink-soft);margin-bottom:2rem;max-width:36rem}
+.desk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem;margin-bottom:4rem}
+.desk-card{
+  background:var(--surface);border-radius:0.85rem;padding:1.5rem;
+  box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08);
+  transition:transform 200ms ease;
+}
+.desk-card:hover{transform:translateY(-3px)}
+.desk-card__icon{font-size:2rem;margin-bottom:0.6rem}
+.desk-card h3{font-family:var(--title-font);font-size:1.2rem;margin-bottom:0.5rem}
+.desk-card p{font-size:0.9rem;color:var(--ink-soft);line-height:1.7}
+.desk-card__specs{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.8rem}
+.spec{border:1px solid var(--line);border-radius:999px;padding:0.25rem 0.65rem;font-size:0.78rem;color:var(--ink-muted)}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+
+@media(max-width:800px){
+  .hero-bento{grid-template-columns:repeat(2,1fr)}
+  .hero-bento__item--hero{grid-column:span 2}
+}
+@media(max-width:480px){
+  .hero-bento{grid-template-columns:1fr}
+  .hero-bento__item--hero,.hero-bento__item--stat,.hero-bento__item--pull,.hero-bento__item--img{grid-column:span 1}
+  .page{padding:1.2rem}
+}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">唐 <span>·</span> 餐具</div>
+</header>
+
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/tang-sancai-horse.jpg" alt="tang 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+
+<div class="page">
+  <div class="hero-bento">
+    <div class="hero-bento__item hero-bento__item--hero">
+      <h1>唐 · 餐具</h1>
+      <p>唐代是中国高足器皿走向成熟的时期，金银器、三彩、越窑青瓷共同塑造了盛唐餐桌的视觉秩序。高足盘、多曲碗、凤首壶代表了唐人对"器物如建筑"的空间想象。</p>
+    </div>
+    <div class="hero-bento__item hero-bento__item--stat">
+      <div class="num">32</div><div class="lbl">件出土完整器</div>
+    </div>
+    <div class="hero-bento__item hero-bento__item--stat">
+      <div class="num">7</div><div class="lbl">类桌面分工</div>
+    </div>
+    <div class="hero-bento__item hero-bento__item--img">
+      <div class="hero-bento__img-placeholder">盘</div>
+    </div>
+    <div class="hero-bento__item hero-bento__item--pull">
+      金银平脱、三彩釉、越窑青<br>三大材质鼎立
+    </div>
+    <div class="hero-bento__item hero-bento__item--stat">
+      <div class="num">4</div><div class="lbl">核心窑口</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">桌面谱系</h2>
+  <p class="section-lead">唐代餐具分工已相当精细，从高足大盘到多曲小碟，桌面器物的高低错落形成了独特的空间韵律。</p>
+  <div class="desk-grid">
+    <div class="desk-card">
+      <div class="desk-card__icon">🏺</div>
+      <h3>高足大盘</h3>
+      <p>唐代宴饮采用分食制，高足大盘置于席前，既是盛器也是身份象征。金银平脱和螺钿镶嵌工艺将漆器与金属结合，形成极具雕塑感的桌面中心。</p>
+      <div class="desk-card__specs"><span class="spec">口径 30-45cm</span><span class="spec">金银平脱</span><span class="spec">分食制</span></div>
+    </div>
+    <div class="desk-card">
+      <div class="desk-card__icon">🥣</div>
+      <h3>多曲花口碗</h3>
+      <p>模仿花瓣形态的五曲、六曲碗是唐代最具辨识度的器型之一。越窑青瓷多曲碗釉色温润，金银器多曲碗则錾刻精细纹样，二者共同定义了唐代碗类器物的审美标准。</p>
+      <div class="desk-card__specs"><span class="spec">五曲/六曲</span><span class="spec">越窑</span><span class="spec">金银器</span></div>
+    </div>
+    <div class="desk-card">
+      <div class="desk-card__icon">🍽️</div>
+      <h3>承盘与托盘</h3>
+      <p>唐代出现了专门用于承托碗盏的托盘——"盏托"的前身。何家村窖藏中的鎏金双狮纹银盘不仅实用，其錾刻纹样更承载了西域传入的狮子母题。</p>
+      <div class="desk-card__specs"><span class="spec">鎏金银盘</span><span class="spec">西域纹样</span><span class="spec">盏托起源</span></div>
+    </div>
+    <div class="desk-card">
+      <div class="desk-card__icon">🏮</div>
+      <h3>凤首壶与执壶</h3>
+      <p>凤首壶是唐代最具异域风情的餐具器型，造型源自波斯萨珊金银器。三彩凤首壶将胡风与唐韵完美融合，见证了丝路文化交流的深度。</p>
+      <div class="desk-card__specs"><span class="spec">唐三彩</span><span class="spec">萨珊影响</span><span class="spec">凤首造型</span></div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 唐 · 餐具</p>
+</footer>
+
+</body>
+</html>

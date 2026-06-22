@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>唐 · 花器 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* Hero-Centric + Gallery 布局 */
+.hero-full{min-height:85vh;display:flex;align-items:center;padding:0;position:relative}
+.hero-full__text{flex:1;padding:4rem}
+.hero-full__text h1{font-family:var(--title-font);font-size:clamp(3rem,6vw,4.8rem);font-weight:700;line-height:1.05;margin-bottom:1.2rem}
+.hero-full__text .lead{font-size:1.2rem;color:var(--ink-soft);max-width:30rem;line-height:1.9}
+.hero-full__text .verse{font-family:"Ma Shan Zheng",serif;font-size:1.3rem;color:var(--accent-warm);margin-top:1.5rem;line-height:2}
+.hero-full__image{flex:1;min-height:85vh;background:linear-gradient(135deg,rgba(150,97,73,0.1),rgba(49,95,135,0.08));display:flex;align-items:center;justify-content:center}
+.hero-full__image-inner{font-family:var(--title-font);font-size:6rem;color:rgba(150,97,73,0.12);writing-mode:vertical-rl}
+
+/* 画廊 */
+.gallery{padding:3rem 2rem 5rem;max-width:64rem;margin:0 auto}
+.gallery h2{font-family:var(--title-font);font-size:1.8rem;margin-bottom:0.3rem}
+.gallery__lead{color:var(--ink-soft);margin-bottom:2rem}
+.gallery__strip{display:flex;gap:1.2rem;overflow-x:auto;padding-bottom:1rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.gallery__strip::-webkit-scrollbar{height:6px}
+.gallery__strip::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.gallery__card{flex:0 0 18rem;scroll-snap-align:start;background:var(--surface);border-radius:0.85rem;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08)}
+.gallery__card-img{height:14rem;display:flex;align-items:center;justify-content:center;font-family:var(--title-font);font-size:3rem}
+.gallery__card:nth-child(1) .gallery__card-img{background:linear-gradient(135deg,rgba(150,97,73,0.18),rgba(49,95,135,0.08));color:rgba(150,97,73,0.2)}
+.gallery__card:nth-child(2) .gallery__card-img{background:linear-gradient(135deg,rgba(102,127,97,0.18),rgba(49,95,135,0.08));color:rgba(102,127,97,0.2)}
+.gallery__card:nth-child(3) .gallery__card-img{background:linear-gradient(135deg,rgba(49,95,135,0.18),rgba(150,97,73,0.08));color:rgba(49,95,135,0.2)}
+.gallery__card:nth-child(4) .gallery__card-img{background:linear-gradient(135deg,rgba(120,70,130,0.18),rgba(49,95,135,0.08));color:rgba(120,70,130,0.2)}
+.gallery__card-body{padding:1.1rem}
+.gallery__card-body h3{font-family:var(--title-font);font-size:1.1rem;margin-bottom:0.3rem}
+.gallery__card-body p{font-size:0.85rem;color:var(--ink-soft)}
+
+/* 三栏特征 */
+.features{max-width:64rem;margin:0 auto;padding:2rem 2rem 5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.features h2{grid-column:1/-1;font-family:var(--title-font);font-size:1.8rem}
+.feature{border-top:3px solid var(--line);padding-top:1rem}
+.feature__icon{font-size:1.6rem;margin-bottom:0.5rem}
+.feature h3{font-family:var(--title-font);font-size:1.2rem;margin-bottom:0.4rem}
+.feature p{font-size:0.92rem;color:var(--ink-soft);line-height:1.75}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+
+@media(max-width:768px){
+  .hero-full{flex-direction:column;min-height:auto}
+  .hero-full__text{padding:3rem 1.5rem}
+  .hero-full__image{min-height:40vh;width:100%}
+  .features{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">唐 <span>·</span> 花器</div>
+</header>
+
+<div class="hero-full">
+  <div class="hero-full__text">
+    <h1>唐·花器</h1>
+    <p class="lead">唐代花器以瓶、壶、尊为三大主型，金银器与唐三彩共同塑造了盛唐花事的奢华底色。佛前供花、庭院插花、宴会摆花——花器是唐人生活美学的无声见证。</p>
+    <p class="verse">宝瓶承露，花影入禅。</p>
+  </div>
+  <div class="hero-full__image">
+    <img src="img/era-tang-sancai.jpg" alt="唐三彩代表器型" style="width:100%;height:100%;object-fit:cover">
+  </div>
+</div>
+
+<section class="gallery">
+  <h2>器型纵览</h2>
+  <p class="gallery__lead">横向滑动浏览唐代花器的四种核心器型</p>
+  <div class="gallery__strip">
+    <div class="gallery__card">
+      <img class="gallery__card-img" src="img/dynasty-pages/tang-teaware.jpg" alt="军持净瓶" style="object-fit:cover">
+      <div class="gallery__card-body">
+        <h3>军持（净瓶）</h3>
+        <p>源自印度佛教法器，唐代随佛教东传普及。长颈、撇口、带流，用于佛前供水与插花。越窑和邢窑均有烧造。</p>
+      </div>
+    </div>
+    <div class="gallery__card">
+      <img class="gallery__card-img" src="img/dynasty-pages/tang-sancai.JPG" alt="唐代梅瓶雏形" style="object-fit:cover">
+      <div class="gallery__card-body">
+        <h3>唐代梅瓶雏形</h3>
+        <p>小口、短颈、丰肩、敛腹，虽至宋代才称"梅瓶"，唐代已有近似器型用于贮酒与插花。三彩釉色斑斓，金银器錾刻精工。</p>
+      </div>
+    </div>
+    <div class="gallery__card">
+      <img class="gallery__card-img" src="img/dynasty-pages/tang-figurine.jpg" alt="长颈瓶" style="object-fit:cover">
+      <div class="gallery__card-body">
+        <h3>长颈瓶</h3>
+        <p>细长颈、圆鼓腹，唐代金银器中的经典器型。长颈利于单枝花材的固定与展示，是士人书斋和佛堂的常见花器。</p>
+      </div>
+    </div>
+    <div class="gallery__card">
+      <img class="gallery__card-img" src="img/dynasty-pages/tang-bowl.JPG" alt="凤首瓶" style="object-fit:cover">
+      <div class="gallery__card-body">
+        <h3>凤首瓶</h3>
+        <p>受波斯金银器影响，瓶口塑为凤首造型，颈部细长，腹部饱满。唐三彩凤首瓶色彩绚丽，是唐代中西合璧花器的典范。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <h2>唐代花器三脉</h2>
+  <div class="feature">
+    <div class="feature__icon">🏛️</div>
+    <h3>佛前供花</h3>
+    <p>佛教兴盛推动花器需求。净瓶、宝瓶用于佛前供水供花，敦煌壁画中大量出现手持花器的供养人形象。花器布置与佛教仪轨紧密相连。</p>
+  </div>
+  <div class="feature">
+    <div class="feature__icon">🏡</div>
+    <h3>庭院插花</h3>
+    <p>唐代贵族庭院中设"花局"，专司花木养护与室内插花。牡丹、芍药、莲花是主要花材，配以金银或越窑青瓷瓶，形成"花与器共赏"的审美传统。</p>
+  </div>
+  <div class="feature">
+    <div class="feature__icon">🎪</div>
+    <h3>宴会摆花</h3>
+    <p>唐代宴会极重排场，大型花器置于宴席中央，小型瓶花点缀各席。《韩熙载夜宴图》虽为五代作品，但承袭了唐代以花器分隔空间、营造氛围的宴饮传统。</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 唐 · 花器</p>
+</footer>
+
+</body>
+</html>

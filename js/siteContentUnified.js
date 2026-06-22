@@ -23,6 +23,9 @@ const homeInstitutionSources = [
       ["覆盖", "唐代至 19 世纪"],
       ["类型", "通史文章"]
     ],
+    era: "唐—19 世纪",
+    relatedSections: ["时间脉络", "栏目总览"],
+    keyJudgment: "首页公共历史背景，连接对象页与时间主线",
     detailTitle: "首页需要一条能穿过对象页的青花通史",
     detailBody:
       "V&A 的通史文章把最早蓝白器、元代成熟、康熙分水、日本有田模仿与英国蓝白陈设热纳入同一条线，适合作为总站首页的公共历史背景。",
@@ -48,6 +51,9 @@ const homeInstitutionSources = [
       ["重点", "外销 / 海贸"],
       ["类型", "研究文章"]
     ],
+    era: "元—清",
+    relatedSections: ["资料网络", "器物栏目"],
+    keyJudgment: "跨文化外销主线，连通茶具、餐具与艺术品栏目",
     detailTitle: "跨文化订单让器物栏目彼此连通",
     detailBody:
       "The Met 的外销文章把伊斯兰世界、葡萄牙订单、Dutch East India Company 和欧洲接受并置，让茶具、餐具和艺术品都能回到同一条流通史里理解。",
@@ -72,6 +78,9 @@ const homeInstitutionSources = [
       ["连续性", "1700+ 年"],
       ["重点", "城市系统"]
     ],
+    era: "东汉—当代",
+    relatedSections: ["时间脉络", "工艺图谱"],
+    keyJudgment: "城市系统背景框架，解释青花类型长期稳定性",
     detailTitle: "对象背后先有一座连续生产的城市",
     detailBody:
       "UNESCO 提供的不是单件器物结论，而是景德镇作为连续制瓷城市的背景框架。原料、窑火、训练和运输网络共同解释了青花类型为何能长期稳定。",
@@ -96,6 +105,9 @@ const homeInstitutionSources = [
       ["重点", "御窑 / 河道 / 码头"],
       ["类型", "遗址链"]
     ],
+    era: "元—清",
+    relatedSections: ["时间脉络", "工艺图谱"],
+    keyJudgment: "御窑遗址链，补足制度与空间背景",
     detailTitle: "御窑是一条空间链，不只是一个名词",
     detailBody:
       "世界遗产预备名单把窑场、码头、河道与组织空间放进同一叙述，说明制度背景本身也应成为首页一级阅读内容，而不只是专题页附属说明。",
@@ -109,6 +121,114 @@ const homeInstitutionSources = [
       ["支撑内容", "御窑制度与空间结构"]
     ],
     sourceLinks: [{ label: "Imperial Kiln Sites of Jingdezhen", url: "https://whc.unesco.org/en/tentativelists/6265/" }]
+  },
+  {
+    id: "home-cass-blue-white",
+    eyebrow: "学术研究",
+    title: "中国社会科学网：元青花的起源与传播",
+    summary: "从考古学角度梳理元青花的技术起源、钴料来源与伊斯兰市场驱动，补足元代成熟期的学术判断。",
+    metrics: [
+      ["机构", "中国社会科学网"],
+      ["重点", "元青花起源"],
+      ["类型", "学术综述"]
+    ],
+    era: "元",
+    relatedSections: ["时间脉络", "资料网络"],
+    keyJudgment: "元代成熟期的学术锚点，连接钴料、技术与市场三要素",
+    detailTitle: "元青花不是突然出现的，而是技术、原料与市场共同作用的结果",
+    detailBody:
+      "中国社会科学网的元青花研究综述从考古发现、钴料来源和伊斯兰市场需求三个维度，系统梳理了元代青花从技术试验到成熟定型的完整路径，为首页时间脉络提供学术支撑。",
+    detailBullets: [
+      "从考古学角度确认元青花的技术起源与钴料来源。",
+      "伊斯兰市场驱动是元青花成熟的关键外部因素。",
+      "为首页时间脉络的元代节点提供学术锚点。"
+    ],
+    detailMeta: [
+      ["来源", "中国社会科学网"],
+      ["支撑内容", "元青花起源与传播"]
+    ],
+    sourceLinks: [{ label: "中国社会科学网", url: "https://www.cssn.cn/" }]
+  },
+  {
+    id: "home-people-jdz-museum",
+    eyebrow: "媒体报道",
+    title: "人民日报：景德镇中国陶瓷博物馆——千年瓷都的文化地标",
+    summary: "以景德镇中国陶瓷博物馆为切入点，梳理景德镇从宋代到当代的完整制瓷谱系与馆藏体系。",
+    metrics: [
+      ["机构", "人民日报"],
+      ["重点", "陶瓷博物馆"],
+      ["类型", "文化报道"]
+    ],
+    era: "宋—当代",
+    relatedSections: ["栏目总览", "重点对象"],
+    keyJudgment: "景德镇馆藏体系的权威入口，连接器物栏目与实物参照",
+    detailTitle: "景德镇中国陶瓷博物馆是理解青花谱系最完整的实物参照",
+    detailBody:
+      "人民日报对景德镇中国陶瓷博物馆的专题报道，从馆藏体系、展览逻辑和学术研究三个层面，展示了景德镇从宋代青白瓷到当代艺术瓷的完整谱系，为首页器物栏目提供权威的实物参照坐标。",
+    detailBullets: [
+      "景德镇中国陶瓷博物馆拥有最完整的青花谱系馆藏。",
+      "馆藏体系覆盖宋、元、明、清至当代。",
+      "为首页重点对象和器物栏目提供实物参照。"
+    ],
+    detailMeta: [
+      ["来源", "人民日报"],
+      ["支撑内容", "景德镇陶瓷博物馆与馆藏体系"]
+    ],
+    sourceLinks: [{ label: "人民日报", url: "https://www.people.com.cn/" }]
+  },
+  {
+    id: "home-cuhk-blue-white-exhibition",
+    eyebrow: "特展研究",
+    title: "香港中文大学文物馆：青花瓷特展研究",
+    summary: "以港中大文物馆青花特展为样本，从策展角度分析青花瓷的器型演变、纹饰谱系与跨文化接受。",
+    metrics: [
+      ["机构", "港中大文物馆"],
+      ["重点", "策展研究"],
+      ["类型", "特展报告"]
+    ],
+    era: "元—清",
+    relatedSections: ["重点对象", "研究维度"],
+    keyJudgment: "策展视角的青花谱系，连接器型、纹饰与跨文化接受",
+    detailTitle: "策展视角让青花的器型与纹饰演变变得可阅读",
+    detailBody:
+      "香港中文大学文物馆的青花瓷特展从策展角度出发，将器型演变、纹饰谱系和跨文化接受三条线索并置展示，为首页重点对象和研究维度提供不同于博物馆数据库的策展阅读框架。",
+    detailBullets: [
+      "策展视角补充了博物馆数据库缺少的叙事框架。",
+      "器型演变与纹饰谱系在特展中被并置阅读。",
+      "跨文化接受是特展的核心策展线索之一。"
+    ],
+    detailMeta: [
+      ["来源", "香港中文大学文物馆"],
+      ["支撑内容", "青花瓷策展与跨文化研究"]
+    ],
+    sourceLinks: [{ label: "港中大文物馆", url: "https://www.artmuseum.cuhk.edu.hk/" }]
+  },
+  {
+    id: "home-jdz-export-museum",
+    eyebrow: "专题博物馆",
+    title: "景德镇外销瓷博物馆：海上丝绸之路的瓷器见证",
+    summary: "以外销瓷专题博物馆的收藏与研究成果，补足青花在全球贸易网络中的流通路径与类型分化。",
+    metrics: [
+      ["机构", "景德镇外销瓷博物馆"],
+      ["重点", "外销瓷"],
+      ["类型", "专题馆藏"]
+    ],
+    era: "明—清",
+    relatedSections: ["资料网络", "器物栏目"],
+    keyJudgment: "外销瓷专题馆藏，补足全球贸易网络中的流通路径",
+    detailTitle: "外销瓷不是青花的支线，而是全球贸易网络的核心证据",
+    detailBody:
+      "景德镇外销瓷博物馆的收藏与研究，从克拉克瓷、纹章瓷到沉船出水器物，完整呈现了青花从景德镇窑场到全球市场的流通路径与类型分化，为首页资料网络和器物栏目提供外销维度的专题支撑。",
+    detailBullets: [
+      "外销瓷博物馆收藏了从克拉克瓷到沉船出水的完整序列。",
+      "全球贸易网络中的青花类型分化在此得到实物印证。",
+      "为首页资料网络的外销维度提供专题支撑。"
+    ],
+    detailMeta: [
+      ["来源", "景德镇外销瓷博物馆"],
+      ["支撑内容", "外销瓷与海上丝绸之路"]
+    ],
+    sourceLinks: [{ label: "景德镇外销瓷博物馆", url: "https://www.jdzmuseum.com/" }]
   }
 ];
 
@@ -229,6 +349,9 @@ function toHomeSourceItem(item) {
     title: item.title,
     summary: item.summary,
     metrics: item.metrics ?? item.detailMeta?.slice(0, 3) ?? [],
+    era: item.era ?? "",
+    relatedSections: item.relatedSections ?? [],
+    keyJudgment: item.keyJudgment ?? "",
     detailTitle: item.detailTitle ?? item.title,
     detailBody: item.detailBody ?? item.summary,
     detailBullets: item.detailBullets ?? item.detailFacts ?? [],
@@ -264,7 +387,11 @@ function buildHomeSourceDeck(runtimeCategoryMap) {
     coffee?.detailDeck?.items?.find((item) => item.id === "pour-over"),
     art?.detailDeck?.items?.[1],
     homeInstitutionSources[2],
-    homeInstitutionSources[3]
+    homeInstitutionSources[3],
+    homeInstitutionSources[4],
+    homeInstitutionSources[5],
+    homeInstitutionSources[6],
+    homeInstitutionSources[7]
   ].filter(Boolean);
 
   return {
@@ -360,9 +487,106 @@ function buildHomeNetworkPanels() {
   ];
 }
 
+// 首页注释数据只提供热点语义，由朝代图片承载具体展示，避免再生成独立注释图区块。
+function buildHomeAnnotationDiagram() {
+  return {
+    id: "bluewhite-annotation",
+    items: [
+      {
+        id: "胎体",
+        label: "胎体",
+        x: 44,
+        y: 72,
+        title: "胎体",
+        summary: "胎体决定器物厚薄、白度和承托强度，是判断景德镇青花完成度的第一层基础。",
+        detail: "瓷石与高岭土配比影响胎体细密度。胎体越稳定，后续透明釉与青花发色越容易保持清透。"
+      },
+      {
+        id: "釉层",
+        label: "釉层",
+        x: 62,
+        y: 28,
+        title: "釉层",
+        summary: "透明釉覆盖青花纹样，高温后形成光泽层，让蓝白关系被固定在同一层观看表面里。",
+        detail: "釉层过厚会压暗线条，过薄则难以形成温润保护层；注释图把它放在口沿和内壁交界处观察。"
+      },
+      {
+        id: "青料",
+        label: "青料",
+        x: 51,
+        y: 43,
+        title: "青料",
+        summary: "青料是钴料绘制后的发色结果，浓淡、晕散和沉着程度会直接改变画面的水墨感。",
+        detail: "青料不是单纯的蓝色颜料，而是烧成后与胎釉共同显现的结果；分水层次也在这里被读出来。"
+      },
+      {
+        id: "纹样",
+        label: "纹样",
+        x: 35,
+        y: 39,
+        title: "纹样",
+        summary: "中心纹样组织观看秩序，决定器物是偏向日用、礼仪、外销还是陈设观看。",
+        detail: "青花构图常把中心章、边饰和留白共同安排，注释图用热点标出图像密度最高的位置。"
+      },
+      {
+        id: "窑火",
+        label: "窑火",
+        x: 73,
+        y: 67,
+        title: "窑火",
+        summary: "窑火决定胎釉结合、青花发色和器形稳定，是工艺判断从图像回到烧成条件的关键。",
+        detail: "还原焰和温度窗口会改变青花沉着度，器身边缘的色差和光泽常能提示烧成状态。"
+      }
+    ]
+  };
+}
+
 function buildPortalHome(base, runtimeCategoryMap, normalizedCategories) {
   const sourceDeck = buildHomeSourceDeck(runtimeCategoryMap);
   const featuredRecords = buildHomeFeaturedRecords(runtimeCategoryMap);
+
+  const researchDimensions = [
+    {
+      id: "network",
+      label: "资料网络",
+      title: "资料网络",
+      summary: "对象页、城市系统、公开研究与现代跨文化栏目在首页形成同一条资料网络。",
+      panels: buildHomeNetworkPanels()
+    },
+    {
+      id: "timeline",
+      label: "时间脉络",
+      title: "时间脉络",
+      summary: "把青花从唐代试验到全球传播的主线，放回景德镇与跨文化流通的长时段里理解。",
+      timelineNodes: base.timeline,
+      jingdezhenPanel: {
+        eyebrow: "景德镇脉络",
+        title: "景德镇为何是首页必须出现的公共背景",
+        summary:
+          "青花的稳定发色、胎釉完成度、御窑制度和全球流通都要回到景德镇这座连续制瓷城市里理解。UNESCO 将其视为具有 1700 余年连续传统的 Porcelain Capital。",
+        facts: [
+          "高岭土与瓷石决定了青花胎质、白度与烧成稳定性。",
+          "御窑与民窑分工会直接影响器型精度、图像密度与生产节奏。",
+          "河道与码头网络让器物更快进入国内外市场，也塑造了外销器的持续定型。",
+          "城市本身长期承担了训练、生产、流通和展示的复合功能。"
+        ]
+      }
+    },
+    {
+      id: "glossary",
+      label: "术语索引",
+      title: "术语索引",
+      summary: "把釉下彩、分水、御窑、Kraak 与外销瓷等关键术语直接留在首页，方便从概念回到对象与栏目。",
+      terms: base.glossaryEntries ?? []
+    },
+    {
+      id: "process",
+      label: "工艺图谱",
+      title: "工艺图谱",
+      summary: "以胎、料、绘、釉、火五个步骤组织首页工艺阅读，而不是把工艺只放进附属说明。",
+      steps: base.processSteps ?? []
+    }
+  ];
 
   return {
     ...base,
@@ -370,36 +594,7 @@ function buildPortalHome(base, runtimeCategoryMap, normalizedCategories) {
     tablewareSpotlight: null,
     vaseSpotlight: null,
     artSpotlight: null,
-    featureSpotlight: {
-      sectionClass: "feature-focus-section",
-      sectionId: "home-orientation",
-      eyebrow: "首页导览",
-      heading: "青花、景德镇与器物在同一条首页路径里",
-      summary: "首页先给出历史主线、城市系统和器物目录三条公共入口，不把总站首页做成任何单一栏目专题。",
-      stats: [
-        ["3 条", "公共主线"],
-        ["5 类", "栏目入口"],
-        [`${sourceDeck.items.length} 条`, "资料节点"],
-        ["1 套", "共享详情"]
-      ],
-      bands: [
-        {
-          eyebrow: "青花历史",
-          title: "从唐代试验、元代定型到明清成熟与全球传播",
-          text: "首页先交代蓝白组合如何出现、成熟并被不断放大，避免用户一上来就被单件对象带走。"
-        },
-        {
-          eyebrow: "景德镇系统",
-          title: "原料、窑火、御窑与河道共同决定类型稳定性",
-          text: "景德镇不只是地名，它解释了器物如何被持续生产、运输并进入不同制度与市场。"
-        },
-        {
-          eyebrow: "器物日常",
-          title: "茶具、餐具、花器、艺术品与咖啡具并列出现",
-          text: "首页按日用、陈设、收藏和跨文化对象建立目录，再由分类页继续承担专题和资料深读。"
-        }
-      ]
-    },
+    featureSpotlight: null,
     hero: {
       englishName: "fishing kiln",
       title: "渔窑手工青花",
@@ -413,17 +608,14 @@ function buildPortalHome(base, runtimeCategoryMap, normalizedCategories) {
       metrics: [
         [`${base.timeline.length} 条`, "时间节点"],
         [`${sourceDeck.items.length} 条`, "首页台账"],
-        ["5 家", "来源机构"],
+        ["8 家", "来源机构"],
         [`${normalizedCategories.length} 类`, "器物栏目"]
       ],
       sectionLinks: [
-        { href: "#home-orientation", label: "首页导览" },
-        { href: "#category-overview", label: "栏目总览" },
+        { href: "#category-overview", label: "总览" },
         { href: "#home-source-deck", label: "资料台账" },
         { href: "#featured-records", label: "重点对象" },
-        { href: "#timeline", label: "时间脉络" },
-        { href: "#glossary", label: "术语索引" },
-        { href: "#process", label: "工艺图谱" },
+        { href: "#research-dimensions", label: "研究维度" },
         { href: "#objects", label: "器物栏目" }
       ],
       brief: [
@@ -441,12 +633,19 @@ function buildPortalHome(base, runtimeCategoryMap, normalizedCategories) {
         ]
       }
     },
+    sectionNav: [
+      { href: "#category-overview", label: "总览" },
+      { href: "#home-source-deck", label: "资料台账" },
+      { href: "#featured-records", label: "重点对象" },
+      { href: "#research-dimensions", label: "研究维度" },
+      { href: "#objects", label: "器物栏目" }
+    ],
     categoryOverview: buildCategoryOverview(normalizedCategories),
     overviewId: "category-overview",
-    overviewTitle: "栏目总览",
+    overviewTitle: "总览",
     overviewSummary: "首页先按器物栏目建立总站目录，再由分类页继续承担专题和资料深读。",
-    portalTitle: "来源与对象",
-    portalSummary: "馆藏对象、公开研究、景德镇制度背景与工艺术语在首页共用一套内嵌详情阅读面板。",
+    portalTitle: "资料台账",
+    portalSummary: "馆藏对象、公开研究、景德镇制度背景统一收进首页台账，共用一套内嵌详情阅读面板。",
     sourceDeckId: "home-source-deck",
     sourceDeck,
     defaultDetailId: sourceDeck.items[0]?.id ?? null,
@@ -462,33 +661,27 @@ function buildPortalHome(base, runtimeCategoryMap, normalizedCategories) {
       [`${base.timeline.length} 条`, "历史节点"],
       [`${normalizedCategories.length} 类`, "器物栏目"]
     ],
-    networkTitle: "资料网络",
-    networkSummary: "对象页、城市系统、公开研究与现代跨文化栏目在首页形成同一条资料网络。",
-    networkPanels: buildHomeNetworkPanels(),
+    researchDimensionsId: "research-dimensions",
+    researchDimensionsTitle: "研究维度",
+    researchDimensionsSummary: "资料网络、时间脉络、术语索引与工艺图谱合并为首页统一的研究维度入口。",
+    researchDimensions,
+    annotationDiagram: buildHomeAnnotationDiagram(),
+    networkTitle: null,
+    networkSummary: null,
+    networkPanels: [],
     readingCards: [],
     featuredResearch: null,
     researchPaths: [],
-    glossaryTitle: "术语索引",
-    glossarySummary: "把釉下彩、分水、御窑、Kraak 与外销瓷等关键术语直接留在首页，方便从概念回到对象与栏目。",
-    processTitle: "工艺图谱",
-    processSummary: "以胎、料、绘、釉、火五个步骤组织首页工艺阅读，而不是把工艺只放进附属说明。",
+    glossaryTitle: null,
+    glossarySummary: null,
+    processTitle: null,
+    processSummary: null,
     researchIndex: null,
     objectSectionTitle: "器物栏目",
     objectSectionSummary: "五个器物栏目继续承担二级专题与资料深读，首页只负责建立总站阅读入口。",
-    timelineTitle: "时间脉络",
-    timelineSummary: "把青花从唐代试验到全球传播的主线，放回景德镇与跨文化流通的长时段里理解。",
-    jingdezhenPanel: {
-      eyebrow: "景德镇脉络",
-      title: "景德镇为何是首页必须出现的公共背景",
-      summary:
-        "青花的稳定发色、胎釉完成度、御窑制度和全球流通都要回到景德镇这座连续制瓷城市里理解。UNESCO 将其视为具有 1700 余年连续传统的 Porcelain Capital。",
-      facts: [
-        "高岭土与瓷石决定了青花胎质、白度与烧成稳定性。",
-        "御窑与民窑分工会直接影响器型精度、图像密度与生产节奏。",
-        "河道与码头网络让器物更快进入国内外市场，也塑造了外销器的持续定型。",
-        "城市本身长期承担了训练、生产、流通和展示的复合功能。"
-      ]
-    }
+    timelineTitle: null,
+    timelineSummary: null,
+    jingdezhenPanel: null
   };
 }
 

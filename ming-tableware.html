@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>明 · 餐具 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* 对比表格布局 */
+.hero{padding:3rem 2rem 1.5rem;max-width:52rem;margin:0 auto;text-align:center}
+.hero h1{font-family:var(--title-font);font-size:clamp(2.4rem,4.5vw,3.2rem);margin-bottom:0.6rem}
+.hero .lead{color:var(--ink-soft);max-width:32rem;margin:0 auto;font-size:1.05rem}
+
+.compare{padding:2rem;max-width:60rem;margin:0 auto 4rem;overflow-x:auto}
+.compare table{width:100%;border-collapse:collapse;font-size:0.9rem}
+.compare thead th{background:var(--surface);font-family:var(--title-font);font-size:1.05rem;padding:1rem 1.2rem;text-align:left;border-bottom:2px solid var(--accent-warm);position:sticky;top:3.4rem}
+.compare thead th:first-child{border-radius:0.5rem 0 0 0}
+.compare thead th:last-child{border-radius:0 0.5rem 0 0}
+.compare tbody td{padding:1rem 1.2rem;border-bottom:1px solid var(--line);vertical-align:top}
+.compare tbody tr:nth-child(even) td{background:var(--surface-soft)}
+.compare tbody tr:hover td{background:var(--surface)}
+.compare .era{color:var(--accent-warm);font-weight:600;white-space:nowrap}
+.compare .era .sub{font-size:0.75rem;color:var(--ink-muted);display:block;font-weight:400}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">明 <span>·</span> 餐具</div>
+</header>
+
+<section class="hero">
+  <h1>明 · 餐具</h1>
+  <p class="lead">明代景德镇成为全国乃至世界的制瓷中心。从永乐的甜白釉、宣德的青花到成化的斗彩，明代餐具在各个时期呈现出截然不同的美学面貌。</p>
+</section>
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/ming-bluewhite.jpg" alt="ming 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+<div class="compare">
+  <table>
+    <thead>
+      <tr>
+        <th>时期</th>
+        <th>代表性餐具</th>
+        <th>釉色与装饰</th>
+        <th>规格与用途</th>
+        <th>技术与审美要点</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="era">永乐<span class="sub">1403–1424</span></span></td>
+        <td>甜白釉碗、压手杯、僧帽壶</td>
+        <td>甜白釉（半脱胎）、青花（苏麻离青）</td>
+        <td>碗径10~15cm，多成套</td>
+        <td>甜白釉温润如玉，胎薄如纸；青花发色浓艳，带铁锈斑</td>
+      </tr>
+      <tr>
+        <td><span class="era">宣德<span class="sub">1426–1435</span></span></td>
+        <td>青花折沿盘、蟋蟀罐、高足碗</td>
+        <td>青花（苏麻离青+国产）、黄釉</td>
+        <td>大盘径30~40cm，外销为主</td>
+        <td>青花发色达到巅峰，画意精妙；宣德皇帝亲自督办御窑</td>
+      </tr>
+      <tr>
+        <td><span class="era">成化<span class="sub">1465–1487</span></span></td>
+        <td>斗彩鸡缸杯、葡萄纹高足杯、青花宫碗</td>
+        <td>斗彩（釉下青花+釉上彩）</td>
+        <td>小巧精致，多为宫廷用器</td>
+        <td>斗彩工艺的成熟标志着彩瓷时代的开始；成化瓷器以淡雅秀美著称</td>
+      </tr>
+      <tr>
+        <td><span class="era">弘治<span class="sub">1488–1505</span></span></td>
+        <td>黄釉碗、黄釉盘</td>
+        <td>低温黄釉（浇黄）</td>
+        <td>碗径12~18cm</td>
+        <td>弘治黄釉发色娇嫩如鸡油，为明代单色釉最高水平之一</td>
+      </tr>
+      <tr>
+        <td><span class="era">嘉靖<span class="sub">1522–1566</span></span></td>
+        <td>青花大盘、五彩鱼藻纹盖罐</td>
+        <td>青花（回青料）+ 五彩</td>
+        <td>器型趋大，纹饰繁密</td>
+        <td>回青料发色蓝中泛紫；道教题材（八仙、灵芝、云鹤）大量出现</td>
+      </tr>
+      <tr>
+        <td><span class="era">万历<span class="sub">1573–1620</span></span></td>
+        <td>青花克拉克瓷盘、五彩龙凤纹碗</td>
+        <td>青花（浙料）+ 五彩 + 矾红</td>
+        <td>克拉克盘径20~50cm，专供外销</td>
+        <td>克拉克瓷开光装饰风格专为欧洲市场设计；五彩趋于浓艳华丽</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 明 · 餐具</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>明 · 茶具 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* 工艺流程布局 */
+.hero{padding:3rem 2rem 1.5rem;max-width:52rem;margin:0 auto;text-align:center}
+.hero h1{font-family:var(--title-font);font-size:clamp(2.4rem,4.5vw,3.2rem);margin-bottom:0.6rem}
+.hero .lead{color:var(--ink-soft);max-width:30rem;margin:0 auto;font-size:1.05rem}
+
+.process{max-width:52rem;margin:0 auto;padding:1rem 2rem 4rem}
+.process__step{display:flex;align-items:flex-start;margin-bottom:1.5rem;gap:1.5rem}
+.process__step-num{flex-shrink:0;width:3rem;height:3rem;border-radius:50%;background:var(--surface);border:2px solid var(--accent-warm);display:flex;align-items:center;justify-content:center;font-family:var(--title-font);font-size:1.2rem;font-weight:700;color:var(--accent-warm)}
+.process__step-body{padding:1.2rem;background:var(--surface);border-radius:0.7rem;flex:1;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08)}
+.process__step-body h3{font-family:var(--title-font);font-size:1.1rem;margin-bottom:0.3rem}
+.process__step-body p{font-size:0.88rem;color:var(--ink-soft);line-height:1.75}
+.process__step-body .tool{font-size:0.8rem;color:var(--accent);margin-top:0.3rem}
+
+/* 瀹茶法要点 */
+.highlight-box{max-width:52rem;margin:0 auto 4rem;padding:2rem;background:var(--surface);border-radius:0.8rem;border-left:4px solid var(--accent-warm);box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08)}
+.highlight-box h2{font-family:var(--title-font);font-size:1.3rem;margin-bottom:0.6rem}
+.highlight-box p{color:var(--ink-soft);font-size:0.9rem}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">明 <span>·</span> 茶具</div>
+</header>
+
+<section class="hero">
+  <h1>明 · 茶具</h1>
+  <p class="lead">明代茶道完成了一次深刻变革——从宋代繁复的点茶法转为散茶瀹泡法。这一转变不仅改变了饮茶方式，更重塑了整个茶具体系：茶壶取代茶瓶成为核心器皿，紫砂壶在宜兴诞生并被文人赋予极高的审美价值。</p>
+</section>
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/ming-bluewhite.jpg" alt="ming 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+<div class="process">
+  <div class="process__step">
+    <div class="process__step-num">1</div>
+    <div class="process__step-body">
+      <h3>朱元璋废团茶 · 洪武二十四年</h3>
+      <p>1391年，明太祖朱元璋下诏废团茶、改贡散茶。这一行政命令直接终结了延续数百年的龙团凤饼传统，全国改饮散茶。茶具体系随之巨变：茶碾、茶臼、茶罗等点茶工具迅速退出历史舞台。</p>
+      <div class="tool">诏令时间：洪武二十四年九月十六日</div>
+    </div>
+  </div>
+  <div class="process__step">
+    <div class="process__step-num">2</div>
+    <div class="process__step-body">
+      <h3>瀹茶法成型</h3>
+      <p>散茶直接投入壶中，沸水冲泡。不需碾磨、不需击拂。茶壶的器型设计从此围绕出水流畅度、断水利落度和执握舒适度展开。明代茶壶多为瓷质，早期以永乐甜白釉壶、宣德青花壶为代表。</p>
+      <div class="tool">核心器皿：茶壶、茶杯（不用盏）</div>
+    </div>
+  </div>
+  <div class="process__step">
+    <div class="process__step-num">3</div>
+    <div class="process__step-body">
+      <h3>宜兴紫砂壶的诞生</h3>
+      <p>正德至嘉靖年间，宜兴金沙寺僧和供春首创紫砂壶。紫砂泥料双气孔结构使其具有良好的透气性和保温性，"不夺茶香，又无熟汤气"。此后时大彬、李仲芳、徐友泉等名家辈出，紫砂壶从日用器升格为文人雅玩。</p>
+      <div class="tool">代表人物：供春（正德）、时大彬（万历）</div>
+    </div>
+  </div>
+  <div class="process__step">
+    <div class="process__step-num">4</div>
+    <div class="process__step-body">
+      <h3>茶杯的小型化</h3>
+      <p>瀹茶法每次冲泡少量茶汤，分杯品饮。茶杯因此趋于小巧——口径3~5cm的小杯成为主流。永乐压手杯、成化斗彩鸡缸杯是明代茶杯的经典器型。杯身低矮、撇口，便于观赏汤色和闻香。</p>
+      <div class="tool">经典器型：压手杯 · 鸡缸杯 · 若琛杯</div>
+    </div>
+  </div>
+  <div class="process__step">
+    <div class="process__step-num">5</div>
+    <div class="process__step-body">
+      <h3>文人茶空间的形成</h3>
+      <p>许次纾《茶疏》、张源《茶录》、罗廪《茶解》等明代茶书的涌现，标志着中国茶道理论体系的成熟。茶具不再是单纯的饮器，而被赋予了"器以载道"的哲学意味。茶壶、茶杯、茶洗、茶巾等一整套器具的组合成为文人书斋的标配。</p>
+      <div class="tool">重要文献：许次纾《茶疏》（1597年）</div>
+    </div>
+  </div>
+</div>
+
+<div class="highlight-box">
+  <h2>从点茶到瀹泡：一场自上而下的茶器革命</h2>
+  <p>宋代点茶所用的建盏、茶筅、茶碾在明代几乎消失殆尽。取而代之的是小巧精致的白瓷茶杯和紫砂壶。这一转变仅用了不到五十年——行政力量与饮茶风尚的合力，创造了一套全新的茶具美学和饮茶仪式，其影响延续至今。</p>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 明 · 茶具</p>
+</footer>
+
+</body>
+</html>

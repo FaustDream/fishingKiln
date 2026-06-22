@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宋 · 茶具 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent)}
+
+/* 对比陈列布局 */
+.page{padding:3rem 2rem;max-width:64rem;margin:0 auto}
+.page h1{font-family:var(--title-font);font-size:clamp(2.4rem,4.5vw,3.2rem);text-align:center;margin-bottom:0.6rem}
+.page .lead{text-align:center;color:var(--ink-soft);max-width:32rem;margin:0 auto 3rem;font-size:1.05rem}
+
+.compare{display:grid;grid-template-columns:1fr 1px 1fr;gap:2rem;margin-bottom:4rem;align-items:start}
+.compare__col{padding:1.5rem}
+.compare__col h2{font-family:var(--title-font);font-size:1.5rem;margin-bottom:0.8rem;text-align:center}
+.compare__col .vs-label{font-size:0.8rem;color:var(--ink-muted);text-transform:uppercase;letter-spacing:0.1em;text-align:center;margin-bottom:1.5rem}
+.compare__divider{background:var(--line);height:100%;min-height:20rem}
+.compare__item{margin-bottom:1.8rem}
+.compare__item-img{height:10rem;border-radius:0.7rem;display:flex;align-items:center;justify-content:center;font-family:var(--title-font);font-size:2.5rem;margin-bottom:0.8rem}
+.compare__col:first-child .compare__item:nth-child(2) .compare__item-img{background:linear-gradient(135deg,rgba(102,127,97,0.15),rgba(49,95,135,0.06));color:rgba(102,127,97,0.2)}
+.compare__col:first-child .compare__item:nth-child(3) .compare__item-img{background:linear-gradient(135deg,rgba(150,97,73,0.15),rgba(49,95,135,0.06));color:rgba(150,97,73,0.2)}
+.compare__col:last-child .compare__item:nth-child(2) .compare__item-img{background:linear-gradient(135deg,rgba(49,95,135,0.15),rgba(150,97,73,0.06));color:rgba(49,95,135,0.2)}
+.compare__col:last-child .compare__item:nth-child(3) .compare__item-img{background:linear-gradient(135deg,rgba(120,70,130,0.15),rgba(49,95,135,0.06));color:rgba(120,70,130,0.2)}
+.compare__item h3{font-family:var(--title-font);font-size:1.1rem;margin-bottom:0.3rem}
+.compare__item p{font-size:0.88rem;color:var(--ink-soft)}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+
+@media(max-width:700px){.compare{grid-template-columns:1fr}.compare__divider{display:none}}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">宋 <span>·</span> 茶具</div>
+</header>
+
+<div class="page">
+  <h1>宋 · 茶具</h1>
+  <p class="lead">宋代是从煎茶到点茶的革命期。斗茶之风盛行，黑釉建盏与青白瓷执壶分庭抗礼。蔡襄《茶录》与徽宗《大观茶论》将茶具审美推向极致。</p>
+
+  <div class="compare">
+    <div class="compare__col">
+      <h2>建窑 · 黑釉</h2>
+      <p class="vs-label">Southern School</p>
+      <div class="compare__item">
+        <img class="compare__item-img" src="img/dynasty-pages/song-teabowl.jpg" alt="兔毫盏" style="object-fit:cover;width:100%">
+        <h3>兔毫盏</h3>
+        <p>建窑黑釉茶盏以兔毫纹最为著名。釉面在高温下析出铁结晶，形成如兔毫般细密纹理。斗茶时白色茶沫在黑色盏壁上格外分明，故蔡襄言"茶色白，宜黑盏"。</p>
+      </div>
+      <div class="compare__item">
+        <img class="compare__item-img" src="img/dynasty-pages/song-jian.jpg" alt="曜变天目" style="object-fit:cover;width:100%">
+        <h3>曜变天目</h3>
+        <p>建窑极品，釉面呈现如宇宙星云般的七彩光斑，存世仅三件完整器，均在日本被列为国宝。每只曜变盏的斑纹独一无二，是宋代陶瓷偶然之美的最高体现。</p>
+      </div>
+    </div>
+    <div class="compare__divider"></div>
+    <div class="compare__col">
+      <h2>景德镇 · 青白瓷</h2>
+      <p class="vs-label">Northern Elegance</p>
+      <div class="compare__item">
+        <img class="compare__item-img" src="img/dynasty-pages/song-qingbai.jpg" alt="青白瓷执壶" style="object-fit:cover;width:100%">
+        <h3>青白瓷执壶</h3>
+        <p>景德镇青白瓷釉色介于青白之间，称"影青"或"映青"。执壶长流、曲柄、瓜棱腹，薄胎透光，釉面如冰似玉。李清照词中"玉枕纱橱"或即影青瓷枕。</p>
+      </div>
+      <div class="compare__item">
+        <img class="compare__item-img" src="img/dynasty-pages/song-bowl.jpg" alt="青白瓷茶臼" style="object-fit:cover;width:100%">
+        <h3>青白瓷茶臼</h3>
+        <p>宋代点茶需先将茶饼碾成细末，茶臼即为研茶工具。青白瓷茶臼内壁无釉以利研磨，外壁施青白釉，器型端庄、重心沉稳，是实用与审美结合的典范。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 宋 · 茶具</p>
+</footer>
+
+</body>
+</html>

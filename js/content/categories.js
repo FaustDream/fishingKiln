@@ -35,36 +35,76 @@ export const categories = [
     relatedResearchIds: ["kraak-export", "global-export", "imperial-kiln-system", "underglaze-definition", "chinamania-interior"],
     pageLinks: [
       { href: "#tableware-roster", label: "看桌面谱系" },
-      { href: "#category-context", label: "看观察维度" },
+      { href: "#category-context", label: "看欣赏角度" },
       { href: "#tableware-collection", label: "看馆藏样本" },
-      { href: "#tableware-ledger", label: "看资料台账" }
+      { href: "#tableware-ledger", label: "看参考资料" }
     ],
     summaryStats: [
       ["5 组", "桌面类型"],
       ["4 件", "馆藏样本"],
-      ["7 条", "来源台账"],
+      ["7 条", "参考资料"],
       ["4 家", "核心机构"]
     ],
     classificationBands: [
       {
         eyebrow: "主盘",
         title: "先看中心章与远距识别，再看盛放功能",
-        text: "大型主盘的第一任务通常不是细节叙事，而是让中心章、边饰和整圈留白在桌面中心立住，适合承接节庆或展示性订单。"
+        text: "大型主盘的第一任务通常不是细节叙事，而是让中心章、边饰和整圈留白在桌面中心立住，适合承接节庆或展示性订单。",
+        meta: [
+          ["桌面位置", "宴席中心 / 展示柜"],
+          ["代表尺度", "50 cm 级大盘"],
+          ["画面重心", "中心章 + 外圈边饰"]
+        ],
+        points: [
+          "先确认盘面是否能在远距形成清楚轮廓。",
+          "再看中心章、留白圈和边饰之间是否层级分明。",
+          "最后把纹章或主题放回订单、礼仪和陈设场景。"
+        ]
       },
       {
         eyebrow: "深碗",
         title: "容积、开口和端持方式一起决定阅读顺序",
-        text: "碗类器物不能只看图案。口径、腹深、双耳或加装构件会直接影响盛放、端持和海外展示时的观看重心。"
+        text: "碗类器物不能只看图案。口径、腹深、双耳或加装构件会直接影响盛放、端持和海外展示时的观看重心。",
+        meta: [
+          ["桌面位置", "盛汤 / 展示碗"],
+          ["器型要点", "口径、腹深、双耳"],
+          ["使用动作", "端持 / 承接 / 展示"]
+        ],
+        points: [
+          "深腹会改变盛放容量，也会改变纹样进入视线的角度。",
+          "双耳和金属加装会把碗从日用器推向展示器。",
+          "碗口展开越大，盘面式阅读和环绕阅读越明显。"
+        ]
       },
       {
         eyebrow: "外销盘",
         title: "分区边饰是运输与陈设共同塑造的版式",
-        text: "Kraak 一类的外销盘把边饰分区、中心章和盘壁深度压进同一件器物里，本质上是在解决远洋流通与海外陈设的双重需求。"
+        text: "Kraak 一类的外销盘把边饰分区、中心章和盘壁深度压进同一件器物里，本质上是在解决远洋流通与海外陈设的双重需求。",
+        meta: [
+          ["流通场景", "远洋贸易"],
+          ["盘面结构", "分区边饰 / 中心章"],
+          ["陈设距离", "餐桌 + 室内墙柜"]
+        ],
+        points: [
+          "分区边饰让盘面在跨文化市场里更容易被识别。",
+          "较深盘壁兼顾运输强度、盛放功能和上墙陈设。",
+          "外销盘要同时读海贸路线、盘面版式和海外室内趣味。"
+        ]
       },
       {
         eyebrow: "成组服务",
         title: "标准化直径与成套关系让餐具真正进入日常桌面",
-        text: "到了 17 至 18 世纪，更稳定的口径和较明确的服务分工让出口盘能够成组出现，桌面阅读也从单件转向整套餐桌秩序。"
+        text: "到了 17 至 18 世纪，更稳定的口径和较明确的服务分工让出口盘能够成组出现，桌面阅读也从单件转向整套餐桌秩序。",
+        meta: [
+          ["时间段", "17-18 世纪"],
+          ["组合方式", "主盘 / 服务盘 / 小碟"],
+          ["桌面节奏", "成套摆放"]
+        ],
+        points: [
+          "稳定口径让不同器物可以进入同一套餐桌系统。",
+          "中心题景逐渐服务日常桌面，而不只服务展示场景。",
+          "成组关系能解释为什么同类图案会反复出现在不同尺寸上。"
+        ]
       }
     ],
     rosterSummary: "桌面谱系先按主盘、深碗、外销盘和成组服务四条线展开，再把各自最有代表性的馆藏对象挂回去，避免餐具页只剩年代列表。",
@@ -299,20 +339,60 @@ export const categories = [
     ],
     judgementNotes: [
       {
-        title: "先判桌面位置，再判年代",
-        text: "主盘、深碗和服务盘的第一差异来自桌面分工与观看距离，而不是先来自朝代断代。"
+        title: "先定桌面位置，再看年代",
+        text: "主盘、深碗和服务盘的第一差异来自桌面分工与观看距离，年代信息要放在具体使用方式之后再读。",
+        meta: [
+          ["入口", "桌面中心 / 边位"],
+          ["对象", "主盘、深碗、服务盘"],
+          ["参照", "尺寸 + 观看距离"]
+        ],
+        points: [
+          "中心主盘先看远距识别和整圈留白。",
+          "深碗先看腹深、端持方式和口沿展开。",
+          "服务盘先看直径是否能与同套器物形成节奏。"
+        ]
       },
       {
         title: "边饰和中心章是盘面秩序",
-        text: "对餐具来说，边饰不是附属纹样，而是决定留白边界、主图位置和桌面识别节奏的核心结构。"
+        text: "对餐具来说，边饰不是附属纹样，而是决定留白边界、主图位置和桌面识别节奏的核心结构。",
+        meta: [
+          ["画面", "边饰 / 留白 / 中心章"],
+          ["场景", "餐桌与陈设"],
+          ["节奏", "由外向内"]
+        ],
+        points: [
+          "边饰宽窄会直接改变盘面呼吸感。",
+          "中心章越强，盘子越适合承担桌面焦点。",
+          "留白圈能让题景与食物、灯光、陈设保持距离。"
+        ]
       },
       {
-        title: "海外加装要进主判断线",
-        text: "像 Burghley House 双耳碗这样的对象说明，海外加装并非枝节，而是餐具如何被再定义的重要证据。"
+        title: "海外加装也是器物身份",
+        text: "像 Burghley House 双耳碗这样的对象说明，海外加装并非枝节，而是餐具如何被再定义的重要线索。",
+        meta: [
+          ["对象", "双耳碗 / 金属件"],
+          ["场景", "海外室内"],
+          ["变化", "端持与展示并行"]
+        ],
+        points: [
+          "加装构件会改变器物的握持方式和横向存在感。",
+          "金属件常把原本的盛放器转成展示性器物。",
+          "这类对象适合放在跨文化接受和室内陈设里阅读。"
+        ]
       },
       {
         title: "城市系统决定成组稳定性",
-        text: "如果没有景德镇长期稳定的原料、窑火和运输网络，盘、碗、碟很难在外销环境里形成可重复的成组类型。"
+        text: "如果没有景德镇长期稳定的原料、窑火和运输网络，盘、碗、碟很难在外销环境里形成可重复的成组类型。",
+        meta: [
+          ["城市", "景德镇"],
+          ["基础", "原料 / 窑火 / 运输"],
+          ["结果", "成组器物稳定出现"]
+        ],
+        points: [
+          "稳定原料让胎体、釉面和口径更容易保持一致。",
+          "运输网络让大批量订单能够离开产地并进入海外市场。",
+          "成组餐具背后是长期生产能力和市场协同。"
+        ]
       }
     ],
     researchLedger: [
@@ -320,56 +400,56 @@ export const categories = [
         title: "The Met / Portuguese royal arms dish",
         type: "博物馆馆藏",
         focus: "早期超大订单盘、王室纹章与中心主盘逻辑",
-        value: "支撑主盘与远距识别判断",
+        value: "关联主盘陈设和远距识别线索",
         href: "https://www.metmuseum.org/art/collection/search/204716"
       },
       {
         title: "British Museum / Kraak dish",
         type: "博物馆馆藏",
         focus: "晚明分区边饰、沉船语境与欧洲贸易",
-        value: "支撑 Kraak 外销盘版式",
+        value: "关联 Kraak 外销盘的分区版式",
         href: "https://www.britishmuseum.org/collection/object/A_1984-0202-33"
       },
       {
         title: "The Met / Burghley House bowl",
         type: "博物馆馆藏",
         focus: "双耳碗与英国金属加装",
-        value: "支撑深碗与海外接受线",
+        value: "关联深碗器型和海外接受方式",
         href: "https://www.metmuseum.org/art/collection/search/199405"
       },
       {
         title: "The Met / late 17th century dish",
         type: "博物馆馆藏",
         focus: "较标准口径的出口盘与中心题景",
-        value: "支撑成组服务盘判断",
+        value: "关联成组服务盘和日常桌面节奏",
         href: "https://www.metmuseum.org/art/collection/search/208218"
       },
       {
         title: "The Met / Dish ca. 1720",
         type: "博物馆馆藏",
         focus: "18 世纪前段大径服务盘",
-        value: "支撑桌面服务标准化",
+        value: "关联桌面服务的尺寸趋同和成套关系",
         href: "https://www.metmuseum.org/art/collection/search/205707"
       },
       {
         title: "The Met / Chinese Export Porcelain",
         type: "博物馆研究",
         focus: "Islamic world、Portugal、VOC 与 Kraak 传播链",
-        value: "支撑海贸传播背景",
+        value: "关联海贸传播、外销市场和跨区域订单",
         href: "https://www.metmuseum.org/essays/east-and-west-chinese-export-porcelain"
       },
       {
         title: "UNESCO / Jingdezhen",
         type: "国际机构",
         focus: "1700 余年连续制瓷与 Porcelain Capital 定位",
-        value: "支撑城市系统与成组稳定性",
+        value: "关联景德镇城市系统和成组生产稳定性",
         href: "https://www.unesco.org/en/creative-cities/jingdezhen"
       },
       {
         title: "V&A / Chinese blue and white ceramics",
         type: "博物馆研究",
         focus: "唐代试验、元代成熟与全球传播总述",
-        value: "支撑首页时间线与通史背景",
+        value: "关联青花时间线和通史背景",
         href: "https://www.vam.ac.uk/articles/chinese-blue-and-white-ceramics"
       }
     ],
@@ -402,35 +482,75 @@ export const categories = [
     pageLinks: [
       { href: "#coffee-systems", label: "看冲煮系统" },
       { href: "#coffee-matrix", label: "看参数矩阵" },
-      { href: "#coffee-history", label: "看历史档案" },
-      { href: "#coffee-ledger", label: "看资料台账" }
+      { href: "#coffee-history", label: "看历史脉络" },
+      { href: "#coffee-ledger", label: "看参考资料" }
     ],
     summaryStats: [
       ["6 组", "冲煮系统"],
       ["5 条", "参数矩阵"],
-      ["4 段", "历史档案"],
+      ["4 段", "历史脉络"],
       ["7 条", "联网来源"]
     ],
     classificationBands: [
       {
         eyebrow: "手动滴滤",
         title: "以注水节奏和滤材为主导",
-        text: "V60 与 CHEMEX 这类系统把流速、滤纸阻力和粉床形态交给操作者，因此最适合拿来比较粉水比、研磨粗细与总时长。"
+        text: "V60 与 CHEMEX 这类系统把流速、滤纸阻力和粉床形态交给操作者，因此最适合拿来比较粉水比、研磨粗细与总时长。",
+        meta: [
+          ["代表器具", "V60 / CHEMEX"],
+          ["时间窗口", "2-4 分钟"],
+          ["核心变量", "注水节奏"]
+        ],
+        points: [
+          "锥形滤杯会放大粉床高度和注水路线的差异。",
+          "纸滤让口感更清亮，油脂与细粉会被明显截留。",
+          "同样粉水比下，操作者的水流稳定性会改变萃取层次。"
+        ]
       },
       {
         eyebrow: "浸泡 / 混合",
         title: "把接触时间当成第一控制项",
-        text: "法压和 AeroPress 都不是先看器形，而是先看浸泡时长、过滤方式和压出节奏，适合强调口感厚度和操作窗口。"
+        text: "法压和 AeroPress 都不是先看器形，而是先看浸泡时长、过滤方式和压出节奏，适合强调口感厚度和操作窗口。",
+        meta: [
+          ["代表器具", "French press / AeroPress"],
+          ["时间窗口", "少于 2 分钟到 4 分钟"],
+          ["核心变量", "接触时间"]
+        ],
+        points: [
+          "法压更强调完整浸泡和金属滤网带来的厚度。",
+          "AeroPress 把短时浸泡与压滤结合，适合单杯和移动场景。",
+          "这一路的差异主要来自浸泡时间、滤材和压出方式。"
+        ]
       },
       {
         eyebrow: "压力系统",
         title: "用短时高强度萃取换取结构感",
-        text: "espresso 这一路把接触时间压到 20-30 秒范围，器具要先保证投粉量、受力路径和温度稳定，再谈杯型和陈设。"
+        text: "espresso 这一路把接触时间压到 20-30 秒范围，器具要先保证投粉量、受力路径和温度稳定，再谈杯型和陈设。",
+        meta: [
+          ["代表器具", "半自动 espresso"],
+          ["时间窗口", "20-30 秒"],
+          ["核心变量", "压力与投粉"]
+        ],
+        points: [
+          "短时萃取会压缩容错空间，研磨、投粉和粉饼受力都要同步稳定。",
+          "54mm、18g 这类规格会直接影响杯量和出液路径。",
+          "杯型服务香气集中和 crema 展示，不能只当外观附件。"
+        ]
       },
       {
         eyebrow: "低温长时",
         title: "把浓缩与批量预制放回器具分类",
-        text: "冷萃系统强调低温、长时和浓缩储存，因此器具的容积、排液方式和后续稀释逻辑都要单独成立。"
+        text: "冷萃系统强调低温、长时和浓缩储存，因此器具的容积、排液方式和后续稀释逻辑都要单独成立。",
+        meta: [
+          ["代表器具", "OXO Cold Brew"],
+          ["时间窗口", "约 12 小时"],
+          ["核心变量", "容积与排液"]
+        ],
+        points: [
+          "冷萃先得到浓缩液，再通过稀释进入不同饮用场景。",
+          "过滤路径越稳定，长时接触中的杂味控制越清楚。",
+          "容积和储存方式决定它更接近批量预制器具。"
+        ]
       }
     ],
     systemsSummary: "按冲煮系统先分大类，再把容量、时间和官方参数折回器具本身，形成既能扫读又能比对的分类层。",
@@ -795,7 +915,7 @@ export const categories = [
         title: "British Museum",
         summary: "从《Life in a cup》到 18 世纪 Worcester 咖啡杯碟，补足咖啡社交与瓷器套组的历史层。",
         href: "https://www.britishmuseum.org/collection/object/H_1887-0307-V-68",
-        stat: "历史档案"
+        stat: "历史脉络"
       }
     ],
     researchLedger: [
@@ -803,50 +923,64 @@ export const categories = [
         title: "NCA 手冲页面",
         type: "行业组织",
         focus: "温度、时间、粉水比与滤泡定义",
-        value: "支撑手冲滤泡协议",
+        value: "关联手冲滤泡的基础参数",
         href: "https://www.aboutcoffee.org/brewing/pour-over-coffee/"
       },
       {
         title: "NCA 法压页面",
         type: "行业组织",
         focus: "4 分钟窗口、粗研磨与浸泡路径",
-        value: "支撑法压浸泡协议",
+        value: "关联法压浸泡的时间和研磨条件",
         href: "https://www.aboutcoffee.org/brewing/french-press-coffee/"
       },
       {
         title: "NCA Espresso 页面",
         type: "行业组织",
         focus: "1:2、20-30 秒与压力萃取定义",
-        value: "支撑 espresso 工作流",
+        value: "关联 espresso 的短时压力萃取参数",
         href: "https://www.aboutcoffee.org/brewing/espresso/"
       },
       {
         title: "NCA 冷萃页面",
         type: "行业组织",
         focus: "1:4-1:5、12 小时与浓缩逻辑",
-        value: "支撑冷萃浓缩系统",
+        value: "关联冷萃浓缩的长时接触路径",
         href: "https://www.aboutcoffee.org/brewing/cold-brew-coffee/"
       },
       {
         title: "The Met / Coffee Pot",
         type: "博物馆馆藏",
         focus: "1650-75 日本外销咖啡壶",
-        value: "支撑跨文化器型改写",
+        value: "关联跨文化器型改写与欧洲订单需求",
         href: "https://www.metmuseum.org/art/collection/search/62526"
       },
       {
         title: "The Met / Coffee Cup and Saucer",
         type: "博物馆馆藏",
         focus: "中国为美国市场制作的咖啡杯碟",
-        value: "支撑市场定制与套组器具",
+        value: "关联市场定制、杯碟组合和外销服务",
         href: "https://www.metmuseum.org/en/art/collection/search/2110"
       },
       {
         title: "British Museum / Life in a cup",
         type: "博物馆研究",
         focus: "奥斯曼咖啡杯文化与中国瓷杯进口",
-        value: "支撑咖啡具社会史",
+        value: "关联咖啡具社会史和早期瓷杯流通",
         href: "https://www.britishmuseum.org/sites/default/files/2021-10/Life_in_a_cup_coffee_culture_in_the_Islamic_world_large_print_guide_1021.pdf"
+      },
+      {
+        title: "Hario / V60 02",
+        type: "品牌资料",
+        focus: "1-4 cups、60° 锥形和 spiral ribs",
+        value: "用于对照手冲滤杯的器形、容量和流速结构",
+        href: "https://www.hario-usa.com/products/v60-ceramic-coffee-dripper-02-white"
+      },
+      {
+        title: "AeroPress / Original",
+        type: "品牌资料",
+        focus: "10 oz 容量、1-3 cups 与少于 2 分钟的移动单杯",
+        value: "用于对照短时浸泡、压滤和便携使用场景",
+        href: "https://aeropress.com/products/aeropress-coffee-maker"
       }
     ],
     researchSectionTitle: "咖啡具延伸研究",
@@ -880,12 +1014,12 @@ export const categories = [
     relatedResearchIds: ["qingbai-bridge", "tianbai-yongle", "porcelain-capital", "imperial-kiln-system", "underglaze-definition"],
     pageLinks: [
       { href: "#vase-typology", label: "看花器谱系" },
-      { href: "#vase-rules", label: "看典籍规矩" },
-      { href: "#vase-ledger", label: "看资料台账" }
+      { href: "#vase-rules", label: "看典籍" },
+      { href: "#vase-ledger", label: "看参考资料" }
     ],
     summaryStats: [
       ["7 组", "器型样本"],
-      ["4 条", "典籍规矩"],
+      ["4 条", "典籍"],
       ["4 家", "资料来源"],
       ["3 层", "空间等级"]
     ],
@@ -893,17 +1027,47 @@ export const categories = [
       {
         eyebrow: "书斋清供",
         title: "近身观看，器型宜矮小或束口",
-        text: "书斋花器更强调口沿如何束枝、肩部如何稳住枝量，适合梅瓶、胆瓶或较内敛的壶形花器。"
+        text: "书斋花器更强调口沿如何束枝、肩部如何稳住枝量，适合梅瓶、胆瓶或较内敛的壶形花器。",
+        meta: [
+          ["空间", "书斋 / 小几"],
+          ["器型", "梅瓶 / 胆瓶 / 小壶"],
+          ["花量", "单枝 / 疏枝"]
+        ],
+        points: [
+          "近身观看先看口沿是否能把枝条收成清楚中轴。",
+          "肩线要能稳住枝量，避免花枝把器身压低。",
+          "留白面需要给花影、枝势和器身纹样留出呼吸。"
+        ]
       },
       {
         eyebrow: "厅堂陈设",
         title: "远距观看，轮廓必须先立住",
-        text: "堂瓶强调高度、分段和正面性，尊式、觚式或大口外撇器更容易在远处形成气场。"
+        text: "堂瓶强调高度、分段和正面性，尊式、觚式或大口外撇器更容易在远处形成气场。",
+        meta: [
+          ["空间", "厅堂 / 边几"],
+          ["器型", "尊式 / 觚式 / 大瓶"],
+          ["花量", "高枝 / 成对陈设"]
+        ],
+        points: [
+          "远距陈设先看高度和分段轮廓是否能压住空间。",
+          "外撇口沿适合把枝势向上送，形成更高的视觉中心。",
+          "成对摆放时，左右轮廓和纹样密度要保持同一节奏。"
+        ]
       },
       {
         eyebrow: "案几与墙边",
         title: "侧面、正面与靠墙关系都要成立",
-        text: "抱月瓶、环耳瓶等器型不是只靠正面图案成立，它们要兼顾靠墙陈设时的正面性与侧向线条。"
+        text: "抱月瓶、环耳瓶等器型不是只靠正面图案成立，它们要兼顾靠墙陈设时的正面性与侧向线条。",
+        meta: [
+          ["空间", "案后 / 靠墙"],
+          ["器型", "抱月瓶 / 环耳瓶"],
+          ["观看", "正面性 + 侧向线"]
+        ],
+        points: [
+          "靠墙陈设先看器物正面是否足够完整。",
+          "双耳和扁腹会强化中轴，不适合被花材完全遮住。",
+          "侧面线条决定人在移动时是否还能读到器物轮廓。"
+        ]
       }
     ],
     typologyList: [
@@ -987,19 +1151,59 @@ export const categories = [
     curationNotes: [
       {
         title: "先分场所，再定器型",
-        text: "《瓶花谱》《瓶史》都把书斋与厅堂分开处理。花器分类的第一步不是年代，而是观看距离与空间体量。"
+        text: "《瓶花谱》《瓶史》都把书斋与厅堂分开处理。花器分类的第一步不是年代，而是观看距离与空间体量。",
+        meta: [
+          ["典籍", "《瓶花谱》《瓶史》"],
+          ["场所", "书斋 / 厅堂"],
+          ["入口", "观看距离"]
+        ],
+        points: [
+          "书斋适合小体量和近身细看，器口要能控制枝势。",
+          "厅堂需要先立起轮廓，高度和体量比细节更早进入视线。",
+          "同一器型放到不同空间里，花量和观看方式都会改变。"
+        ]
       },
       {
         title: "花高略出瓶口",
-        text: "古籍强调花枝不能埋没在瓶腹里，枝条略高于瓶口，器与花之间才有俯仰关系。"
+        text: "古籍强调花枝不能埋没在瓶腹里，枝条略高于瓶口，器与花之间才有俯仰关系。",
+        meta: [
+          ["典籍", "瓶花方法"],
+          ["动作", "插枝 / 定高"],
+          ["看点", "瓶口与枝顶"]
+        ],
+        points: [
+          "枝条略出瓶口能让花与器形成高低关系。",
+          "枝势过低会让瓶腹显得沉闷，过高会削弱器物重心。",
+          "口沿位置是花器和花材发生关系的第一条线。"
+        ]
       },
       {
         title: "口小足厚，优先稳枝",
-        text: "束口便于控枝，足部厚实便于稳水量与器重，这类结构性特征比图案更先决定花器可用性。"
+        text: "束口便于控枝，足部厚实便于稳水量与器重，这类结构性特征比图案更先决定花器可用性。",
+        meta: [
+          ["结构", "束口 / 厚足"],
+          ["用途", "控枝 / 稳水"],
+          ["器型", "梅瓶 / 胆瓶"]
+        ],
+        points: [
+          "束口能减少枝条散开，让小空间陈设更安定。",
+          "厚足提高稳定性，尤其适合有水量和枝量的花器。",
+          "图案再精细，也要先满足口足结构与摆放安全。"
+        ]
       },
       {
         title: "单枝重骨，堂花重量感",
-        text: "案头清供适合骨力清楚的单枝或疏枝；堂花则需要更高体量和更明显的轮廓来承担远距观看。"
+        text: "案头清供适合骨力清楚的单枝或疏枝；堂花则需要更高体量和更明显的轮廓来承担远距观看。",
+        meta: [
+          ["场景", "案头 / 厅堂"],
+          ["花量", "单枝 / 大枝"],
+          ["观看", "近看骨力 / 远看分量"]
+        ],
+        points: [
+          "案头花要给枝条骨力留出完整轮廓。",
+          "堂花要让花材、瓶身和空间一起形成稳定分量。",
+          "花量越大，器身高度和腹部承托就越重要。"
+        ]
       }
     ],
     detailDeck: {
@@ -1208,21 +1412,21 @@ export const categories = [
         title: "《瓶花谱》",
         type: "典籍",
         focus: "堂厦 / 书室 / 口足比例 / 季节深浅",
-        value: "支撑空间尺度与口足结构规则",
+        value: "关联空间尺度、口足结构和季节用花方法",
         href: "https://zh.wikisource.org/zh-hans/%E7%93%B6%E8%8A%B1%E8%AD%9C"
       },
       {
         title: "《瓶史》",
         type: "典籍",
         focus: "斋瓶与堂瓶分级、陈设位置",
-        value: "支撑观看距离与场景化分类",
+        value: "关联观看距离、陈设位置和斋堂分级",
         href: "https://zh.wikisource.org/zh-hans/%E7%93%B6%E5%8F%B2"
       },
       {
         title: "British Museum collection",
         type: "馆藏对象页",
         focus: "梅瓶、抱月瓶、尊式花瓶等",
-        value: "支撑具体器型、年代和尺寸对照",
+        value: "提供具体器型、年代和尺寸对照",
         href: "https://www.britishmuseum.org/collection"
       },
       {
@@ -1231,6 +1435,48 @@ export const categories = [
         focus: "觚式瓶与明清器型参照",
         value: "补足纵向张力类花器的类型线",
         href: "https://www.metmuseum.org/art/collection"
+      },
+      {
+        title: "British Museum / Zhengtong meiping",
+        type: "馆藏对象页",
+        focus: "正统青花梅瓶、小口丰肩和书斋清供尺度",
+        value: "用于对照梅瓶的口沿、肩线和近身陈设关系",
+        href: "https://www.britishmuseum.org/collection/object/A_1973-0726-359"
+      },
+      {
+        title: "British Museum / Yongle moon flask",
+        type: "馆藏对象页",
+        focus: "永乐抱月瓶、扁圆腹、双耳与正面陈设",
+        value: "用于对照靠墙或案后陈设里的正面性",
+        href: "https://www.britishmuseum.org/collection/object/A_1935-0520-2"
+      },
+      {
+        title: "British Museum / Wanli zun-shaped vase",
+        type: "馆藏对象页",
+        focus: "万历尊式花瓶、高体量和厅堂尺度",
+        value: "用于对照堂瓶的大空间分量和成对陈设",
+        href: "https://www.britishmuseum.org/collection/object/A_1950-1209-2"
+      },
+      {
+        title: "The Met / Gu-shaped vase",
+        type: "馆藏对象页",
+        focus: "清代觚式瓶、外撇口沿和竖向分段",
+        value: "用于对照高挑枝材和边几陈设的器型节奏",
+        href: "https://www.metmuseum.org/art/collection/search/50080"
+      },
+      {
+        title: "V&A / Chinese blue and white ceramics",
+        type: "博物馆研究",
+        focus: "青花通史、欧洲接受和蓝白陈设传统",
+        value: "用于把花器放回蓝白瓷全球审美与室内陈设里",
+        href: "https://www.vam.ac.uk/articles/chinese-blue-and-white-ceramics"
+      },
+      {
+        title: "UNESCO / Jingdezhen",
+        type: "国际机构",
+        focus: "景德镇连续制瓷、城市网络与瓷都定位",
+        value: "用于说明花器背后的原料、窑业与城市生产基础",
+        href: "https://www.unesco.org/en/creative-cities/jingdezhen"
       }
     ],
     panels: [
@@ -1466,15 +1712,45 @@ export const categories = [
     viewingAxes: [
       {
         title: "先看题景与年款",
-        text: "艺术品页的第一层不是用途，而是图像和文字如何共同建立身份与正面性。"
+        text: "艺术品页的第一层不是用途，而是图像和文字如何共同建立身份与正面性。",
+        meta: [
+          ["对象", "年款 / 纹章 / 题景"],
+          ["位置", "器心、外壁、肩颈"],
+          ["观看", "先定正面"]
+        ],
+        points: [
+          "年款会把器物直接带入宫廷、时代和制作语境。",
+          "纹章和题景常常决定对象在展柜里的第一视线。",
+          "正面性越强，图像与器型之间的关系越需要一起阅读。"
+        ]
       },
       {
         title: "再看器型如何组织视线",
-        text: "高足、长器身、碗壁环形和异形轮廓都会改变观看路径，展陈时尤其明显。"
+        text: "高足、长器身、碗壁环形和异形轮廓都会改变观看路径，展陈时尤其明显。",
+        meta: [
+          ["器型", "高足 / 长瓶 / 圆碗 / 异形器"],
+          ["路径", "正面、环绕、纵向"],
+          ["场景", "展柜 / 展台"]
+        ],
+        points: [
+          "高足器会把对象抬高，天然带有展台感。",
+          "长器身更像纵向画卷，适合顺着器身阅读人物和山水。",
+          "圆碗与盘类需要绕行观看，图像不止停在一个正面。"
+        ]
       },
       {
         title: "最后看工艺如何转成收藏语境",
-        text: "发色层次、胎釉纯度与制度化生产能力，决定一件对象为何会被反复收藏与讨论。"
+        text: "发色层次、胎釉纯度与制度化生产能力，决定一件对象为何会被反复收藏与讨论。",
+        meta: [
+          ["工艺", "发色 / 胎釉 / 窑业"],
+          ["语境", "馆藏、展览、收藏"],
+          ["延伸", "制度与流通"]
+        ],
+        points: [
+          "青花发色的深浅层次会直接影响图像纵深。",
+          "胎釉纯度和烧成稳定性让对象具备长期展陈价值。",
+          "制度化生产和全球流通解释了它为何会进入重要馆藏。"
+        ]
       }
     ],
     sourceInstitutions: [
@@ -1521,8 +1797,8 @@ if (teaCategory) {
       "把茶盏、碗、壶、盖碗与杯碟放回饮法与流通里看。这里不只看单件器物，而看点茶、泡饮、分饮和外销服务如何改变口沿、腹深、出汤路径与成组关系。",
     pageLinks: [
       { href: "#tea-typology", label: "看茶具体系" },
-      { href: "#tea-texts", label: "看文献规则" },
-      { href: "#tea-ledger", label: "看资料台账" }
+      { href: "#tea-texts", label: "看典籍" },
+      { href: "#tea-ledger", label: "看参考资料" }
     ],
     summaryStats: [
       ["6 组", "核心器型"],
@@ -1534,17 +1810,47 @@ if (teaCategory) {
       {
         eyebrow: "点茶盏系",
         title: "先看盏色与腹深，再看器表图案",
-        text: "从《大观茶论》到 The Met 的建盏，点茶器首先服务于观汤、留温与近身观看，因此盏色、腹深和口沿比纹饰更先决定分类。"
+        text: "从《大观茶论》到 The Met 的建盏，点茶器首先服务于观汤、留温与近身观看，因此盏色、腹深和口沿比纹饰更先决定分类。",
+        meta: [
+          ["饮法", "点茶"],
+          ["器型", "茶盏 / 深腹碗"],
+          ["看点", "盏色、腹深、口沿"]
+        ],
+        points: [
+          "黑釉或深色盏底更容易衬出汤花和茶色。",
+          "腹深提供击拂空间，也帮助茶汤保持温度。",
+          "口沿厚薄会影响近身触感和观看盏心的角度。"
+        ]
       },
       {
         eyebrow: "泡饮壶系",
         title: "壶嘴、把位与容量共同决定出汤节奏",
-        text: "进入明清以后，茶壶和小型注器把出汤路径固定下来。茶具页讨论壶类时，要同时看握持稳定性、盖与嘴的协作，以及桌面分饮的份量控制。"
+        text: "进入明清以后，茶壶和小型注器把出汤路径固定下来。茶具页讨论壶类时，要同时看握持稳定性、盖与嘴的协作，以及桌面分饮的份量控制。",
+        meta: [
+          ["饮法", "泡饮"],
+          ["器型", "茶壶 / 注器"],
+          ["看点", "壶嘴、把位、容量"]
+        ],
+        points: [
+          "壶嘴长度和出水角度决定茶汤是否能稳定离开器身。",
+          "把位影响端持重心，尤其关系到满水状态下的安全感。",
+          "盖身协作越稳定，桌面分饮越不容易打乱节奏。"
+        ]
       },
       {
         eyebrow: "分饮套组",
         title: "盖碗、杯碟与外销服务把茶带进成组阅读",
-        text: "当茶具开始按成套服务被使用，单件杯盏就不再足够。盖碗的碗、盖、托关系，以及外销杯碟的杯高和碟径，都会改变观看与使用方式。"
+        text: "当茶具开始按成套服务被使用，单件杯盏就不再足够。盖碗的碗、盖、托关系，以及外销杯碟的杯高和碟径，都会改变观看与使用方式。",
+        meta: [
+          ["饮法", "分饮 / 待客"],
+          ["器型", "盖碗 / 杯碟"],
+          ["看点", "套组比例"]
+        ],
+        points: [
+          "盖碗把碗、盖、托合成一套留温和承接动作。",
+          "杯碟把握持和放置拆开，桌面礼仪随之变得更明确。",
+          "成套关系能解释为什么单只杯盏的尺度不能孤立阅读。"
+        ]
       }
     ],
     typologyList: [
@@ -1612,19 +1918,59 @@ if (teaCategory) {
     curationNotes: [
       {
         title: "《茶经》先列器，再谈饮法",
-        text: "《茶经·四之器》把茶事拆成二十四事，说明茶具页面不能只按“好看器物”排版，而要把煮、贮、分、饮的器用分工一起交代。"
+        text: "《茶经·四之器》把茶事拆成二十四事，说明茶具页面不能只按“好看器物”排版，而要把煮、贮、分、饮的器用分工一起交代。",
+        meta: [
+          ["典籍", "《茶经·四之器》"],
+          ["对象", "二十四事"],
+          ["动作", "煮 / 贮 / 分 / 饮"]
+        ],
+        points: [
+          "茶具从一开始就是一套协作系统，不是单件器物清单。",
+          "风炉、鍑、夹、碗等器名对应不同操作环节。",
+          "页面阅读也应先理解动作，再进入具体器形。"
+        ]
       },
       {
         title: "《大观茶论》先看盏色，再看器面",
-        text: "点茶系统把茶盏当作观汤工具，因此黑釉、腹深和口沿结构，比青花图案更早进入判断。"
+        text: "点茶系统把茶盏当作观汤工具，因此黑釉、腹深和口沿结构，比青花图案更早进入阅读。",
+        meta: [
+          ["典籍", "《大观茶论》"],
+          ["对象", "茶盏"],
+          ["看点", "青黑、玉毫、腹深"]
+        ],
+        points: [
+          "深色盏底让汤花与乳沫更容易被看清。",
+          "腹深影响击拂空间和保温表现。",
+          "点茶盏的器面装饰要服从观汤这一主要动作。"
+        ]
       },
       {
         title: "壶类器先看出汤路径",
-        text: "从明末青花茶壶到更晚近的注器，壶嘴长度、把位角度和盖身协作，决定了茶汤如何稳定地离开器身。"
+        text: "从明末青花茶壶到更晚近的注器，壶嘴长度、把位角度和盖身协作，决定了茶汤如何稳定地离开器身。",
+        meta: [
+          ["对象", "茶壶 / 注器"],
+          ["动作", "注汤 / 分杯"],
+          ["结构", "嘴、把、盖"]
+        ],
+        points: [
+          "壶嘴越清楚，出汤路径越容易被使用者掌握。",
+          "侧把和提梁会改变手腕角度，也改变桌面动作节奏。",
+          "盖身密合度影响倾倒时的稳定性和安全感。"
+        ]
       },
       {
         title: "杯碟与盖碗说明茶具已经成组",
-        text: "当杯、碟、盖、托被拆成一套动作系统后，茶具就不再只是单只茶盏，而是服务礼仪和桌面秩序的一部分。"
+        text: "当杯、碟、盖、托被拆成一套动作系统后，茶具就不再只是单只茶盏，而是服务礼仪和桌面秩序的一部分。",
+        meta: [
+          ["对象", "盖碗 / 杯碟"],
+          ["动作", "留温 / 承接 / 分饮"],
+          ["场景", "待客与外销服务"]
+        ],
+        points: [
+          "盖碗三件组合让闻香、留温和端持集中在一套器物里。",
+          "杯碟组合让桌面承接和握持动作分开完成。",
+          "外销杯碟还会把本土饮茶器具带入海外餐桌礼仪。"
+        ]
       }
     ],
     detailDeck: {
@@ -1833,43 +2179,71 @@ if (teaCategory) {
         title: "《茶经·四之器》",
         type: "典籍",
         focus: "二十四事、器用分工与茶事流程",
-        value: "支撑茶具系统结构",
+        value: "关联茶具系统结构和器用分工",
         href: "https://zh.wikisource.org/zh-hans/%E8%8C%B6%E7%B6%93/%E5%9B%9B%E4%B9%8B%E5%99%A8"
       },
       {
         title: "《大观茶论》",
         type: "典籍",
         focus: "盏色青黑、玉毫与点茶观看",
-        value: "支撑盏系判断标准",
+        value: "关联盏色、腹深和点茶观看方法",
         href: "https://zh.wikisource.org/zh-hans/%E5%A4%A7%E8%A7%80%E8%8C%B6%E8%AB%96"
       },
       {
         title: "British Museum / Tea Pot",
         type: "馆藏对象页",
         focus: "1643 年青花茶壶与泡饮路径",
-        value: "支撑壶系分类",
+        value: "关联壶嘴、把位和明清泡饮路径",
         href: "https://www.britishmuseum.org/collection/object/A_1984-0303-3"
       },
       {
         title: "British Museum / Gaiwan",
         type: "馆藏对象页",
         focus: "盖碗构成、比例与断代线索",
-        value: "支撑套组茶具判断",
+        value: "关联盖碗的碗、盖、托组合关系",
         href: "https://www.britishmuseum.org/collection/object/A_1985-1024-39-1-9"
       },
       {
         title: "The Met collection",
         type: "馆藏对象页",
         focus: "建盏、注器、杯碟与茶壶样本",
-        value: "支撑尺寸和图像参照",
+        value: "提供尺寸、图像和茶具对象参照",
         href: "https://www.metmuseum.org/art/collection"
       },
       {
         title: "UNESCO / Tea ICH",
         type: "国际机构",
         focus: "制茶、待客和社会实践",
-        value: "支撑茶具的场景语义",
+        value: "关联茶具的待客、共饮和社会实践语境",
         href: "https://ich.unesco.org/en/RL/traditional-tea-processing-techniques-and-associated-social-practices-in-china-01884"
+      },
+      {
+        title: "The Met / Jian tea bowl",
+        type: "馆藏对象页",
+        focus: "宋代建盏、黑釉、腹深和点茶观汤",
+        value: "用于对照点茶盏的盏色、口沿和近身观看",
+        href: "https://www.metmuseum.org/art/collection/search/48112"
+      },
+      {
+        title: "The Met / Covered wine pot or teapot",
+        type: "馆藏对象页",
+        focus: "清代有盖注器、流口、圆腹和桌面分配",
+        value: "用于对照茶壶与注器之间的过渡器型",
+        href: "https://www.metmuseum.org/art/collection/search/47545"
+      },
+      {
+        title: "The Met / Teacup and saucer",
+        type: "馆藏对象页",
+        focus: "外销杯碟、杯高、碟径和成套服务",
+        value: "用于对照杯碟组合和海外分饮礼仪",
+        href: "https://www.metmuseum.org/art/collection/search/8299"
+      },
+      {
+        title: "V&A / Chinese blue and white ceramics",
+        type: "博物馆研究",
+        focus: "青花通史、全球传播和蓝白器物接受史",
+        value: "用于把茶具放回景德镇青花与跨区域流通背景",
+        href: "https://www.vam.ac.uk/articles/chinese-blue-and-white-ceramics"
       }
     ],
     sectionHeadings: {
@@ -1880,8 +2254,8 @@ if (teaCategory) {
       },
       notes: {
         id: "tea-texts",
-        title: "文献规则",
-        summary: "把《茶经》《大观茶论》里的判断翻译成现代可读的观察原则，而不是只留下古文摘句。"
+        title: "典籍",
+        summary: "把《茶经》《大观茶论》里的器用方法翻译成现代可读的欣赏线索，而不是只留下古文摘句。"
       },
       collection: {
         id: "tea-collection",
@@ -1890,7 +2264,7 @@ if (teaCategory) {
       },
       ledger: {
         id: "tea-ledger",
-        title: "资料台账",
+        title: "参考资料",
         summary: "这里列出茶具页使用的古籍、馆藏和机构来源，避免分类结论失去出处。"
       }
     },
@@ -1909,8 +2283,8 @@ if (vaseCategory) {
     },
     notes: {
       id: "vase-rules",
-      title: "典籍规矩",
-      summary: "把《瓶花谱》和《瓶史》里的花器方法翻译成现代可读的分类原则，而不是只留下古文摘句。"
+      title: "典籍",
+      summary: "把《瓶花谱》和《瓶史》里的花器方法翻译成现代可读的空间、器型与插枝线索。"
     },
     collection: {
       id: "vase-collection",
@@ -1919,7 +2293,7 @@ if (vaseCategory) {
     },
     ledger: {
       id: "vase-ledger",
-      title: "资料台账",
+      title: "参考资料",
       summary: "这里列出花器页使用的典籍、馆藏与机构来源，避免分类结论失去出处。"
     }
   };

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>清 · 餐具 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* 纹样图鉴布局 */
+.hero{padding:3rem 2rem 1.5rem;max-width:52rem;margin:0 auto;text-align:center}
+.hero h1{font-family:var(--title-font);font-size:clamp(2.4rem,4.5vw,3.2rem);margin-bottom:0.6rem}
+.hero .lead{color:var(--ink-soft);max-width:32rem;margin:0 auto;font-size:1.05rem}
+
+.motif{padding:1rem 2rem 4rem;max-width:56rem;margin:0 auto}
+.motif__cat{margin-bottom:3rem}
+.motif__cat h2{font-family:var(--title-font);font-size:1.5rem;padding:0.5rem 0;border-bottom:2px solid var(--accent);margin-bottom:1.2rem;display:inline-block}
+.motif__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));gap:1.2rem}
+.motif-card{padding:1.3rem;background:var(--surface);border-radius:0.75rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08);position:relative;overflow:hidden}
+.motif-card::after{content:"";position:absolute;top:0;right:0;width:3rem;height:3rem;background:var(--surface-soft);clip-path:polygon(100% 0, 0 0, 100% 100%)}
+.motif-card__symbol{font-size:2.5rem;margin-bottom:0.5rem;opacity:0.7}
+.motif-card h3{font-family:var(--title-font);font-size:1.1rem;margin-bottom:0.3rem}
+.motif-card p{font-size:0.85rem;color:var(--ink-soft)}
+.motif-card .usage{font-size:0.78rem;color:var(--accent-warm);margin-top:0.5rem;font-style:italic}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">清 <span>·</span> 餐具</div>
+</header>
+
+<section class="hero">
+  <h1>清 · 餐具</h1>
+  <p class="lead">清代是中国陶瓷餐具装饰最为丰富的时代。粉彩、珐琅彩、斗彩、青花、单色釉——每一种釉彩都发展出了独立的纹样体系，从宫廷到民间，从日用器到外销瓷，纹样成为身份、地域和时代的视觉密码。</p>
+</section>
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/qing-famille.jpg" alt="qing 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+<div class="motif">
+  <div class="motif__cat">
+    <h2>花卉纹</h2>
+    <div class="motif__grid">
+      <div class="motif-card">
+        <div class="motif-card__symbol">牡丹</div>
+        <h3>粉彩牡丹纹盘</h3>
+        <p>雍正粉彩牡丹以没骨法绘制，花瓣由胭脂红、粉红到白渐变渲染，层次极为丰富。牡丹为"花王"，寓意富贵。</p>
+        <div class="usage">雍正官窑 · 富贵寓意 · 宴请主盘</div>
+      </div>
+      <div class="motif-card">
+        <div class="motif-card__symbol">莲花</div>
+        <h3>青花缠枝莲纹碗</h3>
+        <p>缠枝莲纹从元明延续至清，但清代线条更细密工整。康熙青花分水技法使莲叶呈现深浅五色层次。</p>
+        <div class="usage">康熙 · 缠枝莲 · 日常餐具</div>
+      </div>
+      <div class="motif-card">
+        <div class="motif-card__symbol">梅花</div>
+        <h3>粉彩冰梅纹盘</h3>
+        <p>以冰裂纹为地、梅花为主纹，清代独创纹样。"冰梅"谐音"冰媒"，寓意高洁。康熙年间创烧，晚清大量生产。</p>
+        <div class="usage">康熙创烧 · 冰梅纹 · 餐具套装</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="motif__cat">
+    <h2>瑞兽纹</h2>
+    <div class="motif__grid">
+      <div class="motif-card">
+        <div class="motif-card__symbol">龙纹</div>
+        <h3>青花五爪龙纹碗</h3>
+        <p>清代龙纹以五爪为皇帝专用。康熙龙凶猛矫健，雍正龙端庄威严，乾隆龙华丽繁缛，三个时期的龙纹风格差异可作为断代依据。</p>
+        <div class="usage">御用餐具 · 五爪龙 · 官窑</div>
+      </div>
+      <div class="motif-card">
+        <div class="motif-card__symbol">凤纹</div>
+        <h3>粉彩百鸟朝凤盘</h3>
+        <p>凤凰居盘心，百鸟围绕飞翔。粉彩的丰富色彩使羽毛层次分明。寓意天下归心、国泰民安。</p>
+        <div class="usage">乾隆 · 百鸟朝凤 · 宫廷宴盘</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="motif__cat">
+    <h2>人物故事纹</h2>
+    <div class="motif__grid">
+      <div class="motif-card">
+        <div class="motif-card__symbol">西厢</div>
+        <h3>粉彩西厢记故事碗</h3>
+        <p>取材元杂剧《西厢记》，碗身绘张生与崔莺莺相见场景。清代粉彩人物画工极细，服饰纹理清晰可辨。</p>
+        <div class="usage">雍正乾隆 · 戏曲题材 · 民窑精品</div>
+      </div>
+      <div class="motif-card">
+        <div class="motif-card__symbol">八仙</div>
+        <h3>青花八仙过海碗</h3>
+        <p>八位仙人各执法器渡海，画面动感强烈。八仙纹在清代餐具中极受欢迎，"暗八仙"（仅绘法器）则更含蓄。</p>
+        <div class="usage">康熙 · 八仙纹 · 祝寿餐具</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="motif__cat">
+    <h2>吉祥文字纹</h2>
+    <div class="motif__grid">
+      <div class="motif-card">
+        <div class="motif-card__symbol">寿</div>
+        <h3>珐琅彩万寿无疆碗</h3>
+        <p>碗壁四个圆形开光内各书一字——"万""寿""无""疆"，开光之间以缠枝莲纹连接。为乾隆祝寿特制。</p>
+        <div class="usage">乾隆御制 · 珐琅彩 · 万寿节用器</div>
+      </div>
+      <div class="motif-card">
+        <div class="motif-card__symbol">福</div>
+        <h3>粉彩百福碗</h3>
+        <p>碗身满书不同字体的"福"字，与蝙蝠纹交替排列（蝠谐音"福"），整体纹饰繁密而有序。</p>
+        <div class="usage">同光时期 · 百福纹 · 婚庆餐具</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 清 · 餐具</p>
+</footer>
+
+</body>
+</html>

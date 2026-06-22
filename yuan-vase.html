@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>元 · 花器 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* 杂志编辑式布局 */
+.hero{padding:3rem 2rem 1.5rem;max-width:56rem;margin:0 auto;text-align:center}
+.hero h1{font-family:var(--title-font);font-size:clamp(2.6rem,5vw,3.4rem);margin-bottom:0.6rem}
+.hero .lead{color:var(--ink-soft);max-width:30rem;margin:0 auto;font-size:1.05rem}
+.hero .issue{font-size:0.8rem;color:var(--ink-muted);text-transform:uppercase;letter-spacing:0.15em;margin-top:1rem}
+
+.editorial{max-width:60rem;margin:0 auto;padding:2rem}
+.editorial__feature{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:2rem;background:var(--surface);border-radius:0.8rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08);margin-bottom:2rem}
+.editorial__feature h2{font-family:var(--title-font);font-size:1.5rem;grid-column:1}
+.editorial__feature p{grid-column:1;color:var(--ink-soft);line-height:1.85}
+.editorial__feature .img-placeholder{grid-column:2;grid-row:1/3;background:var(--surface-soft);border-radius:0.65rem;display:flex;align-items:center;justify-content:center;min-height:12rem;color:var(--ink-muted);font-size:0.9rem}
+
+.editorial__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.5rem;margin-bottom:2rem}
+.editorial__grid .card{background:var(--surface);border-radius:0.7rem;padding:1.3rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08);border-top:3px solid var(--accent-warm)}
+.card h3{font-family:var(--title-font);font-size:1.1rem;margin-bottom:0.5rem}
+.card p{font-size:0.85rem;color:var(--ink-soft)}
+
+.editorial__quote{padding:2rem;max-width:40rem;margin:0 auto 3rem;text-align:center;font-family:var(--title-font);font-size:1.3rem;color:var(--accent-warm);position:relative}
+.editorial__quote::before{content:"\201C";font-size:4rem;color:var(--line);position:absolute;top:-0.5rem;left:50%;transform:translateX(-50%);font-family:serif}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+
+@media(max-width:700px){
+  .editorial__feature{grid-template-columns:1fr}
+  .editorial__feature .img-placeholder{grid-column:1;grid-row:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">元 <span>·</span> 花器</div>
+</header>
+
+<section class="hero">
+  <h1>元 · 花器</h1>
+  <p class="lead">梅瓶、玉壶春瓶和大罐——元代花器以体量雄健、纹饰满密著称。青花蓝白交织的视觉效果在世界陶瓷史上无可替代。</p>
+  <p class="issue">Vol. I · 1271–1368 · 蒙古帝国时代的景德镇</p>
+</section>
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/yuan-bluewhite.jpg" alt="yuan 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+<div class="editorial">
+  <div class="editorial__feature">
+    <h2>封面故事：鬼谷子下山图罐</h2>
+    <p>2005年伦敦佳士得拍卖会上，一件元青花"鬼谷子下山"图罐以约2.3亿元人民币成交，创下当时中国艺术品拍卖纪录。此罐高27.5厘米，腹径33厘米，通体绘人物故事——鬼谷子乘坐虎豹双轮车下山营救孙膑。故事取材于元代流行的平话文学，画面构图取自当时戏曲版画的叙事传统。这件大罐将文学、绘画与陶瓷完美融合，是元代花器艺术的巅峰之作。</p>
+    <div class="img-placeholder">鬼谷子下山图罐 · 元青花</div>
+  </div>
+
+  <div class="editorial__grid">
+    <div class="card">
+      <h3>梅瓶的转型</h3>
+      <p>元代梅瓶从宋代的修长清秀转向雄健敦实。肩部加宽、腹部饱满，整体器型更为壮硕。青花梅瓶常满绘缠枝牡丹或人物故事，纹饰繁而不乱，适合陈设观赏。</p>
+    </div>
+    <div class="card">
+      <h3>玉壶春瓶</h3>
+      <p>元代玉壶春瓶撒口、细颈、垂腹，曲线优美。青花玉壶春瓶多用蕉叶纹、莲瓣纹做边饰，腹部主纹常为人物故事或龙凤纹，是文人书斋中最受欢迎的花器。</p>
+    </div>
+    <div class="card">
+      <h3>大罐与象耳瓶</h3>
+      <p>元代创造了双耳罐和象耳瓶等大型陈设器。至正十一年款青花云龙象耳瓶是现存最早的纪年元青花，其颈部书有62字铭文，是元青花断代的标准器。</p>
+    </div>
+    <div class="card">
+      <h3>八方造型</h3>
+      <p>元代青花中出现了八角、六角等多面造型的瓶和罐。八方梅瓶、八方玉壶春瓶接胎成型难度极大，是元代制瓷技术达到新高度的有力证据。</p>
+    </div>
+  </div>
+
+  <div class="editorial__quote">
+    蓝分五色，画尽人间百态。元人用钴料在瓷胎上写就了一部无言史诗。
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 元 · 花器</p>
+</footer>
+
+</body>
+</html>

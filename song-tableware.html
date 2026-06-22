@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宋 · 餐具 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent)}
+
+/* 参考资料布局 */
+.page{padding:2.5rem 2rem;max-width:56rem;margin:0 auto}
+.page h1{font-family:var(--title-font);font-size:clamp(2.2rem,4vw,3rem);font-weight:700;margin-bottom:0.4rem}
+.page .lead{color:var(--ink-soft);max-width:34rem;margin-bottom:2.5rem}
+
+.ledger-table{width:100%;border-collapse:collapse;font-size:0.92rem}
+.ledger-table thead{border-bottom:2px solid var(--ink)}
+.ledger-table th{text-align:left;padding:0.8rem 0.6rem;font-family:var(--title-font);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);white-space:nowrap}
+.ledger-table td{padding:0.85rem 0.6rem;border-bottom:1px solid var(--line);vertical-align:top}
+.ledger-table tbody tr:hover{background:var(--surface-soft)}
+.ledger-table .name{font-family:var(--title-font);font-weight:600}
+.ledger-table .source{font-size:0.82rem;color:var(--ink-muted)}
+.ledger-table .note{font-size:0.85rem;color:var(--ink-soft);max-width:16rem}
+.tag-row{display:flex;flex-wrap:wrap;gap:0.3rem}
+.tag-row span{border:1px solid var(--line);border-radius:999px;padding:0.15rem 0.55rem;font-size:0.75rem;color:var(--ink-muted);white-space:nowrap}
+
+/* 侧栏摘要 */
+.summary-bar{display:flex;gap:1rem;margin-bottom:2rem;flex-wrap:wrap}
+.summary-item{flex:1;min-width:8rem;padding:1rem;background:var(--surface);border-radius:0.7rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08);text-align:center}
+.summary-item .num{font-family:var(--title-font);font-size:2rem;font-weight:700;color:var(--accent)}
+.summary-item .lbl{font-size:0.82rem;color:var(--ink-muted);margin-top:0.2rem}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem;margin-top:2rem}
+.footer a{color:var(--accent)}
+
+@media(max-width:640px){.ledger-table{font-size:0.8rem}.ledger-table th,.ledger-table td{padding:0.6rem 0.4rem}}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">宋 <span>·</span> 餐具</div>
+</header>
+
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/song-guanyin.jpg" alt="song 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+
+<div class="page">
+  <h1>宋 · 餐具</h1>
+  <p class="lead">宋代餐饮文化高度发达，《东京梦华录》《梦粱录》详细记载了汴京与临安的饮食风貌。从定窑白瓷到龙泉青瓷，宋代餐具在材质与器型上达到了前所未有的丰富度。</p>
+
+  <div class="summary-bar">
+    <div class="summary-item"><div class="num">8</div><div class="lbl">核心窑口</div></div>
+    <div class="summary-item"><div class="num">12</div><div class="lbl">器型分类</div></div>
+    <div class="summary-item"><div class="num">5</div><div class="lbl">桌面类型</div></div>
+    <div class="summary-item"><div class="num">3</div><div class="lbl">海外传播线</div></div>
+  </div>
+
+  <table class="ledger-table">
+    <thead>
+      <tr><th>器物</th><th>窑口</th><th>年代</th><th>桌面分工</th><th>来源</th><th>备注</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">定窑白瓷刻花大盘</td><td>定窑</td><td>北宋</td><td>主盘 / 展示</td><td class="source">故宫博物院</td>
+        <td class="note">覆烧工艺，芒口镶金银扣。刻花刀法犀利，以萱草纹为主。</td>
+      </tr>
+      <tr>
+        <td class="name">龙泉青瓷莲瓣碗</td><td>龙泉窑</td><td>南宋</td><td>汤碗 / 盛器</td><td class="source">浙江省博物馆</td>
+        <td class="note">粉青釉，外壁刻莲瓣纹。南宋龙泉以厚釉取胜，质感如青玉。</td>
+      </tr>
+      <tr>
+        <td class="name">景德镇青白瓷温碗注子</td><td>景德镇</td><td>北宋</td><td>酒具套组</td><td class="source">大英博物馆</td>
+        <td class="note">注子（执壶）与温碗配套。温碗内加热水以保温酒液，宴席必备。</td>
+      </tr>
+      <tr>
+        <td class="name">耀州窑刻花六出碗</td><td>耀州窑</td><td>北宋</td><td>饭碗</td><td class="source">陕西历史博物馆</td>
+        <td class="note">橄榄青釉，刻花犀利。碗壁斜直，六出花口，北方刻花典范。</td>
+      </tr>
+      <tr>
+        <td class="name">磁州窑白地黑花鱼藻纹盆</td><td>磁州窑</td><td>金/南宋</td><td>大盆 / 盛器</td><td class="source">邯郸市博物馆</td>
+        <td class="note">白地黑花技法，民窑写意画风。鱼藻纹生动活泼，有别于官窑的严谨。</td>
+      </tr>
+      <tr>
+        <td class="name">官窑青瓷葵口盘</td><td>南宋官窑</td><td>南宋</td><td>分食盘</td><td class="source">台北故宫</td>
+        <td class="note">紫口铁足，釉面开片如冰裂。南宋官窑为宫廷专用，存世极少。</td>
+      </tr>
+      <tr>
+        <td class="name">吉州窑木叶纹碗</td><td>吉州窑</td><td>南宋</td><td>饭碗 / 茶碗兼用</td><td class="source">江西省博物馆</td>
+        <td class="note">将真树叶贴于坯体烧制，叶脉纹理清晰保留于釉下，天人合一的禅意之作。</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 宋 · 餐具</p>
+</footer>
+
+</body>
+</html>

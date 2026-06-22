@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>元 · 艺术品 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* 瀑布流画廊 */
+.hero{padding:3rem 2rem 1.5rem;max-width:48rem;margin:0 auto;text-align:center}
+.hero h1{font-family:var(--title-font);font-size:clamp(2.4rem,4.5vw,3.2rem);margin-bottom:0.6rem}
+.hero .lead{color:var(--ink-soft);max-width:32rem;margin:0 auto;font-size:1.05rem}
+
+.masonry{max-width:64rem;margin:0 auto;padding:1rem 2rem 4rem;columns:3 18rem;column-gap:1.2rem}
+.masonry-item{break-inside:avoid;margin-bottom:1.2rem;background:var(--surface);border-radius:0.75rem;padding:1.5rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08)}
+.masonry-item--tall{padding:2.2rem 1.5rem}
+.masonry-item__era{font-size:0.76rem;color:var(--accent-warm);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem}
+.masonry-item h3{font-family:var(--title-font);font-size:1.15rem;margin-bottom:0.5rem}
+.masonry-item p{font-size:0.85rem;color:var(--ink-soft);line-height:1.75}
+.masonry-item .highlight{font-size:0.82rem;color:var(--accent);margin-top:0.6rem;font-style:italic}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">元 <span>·</span> 艺术品</div>
+</header>
+
+<section class="hero">
+  <h1>元 · 艺术品</h1>
+  <p class="lead">元青花的出现是中国陶瓷史上的一次"突变"——技术、审美、市场和原料的全球化配置，在蒙古世界帝国的背景下催生了全新的艺术范式。</p>
+</section>
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/yuan-bluewhite.jpg" alt="yuan 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+<div class="masonry">
+  <div class="masonry-item">
+    <div class="masonry-item__era">大维德基金会藏 · 至正十一年</div>
+    <h3>青花云龙象耳瓶</h3>
+    <p>通高63.6cm，颈部书有62字供养铭文："信州路玉山县顺城乡德教里荆塘社奉圣弟子张文进喜舍香炉花瓶一副，祈保合家清吉子女平安。至正十一年四月良辰谨记。"两件象耳瓶是目前唯一有纪年的元青花标准器，为整个元青花体系建立断代坐标。</p>
+    <p class="highlight">元青花纪年标准器 · 大英博物馆</p>
+  </div>
+  <div class="masonry-item masonry-item--tall">
+    <div class="masonry-item__era">景德镇珠山出土 · 元中期</div>
+    <h3>釉里红飞凤纹玉壶春瓶</h3>
+    <p>釉里红以氧化铜为呈色剂，在1300°C高温还原焰中烧成。铜红的发色范围极窄——温度稍低则灰暗，稍高则挥发殆尽。这件玉壶春瓶上的飞凤纹呈暗红色，斑驳中见古拙，是元代釉里红工艺探索的珍贵见证。</p>
+  </div>
+  <div class="masonry-item">
+    <div class="masonry-item__era">景德镇窑 · 元晚期</div>
+    <h3>青花萧何月下追韩信梅瓶</h3>
+    <p>腹部通景绘萧何月下追韩信故事——萧何策马急追，韩信牵马在河边徘徊，艄公撑船待渡。人物神情生动，山石树木层次分明。将历史故事绘于梅瓶之上，既是陈设观赏的艺术品，也是叙事文学与陶瓷工艺的完美结合。</p>
+  </div>
+  <div class="masonry-item">
+    <div class="masonry-item__era">景德镇窑 · 元晚期</div>
+    <h3>蓝釉白龙纹梅瓶</h3>
+    <p>高温蓝釉是元代另一创举。以钴为着色剂在素胎上施釉，高温一次烧成。蓝釉白龙纹梅瓶以蓝釉为地、留白刻龙纹，蓝白对比强烈，气势磅礴。存世仅三件，分别藏于扬州博物馆、颐和园和吉美博物馆。</p>
+  </div>
+  <div class="masonry-item masonry-item--tall">
+    <div class="masonry-item__era">景德镇窑 · 元晚期</div>
+    <h3>青花蒙恬将军图玉壶春瓶</h3>
+    <p>这件玉壶春瓶的腹部绘蒙恬将军端坐帐中、武士执戟护卫的场景。人物衣着、铠甲、兵器细节丰富，画面构图受元代戏曲壁画和版画影响。元代青花人物故事纹多取材于当时流行的杂剧和平话，反映了元代市民文化的兴起。</p>
+    <p class="highlight">将厅堂壁画搬上瓷瓶 · 叙事性绘画的立体化</p>
+  </div>
+  <div class="masonry-item">
+    <div class="masonry-item__era">景德镇窑 · 元代</div>
+    <h3>青花缠枝牡丹纹兽耳盖罐</h3>
+    <p>兽耳源于青铜器造型的演变，元代工匠将它融入瓷器设计，赋予大罐威严感。通体满绘缠枝牡丹，花大叶小，青花发色浓艳，黑色铁锈斑清晰可见。这种满密纹饰的装饰风格直接影响了明代永宣青花。</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 元 · 艺术品</p>
+</footer>
+
+</body>
+</html>

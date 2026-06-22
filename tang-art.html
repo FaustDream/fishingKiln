@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>唐 · 艺术品 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* 极简直排布局 */
+.page{max-width:46rem;margin:0 auto;padding:6rem 2rem}
+.page h1{font-family:var(--title-font);font-size:clamp(2.6rem,5vw,3.6rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem}
+.page .lead{font-size:1.2rem;color:var(--ink-soft);line-height:1.9;margin-bottom:3rem}
+.entry{margin-bottom:4rem}
+.entry:last-child{margin-bottom:0}
+.entry__image{height:18rem;border-radius:0.85rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;font-family:var(--title-font);font-size:3.5rem}
+.entry:nth-child(2) .entry__image{background:linear-gradient(135deg,rgba(150,97,73,0.15),rgba(49,95,135,0.06));color:rgba(150,97,73,0.18)}
+.entry:nth-child(3) .entry__image{background:linear-gradient(135deg,rgba(49,95,135,0.15),rgba(150,97,73,0.06));color:rgba(49,95,135,0.18)}
+.entry:nth-child(4) .entry__image{background:linear-gradient(135deg,rgba(102,127,97,0.15),rgba(49,95,135,0.06));color:rgba(102,127,97,0.18)}
+.entry__meta{font-size:0.82rem;color:var(--ink-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem}
+.entry h2{font-family:var(--title-font);font-size:1.6rem;font-weight:600;margin-bottom:0.7rem}
+.entry p{color:var(--ink-soft);line-height:1.85;margin-bottom:0.8rem}
+.entry__tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.6rem}
+.tag{border:1px solid var(--line);border-radius:999px;padding:0.3rem 0.75rem;font-size:0.82rem;color:var(--ink-muted)}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+
+@media(max-width:640px){.page{padding:3rem 1.2rem}}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">唐 <span>·</span> 艺术品</div>
+</header>
+
+<div class="page">
+  <h1>唐 · 艺术品</h1>
+  <p class="lead">唐代陶瓷艺术以三彩为冠冕，金银器为筋骨，越窑青瓷为魂魄。三者共同构建了一个色彩丰沛、器型雄健、纹样包容万象的艺术世界。</p>
+
+  <div class="entry">
+    <img class="entry__image" src="img/dynasty-pages/tang-sancai-horse.jpg" alt="唐三彩载乐骆驼俑" style="object-fit:cover">
+    <p class="entry__meta">Tang Sancai · National Treasure</p>
+    <h2>三彩釉陶载乐骆驼俑</h2>
+    <p>唐三彩是唐代陶瓷艺术的最高成就之一，以黄、绿、白三色釉彩著称，实际上包含褐、蓝、黑等多种釉色。这件载乐骆驼俑高58.4厘米，驼背上载有八人乐舞组合，生动记录了丝绸之路上的胡汉文化交融。三彩器多为明器，但其雕塑水准和釉色表现力代表了中国古代陶塑的巅峰。</p>
+    <div class="entry__tags"><span class="tag">唐三彩</span><span class="tag">丝绸之路</span><span class="tag">明器</span><span class="tag">1957年西安出土</span></div>
+  </div>
+
+  <div class="entry">
+    <img class="entry__image" src="img/dynasty-pages/tang-figurine.jpg" alt="越窑秘色瓷" style="object-fit:cover">
+    <p class="entry__meta">Yue Kiln · Mise Porcelain</p>
+    <h2>越窑秘色瓷八棱净瓶</h2>
+    <p>法门寺地宫出土的秘色瓷是唐代越窑最高等级的产品，釉色青碧如湖水映天，陆羽谓之"类玉""类冰"。八棱净瓶造型源自佛教法器，八面棱角刚柔相济，釉层在棱线处自然减薄形成微妙光影变化。这件器物的出土解决了学术界关于"秘色瓷"为何物的长期争议。</p>
+    <div class="entry__tags"><span class="tag">秘色瓷</span><span class="tag">越窑</span><span class="tag">法门寺</span><span class="tag">佛教艺术</span></div>
+  </div>
+
+  <div class="entry">
+    <img class="entry__image" src="img/dynasty-pages/tang-teaware.jpg" alt="鎏金舞马衔杯纹银壶" style="object-fit:cover">
+    <p class="entry__meta">Tang Gold & Silver · Hejiacun Hoard</p>
+    <h2>鎏金舞马衔杯纹银壶</h2>
+    <p>何家村窖藏出土的鎏金银壶，壶身錾刻舞马衔杯图样，造型仿皮囊壶，融合了北方游牧民族的器型传统与唐代金银器精工錾刻技艺。舞马是唐玄宗时期宫廷驯马表演的写照，每逢千秋节（玄宗生日），舞马随乐曲衔杯祝寿。此壶集历史、工艺、艺术于一身，是盛唐气象的缩影。</p>
+    <div class="entry__tags"><span class="tag">何家村窖藏</span><span class="tag">鎏金银器</span><span class="tag">舞马</span><span class="tag">游牧融合</span></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 唐 · 艺术品</p>
+</footer>
+
+</body>
+</html>

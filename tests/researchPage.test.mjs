@@ -18,13 +18,14 @@ test("renderResearchDetailPage returns fallback content for unknown ids", () => 
   assert.match(html, /研究路径/);
 });
 
-test("renderResearchDetailPage renders observation and essay sections for a valid topic", () => {
+test("renderResearchDetailPage renders observation and source sections for a valid topic", () => {
   const html = renderResearchDetailPage("global-export", siteContent);
 
   assert.match(html, /观察笔记/);
   assert.match(html, /延伸阅读/);
-  assert.match(html, /来源档案/);
+  assert.match(html, /出处与参考/);
   assert.match(html, /关联图谱/);
+  assert.doesNotMatch(html, /来源档案|档案|规则|判断|台账|支撑/);
 });
 
 test("getResearchIdFromLocation reads the id query parameter", () => {

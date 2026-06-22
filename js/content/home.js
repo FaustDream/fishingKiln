@@ -26,7 +26,7 @@ export const home = {
     ],
     brief: [
       ["专题范围", "五类器物并行，餐具是当前重点整理对象。"],
-      ["资料来源", "British Museum、The Met、V&A、UNESCO 与经典饮食文献交叉校读。"],
+      ["资料来源", "国际公开馆藏与经典饮食文献交叉校读。"],
       ["阅读方式", "先看餐具专题，再进入桌面谱系、内嵌详情和研究索引。"]
     ],
     focusCard: {
@@ -79,7 +79,7 @@ export const home = {
       {
         id: "met-portuguese-dish",
         eyebrow: "馆藏对象",
-        title: "The Met：葡萄牙王室纹章大盘",
+        title: "葡萄牙王室纹章大盘：外销超大尺度",
         summary: "1520-1540 年之间的景德镇外销大盘直径超过 52 厘米，说明早期远洋订单已经要求盘面具备强烈的中心识别和远距陈设性。",
         metrics: [
           ["时期", "ca. 1520-40"],
@@ -88,22 +88,22 @@ export const home = {
         ],
         detailTitle: "大盘先服务远距识别，再服务盛放",
         detailBody:
-          "这件 The Met 馆藏大盘最关键的不是图案本身，而是景德镇已经能为海外订单稳定生产超大尺度盘面。中心章、外圈边饰和器壁深度一起服务于展示与远途运输。",
+          "这件大盘的关键不在图案本身，而是景德镇已能为海外订单稳定生产超大尺度盘面——中心章、外圈边饰和器壁深度共同服务于展示与远途运输。",
         detailBullets: [
           "超大直径要求边饰与中心章层级非常清楚。",
           "葡萄牙王室纹章说明餐具早已被定制到跨洋订单里。",
           "餐具页可以据此把“陈设性”列为独立判断维度。"
         ],
         detailMeta: [
-          ["来源", "The Metropolitan Museum of Art"],
+          ["来源", "国际公开馆藏"],
           ["支撑内容", "早期外销大盘与远距识别"]
         ],
-        sourceLinks: [{ label: "The Met 对象页", url: "https://www.metmuseum.org/art/collection/search/204716" }]
+        sourceLinks: [{ label: "博物馆对象页", url: "https://www.metmuseum.org/art/collection/search/204716" }]
       },
       {
         id: "met-burghley-bowl",
         eyebrow: "馆藏对象",
-        title: "The Met：Burghley House 双耳碗",
+        title: "Burghley House 双耳碗：跨文化再定义",
         summary: "1573-1585 年的双耳碗证明餐具在进入欧洲之后，不只是被使用，也会被加上银鎏金构件重新定义身份和陈设方式。",
         metrics: [
           ["时期", "1573-1585"],
@@ -119,16 +119,16 @@ export const home = {
           "这类对象最适合放进“海外接受”判断条目。"
         ],
         detailMeta: [
-          ["来源", "The Metropolitan Museum of Art"],
+          ["来源", "国际公开馆藏"],
           ["支撑内容", "跨文化改装与陈设接受"]
         ],
-        sourceLinks: [{ label: "The Met 对象页", url: "https://www.metmuseum.org/art/collection/search/199405" }]
+        sourceLinks: [{ label: "博物馆对象页", url: "https://www.metmuseum.org/art/collection/search/199405" }]
       },
       {
         id: "bm-kraak-dish",
         eyebrow: "馆藏对象",
-        title: "British Museum：Kraak 外销盘",
-        summary: "British Museum 的 Kraak 盘直径约 30.8 厘米，是晚明外销餐具如何把边饰分区、中心章和运输陈设语法压缩进一件器物里的代表。",
+        title: "Kraak 外销盘：晚明海贸版式",
+        summary: "这件 Kraak 盘直径约 30.8 厘米，是晚明外销餐具如何把边饰分区、中心章和运输陈设语法压缩进一件器物里的代表案例。",
         metrics: [
           ["时期", "late Ming"],
           ["尺寸", "30.8 cm"],
@@ -143,18 +143,18 @@ export const home = {
           "餐具页的“边饰 / 中心章 / 留白圈”判断直接由此展开。"
         ],
         detailMeta: [
-          ["来源", "British Museum"],
+          ["来源", "国际公开馆藏"],
           ["支撑内容", "Kraak 版式与外销盘面"]
         ],
-        sourceLinks: [{ label: "British Museum 对象页", url: "https://www.britishmuseum.org/collection/object/A_1984-0202-33" }]
+        sourceLinks: [{ label: "博物馆对象页", url: "https://www.britishmuseum.org/collection/object/A_1984-0202-33" }]
       },
       {
         id: "met-export-essay",
         eyebrow: "馆藏研究",
-        title: "The Met：Chinese Export Porcelain",
-        summary: "The Met 的长文把伊斯兰世界、葡萄牙订单、Dutch East India Company 与 Kraak 流通放进同一条外销主线，适合作为餐具页的传播背景。",
+        title: "中国外销瓷：跨洋贸易主线",
+        summary: "从伊斯兰世界、葡萄牙订单到 Dutch East India Company 与 Kraak 流通，外销瓷的研究主线已相当清晰，适合作为餐具页的传播背景。",
         metrics: [
-          ["机构", "The Met"],
+          ["机构", "国际馆藏"],
           ["重点", "Islamic world / VOC / Kraak"],
           ["对象", "外销通史"]
         ],
@@ -167,18 +167,18 @@ export const home = {
           "Kraak 盘的欧洲接受说明餐具也在塑造室内陈设。"
         ],
         detailMeta: [
-          ["来源", "The Metropolitan Museum of Art"],
+          ["来源", "国际公开馆藏"],
           ["支撑内容", "海贸、出口与市场适配"]
         ],
-        sourceLinks: [{ label: "The Met 研究文章", url: "https://www.metmuseum.org/essays/east-and-west-chinese-export-porcelain" }]
+        sourceLinks: [{ label: "研究综述文章", url: "https://www.metmuseum.org/essays/east-and-west-chinese-export-porcelain" }]
       },
       {
         id: "unesco-jingdezhen",
         eyebrow: "机构",
-        title: "UNESCO：景德镇作为连续制瓷城市系统",
-        summary: "UNESCO 以“Porcelain Capital”定位景德镇，提示餐具分类不能只看器身，还要看其背后的城市化工艺系统。",
+        title: "景德镇：连续制瓷城市系统",
+        summary: "景德镇作为连续制瓷城市系统，提示器物分类不能只看器身，还要看其背后的原料、窑火与运输协作体系。",
         metrics: [
-          ["机构", "UNESCO"],
+          ["机构", "国际资料"],
           ["重点", "1700 余年制瓷连续性"],
           ["对象", "城市系统"]
         ],
@@ -191,26 +191,26 @@ export const home = {
           "把餐具放回城市系统里看，页面的分类深度才足够。"
         ],
         detailMeta: [
-          ["来源", "UNESCO Creative Cities Network"],
+          ["来源", "国际公开资料"],
           ["支撑内容", "景德镇与成组稳定性"]
         ],
         sourceLinks: [
-          { label: "UNESCO 景德镇页面", url: "https://www.unesco.org/en/creative-cities/jingdezhen" }
+          { label: "景德镇城市系统", url: "https://www.unesco.org/en/creative-cities/jingdezhen" }
         ]
       },
       {
         id: "vam-overview",
         eyebrow: "馆藏研究",
-        title: "V&A：Chinese blue and white ceramics",
-        summary: "V&A 的综述把唐代早期样本、元代成熟、康熙分水、日本有田模仿和英国蓝白陈设热连成一条公开研究主线。",
+        title: "中国青花瓷综述：从唐代试验到全球流通",
+        summary: "从唐代早期样本、元代成熟、康熙分水到日本有田模仿和英国蓝白陈设热，青花的全球传播已形成清晰的研究主线。",
         metrics: [
-          ["机构", "V&A"],
+          ["机构", "国际馆藏"],
           ["重点", "Tang / Yuan / global spread"],
           ["对象", "公开总述"]
         ],
-        detailTitle: "V&A 负责把零散对象页串成一条主线",
+        detailTitle: "综述：把零散对象串联成完整叙事",
         detailBody:
-          "相比单件对象页，V&A 这篇综述更适合做首页主线资料。它把青花从唐代试验、元代成熟一路讲到 19 世纪欧洲室内陈设，让餐具页的传播背景和时间轴保持连续。",
+          "这篇综述把青花从唐代试验、元代成熟一路讲到 19 世纪欧洲室内陈设，让餐具页的传播背景和时间轴保持连续。",
         detailBullets: [
           "最早中国蓝白器可追溯到唐代。",
           "元代被明确放在成熟与定型的关键位置。",
@@ -220,35 +220,35 @@ export const home = {
           ["来源", "Victoria and Albert Museum"],
           ["支撑内容", "青花通史与传播主线"]
         ],
-        sourceLinks: [{ label: "V&A 研究文章", url: "https://www.vam.ac.uk/articles/chinese-blue-and-white-ceramics" }]
+        sourceLinks: [{ label: "研究综述文章", url: "https://www.vam.ac.uk/articles/chinese-blue-and-white-ceramics" }]
       }
     ]
   },
   institutionSignals: [
     {
       eyebrow: "馆藏",
-      title: "British Museum",
+      title: "国际馆藏对象页",
       summary: "提供 Kraak 外销盘等对象页，用来校对餐具版式、年代和外销背景。",
-      href: "https://www.britishmuseum.org/collection",
+      href: "https://www.metmuseum.org/art/collection",
       stat: "对象页样本"
     },
     {
       eyebrow: "馆藏",
-      title: "The Met",
+      title: "开放馆藏精选",
       summary: "补足大盘、双耳碗、出口盘和小碟样本，让餐具页不只停留在单一类型。",
       href: "https://www.metmuseum.org/art/collection",
       stat: "开放馆藏"
     },
     {
-      eyebrow: "馆藏研究",
-      title: "V&A",
+      eyebrow: "研究综述",
+      title: "青花全球传播总述",
       summary: "用公开总述把唐代、元代、海贸传播与英国室内陈设热压缩成首页可用的主线资料。",
       href: "https://www.vam.ac.uk/articles/chinese-blue-and-white-ceramics",
       stat: "公开总述"
     },
     {
-      eyebrow: "国际机构",
-      title: "UNESCO",
+      eyebrow: "城市系统",
+      title: "景德镇制瓷传统",
       summary: "把景德镇从单件器物拉回连续制瓷城市系统，解释餐具稳定生产背后的基础设施。",
       href: "https://www.unesco.org/en/creative-cities/jingdezhen",
       stat: "城市系统"
@@ -257,24 +257,24 @@ export const home = {
   institutionStats: [
     ["1700+ 年", "连续制瓷传统"],
     ["8 段", "历史时间节点"],
-    ["4 家", "核心来源机构"],
+    ["4 组", "核心来源资料"],
     ["4 组", "桌面对象样本"]
   ],
   networkPanels: [
     {
       eyebrow: "馆藏对象",
       title: "对象页提供盘面比例、容积与装饰秩序的硬参照",
-      summary: "British Museum 与 The Met 负责把外销盘、双耳碗和出口小碟这些具体对象拉进首页和餐具页。"
+      summary: "国际馆藏把外销盘、双耳碗和出口小碟这些具体对象拉进首页和餐具页。"
     },
     {
       eyebrow: "研究文章",
       title: "传播背景与室内接受史由公开文章补足",
-      summary: "V&A 与 The Met 把海贸、Kraak 流通和英国蓝白陈设热连成公开可追溯的背景主线。"
+      summary: "公开研究把海贸、Kraak 流通和英国蓝白陈设热连成可追溯的背景主线。"
     },
     {
       eyebrow: "城市系统",
       title: "景德镇作为生产基础设施持续影响餐具稳定性",
-      summary: "UNESCO 负责把餐具放回原料、窑火、运输与作坊协作的长期城市系统中。"
+      summary: "城市系统研究把器物放回原料、窑火、运输与作坊协作的长期语境中。"
     }
   ],
   featuredRecordTitle: "桌面谱系",
@@ -284,13 +284,13 @@ export const home = {
       id: "kraak-dish-record",
       eyebrow: "馆藏样本",
       title: "Kraak 外销盘",
-      summary: "British Museum 的 Kraak 盘适合拿来解释边饰分区、中心章和晚明海贸如何共同塑造餐具版式。",
+      summary: "Kraak 盘的边饰分区、中心章展示了晚明海贸如何重塑餐具版式语言。",
       imagePath: "https://images.metmuseum.org/CRDImages/es/web-large/ES5502.jpg",
-      sourceName: "British Museum",
+      sourceName: "国际公开馆藏",
       sourceUrl: "https://www.britishmuseum.org/collection/object/A_1984-0202-33",
       detailMeta: [
         ["年代", "late Ming"],
-        ["机构", "British Museum"],
+        ["机构", "国际馆藏"],
         ["类别", "外销盘"],
         ["观看重点", "边饰分区 / 中心章"]
       ],
@@ -300,13 +300,13 @@ export const home = {
       id: "portuguese-arms-record",
       eyebrow: "馆藏样本",
       title: "葡萄牙王室纹章大盘",
-      summary: "The Met 的大盘说明超大尺度餐具如何先服务远距识别，再服务盛放与陈设。",
+      summary: "超大尺度餐具如何先服务远距识别再服务盛放与陈设。",
       imagePath: "https://images.metmuseum.org/CRDImages/es/web-large/DP349125.jpg",
-      sourceName: "The Metropolitan Museum of Art",
+      sourceName: "国际公开馆藏",
       sourceUrl: "https://www.metmuseum.org/art/collection/search/204716",
       detailMeta: [
         ["年代", "ca. 1520-40"],
-        ["机构", "The Met"],
+        ["机构", "国际馆藏"],
         ["材质", "Jingdezhen export porcelain"],
         ["观看重点", "王室徽章 / 超大盘面"]
       ],
@@ -316,13 +316,13 @@ export const home = {
       id: "burghley-bowl-record",
       eyebrow: "馆藏样本",
       title: "Burghley House 双耳碗",
-      summary: "The Met 的双耳碗提醒我们，餐具在跨文化环境中会被加装、再定义，并进入新的观看体系。",
+      summary: "双耳碗的案例说明餐具在跨文化环境中会被加装、再定义并进入新的观看体系。",
       imagePath: "https://images.metmuseum.org/CRDImages/es/web-large/DP266966.jpg",
-      sourceName: "The Metropolitan Museum of Art",
+      sourceName: "国际公开馆藏",
       sourceUrl: "https://www.metmuseum.org/art/collection/search/199405",
       detailMeta: [
         ["年代", "1573-1585"],
-        ["机构", "The Met"],
+        ["机构", "国际馆藏"],
         ["材质", "Porcelain with gilded silver"],
         ["观看重点", "双耳 / 海外加装"]
       ],
@@ -332,13 +332,13 @@ export const home = {
       id: "late-export-dish-record",
       eyebrow: "馆藏样本",
       title: "late 17th century export dish",
-      summary: "The Met 的晚 17 世纪出口盘直径约 28.6 厘米，适合说明外销餐具如何在相对标准化尺寸里平衡题景与盛放空间。",
+      summary: "17 世纪末出口盘直径约 28.6 厘米，展示了外销餐具如何在标准化尺寸里平衡题景与盛放空间。",
       imagePath: "https://images.metmuseum.org/CRDImages/es/web-large/DT3892.jpg",
-      sourceName: "The Metropolitan Museum of Art",
+      sourceName: "国际公开馆藏",
       sourceUrl: "https://www.metmuseum.org/art/collection/search/208218",
       detailMeta: [
         ["年代", "late 17th century"],
-        ["机构", "The Met"],
+        ["机构", "国际馆藏"],
         ["类别", "出口盘"],
         ["观看重点", "标准化直径 / 鸟花题景"]
       ],
@@ -358,10 +358,35 @@ export const home = {
       title: "唐代初现",
       summary: "最早的蓝白器已经出现，但胎体与发色都还没有进入后来的成熟状态。",
       detail:
-        "V&A 提到唐代已经出现最早的中国蓝白器实例，但器身仍偏灰、不似后来的细白瓷胎。这个阶段更像一次方向明确的试验，而不是成熟体系。",
+        "唐代已出现早期蓝白器实例，器身偏灰、胎质尚粗，是一次方向明确的试验而非成熟体系。",
       facts: ["唐代早期蓝白器说明“蓝白组合”先于元代成熟。", "真正稳定的白胎与高温效果还要等到后续景德镇系统逐步建立。"],
       relatedCategories: ["art", "tableware"],
-      researchId: "tang-beginnings"
+      researchId: "tang-beginnings",
+      imagePath: "img/era-tang-sancai.jpg"
+    },
+    {
+      id: "tang-sancai-tableware",
+      era: "唐代",
+      title: "三彩器用",
+      summary: "唐代三彩和白瓷并行发展，桌面器、俑塑与陈设器共同构成早期器物谱系。",
+      detail:
+        "三彩釉色说明唐代器物已经具备强烈的装饰意识；它和早期蓝白试验并置，可以看出颜色、胎体和观看用途在唐代还处于多线探索状态。",
+      facts: ["三彩器强调釉色流动和陈设感。", "白瓷与三彩并行，让后续蓝白器有了更复杂的材料背景。"],
+      relatedCategories: ["tea", "tableware", "vase", "art"],
+      researchId: "tang-beginnings",
+      imagePath: "img/dynasty-pages/tang-sancai.JPG"
+    },
+    {
+      id: "tang-teaware-forms",
+      era: "唐代",
+      title: "煎茶器形",
+      summary: "唐代饮茶方式推动碗、盏、执壶等器型分工，器物开始围绕使用动作形成组合。",
+      detail:
+        "唐代茶事不是单件器物的孤立出现，而是煎煮、分饮、盛装与陈设共同推动器形变化。首页把茶具、餐具、花器与艺术品都纳入唐代入口，能更准确承接子页数量。",
+      facts: ["饮茶动作会推动碗盏和壶类分工。", "器形组合比单件器物更适合解释唐代分类入口。"],
+      relatedCategories: ["tea", "tableware", "vase", "art"],
+      researchId: "tang-beginnings",
+      imagePath: "img/dynasty-pages/tang-teaware.jpg"
     },
     {
       id: "qingbai-bridge",
@@ -369,10 +394,35 @@ export const home = {
       title: "青白过渡",
       summary: "景德镇的青白瓷为后来的青花成熟打下了胎釉与烧成基础。",
       detail:
-        "British Museum 的景德镇青白瓷资料提示，在宋元之间，透明偏蓝白的釉感与更轻薄的器体已经相当成熟。它不是青花本身，却为青花准备了技术地基。",
+        "宋元之际的景德镇青白瓷已经具备透明偏蓝白的釉感与轻薄器体，为后来的青花成熟打下了胎釉与烧成基础。",
       facts: ["景德镇青白瓷说明当地早已具备高质量白瓷生产基础。", "倒烧与支圈等做法反映出器物成批烧造的成熟经验。"],
       relatedCategories: ["tea", "vase"],
-      researchId: "qingbai-bridge"
+      researchId: "qingbai-bridge",
+      imagePath: "img/era-song-qingbai.jpg"
+    },
+    {
+      id: "song-jian-tea",
+      era: "宋代",
+      title: "建盏与点茶",
+      summary: "宋代点茶让盏形、釉色和茶汤泡沫成为共同判断点，茶具从器形进入使用方法。",
+      detail:
+        "建盏的黑釉、深腹和执握尺度都服务于点茶观看。它与景德镇青白瓷并行出现，说明宋代器物不是单一路径，而是在茶事、白瓷和陈设之间形成多重坐标。",
+      facts: ["点茶要求盏内能衬出汤花。", "建盏和青白瓷共同撑起宋代器物差异。"],
+      relatedCategories: ["tea", "tableware", "vase", "art"],
+      researchId: "qingbai-bridge",
+      imagePath: "img/dynasty-pages/song-jian.jpg"
+    },
+    {
+      id: "song-qingbai-vase",
+      era: "宋代",
+      title: "青白花器",
+      summary: "宋代青白瓷把轻薄胎、透明釉和收束轮廓推向稳定，花器与陈设器因此获得清简气质。",
+      detail:
+        "青白花器适合解释宋代器物的安静比例：它不依赖密集纹样，而依赖胎釉、轮廓和光泽让空间变得可读。",
+      facts: ["透明偏青白釉让轮廓成为观看重点。", "花器入口能把宋代清简审美从茶盏扩展到陈设空间。"],
+      relatedCategories: ["tea", "tableware", "vase", "art"],
+      researchId: "qingbai-bridge",
+      imagePath: "img/dynasty-pages/song-vase.jpg"
     },
     {
       id: "yuan-origins",
@@ -383,7 +433,32 @@ export const home = {
         "元代的重要性在于把蓝白对比、胎釉关系与烧成控制逐步固定下来，后来的明清高峰都建立在这一步的稳定性上。",
       facts: ["青花在这一阶段从零散试验转向可重复生产。", "景德镇逐渐形成更成熟的瓷胎与发色控制。"],
       relatedCategories: ["tea", "art"],
-      researchId: "yuan-origins"
+      researchId: "yuan-origins",
+      imagePath: "img/artworks/met-vase-landscape-49862.jpg"
+    },
+    {
+      id: "yuan-large-vessels",
+      era: "元代",
+      title: "大器与图像",
+      summary: "元代大罐、大盘和梅瓶让青花从局部装饰转向完整画面组织。",
+      detail:
+        "大体量器物给青花提供了更完整的叙事空间，中心章、边饰、肩部和胫部纹样开始形成分区秩序。",
+      facts: ["大器让纹样组织从单点图案转向整器布局。", "梅瓶与大盘能同时连接花器、餐具和艺术品分类。"],
+      relatedCategories: ["tea", "tableware", "coffee", "vase", "art"],
+      researchId: "yuan-origins",
+      imagePath: "img/dynasty-pages/yuan-bluewhite.jpg"
+    },
+    {
+      id: "yuan-trade-forms",
+      era: "元代",
+      title: "贸易器形",
+      summary: "元代青花面对更广市场，执壶、盘、瓶等器型开始承接跨文化使用需求。",
+      detail:
+        "贸易需求让青花不只服务本地使用，也进入更复杂的饮食、陈设和交流场景。咖啡具在元代导航里已有入口，首页也需要同步显示。",
+      facts: ["器型会受市场和使用对象反向塑造。", "元代入口应同时承接茶具、餐具、咖啡具、花器与艺术品。"],
+      relatedCategories: ["tea", "tableware", "coffee", "vase", "art"],
+      researchId: "global-export",
+      imagePath: "img/era-yuan-flask.jpg"
     },
     {
       id: "tianbai-yongle",
@@ -391,10 +466,11 @@ export const home = {
       title: "甜白精进",
       summary: "永乐时期的甜白瓷把高岭土比例、薄胎与柔光白釉推向更高完成度。",
       detail:
-        "British Museum 对永乐甜白器的说明强调，这种白釉与较高高岭土比例、轻薄胎体和宫廷礼仪场景关系密切。它让“白”本身也成为一种高度控制的工艺语言。",
+        "永乐甜白器通过较高高岭土比例与轻薄胎体实现纯白釉面，服务于宫廷礼仪场景。“白”本身成为一种高度控制的工艺语言。",
       facts: ["甜白不是缺少装饰，而是让胎釉控制本身成为主角。", "永乐甜白说明景德镇在明初已经能稳定处理更轻更薄的白瓷表达。"],
       relatedCategories: ["tea", "vase"],
-      researchId: "tianbai-yongle"
+      researchId: "tianbai-yongle",
+      imagePath: "img/era-ming-dragon.jpg"
     },
     {
       id: "xuande-stem-cup",
@@ -402,10 +478,11 @@ export const home = {
       title: "宣德青花",
       summary: "宣德器把年款、钴料层次和宫廷图像要求结合成更精密的青花范式。",
       detail:
-        "British Museum 的宣德高足杯显示，五爪龙、海水纹与深浅不同的青花层次被严密组织在一件小器里，说明青花已经进入高控制、高辨识度的宫廷表达阶段。",
+        "宣德高足杯上的五爪龙、海水纹与多层次青花被严密组织在一件小器里，说明青花已进入高度控制的宫廷表达阶段。",
       facts: ["宣德器常把年款、图像权威和发色层次同时放进作品。", "青花不再只是蓝白对比，而开始承担更复杂的宫廷视觉秩序。"],
       relatedCategories: ["tea", "art"],
-      researchId: "xuande-stem-cup"
+      researchId: "xuande-stem-cup",
+      imagePath: "img/主界面-2.png"
     },
     {
       id: "porcelain-capital",
@@ -416,7 +493,20 @@ export const home = {
         "景德镇之所以关键，不在于单一工艺名词，而在于城市把原料、师徒训练、水陆运输和市场连接成了持续运行的器物生态。",
       facts: ["连续的制瓷传统让城市本身成为生产基础设施。", "青花在这里既是风格语言，也是产业系统的一部分。"],
       relatedCategories: ["tea", "vase"],
-      researchId: "porcelain-capital"
+      researchId: "porcelain-capital",
+      imagePath: "img/era-ming-bowl.jpg"
+    },
+    {
+      id: "ming-doucai-wucai",
+      era: "明代",
+      title: "斗彩与五彩",
+      summary: "明代青花体系继续分化，斗彩、五彩让釉下蓝和釉上彩形成更复杂的层次关系。",
+      detail:
+        "青花在明代已经不是单一风格，而是成为多种彩瓷系统的底层骨架。斗彩与五彩说明器物图像从线条、填彩到烧成顺序都更加复杂。",
+      facts: ["青花轮廓能成为釉上彩的结构基础。", "彩瓷分化说明明代工艺不止一条蓝白路线。"],
+      relatedCategories: ["tea", "tableware", "coffee", "vase", "art"],
+      researchId: "underglaze-definition",
+      imagePath: "img/dynasty-pages/ming-doucai.jpg"
     },
     {
       id: "kraak-export",
@@ -424,10 +514,35 @@ export const home = {
       title: "克拉克外销",
       summary: "Kraak 瓷让青花在面向欧洲的贸易链里形成更鲜明的器型与边饰语法。",
       detail:
-        "British Museum 对 Kraak dish 的说明把它直接放进欧洲贸易与海难出水的语境里。这里的重点不是“外销”三个字，而是青花开始为跨洋运输和海外陈设发展出新的板式。",
+        "Kraak 盘从欧洲贸易与海难出水的考古语境可以看出，青花为适应跨洋运输和海外陈设发展出了分区边饰、中心章等新板式。",
       facts: ["Kraak 瓷说明晚明青花已经能针对海外市场形成稳定品类。", "分区边饰、盘面比例和流通路线在这一阶段紧密相连。"],
       relatedCategories: ["tableware", "coffee"],
-      researchId: "kraak-export"
+      researchId: "kraak-export",
+      imagePath: "img/背景图-餐具.png"
+    },
+    {
+      id: "qing-kangxi-fenshui",
+      era: "清代",
+      title: "康熙分水",
+      summary: "清代分水让同一种青料产生多层浓淡，青花画面更接近水墨的层次组织。",
+      detail:
+        "分水技术把青花从勾线与填色推进到浓淡递进。器物图像开始承担更强的空间感，茶具、花器、艺术品与咖啡具都能从这里获得观看线索。",
+      facts: ["分水让青花出现多层蓝色。", "康熙时期的水墨感是清代青花的重要判断点。"],
+      relatedCategories: ["tea", "tableware", "coffee", "vase", "art"],
+      researchId: "ink-painting-effect",
+      imagePath: "img/era-qing-dragon.jpg"
+    },
+    {
+      id: "qing-famille-export",
+      era: "清代",
+      title: "粉彩与外销",
+      summary: "清代外销体系继续扩大，粉彩、青花和成套餐具共同进入全球陈设与桌面场景。",
+      detail:
+        "清代器物需要同时看国内审美、宫廷要求和海外订单。粉彩和青花并行，使餐具、茶具、咖啡具和艺术品在同一贸易网络里被重新组织。",
+      facts: ["海外订单推动成套餐具和陈设器稳定化。", "粉彩与青花并行说明清代不再只有单一蓝白表达。"],
+      relatedCategories: ["tea", "tableware", "coffee", "vase", "art"],
+      researchId: "chinamania-interior",
+      imagePath: "img/dynasty-pages/qing-famille.jpg"
     },
     {
       id: "global-export",
@@ -438,14 +553,15 @@ export const home = {
         "外销并不是简单的输出，而是一场持续的适配过程。市场口味、器型需求和运输条件都会反过来改写青花的观看方式。",
       facts: ["贸易网络推动了题材、器型和装饰密度的变化。", "青花的国际辨识度是在长期跨文化流通中被塑造出来的。"],
       relatedCategories: ["tableware", "coffee"],
-      researchId: "global-export"
+      researchId: "global-export",
+      imagePath: "img/era-qing-dragon.jpg"
     }
   ],
   jingdezhenPanel: {
     eyebrow: "瓷都脉络",
     title: "景德镇为何成为青花的关键坐标",
     summary:
-      "景德镇的重要性不只在窑火，也在原料、运输、作坊协作与制度化生产如何同时出现。UNESCO 将它视为具有 1700 余年连续制瓷传统的“Porcelain Capital”。",
+      "景德镇的重要性在于原料、运输、作坊协作与制度化生产同时出现，具有超过 1700 年的连续制瓷传统。",
     facts: [
       "高岭土与瓷石决定了胎质和烧成稳定性。",
       "御窑系统把工序、分工与质量控制拉进同一条生产链。",
@@ -465,10 +581,10 @@ export const home = {
     ["法压浸泡协议", "4 分钟接触时间与粗研磨规则决定了法压壶的口感框架。", "french-press-protocol"],
     ["压力萃取工作流", "把 espresso 的接触时间、投粉量和设备规格放回同一条工作流里。", "espresso-pressure-workflow"],
     ["冷萃浓缩系统", "从低温长时接触和浓缩逻辑理解冷萃器具为什么需要独立分类。", "cold-brew-concentrate"],
-    ["外销咖啡壶", "The Met 的日本外销咖啡壶说明器型会随欧洲市场而改写。", "export-coffee-pot"],
+    ["外销咖啡壶", "日本外销咖啡壶的器型随欧洲市场需求而演变，展示了跨文化设计适应。", "export-coffee-pot"],
     ["英式咖啡壶", "Worcester coffee-pot 把 18 世纪英国咖啡饮用转成可量产的器用类型。", "worcester-coffee-pot"],
     ["批量滴滤", "Moccamaster 的 1.25L 批量滴滤机把大容量冲煮稳定在 4-6 分钟。", "batch-drip-workflow"],
-    ["奥斯曼咖啡杯文化", "British Museum 的展览资料提醒我们，咖啡具首先是一套社交器物。", "ottoman-coffee-culture"]
+    ["奥斯曼咖啡杯文化", "咖啡具首先是一套社交器物，器型、容量和装饰都服务于共饮礼仪。", "ottoman-coffee-culture"]
   ],
   featuredResearch: {
     title: "专题选读",
@@ -620,7 +736,7 @@ Object.assign(home, {
     title: "渔窑手工青花",
     subtitle: "茶具、馆藏与茶事资料首页",
     description:
-      "以《茶经》《大观茶论》、The Met 与 British Museum 的公开对象页、UNESCO 的茶与景德镇资料为基础，把茶具体系、历史时间线、来源网络与器类入口组织成一个正式的机构型首页。",
+      "以《茶经》《大观茶论》、国际公开对象页与景德镇制瓷资料为基础，把茶具体系、历史时间线、来源网络与器类入口组织成一个正式的机构型首页。",
     actions: [
       { href: "#tea-focus", label: "进入茶具专题" },
       { href: "#home-source-deck", label: "查看资料台账" }
@@ -628,7 +744,7 @@ Object.assign(home, {
     metrics: [
       ["1700+ 年", "连续制瓷传统"],
       ["8 段", "历史时间节点"],
-      ["4 家", "核心来源机构"],
+      ["4 组", "核心来源资料"],
       ["5 组", "茶具对象样本"]
     ],
     sectionLinks: [
@@ -642,7 +758,7 @@ Object.assign(home, {
     ],
     brief: [
       ["专题范围", "本轮首页把茶具专题、时间线、资料台账、馆藏样本和研究路径并列呈现。"],
-      ["来源体系", "British Museum、The Met、UNESCO 与 Wikisource 共同提供对象、古籍与城市系统背景。"],
+      ["来源体系", "国际公开馆藏与 Wikisource 共同提供对象、古籍与城市系统背景。"],
       ["阅读方式", "先看茶具主线，再回到时间线、资料网络和器类入口。"]
     ],
     focusCard: {
@@ -658,7 +774,7 @@ Object.assign(home, {
   institutionStats: [
     ["1700+ 年", "连续制瓷传统"],
     ["8 段", "历史时间节点"],
-    ["4 家", "核心来源机构"],
+    ["4 组", "核心来源资料"],
     ["5 组", "茶具对象样本"]
   ],
   tablewareSpotlight: {
@@ -750,8 +866,8 @@ Object.assign(home, {
       {
         id: "met-jian-bowl",
         eyebrow: "馆藏",
-        title: "The Met：宋代建盏把点茶阅读压回盏心",
-        summary: "The Met 的建盏高约 7.5 厘米、口径约 12.4 厘米，说明点茶器的重点是腹深、黑釉和近身观汤。",
+        title: "宋代建盏：点茶的阅读终点在盏心",
+        summary: "宋代建盏高约 7.5 厘米、口径约 12.4 厘米，说明点茶器的重点是腹深、黑釉和近身观汤。",
         metrics: [
           ["时代", "11th–12th century"],
           ["器高", "7.5 cm"],
@@ -766,19 +882,19 @@ Object.assign(home, {
           "这是茶具页判断盏系器的基准样本。"
         ],
         detailMeta: [
-          ["来源", "The Metropolitan Museum of Art"],
+          ["来源", "国际公开馆藏"],
           ["支撑内容", "点茶盏尺度与釉色"]
         ],
         sourceLinks: [
-          { label: "The Met 对象页", url: "https://www.metmuseum.org/art/collection/search/48112" },
+          { label: "博物馆对象页", url: "https://www.metmuseum.org/art/collection/search/48112" },
           { label: "《大观茶论》", url: "https://zh.wikisource.org/zh-hans/%E5%A4%A7%E8%A7%80%E8%8C%B6%E8%AB%96" }
         ]
       },
       {
         id: "bm-teapot",
         eyebrow: "馆藏",
-        title: "British Museum：明末青花茶壶把泡饮路径固定下来",
-        summary: "British Museum 的 1643 年青花茶壶高约 13 厘米、宽约 19 厘米，直接说明明清泡饮已经需要稳定的出汤路径和握持关系。",
+        title: "明末青花茶壶：泡饮路径的定型",
+        summary: "1643 年青花茶壶高约 13 厘米、宽约 19 厘米，说明明清泡饮已需要稳定的出汤路径和握持关系。",
         metrics: [
           ["时代", "1643"],
           ["器高", "13 cm"],
@@ -786,23 +902,23 @@ Object.assign(home, {
         ],
         detailTitle: "泡饮器先看壶嘴、把位和容量控制",
         detailBody:
-          "British Museum 对这件茶壶的说明直接指出，用壶浸泡茶叶在元末明初之后逐渐成为最常见的方法。也就是说，茶壶不是装饰加法，而是饮法变化的结果。",
+          "元末明初之后，用壶浸泡茶叶逐渐成为最常见的饮法。茶壶不是装饰加法，而是饮法变化的结果。",
         detailBullets: [
           "壶嘴和把手共同决定出汤路线。",
           "小型壶体更适合桌面泡饮与分杯。",
           "鸟纹与花枝说明茶壶在实用之外仍承担审美表达。"
         ],
         detailMeta: [
-          ["来源", "British Museum 1984,0303.3"],
+          ["来源", "国际公开馆藏 1984,0303.3"],
           ["支撑内容", "泡饮壶系与明清饮法"]
         ],
-        sourceLinks: [{ label: "British Museum 对象页", url: "https://www.britishmuseum.org/collection/object/A_1984-0303-3" }]
+        sourceLinks: [{ label: "博物馆对象页", url: "https://www.britishmuseum.org/collection/object/A_1984-0303-3" }]
       },
       {
         id: "bm-gaiwan",
         eyebrow: "馆藏",
-        title: "British Museum：盖碗把碗、盖、托变成一组服务器",
-        summary: "British Museum 把 gaiwan 解释为带盖与托的茶碗，并指出尺寸和盖形会给断代提供线索。",
+        title: "盖碗：碗、盖、托的三位一体",
+        summary: "盖碗（gaiwan）是带盖与托的茶碗，尺寸和盖形为断代提供重要线索。",
         metrics: [
           ["时期", "1900–1975"],
           ["构成", "碗 / 盖 / 托"],
@@ -817,36 +933,36 @@ Object.assign(home, {
           "它适合说明茶具如何从单件走向套组阅读。"
         ],
         detailMeta: [
-          ["来源", "British Museum 1985,1024.39.1-9"],
+          ["来源", "国际公开馆藏 1985,1024.39.1-9"],
           ["支撑内容", "盖碗构成与晚近饮茶"]
         ],
-        sourceLinks: [{ label: "British Museum 对象页", url: "https://www.britishmuseum.org/collection/object/A_1985-1024-39-1-9" }]
+        sourceLinks: [{ label: "博物馆对象页", url: "https://www.britishmuseum.org/collection/object/A_1985-1024-39-1-9" }]
       },
       {
         id: "unesco-tea-ich",
         eyebrow: "国际机构",
-        title: "UNESCO：茶不仅是饮品，更是一套社会实践",
-        summary: "UNESCO 的中国传统制茶与相关社会实践条目提醒我们，茶具必须放回待客、共饮和地方习俗里理解。",
+        title: "茶：从饮品到一整套社会实践",
+        summary: "中国传统制茶及相关社会实践提醒我们，茶具必须放回待客、共饮和地方习俗里理解。",
         metrics: [
-          ["机构", "UNESCO"],
+          ["机构", "国际资料"],
           ["重点", "社会实践"],
           ["对象", "制茶 / 待客 / 传承"]
         ],
         detailTitle: "茶具页要同时呈现器型和场景",
         detailBody:
-          "如果只看器型，茶具会沦为一张表；UNESCO 的条目提醒我们，茶具真正的意义来自社交、待客和地方实践。首页资料网络必须把这一层放进去。",
+          "如果只看器型，茶具会沦为一张表；茶具真正的意义来自社交、待客和地方实践。首页资料网络必须把这一层放进去。",
         detailBullets: [
           "茶具的差异来自饮法，也来自社交场景。",
           "茶与器的关系不是静态陈列，而是持续实践。",
           "这条机构来源让首页避免只剩器物目录。"
         ],
         detailMeta: [
-          ["来源", "UNESCO Intangible Cultural Heritage"],
+          ["来源", "国际公开资料"],
           ["支撑内容", "茶具与社会实践"]
         ],
         sourceLinks: [
           {
-            label: "UNESCO 茶条目",
+            label: "茶社会实践条目",
             url: "https://ich.unesco.org/en/RL/traditional-tea-processing-techniques-and-associated-social-practices-in-china-01884"
           }
         ]
@@ -858,21 +974,21 @@ Object.assign(home, {
   institutionSignals: [
     {
       eyebrow: "馆藏",
-      title: "British Museum",
+      title: "国际馆藏对象页",
       summary: "提供明末茶壶、盖碗等对象页，用来校对茶具的年代、尺寸与饮法语义。",
       href: "https://www.britishmuseum.org/collection",
       stat: "对象页样本"
     },
     {
       eyebrow: "馆藏",
-      title: "The Metropolitan Museum of Art",
+      title: "国际馆藏精选",
       summary: "补足建盏、注器、茶壶、执壶和外销杯碟样本，让茶具页不只停留在单一年代或单一器种。",
       href: "https://www.metmuseum.org/art/collection",
       stat: "开放馆藏"
     },
     {
       eyebrow: "国际机构",
-      title: "UNESCO",
+      title: "非遗与社会实践",
       summary: "把茶事从单件器物拉回社会实践、景德镇城市系统与窑业背景中。",
       href: "https://www.unesco.org/en/creative-cities/jingdezhen",
       stat: "茶与城市系统"
@@ -891,12 +1007,12 @@ Object.assign(home, {
     {
       eyebrow: "馆藏对象",
       title: "对象页提供尺寸、器型和成套关系的硬参照",
-      summary: "British Museum 与 The Met 负责把茶盏、茶壶、盖碗和杯碟这些具体器物拉进首页和茶具页。"
+      summary: "国际馆藏把茶盏、茶壶、盖碗和杯碟这些具体器物拉进首页和茶具页。"
     },
     {
       eyebrow: "国际机构",
-      title: "社会实践与城市系统由 UNESCO 补足",
-      summary: "UNESCO 负责把茶具放回待客、共饮和景德镇制瓷网络中，避免页面只剩器物图录。"
+      title: "社会实践与城市系统",
+      summary: "把茶具放回待客、共饮和景德镇制瓷网络中，避免页面只剩器物图录。"
     },
     {
       eyebrow: "典籍规则",
@@ -909,7 +1025,7 @@ Object.assign(home, {
   storyTabs: [
     ["tea-order", "茶事秩序", "茶具不先按器名堆叠，而先按点茶、泡饮与分饮的动作顺序排列，页面结构也遵循这条阅读主线。"],
     ["craft", "工艺背景", "盏色、腹深、壶流、盖形和杯碟比例都不是孤立审美，它们来自制瓷工艺与饮茶动作的共同约束。"],
-    ["network", "城市与流通", "景德镇、国际馆藏与 UNESCO 的公开资料共同说明茶具既是器物，也是社会实践和城市网络的一部分。"]
+    ["network", "城市与流通", "景德镇与国际公开资料共同说明茶具既是器物，也是社会实践和城市网络的一部分。"]
   ],
   timelineTitle: "茶事与景德镇时间线",
   timelineSummary: "把青白瓷基础、元代定型、明清饮法变化和全球流通放回同一条长时段主线，解释茶具为何会持续改形。",
@@ -917,7 +1033,7 @@ Object.assign(home, {
     eyebrow: "瓷都脉络",
     title: "景德镇为何能长期承接茶具变化",
     summary:
-      "茶盏、壶、杯碟与外销服务的变化，背后是景德镇对胎釉、成型、运输和市场的长期协调。UNESCO 将它视为具有 1700 余年连续制瓷传统的 Porcelain Capital。",
+      "茶盏、壶、杯碟与外销服务的变化，背后是景德镇对胎釉、成型、运输和市场的长期协调，延续超过 1700 年的制瓷传统使其成为当之无愧的瓷都。",
     facts: [
       "高岭土与瓷石决定了盏、壶、杯等器形的胎质和烧成稳定性。",
       "御窑与民窑分工会影响器型尺寸、釉色完成度与生产节奏。",
@@ -930,13 +1046,13 @@ Object.assign(home, {
       id: "jian-bowl-record",
       eyebrow: "馆藏样本",
       title: "宋代建盏",
-      summary: "The Met 的建盏让首页能把点茶、黑釉和近身观汤放回同一件器物里理解。",
+      summary: "建盏让首页能把点茶、黑釉和近身观汤放回同一件器物里理解。",
       imagePath: "https://images.metmuseum.org/CRDImages/as/web-large/DP-15452-025.jpg",
-      sourceName: "The Metropolitan Museum of Art",
+      sourceName: "国际公开馆藏",
       sourceUrl: "https://www.metmuseum.org/art/collection/search/48112",
       detailMeta: [
         ["年代", "11th–12th century"],
-        ["机构", "The Met"],
+        ["机构", "国际馆藏"],
         ["类别", "点茶盏"],
         ["观看重点", "腹深、黑釉与汤色"]
       ],
@@ -951,13 +1067,13 @@ Object.assign(home, {
       id: "covered-pot-record",
       eyebrow: "馆藏样本",
       title: "Covered wine pot or teapot",
-      summary: "The Met 的小型有盖注器把注汤、留温和桌面分配压缩成一条清晰的动作路径。",
+      summary: "小型有盖注器把注汤、留温和桌面分配压缩成一条清晰的动作路径。",
       imagePath: "https://images.metmuseum.org/CRDImages/rl/web-large/1701_31.jpg",
-      sourceName: "The Metropolitan Museum of Art",
+      sourceName: "国际公开馆藏",
       sourceUrl: "https://www.metmuseum.org/art/collection/search/461213",
       detailMeta: [
         ["年代", "1662–1722"],
-        ["机构", "The Met"],
+        ["机构", "国际馆藏"],
         ["材质", "Porcelain painted in underglaze blue"],
         ["观看重点", "盖、壶嘴和出汤路径"]
       ],
@@ -972,13 +1088,13 @@ Object.assign(home, {
       id: "teapot-record",
       eyebrow: "馆藏样本",
       title: "十八世纪中国瓷茶壶",
-      summary: "The Met 的中国瓷茶壶把壶体、流口和把位的三角关系压得很紧，适合说明泡饮器如何先以功能稳定成立。",
+      summary: "瓷茶壶的壶体、流口和把位构成三角关系，说明泡饮器如何先以功能稳定成立。",
       imagePath: "https://images.metmuseum.org/CRDImages/as/web-large/28350.jpg",
-      sourceName: "The Metropolitan Museum of Art",
+      sourceName: "国际公开馆藏",
       sourceUrl: "https://www.metmuseum.org/art/collection/search/47545",
       detailMeta: [
         ["年代", "18th century"],
-        ["机构", "The Met"],
+        ["机构", "国际馆藏"],
         ["材质", "Jingdezhen ware"],
         ["观看重点", "壶嘴、把位与持握角度"]
       ],
@@ -993,13 +1109,13 @@ Object.assign(home, {
       id: "cup-saucer-record",
       eyebrow: "馆藏样本",
       title: "外销杯碟",
-      summary: "The Met 的中国制杯碟为美国市场而作，把杯与碟拆成一组服务器，适合解释茶具如何进入国际礼仪。",
+      summary: "中国制杯碟为美国市场而作，把杯与碟拆成一组服务器，适合解释茶具如何进入国际礼仪。",
       imagePath: "https://images.metmuseum.org/CRDImages/ad/web-large/DP260305.jpg",
-      sourceName: "The Metropolitan Museum of Art",
+      sourceName: "国际公开馆藏",
       sourceUrl: "https://www.metmuseum.org/art/collection/search/8299",
       detailMeta: [
         ["年代", "ca. 1860–66"],
-        ["机构", "The Met"],
+        ["机构", "国际馆藏"],
         ["类别", "分饮套组"],
         ["观看重点", "杯高、碟径与桌面服务"]
       ],
@@ -1014,13 +1130,13 @@ Object.assign(home, {
       id: "ewer-record",
       eyebrow: "馆藏样本",
       title: "Burghley House Ewer",
-      summary: "The Met 的执壶样本让首页能把注器前史接回茶壶系统，说明出汤器并不是一夜之间出现的。",
+      summary: "执壶样本让首页能把注器前史接回茶壶系统，说明出汤器并不是一夜之间出现的。",
       imagePath: "https://images.metmuseum.org/CRDImages/es/web-large/DT568.jpg",
-      sourceName: "The Metropolitan Museum of Art",
+      sourceName: "国际公开馆藏",
       sourceUrl: "https://www.metmuseum.org/art/collection/search/199404",
       detailMeta: [
         ["年代", "1573–ca. 1585"],
-        ["机构", "The Met"],
+        ["机构", "国际馆藏"],
         ["材质", "Chinese porcelain, British mounts"],
         ["观看重点", "注器前史与跨区域流通"]
       ],

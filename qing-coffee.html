@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>清 · 咖啡具 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* 东西融合布局 */
+.hero{padding:3rem 2rem 1.5rem;max-width:52rem;margin:0 auto;text-align:center}
+.hero h1{font-family:var(--title-font);font-size:clamp(2.4rem,4.5vw,3.2rem);margin-bottom:0.6rem}
+.hero .lead{color:var(--ink-soft);max-width:34rem;margin:0 auto;font-size:1.05rem}
+
+.fusion{max-width:56rem;margin:0 auto;padding:1rem 2rem 4rem}
+.fusion__pair{display:grid;grid-template-columns:1fr 1px 1fr;gap:1.5rem;margin-bottom:3rem;align-items:start}
+.fusion__pair .divider{background:linear-gradient(to bottom, transparent, var(--accent-warm), transparent);align-self:stretch}
+.fusion__east,.fusion__west{display:flex;flex-direction:column;gap:0.8rem}
+.fusion__east h3,.fusion__west h3{font-family:var(--title-font);font-size:1.15rem}
+.fusion__east .sub,.fusion__west .sub{font-size:0.76rem;color:var(--accent-warm);text-transform:uppercase;letter-spacing:0.1em}
+.fusion__east .card,.fusion__west .card{padding:1.1rem;background:var(--surface);border-radius:0.65rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08)}
+.card p{font-size:0.85rem;color:var(--ink-soft);line-height:1.7}
+
+.conclusion{max-width:40rem;margin:3rem auto;padding:2rem;background:var(--surface);border-radius:0.8rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08);text-align:center}
+.conclusion h4{font-family:var(--title-font);font-size:1.1rem;margin-bottom:0.5rem}
+.conclusion p{font-size:0.88rem;color:var(--ink-soft);line-height:1.85}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+
+@media(max-width:650px){
+  .fusion__pair{grid-template-columns:1fr;gap:1rem}
+  .fusion__pair .divider{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">清 <span>·</span> 咖啡具</div>
+</header>
+
+<section class="hero">
+  <h1>清 · 咖啡具</h1>
+  <p class="lead">十八至十九世纪，中国瓷器外销达到历史巅峰。来自广州十三行的定制咖啡具、私人纹章咖啡杯源源不断运往欧洲和美洲——这是中西方咖啡器具体系第一次真正的"对话"。</p>
+</section>
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/qing-famille.jpg" alt="qing 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+<div class="fusion">
+  <div class="fusion__pair">
+    <div class="fusion__east">
+      <h3>中国外销瓷</h3>
+      <div class="sub">景德镇 · 广州 · 18世纪</div>
+      <div class="card">
+        <p>广州十三行画珐琅咖啡壶——器型完全按照欧洲咖啡壶形制（圆柱形壶身、弧形把手、鸟嘴流），但壶身施粉彩，绘中式庭园仕女或花鸟纹样。这是"西器中饰"的典型。</p>
+      </div>
+      <div class="card">
+        <p>纹章瓷咖啡杯——欧洲贵族将家族徽章图样寄到广州，中国画工按样绘制在咖啡杯上。一套纹章瓷咖啡具从下单到交货需两到三年，价格昂贵。</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="fusion__west">
+      <h3>欧洲仿中国瓷</h3>
+      <div class="sub">Meissen · Sèvres · 18世纪</div>
+      <div class="card">
+        <p>德国Meissen瓷厂（1710年建立）最早破解瓷器配方，其早期咖啡具的洋葱图案（Zwiebelmuster）直接模仿中国青花缠枝纹，但将石榴和桃误画为"洋葱"。</p>
+      </div>
+      <div class="card">
+        <p>法国Sèvres瓷厂以粉彩风格生产咖啡具，但其粉色（Rose Pompadour）比中国粉彩更鲜艳。中国纹样被重新设计为洛可可风格的卷草和贝壳纹。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="fusion__pair">
+    <div class="fusion__east">
+      <h3>中国外销瓷</h3>
+      <div class="sub">景德镇 · 广州 · 19世纪</div>
+      <div class="card">
+        <p>"广彩"（广东彩瓷）是专门为外销市场开发的品种。咖啡杯碟以金彩勾勒轮廓、粉彩填充纹样，色彩浓艳，符合欧洲人对"东方异域风情"的想象。纽约大都会博物馆收藏了大量19世纪广彩咖啡具。</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="fusion__west">
+      <h3>欧美定制</h3>
+      <div class="sub">英国 · 美国 · 19世纪</div>
+      <div class="card">
+        <p>英国Wedgwood和Spode瓷厂大量生产"柳树图案"（Willow Pattern）咖啡具，这是对中国青花山水纹的欧洲化改编——柳树、小桥、飞鸟、亭台被组合成一个固定的叙事场景。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="conclusion">
+  <h4>咖啡杯中的全球化</h4>
+  <p>清代咖啡具的故事是一场跨越三大洲的对话：中国的纹样和工艺，欧洲的器型和需求，美洲殖民地的消费市场。每一件广彩咖啡杯都是全球化早期的见证——当波士顿商人在广州订购咖啡具时，当伦敦咖啡馆使用青花瓷杯时，真正意义上的全球消费品市场正在成型。</p>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 清 · 咖啡具</p>
+</footer>
+
+</body>
+</html>

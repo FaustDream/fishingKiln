@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>唐 · 茶具 | 渔窑手工青花</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1d2731;
+  --ink-soft: rgba(29,39,49,0.78);
+  --ink-muted: rgba(29,39,49,0.5);
+  --accent: #315f87;
+  --accent-warm: #966149;
+  --surface: rgba(255,255,255,0.84);
+  --surface-soft: rgba(255,255,255,0.55);
+  --line: rgba(49,95,135,0.12);
+  --title-font: "Noto Serif SC", "SimSun", "STSong", serif;
+  --body-font: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);
+  color:var(--ink);
+  line-height:1.7;
+  min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+a{color:inherit;text-decoration:none}
+
+/* ── 顶部导航 ── */
+.top-bar{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;
+  background:rgba(245,241,232,0.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600;letter-spacing:0.04em}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* ── Hero ── */
+.hero{
+  min-height:55vh;display:flex;align-items:center;justify-content:center;
+  padding:4rem 2rem;text-align:center;
+}
+.hero__inner{max-width:42rem}
+.hero__eyebrow{
+  font-size:0.82rem;text-transform:uppercase;letter-spacing:0.12em;
+  color:var(--accent-warm);margin-bottom:1rem;
+}
+.hero h1{
+  font-family:var(--title-font);
+  font-size:clamp(2.6rem,5.5vw,4.2rem);
+  line-height:1.1;font-weight:700;margin-bottom:1.2rem;
+}
+.hero__lead{
+  font-size:1.15rem;color:var(--ink-soft);line-height:1.85;max-width:34rem;margin:0 auto;
+}
+
+/* ── 时间线 ── */
+.timeline{
+  max-width:52rem;margin:0 auto;padding:3rem 2rem 5rem;
+  position:relative;
+}
+.timeline::before{
+  content:"";position:absolute;left:2.5rem;top:0;bottom:0;
+  width:1px;background:var(--line);
+}
+.timeline__item{
+  position:relative;padding-left:5rem;margin-bottom:3.5rem;
+}
+.timeline__item:last-child{margin-bottom:0}
+.timeline__dot{
+  position:absolute;left:2.15rem;top:0.35rem;
+  width:0.7rem;height:0.7rem;border-radius:50%;
+  background:var(--accent-warm);
+  box-shadow:0 0 0 4px rgba(150,97,73,0.15);
+}
+.timeline__era{
+  font-size:0.8rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.1em;color:var(--accent-warm);margin-bottom:0.3rem;
+}
+.timeline__title{
+  font-family:var(--title-font);font-size:1.5rem;font-weight:600;margin-bottom:0.6rem;
+}
+.timeline__text{
+  color:var(--ink-soft);line-height:1.85;max-width:38rem;
+}
+.timeline__tags{
+  display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.8rem;
+}
+.tag{
+  display:inline-flex;align-items:center;min-height:2rem;
+  padding:0.3rem 0.7rem;border-radius:999px;
+  background:var(--surface-soft);color:var(--ink-soft);
+  font-size:0.82rem;box-shadow:inset 0 0 0 1px var(--line);
+}
+
+/* ── 器物卡片 ── */
+.objects{
+  max-width:64rem;margin:0 auto;padding:2rem 2rem 5rem;
+}
+.objects h2{
+  font-family:var(--title-font);font-size:clamp(1.8rem,3vw,2.4rem);
+  margin-bottom:0.5rem;
+}
+.objects__intro{color:var(--ink-soft);margin-bottom:2.5rem;max-width:36rem}
+.objects__grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(18rem,1fr));gap:1.5rem;
+}
+.obj-card{
+  background:var(--surface);border-radius:0.85rem;
+  box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08);
+  overflow:hidden;transition:transform 240ms ease,box-shadow 240ms ease;
+}
+.obj-card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(22,34,48,0.12)}
+.obj-card__img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;
+  background:rgba(49,95,135,0.04);
+}
+.obj-card__body{padding:1.1rem;display:grid;gap:0.5rem}
+.obj-card__name{font-family:var(--title-font);font-size:1.15rem;font-weight:600}
+.obj-card__meta{font-size:0.85rem;color:var(--ink-muted)}
+.obj-card__desc{font-size:0.92rem;color:var(--ink-soft);line-height:1.7}
+
+/* ── 底部 ── */
+.footer{
+  text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);
+  color:var(--ink-muted);font-size:0.88rem;
+}
+.footer a{color:var(--accent)}
+.footer a:hover{text-decoration:underline}
+
+@media(max-width:640px){
+  .top-bar{padding:0.7rem 1.2rem}
+  .hero{padding:3rem 1.2rem;min-height:40vh}
+  .timeline{padding:2rem 1.2rem 4rem}
+  .timeline::before{left:1.5rem}
+  .timeline__item{padding-left:3.5rem}
+  .timeline__dot{left:1.15rem}
+  .objects{padding:1.5rem 1.2rem 4rem}
+}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">唐 <span>·</span> 茶具</div>
+</header>
+
+<section class="hero">
+  <div class="hero__inner">
+    <p class="hero__eyebrow">Tang Dynasty · Tea Ware</p>
+    <h1>唐 · 茶具</h1>
+    <p class="hero__lead">唐代是茶文化从药饮走向品饮的关键转折。陆羽《茶经》系统梳理了采、制、烹、饮的全流程，茶具也从日常杂器中独立出来，形成"器以载道"的审美自觉。</p>
+  </div>
+</section>
+
+<section class="timeline">
+  <div class="timeline__item">
+    <div class="timeline__dot"></div>
+    <p class="timeline__era">初唐 618–683</p>
+    <h3 class="timeline__title">煎茶法的萌芽</h3>
+    <p class="timeline__text">初唐饮茶仍沿袭魏晋以来的药饮习惯，茶叶与葱、姜、枣、橘皮同煮。茶具尚未形成独立体系，多借用酒器和食器。西安何家村窖藏出土的鎏金银器虽非专用茶具，但其精工程度已预示了茶器走向独立的审美基础。</p>
+    <div class="timeline__tags"><span class="tag">药饮过渡</span><span class="tag">金银器</span><span class="tag">何家村窖藏</span></div>
+  </div>
+
+  <div class="timeline__item">
+    <div class="timeline__dot"></div>
+    <p class="timeline__era">盛唐 713–755</p>
+    <h3 class="timeline__title">陆羽《茶经》与二十四器</h3>
+    <p class="timeline__text">陆羽在《茶经·四之器》中详列风炉、筥、炭挝、火䇲、鍑、交床、夹、纸囊、碾、罗合、则、水方、漉水囊、瓢、竹䇲、鹾簋、熟盂、碗、畚、札、涤方、滓方、巾、具列、都篮共二十四器。这是中国历史上第一次将茶具作为独立品类进行系统论述，确立了"器以载道"的茶器哲学。</p>
+    <div class="timeline__tags"><span class="tag">陆羽</span><span class="tag">茶经</span><span class="tag">二十四器</span></div>
+  </div>
+
+  <div class="timeline__item">
+    <div class="timeline__dot"></div>
+    <p class="timeline__era">中唐 766–835</p>
+    <h3 class="timeline__title">越窑青瓷茶碗的巅峰</h3>
+    <p class="timeline__text">陆羽评天下瓷窑："碗，越州上，鼎州次，婺州次，岳州次，寿州、洪州次。"越窑秘色瓷釉色青碧如玉，最能衬托茶汤之色。法门寺地宫出土的秘色瓷碗与《茶经》记载高度吻合，证实了唐代宫廷茶具的奢华与考究。</p>
+    <div class="timeline__tags"><span class="tag">越窑</span><span class="tag">秘色瓷</span><span class="tag">法门寺</span></div>
+  </div>
+
+  <div class="timeline__item">
+    <div class="timeline__dot"></div>
+    <p class="timeline__era">晚唐 836–907</p>
+    <h3 class="timeline__title">茶具的东传与定型</h3>
+    <p class="timeline__text">日本遣唐使将唐代煎茶法和茶具形制带回日本，最澄、空海等僧人在比叡山和金刚峰寺种植茶树。唐代茶碾、茶碗的形制直接影响了日本茶道中茶臼和天目茶碗的造型。同时，长沙窑开始批量生产外销茶具，通过海上丝绸之路远销西亚。</p>
+    <div class="timeline__tags"><span class="tag">遣唐使</span><span class="tag">长沙窑</span><span class="tag">海上丝路</span></div>
+  </div>
+</section>
+
+<section class="objects">
+  <h2>代表器物</h2>
+  <p class="objects__intro">从法门寺地宫到何家村窖藏，唐代茶具以金银器和越窑青瓷为两大高峰，兼有邢窑白瓷、长沙窑彩绘瓷等多元面貌。</p>
+  <div class="objects__grid">
+    <div class="obj-card">
+      <img class="obj-card__img" src="img/dynasty-pages/tang-teaware.jpg" alt="唐 · 鎏金茶槽子">
+      <div class="obj-card__body">
+        <h4 class="obj-card__name">鎏金鸿雁纹银茶槽子</h4>
+        <p class="obj-card__meta">法门寺地宫出土 · 唐僖宗供奉</p>
+        <p class="obj-card__desc">用于碾茶的银质茶碾，槽身錾刻鸿雁纹，鎏金工艺精湛，是唐代宫廷茶具的代表作。</p>
+      </div>
+    </div>
+    <div class="obj-card">
+      <img class="obj-card__img" src="img/dynasty-pages/tang-bowl.JPG" alt="唐 · 越窑秘色瓷碗">
+      <div class="obj-card__body">
+        <h4 class="obj-card__name">越窑秘色瓷葵口碗</h4>
+        <p class="obj-card__meta">法门寺地宫出土 · 晚唐</p>
+        <p class="obj-card__desc">釉色青碧如湖水，葵口造型优雅。陆羽所谓"类玉""类冰"的越窑上品，茶汤映于碗中如碧玉含翠。</p>
+      </div>
+    </div>
+    <div class="obj-card">
+      <img class="obj-card__img" src="img/dynasty-pages/tang-sancai.JPG" alt="唐 · 邢窑白瓷执壶">
+      <div class="obj-card__body">
+        <h4 class="obj-card__name">邢窑白瓷执壶</h4>
+        <p class="obj-card__meta">邢窑遗址出土 · 中晚唐</p>
+        <p class="obj-card__desc">邢窑白瓷"类银类雪"，与越窑青瓷形成"南青北白"格局。执壶短流、鼓腹，是唐代煮水点茶的核心器具。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 唐 · 茶具</p>
+</footer>
+
+</body>
+</html>

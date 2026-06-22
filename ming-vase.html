@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>明 · 花器 | 渔窑手工青花</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1d2731;--ink-soft:rgba(29,39,49,0.78);--ink-muted:rgba(29,39,49,0.5);
+  --accent:#315f87;--accent-warm:#966149;--surface:rgba(255,255,255,0.84);
+  --surface-soft:rgba(255,255,255,0.55);--line:rgba(49,95,135,0.12);
+  --title-font:"Noto Serif SC","SimSun",serif;
+  --body-font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);color:var(--ink);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 70% 20%, rgba(205,225,242,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 40% 75%, rgba(190,215,238,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 85% 65%, rgba(220,230,245,0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 10% 55%, rgba(240,242,248,0.5) 0%, transparent 40%),
+    linear-gradient(160deg, #e6f0f7 0%, #d4e3ef 45%, #c9ddec 100%);
+}
+.top-bar{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0.8rem 2rem;background:rgba(245,241,232,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-bar__home{font-family:var(--title-font);font-size:1.1rem;font-weight:600}
+.top-bar__crumb{font-size:0.88rem;color:var(--ink-soft)}
+.top-bar__crumb span{color:var(--accent-warm)}
+
+/* 博物馆陈列式 */
+.hero{padding:3rem 2rem;max-width:52rem;margin:0 auto;text-align:center}
+.hero h1{font-family:var(--title-font);font-size:clamp(2.6rem,5vw,3.4rem);margin-bottom:0.6rem}
+.hero .lead{color:var(--ink-soft);max-width:32rem;margin:0 auto;font-size:1.05rem}
+
+.gallery{max-width:64rem;margin:0 auto;padding:1rem 2rem 4rem}
+.gallery__room{margin-bottom:3rem}
+.gallery__room-title{font-family:var(--title-font);font-size:1.5rem;padding-bottom:0.6rem;border-bottom:1px solid var(--accent-warm);margin-bottom:1.5rem;display:flex;align-items:baseline;gap:0.8rem}
+.gallery__room-title .num{font-size:0.85rem;color:var(--ink-muted);font-weight:400}
+.gallery__row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}
+.gallery__obj{background:var(--surface);border-radius:0.75rem;padding:1.5rem;box-shadow:inset 0 0 0 1px rgba(49,95,135,0.08);display:flex;flex-direction:column}
+.gallery__obj-label{font-size:0.76rem;color:var(--accent-warm);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem}
+.gallery__obj h3{font-family:var(--title-font);font-size:1.2rem}
+.gallery__obj .spec{font-size:0.82rem;color:var(--ink-muted);margin:0.3rem 0 0.6rem}
+.gallery__obj p{font-size:0.88rem;color:var(--ink-soft);line-height:1.75;flex:1}
+.gallery__obj--wide{grid-column:1/-1;flex-direction:row;align-items:flex-start;gap:2rem}
+.gallery__obj--wide p{flex:1}
+
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);color:var(--ink-muted);font-size:0.88rem}
+.footer a{color:var(--accent)}
+
+@media(max-width:700px){
+  .gallery__row{grid-template-columns:1fr}
+  .gallery__obj--wide{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a class="top-bar__home" href="index.html">渔窑手工青花</a>
+  <div class="top-bar__crumb">明 <span>·</span> 花器</div>
+</header>
+
+<section class="hero">
+  <h1>明 · 花器</h1>
+  <p class="lead">明代花器代表了景德镇制瓷业的全面成熟。从永宣青花到成化斗彩，从嘉万五彩到崇祯转型，明代瓶、罐、尊等花器品类之丰富、工艺之精湛，为中国陶瓷树立了难以逾越的标杆。</p>
+</section>
+<div class="hero-image-strip" style="max-width:56rem;margin:0 auto 2rem;padding:0 2rem">
+  <img src="img/dynasty-pages/ming-bluewhite.jpg" alt="ming 陶瓷" style="width:100%;max-height:400px;object-fit:cover;border-radius:0.75rem;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+</div>
+
+
+<div class="gallery">
+  <div class="gallery__room">
+    <div class="gallery__room-title">第一展厅：青花时代 <span class="num">永乐 · 宣德</span></div>
+    <div class="gallery__row">
+      <div class="gallery__obj">
+        <div class="gallery__obj-label">永乐 · 青花</div>
+        <h3>折枝花果纹梅瓶</h3>
+        <div class="spec">高 36.5cm · 景德镇御窑</div>
+        <p>永乐青花梅瓶器型从元代雄健趋于秀美修长。折枝花果纹以"一笔点画"技法勾勒，青花发色浓艳而不失清雅，铁锈斑分布自然。</p>
+      </div>
+      <div class="gallery__obj">
+        <div class="gallery__obj-label">宣德 · 青花</div>
+        <h3>缠枝莲纹天球瓶</h3>
+        <div class="spec">高 43.2cm · 永乐朝创制 / 宣德朝成熟</div>
+        <p>天球瓶为明代独创器型，小口、直颈、圆腹如球。宣德年间青花发色达到巅峰，缠枝莲纹层次分明，是明代花器中最为经典的造型之一。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery__room">
+    <div class="gallery__room-title">第二展厅：彩瓷之变 <span class="num">成化 · 嘉靖 · 万历</span></div>
+    <div class="gallery__row">
+      <div class="gallery__obj">
+        <div class="gallery__obj-label">成化 · 斗彩</div>
+        <h3>斗彩缠枝莲纹高足杯</h3>
+        <div class="spec">高 7.2cm · 成化斗彩代表器</div>
+        <p>斗彩工艺——釉下青花勾线，釉上五彩填色——在成化年间成熟。这件高足杯虽为饮器，但常作陈设雅玩，体现了明代花器与实用器边界的模糊。</p>
+      </div>
+      <div class="gallery__obj">
+        <div class="gallery__obj-label">嘉靖 · 五彩</div>
+        <h3>五彩鱼藻纹盖罐</h3>
+        <div class="spec">高 33.2cm · 嘉靖五彩巅峰</div>
+        <p>通体绘八尾锦鲤游弋于莲花水藻之间，红鲤绿藻黄蕊蓝水，色彩对比极为大胆。以矾红描鱼、绿彩绘藻、黄彩点蕊，是明代五彩器中最具视觉冲击力的作品。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery__room">
+    <div class="gallery__room-title">第三展厅：转型与余韵 <span class="num">崇祯 · 过渡期</span></div>
+    <div class="gallery__row">
+      <div class="gallery__obj gallery__obj--wide">
+        <div style="flex-shrink:0">
+          <div class="gallery__obj-label">崇祯 · 转型期青花</div>
+          <h3>青花人物故事笔筒</h3>
+          <div class="spec">高 21.3cm · 崇祯年间</div>
+        </div>
+        <p>崇祯时期的青花笔筒是明代制瓷最后的余晖。釉色清亮（上品细料），纹饰以文人雅集、历史故事为主，画风受版画影响。此时已出现"V"形地皮、括号云等清初典型特征，标志着从明代雄健向清代精细的审美转向。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="index.html">返回首页</a> · 渔窑手工青花 · 明 · 花器</p>
+</footer>
+
+</body>
+</html>

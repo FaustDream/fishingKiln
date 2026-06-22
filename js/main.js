@@ -1,6 +1,6 @@
-import { getResearchIdFromLocation, initInteractions } from "./interactions.js";
-import { renderPage, renderSiteNav } from "./renderers.js";
-import { siteContent } from "./siteContentUnified.js";
+import { getResearchIdFromLocation, initInteractions } from "./interactions.js?v=20260609-guide-panel1";
+import { renderPage, renderSiteNav } from "./renderers.js?v=20260609-guide-panel1";
+import { siteContent } from "./siteContentUnified.js?v=20260609-guide-panel1";
 
 function mountPage() {
   const page = document.body.dataset.page ?? "home";
